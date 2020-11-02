@@ -10,3 +10,7 @@ https://www.farmy.ch/
 # Product names
 
 # Domain names (add only available domains)
+myfarmer.io
+myfarmerfood.io
+farmerfood.io
+terrafood.io
