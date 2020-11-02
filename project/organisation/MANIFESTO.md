@@ -40,5 +40,7 @@
 
 I have read the manifesto and committed myself to it, Alex.<br/>
 I have read the manifesto and committed myself to it, Sami.<br/>
+I have read the manifesto and committed myself to it, Aleksandra.
+
 
 
