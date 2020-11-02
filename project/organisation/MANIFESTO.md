@@ -38,6 +38,7 @@
     * File names frontend: camelCase.jsx, Post.jsx (components)
     * File names backend: snake_case.py
 
-I have read the manifesto and committed myself to it, Alex.<br/> 
+I have read the manifesto and committed myself to it, Alex.<br/>
+I have read the manifesto and committed myself to it, Sami.<br/>
 
 
