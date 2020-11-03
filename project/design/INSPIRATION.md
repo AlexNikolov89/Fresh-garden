@@ -20,6 +20,8 @@ https://dribbble.com/
 Simplicity: https://procivis.ch/ 
 Minimalistic: https://workstack.io/features
 Dropdown: https://dribbble.com/shots
-
-
-
+https://www.pinterest.ch/pin/578079302147334934/
+https://www.pinterest.ch/pin/397231629613242272/
+https://www.pinterest.ch/pin/34762228356671267/
+https://www.pinterest.ch/pin/737675613942269352/
+https://www.pinterest.ch/pin/849210073465449239/

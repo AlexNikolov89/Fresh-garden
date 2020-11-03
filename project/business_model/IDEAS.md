@@ -15,5 +15,9 @@ disruebli.ch
 euse-garte.ch
 garte-food.ch
 eden.ch
+myfarmer.ch
+myfarmerfood.ch
+farmerfood.ch
+terrafood.ch
 
 # Domain names (add only available domains)
