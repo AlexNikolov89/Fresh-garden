@@ -19,5 +19,7 @@ myfarmer.ch
 myfarmerfood.ch
 farmerfood.ch
 terrafood.ch
+farmer-food.ch
+fresh-garden.ch
 
 # Domain names (add only available domains)
