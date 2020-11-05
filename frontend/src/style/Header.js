@@ -8,7 +8,7 @@ export const HeaderContainer = styled.div `
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: #5D6D37;
+    background-color: #B4CB67;
 `;
 
 export const FormConatiner = styled.div `
