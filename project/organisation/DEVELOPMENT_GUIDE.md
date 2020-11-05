@@ -20,4 +20,3 @@ add
 * <code>makemigrations, migrate and runserver</code> with <code>$ python manage.py your_command</code>
 
 # Drop Database
-add
