@@ -2,12 +2,12 @@ import React, {Fragment} from 'react'
 import Header from '../components/Header/index';
 import {TopContainer, Image, Text} from '../style/Homepage';
 import {CheckoutConatiner,
-         ProductsConatiner, Product,
+         ProductsConatiner, BoxContainer,
           Box, Tomato,
            Description, Info,
            Button, ProductQ, Quantity, QueantityT, Price, Total, TotalP, TotalQ } from '../style/Checkoutpage'
 import TomatoImg from '../assets/tomato.jpg';
-//import Product from '../components/Product/index'
+import Product from '../components/Product/index'
 
 
 const Checkoutpage = () => {
@@ -24,9 +24,10 @@ const Checkoutpage = () => {
             <ProductsConatiner>
                 <Text>-Your Order Items-</Text>
 
-                <Box>
-                    {/*<Product />*/}
-                    <Tomato src={TomatoImg} />
+                <BoxContainer>
+                
+                    <Product />
+                    {/*<Tomato src={TomatoImg} />
                     
                         <Info>
                             <Product>Product</Product>
@@ -47,8 +48,8 @@ const Checkoutpage = () => {
                         <TotalP>
                             <Price>Price</Price>
                             <Total>CHF 25</Total>
-                        </TotalP>
-                    </Box> 
+    </TotalP> */}</BoxContainer>
+    
             </ProductsConatiner>
 
             </CheckoutConatiner>

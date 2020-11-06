@@ -17,7 +17,7 @@ export const Description = styled.p `
     margin-top: 20px;
 `;
 
-export const Product = styled.h3 ``;
+export const ProductTitle = styled.h3 ``;
 
 export const Info = styled.div `
     display: block;

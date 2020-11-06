@@ -9,7 +9,7 @@ export const HeaderContainer = styled.div `
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: ${theme.middleGreenYellow};
+    background-color: ${theme.colorMiddleGreenYellow};
 `;
 
 export const FormConatiner = styled.div `
@@ -23,7 +23,7 @@ export const FormConatiner = styled.div `
 export const Icons = styled.div `
     display: flex-end;
    i {
-       color: ${theme.darkOliveGreen};
+       color: ${theme.colorDarkOliveGreen};
        text-align: center;
        float: right;
        font-size: 1.6rem;
@@ -35,7 +35,7 @@ export const Icons = styled.div `
    }
 
    i:active {
-        color: ${theme.middleGreenYellow};
+        color: ${theme.colorMiddleGreenYellow};
    }
 `;
 

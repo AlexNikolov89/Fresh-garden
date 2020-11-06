@@ -19,7 +19,7 @@ export const Input = styled.input `
     width: 0px;
     transition: all 0.8s;
     border-radius: 40px;
-    background-color: ${theme.middleGreenYellow};
+    background-color: ${theme.colorMiddleGreenYellow};
 
     &:hover, &:active {
         width: 800px;
@@ -42,11 +42,11 @@ export const Button = styled.button `
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: ${theme.middleGreenYellow};
+    background: ${theme.colorMiddleGreenYellow};
 
     i {
         z-index: 1;
-        background: ${theme.middleGreenYellow};
+        background: ${theme.colorMiddleGreenYellow};
         font-size: 1.6rem;
         color: black;
         border-radius: 50px;

@@ -22,7 +22,7 @@ export const Image = styled.div `
 
 export const BottomConatiner = styled.div `
   display: block;
-  background: ${theme.backgroundColor};
+  background: ${theme.colorBackgroundColor};
 `;
 
 export const Box = styled.div `
@@ -34,7 +34,7 @@ export const Box = styled.div `
   justify-content: space-evenly;
   padding: 40px 0;
   height: calc(100% - 68px);
-  background: ${theme.backgroundColor};
+  background: ${theme.colorBackgroundColor};
 `
 
 export const Text = styled.h2 `
@@ -45,7 +45,7 @@ export const Text = styled.h2 `
     font-size: 1.8rem;
     height: 40px;
     width: 100%;
-    color: ${theme.titleColor};
+    color: ${theme.colorTitle};
     text-shadow: grey 0.2em 0.2em 0.2em;
 `
 

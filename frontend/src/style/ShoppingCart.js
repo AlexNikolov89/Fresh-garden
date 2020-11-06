@@ -7,7 +7,7 @@ export const ShoppingCartConatiner = styled.div `
     display: flex;
     flex-direction: column;
     border: 1px solid green;
-    background: ${theme.almond}
+    background: ${theme.colorAlmond}
 `;
 
 export const ImageContainer = styled.div `
@@ -44,7 +44,7 @@ export const Calc = styled(ImageContainer) `
     i {
         height: 25px;
         width: 25px;
-        color: ${theme.middleGreenYellow};
+        color: ${theme.colorMiddleGreenYellow};
         display: flex;
         justify-content: center;
     }
@@ -66,7 +66,7 @@ export const Button = styled.button `
     height: 25px;
     width: 25px;
     border: none;
-    background: ${theme.almond};
+    background: ${theme.colorAlmond};
     
 `;
 
@@ -75,7 +75,7 @@ export const ButtonSubmit = styled.button `
     width: 200px;
     border-radius: 28px;
     margin-left: 25%;
-    background: ${theme.middleGreenYellow};
+    background: ${theme.colorMiddleGreenYellow};
     border: none;
     position: sticky;
     bottom: 0;
@@ -87,7 +87,7 @@ export const ButtonSubmit = styled.button `
         }
 
     &:active {
-        background: ${theme.darkOliveGreen}
+        background: ${theme.colorDarkOliveGreen}
     }
 `;
 

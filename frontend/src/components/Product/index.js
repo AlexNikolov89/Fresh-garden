@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {ProductConatiner, Tomato, TomatoImg, Info, Description,
+import {ProductConatiner, Tomato, TomatoImg, Info, Description, ProductTitle,
         Quantity, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total} from '../../style/Product.js'
 import TomatoImage from '../../assets/tomato.jpg';
 
@@ -12,7 +12,7 @@ const Product = () => {
 
                 <Tomato src={TomatoImage} />
                     <Info>
-                        <Product>Product</Product>
+                        <ProductTitle>Product</ProductTitle>
                         <Description>Fresh Tomato from Thurgau</Description>
                     </Info>
 

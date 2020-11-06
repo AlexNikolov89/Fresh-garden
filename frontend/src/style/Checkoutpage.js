@@ -7,17 +7,17 @@ export const CheckoutConatiner = styled.div `
 `;
 
 export const ProductsConatiner = styled.div `
-    background: ${theme.backgroundColor};
+    background: ${theme.colorBackgroundColor};
 `;
 
-export const Box = styled.div `
+export const BoxContainer = styled.div `
    height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
   justify-content: space-evenly;
-  background: ${theme.backgroundColor};
+  background: ${theme.colorBackgroundColor};
  `;
 
 export const Tomato = styled.img `
