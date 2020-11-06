@@ -1,14 +1,15 @@
 import styled from 'styled-components'
+import {theme} from './index'
 
 export const HeaderContainer = styled.div `
-    height: 80px;
+    height: 60px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: #5D6D37;
+    background-color: ${theme.middleGreenYellow};
 `;
 
 export const FormConatiner = styled.div `
@@ -22,7 +23,7 @@ export const FormConatiner = styled.div `
 export const Icons = styled.div `
     display: flex-end;
    i {
-       color: black;
+       color: ${theme.darkOliveGreen};
        text-align: center;
        float: right;
        font-size: 1.6rem;
@@ -30,13 +31,18 @@ export const Icons = styled.div `
    }
 
    i:hover{
-       font-size: 1.8rem;
+       cursor: pointer;
    }
 
    i:active {
-        color: grey;
+        color: ${theme.middleGreenYellow};
    }
 `;
+
+export const OpenCart = styled.div `
+    position: absolute;
+    bottom: -600px;
+`
 
 export const Logo = styled.img `
 `;
@@ -45,3 +51,5 @@ export const LogoConatiner = styled.div `
    display: flex;
 
 `;
+
+

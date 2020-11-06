@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {theme} from './index'
 
 export const Form = styled.form `
     height: 40px;
@@ -18,7 +19,7 @@ export const Input = styled.input `
     width: 0px;
     transition: all 0.8s;
     border-radius: 40px;
-    background-color: #5D6D37;
+    background-color: ${theme.middleGreenYellow};
 
     &:hover, &:active {
         width: 800px;
@@ -41,11 +42,11 @@ export const Button = styled.button `
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: #5D6D37;
+    background: ${theme.middleGreenYellow};
 
     i {
         z-index: 1;
-        background: #5D6D37;
+        background: ${theme.middleGreenYellow};
         font-size: 1.6rem;
         color: black;
         border-radius: 50px;

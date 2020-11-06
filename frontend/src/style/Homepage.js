@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import background from '../assets/Veggies.jpg'
+import background from '../assets/Veggies.jpg';
+import {theme} from './index'
 
 
 export const HomeContainer = styled.div `
@@ -20,7 +21,12 @@ export const Image = styled.div `
 `;
 
 export const BottomConatiner = styled.div `
-  height: 100%;
+  display: block;
+  background: ${theme.backgroundColor};
+`;
+
+export const Box = styled.div `
+   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -28,8 +34,20 @@ export const BottomConatiner = styled.div `
   justify-content: space-evenly;
   padding: 40px 0;
   height: calc(100% - 68px);
-  background: #fffdf6;
-`;
+  background: ${theme.backgroundColor};
+`
+
+export const Text = styled.h2 `
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    font-size: 1.8rem;
+    height: 40px;
+    width: 100%;
+    color: ${theme.titleColor};
+    text-shadow: grey 0.2em 0.2em 0.2em;
+`
 
 
 export const Logo = styled.img `
