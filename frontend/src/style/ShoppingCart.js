@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import {theme} from './index';
+import {NavLink} from 'react-router-dom'
 
 export const ShoppingCartConatiner = styled.div `
-    width: 400px;
-    height: 600px;
+    width: 370px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     border: 1px solid green;
@@ -71,15 +72,15 @@ export const Button = styled.button `
 `;
 
 export const ButtonSubmit = styled.button `
-    height: 40px;
+    height: 50px;
     width: 200px;
     border-radius: 28px;
-    margin-left: 25%;
     background: ${theme.colorMiddleGreenYellow};
     border: none;
     position: sticky;
     bottom: 0;
-    margin-top: 25px;
+    margin: 25px 80px;
+
 
     &:focus { 
         outline: none; 

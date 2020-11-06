@@ -3,7 +3,7 @@ import {createGlobalStyle} from 'styled-components'
 
 
 export const GlobalStyle = createGlobalStyle `
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;500;700&display=swap');
      
      * {
          margin: 0;
@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle `
         font-weight: 400;
         line-height: 1.6;
         min-height: 100vh;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Hind', sans-serif;
     }
 
 `;
@@ -41,4 +41,5 @@ export const theme = {
 
     // Box Shadows:
     boxShadow: `10px 10px 5px #aaaaaa`,
+
 }

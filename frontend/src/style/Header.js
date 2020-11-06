@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import {theme} from './index'
 
+
 export const HeaderContainer = styled.div `
     height: 60px;
     width: 100%;
@@ -37,12 +38,30 @@ export const Icons = styled.div `
    i:active {
         color: ${theme.colorMiddleGreenYellow};
    }
+   span {
+       color: black;
+       margin-left: 5px;
+       color: white;
+       cursor: pointer;
+       position: absolute;
+       top: 0;
+   }
+
+   @media ( max-width: 800px) {
+       display: none;
+   }
 `;
 
 export const OpenCart = styled.div `
     position: absolute;
     bottom: -600px;
+`;
+
+export const Select = styled.select `
+    height: 100px;
+    width: 100px;
 `
+
 
 export const Logo = styled.img `
 `;

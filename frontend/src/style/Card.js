@@ -14,6 +14,7 @@ export const CardContainer = styled.div `
 export const TopContainer = styled.div `
     height: 250px;
     width: 270px;
+    border: 1px solid black;
 `;
 
 export const Image = styled.img `
