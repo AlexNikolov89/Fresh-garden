@@ -1,7 +1,9 @@
 import React, {Fragment} from 'react'
-import {ProductConatiner, Tomato, TomatoImg, Info, Description,
-        Quantity, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total} from '../../style/Product.js'
+import {ProductConatiner, Tomato, TomatoImg, Info, Description, ProductTitle,
+       Quantity, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total, Delete} from '../../style/Product.js'
 import TomatoImage from '../../assets/tomato.jpg';
+import {HeaderConatiner, QuantityT, ProductT, PriceT,
+       InfoConatiner, Name, TotalPrice, ProductImg, BLock, ImageConatiner} from '../../style/Product'
 
 
 const Product = () => {
@@ -10,25 +12,27 @@ const Product = () => {
         <Fragment>
             <ProductConatiner>
 
-                <Tomato src={TomatoImage} />
+            <ProductImg src={TomatoImage} />
+
+                <InfoConatiner>
+                
                     <Info>
-                        <Product>Product</Product>
+                        <Name>Fresh Tomato</Name>
                         <Description>Fresh Tomato from Thurgau</Description>
                     </Info>
 
                     <Quantity>
-                        <QueantityT>Quantity</QueantityT>
-                        <TotalQ>
-                            <Button><i class="fas fa-plus" /></Button>
-                            <ProductQ>15</ProductQ>
-                            <Button><i class="fas fa-minus" /></Button>
-                        </TotalQ>
+                        <Button><i class="fas fa-plus" /></Button>
+                        <ProductQ>15</ProductQ>
+                        <Button><i class="fas fa-minus" /></Button>
                     </Quantity>
 
-                    <TotatlP>
-                        <Price>Price</Price>
-                        <Total>CHF 25</Total>
-                    </TotatlP>
+                    <TotalPrice>
+                        <Price>CHF 30</Price>
+                        <i class="fas fa-trash-alt"></i>
+                    </TotalPrice>
+
+                </InfoConatiner>
 
             </ProductConatiner>
         </Fragment>

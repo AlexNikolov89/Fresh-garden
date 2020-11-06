@@ -4,7 +4,7 @@ import {theme} from './index'
 export const CardContainer = styled.div `
     width: 270px;
     height: 410px;
-    background: ${theme.almond};
+    background: ${theme.colorAlmond};
     cursor: pointer;
     box-shadow: ${theme.boxShadow};
     box-sizing: border-box;
@@ -14,6 +14,7 @@ export const CardContainer = styled.div `
 export const TopContainer = styled.div `
     height: 250px;
     width: 270px;
+    border: 1px solid black;
 `;
 
 export const Image = styled.img `
@@ -28,7 +29,7 @@ export const BottomConatiner = styled.div `
         font-size: 1.4rem;
         color: #5D6D37;
         text-align: center;
-        margin-right: 40px;
+        margin: 40px;
         cursor: pointer;
     }
 
@@ -38,13 +39,13 @@ export const BottomConatiner = styled.div `
 
  
     i:active {
-         color: ${theme.middleGreenYellow};
+         color: ${theme.colorMiddleGreenYellow};
     }
 `;
 
 export const Info = styled.div `
     display: block;
-    padding: 8px;
+    padding: 15px;
 `
 
 export const Text = styled.p `
@@ -61,10 +62,10 @@ export const Text = styled.p `
 
 export const Price = styled.p `
     width: 50%;
-   color: ${theme.darkOliveGreen};
+   color: ${theme.colorDarkOliveGreen};
     
     span {
         font-weight: ${theme.fontSizeBold};
-        color: ${theme.darkOliveGreen};
+        color: ${theme.colorDarkOliveGreen};
     }
 `;
