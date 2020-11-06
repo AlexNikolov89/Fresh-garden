@@ -1,13 +1,14 @@
 import styled from 'styled-components';
+import {theme} from './index'
 
 export const CardContainer = styled.div `
     width: 270px;
     height: 410px;
-    background: #edded4;
+    background: ${theme.almond};
     cursor: pointer;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    box-shadow: ${theme.boxShadow};
     box-sizing: border-box;
-    margin-top: 50px;
+    margin-top: 30px;
 `;
 
 export const TopContainer = styled.div `
@@ -32,12 +33,12 @@ export const BottomConatiner = styled.div `
     }
 
     i:hover {
-        font-size: 1.6rem;
+        cursor: pointer;
     }
 
  
     i:active {
-         color: grey;
+         color: ${theme.middleGreenYellow};
     }
 `;
 
@@ -48,21 +49,22 @@ export const Info = styled.div `
 
 export const Text = styled.p `
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: ${theme.fontSizeBold};
     color: #5D6D37;
     width: 50%;
 
     &:hover {
-        font-size: 1.3rem;
+        //font-size: 1.3rem;
+        cursor: pointer;
     }
 `;
 
 export const Price = styled.p `
     width: 50%;
-   color: #5D6D37;
+   color: ${theme.darkOliveGreen};
     
     span {
-        font-weight: bold;
-        color: #5D6D37;
+        font-weight: ${theme.fontSizeBold};
+        color: ${theme.darkOliveGreen};
     }
 `;
