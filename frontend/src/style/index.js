@@ -28,7 +28,7 @@ export const theme = {
     colorMaxYellowRed: '#FFC370',
     colorDarkOliveGreen: '#5D6D37',
     colorCapputMortum: '#4F2E2B',
-    colorBackgroundColor:'#F2F2F2',
+    colorBackgroundColor:'#fcf9f4',
     colorTitle: '#5D6D37',
 
 
@@ -41,5 +41,6 @@ export const theme = {
 
     // Box Shadows:
     boxShadow: `10px 10px 5px #aaaaaa`,
+    boxShadowLigh: `0 1px 4px rgba(0, 0, 0, 0.3)`,
 
 }
