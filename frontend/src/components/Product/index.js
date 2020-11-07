@@ -17,14 +17,14 @@ const Product = () => {
                 <InfoConatiner>
                 
                     <Info>
-                        <Name>Fresh Tomato</Name>
+                        
                         <Description>Fresh Tomato from Thurgau</Description>
                     </Info>
 
                     <Quantity>
-                        <Button><i class="fas fa-plus" /></Button>
+                        <Button><i class="fas fa-chevron-left" /></Button>
                         <ProductQ>15</ProductQ>
-                        <Button><i class="fas fa-minus" /></Button>
+                        <Button><i class="fas fa-chevron-right" /></Button>
                     </Quantity>
 
                     <TotalPrice>

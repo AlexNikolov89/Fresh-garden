@@ -15,7 +15,6 @@ export const ProductsConatiner = styled.div `
 export const BoxContainer = styled.div `
   background: ${theme.colorBackgroundColor};
   padding: 50px;
-  border: 1px solid red;
  `;
 
 
@@ -46,7 +45,6 @@ export const TopHeaderConatiner = styled.div `
     margin: 20px 0px;
     display: flex;
     justify-content: space-evenly;
-    margin-left: 90px; 
     font-size: 1.4rem;
     color: grey;
 `;
@@ -81,4 +79,78 @@ export const Button = styled.button `
      height: 30px;
      display: block;
  `;
+
+export const HorizontalLine = styled.hr `
+    width: 80%;
+    margin-left: 150px;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+`;
+
+export const ButtonPay = styled.button `
+    height: 50px;
+    width: 200px;
+    background: ${theme.colorDarkOliveGreen};
+    border: none;
+    border-radius: 25px;
+    color: white;
+    outline: none;
+
+    &:active {
+        background: ${theme.colorMiddleGreenYellow}
+    }
+`;
+
+export const Delivery = styled.h4 `
+    color: grey;
+
+    span {
+        color: ${theme.colorTitle}
+    }
+`;
+
+export const PaymentConatiner = styled.div `
+    background: ${theme.colorBackgroundColor};
+    display: flex;
+    padding: 40px;
+`;
+
+export const Subtotal = styled.h4 `
+    color: grey;
+
+    span {
+        color: ${theme.colorTitle}
+    }
+`;
+
+export const Summary = styled.h3 `
+    color: grey;
+    margin-bottom: 30px;
+`;
+
+export const Tax = styled.h4 `
+    color: grey;
+
+    span {
+        color: ${theme.colorTitle}
+    }
+`;
+
+export const TotalSum = styled.h3 `
+
+`;
+
+export const SumConatiner = styled.div `
+    display: block;
+    justify-content: flex-start;
+    margin-left: 180px;
+`;
+
+export const Submit = styled.div `
+    display: block;
+    margin-left: 700px;
+    padding: 60px;
+`
 

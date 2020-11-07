@@ -2,125 +2,81 @@ import styled from 'styled-components'
 import {theme} from './index';
 
 export const ProductConatiner = styled.div `
-    display: inline-block;
-    width: 100%;
-    border: 1px solid red;
+    border: 1px solid ${theme.colorAlmond};
+    display: flex;
+    padding: 30px;
+    box-shadow: ${theme.boxShadowLigh};
+    cursor: pointer;
+    margin-bottom: 30px; 
+    background-color: ${theme.colorAlmond}
 `;
 
 export const ProductImg = styled.img `
-    height: 100px;
-    
+    height: 150px;
+    border-radius: 10px;
 `;
-
-
-export const Total = styled.h4 ``;
-
-export const Description = styled.h3 ``; 
-
-export const Info = styled.div `
-`;
-
-export const Name = styled.h2 `
-`;
- 
 
 export const InfoConatiner = styled.div `
     display: flex;
-    margin-left: 340px;
-    background: red;
-    //line-height: 1.8;
+    align-items: center;
+    margin-left: 40px; 
 `;
 
-export const Quantity = styled.div `
-    display: flex;
-    align-items: center;
-    padding: 0px 120px;
+export const Info = styled.div `
+    display: block;
+`;
+
+export const Quantity = styled(InfoConatiner) `
+    margin-left: 110px;
+
+`;
+
+export const TotalPrice = styled(InfoConatiner) `
+    margin-left: 250px;
+    
+    i {
+        margin-left: 180px;
+        font-size: 1.8rem;
+        color: white;
+
+        &:active {
+            color: ${theme.colorMiddleGreenYellow}
+        }
+    }
 `;
 
 export const Button = styled.button `
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    background: ${theme.colorMiddleGreenYellow};
-    color: white;
+    width: 50px;
+    height: 50px;
+    background: ${theme.colorAlmond};
     border: none;
-    border-radius: 8px;
-    padding: 5px;
-
-    &:active {
-        background: ${theme.colorDarkOliveGreen};
-    }
-`;
-
-export const ProductQ = styled.h2 `
-    //padding: 0 20px;
-`;
-
-export const TotalPrice = styled.div `
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 80px;
+    outline: none;
 
     i {
         font-size: 1.6rem;
+        font-weight: 700;
+        color: white;
+
+        &:active {
+            color: ${theme.colorMiddleGreenYellow}
+        }
     }
 `;
 
-export const Price = styled.h4 `
-    /* padding: 0px 80px; */
+export const Description = styled.h3 `
+    font-size: 1.4rem;
+    color: ${theme.colorDarkOliveGreen}
 `;
 
 
+export const Name = styled.h2 ``;
 
-// export const Tomato = styled.img `
-//     height: 150px;
-// `;
+export const Price = styled.h3 ``;
 
-// export const Description = styled.p `
-//     margin-top: 20px;
-// `;
 
-// export const ProductTitle = styled.h3 ``;
+export const ProductQ = styled.h3 `
+    padding: 0 30px;
+`;
 
-// export const Info = styled.div `
-//     display: block;
-//     margin: 15px;
-// `;
 
-// export const Quantity = styled(Info) `
-//     display: block;
-//     margin: 10px;
-//     padding: 0 300px;
-// `;
-
-// export const TotatlP = styled(Info)  `
-    
-// `;
-
-// export const Button = styled.button `
-//     width: 30px;
-//     height: 30px;
-//     display: block;
-    
-// `;
-
-// export const TotalQ = styled.div `
-//     display: flex;
-//     margin-top: 20px;
-// `
-
-// export const ProductQ = styled.div `
-//     padding: 0 15px;
-// `;
-
-// export const QueantityT = styled.h3 `
-
-// `;
-
-// export const Total = styled.h3 ``;
-
-// export const Price = styled.h3 ``;
-
-// export const Delete = styled.div ``;
 
