@@ -15,6 +15,16 @@ background-image: url("${background}");
   opacity: 0.8;
 `;
 
+export const HorizontalLine = styled.hr `
+   width: 80%;
+   margin-top: 20px;
+    margin-left: 150px;
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+`
+
 export const Image = styled.div `
     width: 100%;
     height: 300px;
@@ -28,6 +38,9 @@ export const BottomConatiner = styled.div `
 export const Box = styled.div `
    height: 100%;
   width: 100%;
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 30px; */
   display: flex;
   flex-direction: row;
   flex-flow: wrap;
@@ -35,6 +48,7 @@ export const Box = styled.div `
   padding: 40px 0;
   height: calc(100% - 68px);
   background: ${theme.colorBackgroundColor};
+  
 `
 
 export const Text = styled.h2 `
@@ -60,4 +74,19 @@ export const Logo = styled.img `
 
 export const CardContainer = styled.div `
   
+`;
+
+export const About = styled.div `
+  display: flex;
+  justify-content: center;
+  text-align: center;
+`;
+
+export const AboutText = styled.h3 `
+  color: ${theme.colorRandomText};
+  padding: 40px;
+  line-height: 3;
+  font-weight: normal;
+  opacity: 0.7;
 `
+

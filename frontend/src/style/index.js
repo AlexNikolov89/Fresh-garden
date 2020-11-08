@@ -30,6 +30,7 @@ export const theme = {
     colorCapputMortum: '#4F2E2B',
     colorBackgroundColor:'#fcf9f4',
     colorTitle: '#5D6D37',
+    colorRandomText: '#bbbfca',
 
 
 

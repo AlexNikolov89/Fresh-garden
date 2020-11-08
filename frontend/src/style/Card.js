@@ -9,28 +9,30 @@ export const CardContainer = styled.div `
     box-shadow: ${theme.boxShadow};
     box-sizing: border-box;
     margin-top: 30px;
+    //border-top: 10px solid ${theme.colorDarkOliveGreen};
 `;
 
 export const TopContainer = styled.div `
     height: 250px;
     width: 270px;
-    border: 1px solid black;
 `;
 
 export const Image = styled.img `
     height: 100%;
     width: 100%;
+
+    &:hover {
+        opacity: 0.6;
+    }
 `;
+
 
 export const BottomConatiner = styled.div `
 
     i {
-        float: right;
-        font-size: 1.4rem;
-        color: #5D6D37;
-        text-align: center;
-        margin: 40px;
-        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.6rem;
     }
 
     i:hover {
@@ -46,6 +48,7 @@ export const BottomConatiner = styled.div `
 export const Info = styled.div `
     display: block;
     padding: 15px;
+    color: ${theme.colorDarkOliveGreen}
 `
 
 export const Text = styled.p `
@@ -60,12 +63,25 @@ export const Text = styled.p `
     }
 `;
 
+export const Wrapp = styled.div `
+    display: flex;
+`;
+
+export const KG = styled.p `
+    margin-top: 10px;
+`;
+
 export const Price = styled.p `
     width: 50%;
-   color: ${theme.colorDarkOliveGreen};
+    padding-top: 10px;
+    font-size: 1.0rem;
     
     span {
         font-weight: ${theme.fontSizeBold};
-        color: ${theme.colorDarkOliveGreen};
+        opacity: 0.4;
     }
 `;
+
+export const Date = styled.h4 `
+    padding-top: 10px;
+`
