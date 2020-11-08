@@ -22,7 +22,7 @@ export const FormConatiner = styled.div `
 `;
 
 export const Icons = styled.div `
-    display: flex-end;
+    display: flex;
    i {
        color: ${theme.colorDarkOliveGreen};
        text-align: center;

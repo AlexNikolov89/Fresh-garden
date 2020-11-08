@@ -7,7 +7,7 @@ import ShoppingCart from "../ShoppingCart/index";
 
 const Header = ({cart}) => {
 
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState();
 
     const handleCLick = () => setOpen(!open)
 
@@ -26,14 +26,15 @@ const Header = ({cart}) => {
                     <SearchBar />
                 </FormConatiner>
                 <Icons >
+
+                <Link to='/about'><AboutLogo src={LogoImg} /></Link>
+                <Link to='/'><i className="fas fa-user-circle" /></Link>
                 
                     <OpenCart>
                         {open && <ShoppingCart />}
                     </OpenCart>
 
                     <i className="fas fa-shopping-basket" onClick={handleCLick} />
-                    <Link to='/'><i className="fas fa-user-circle" /></Link>
-                    <Link to='/about'><AboutLogo src={LogoImg} /></Link>
                 </Icons>
 
             </HeaderContainer>

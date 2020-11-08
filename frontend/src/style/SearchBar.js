@@ -13,7 +13,6 @@ export const Form = styled.form `
 
 export const Container = styled.div `
     display: flex;
-    flex-wrap: wrap;
     outline: none;
 
     &:hover, :focus {

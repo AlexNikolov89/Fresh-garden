@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import {ProductConatiner, Tomato, TomatoImg, Info, Description, ProductTitle,
+import {ProductConatiner, Tomato, TomatoImg, Info, Description,
        Quantity, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total, Delete} from '../../style/Product.js'
 import TomatoImage from '../../assets/tomato.jpg';
 import {HeaderConatiner, QuantityT, ProductT, PriceT,
