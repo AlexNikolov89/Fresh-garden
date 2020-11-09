@@ -1,12 +1,30 @@
 import React, {Fragment} from 'react'
-import {Form, Input, Button} from '../../style/SearchBar'
+import {Form, Input, Container, InputMiddle, Button} from '../../style/SearchBar'
 
 const SearchBar = () => {
     return (
         <Fragment>
             <Form>
-                <Input type='text' value='' placeholder='Search...' />
-                <Button> <i class="fas fa-search" /></Button>
+                <Container>
+                    <Button>
+                    <i class="fas fa-map-marker-alt"></i>
+                    </Button>
+                    <Input type='text' />
+                </Container>
+
+                <Container>
+                    <Button>
+                    <i class="fas fa-sort"></i>
+                    </Button>
+                    <Input type='text' />
+                </Container>
+                
+                <Container>
+                <Button>
+                    <i class="fas fa-search"></i>
+                    </Button>
+                    <Input type='text' />
+                </Container>
             </Form>
         </Fragment>
     )

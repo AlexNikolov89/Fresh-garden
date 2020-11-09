@@ -1,13 +1,15 @@
 import styled from 'styled-components';
+import {theme} from './index'
 
 export const CardContainer = styled.div `
     width: 270px;
     height: 410px;
-    background: #edded4;
+    background: ${theme.colorAlmond};
     cursor: pointer;
-    box-shadow: 10px 10px 5px #aaaaaa;
+    box-shadow: ${theme.boxShadow};
     box-sizing: border-box;
-    margin-top: 50px;
+    margin-top: 30px;
+    //border-top: 10px solid ${theme.colorDarkOliveGreen};
 `;
 
 export const TopContainer = styled.div `
@@ -18,51 +20,68 @@ export const TopContainer = styled.div `
 export const Image = styled.img `
     height: 100%;
     width: 100%;
+
+    &:hover {
+        opacity: 0.6;
+    }
 `;
+
 
 export const BottomConatiner = styled.div `
 
     i {
-        float: right;
-        font-size: 1.4rem;
-        color: #5D6D37;
-        text-align: center;
-        margin-right: 40px;
-        cursor: pointer;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 1.6rem;
     }
 
     i:hover {
-        font-size: 1.6rem;
+        cursor: pointer;
     }
 
  
     i:active {
-         color: grey;
+         color: ${theme.colorMiddleGreenYellow};
     }
 `;
 
 export const Info = styled.div `
     display: block;
-    padding: 8px;
+    padding: 15px;
+    color: ${theme.colorDarkOliveGreen}
 `
 
 export const Text = styled.p `
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: ${theme.fontSizeBold};
     color: #5D6D37;
     width: 50%;
 
     &:hover {
-        font-size: 1.3rem;
+        //font-size: 1.3rem;
+        cursor: pointer;
     }
+`;
+
+export const Wrapp = styled.div `
+    display: flex;
+`;
+
+export const KG = styled.p `
+    margin-top: 10px;
 `;
 
 export const Price = styled.p `
     width: 50%;
-   color: #5D6D37;
+    padding-top: 10px;
+    font-size: 1.0rem;
     
     span {
-        font-weight: bold;
-        color: #5D6D37;
+        font-weight: ${theme.fontSizeBold};
+        opacity: 0.4;
     }
 `;
+
+export const Date = styled.h4 `
+    padding-top: 10px;
+`

@@ -1,54 +1,35 @@
 import styled from 'styled-components';
+import {theme} from './index'
 
 export const Form = styled.form `
-    height: 40px;
-    padding: 10px;
-    border-radius: 40px;
-    width: 10%;
     display: flex;
+    margin-left: 40px;
+
+    @media (max-width: 1000px) {
+        display: none;
+
+    }
 `;
 
-export const Input = styled.input `
-    border: none;
+export const Container = styled.div `
+    display: flex;
     outline: none;
-    float: left;
-    color: #EDDED4;
-    font-size: 1.4rem;
-    line-height: 40px;
-    width: 0px;
-    transition: all 0.8s;
-    border-radius: 40px;
-    background-color: #5D6D37;
 
-    &:hover, &:active {
-        width: 800px;
-        padding: 0 6px;
-        border: 1px solid #EDDED4;
-    }
+    &:hover, :focus {
+        border: 1px solid lightgrey;
 
-    &:focus {
-        width: 800px;
-        padding: 0 6px;
     }
+`
+
+export const Input = styled.input `
+    height: 30px;
+    color: black;
+    border: none;
 `;
 
 export const Button = styled.button `
+    height: 30px;
+    width: 30px;
     border: none;
-    background: none;
-    outline: none;
-    width: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: #5D6D37;
-
-    i {
-        z-index: 1;
-        background: #5D6D37;
-        font-size: 1.6rem;
-        color: black;
-        border-radius: 50px;
-        cursor: pointer;
-    }
+    background: white;
 `;
