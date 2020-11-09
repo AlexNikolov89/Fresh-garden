@@ -59,6 +59,7 @@ export const Text = styled.h2 `
     width: 100%;
     color: ${theme.colorTitle};
     text-shadow: grey 0.2em 0.2em 0.2em;
+    font-size: ${theme.fontSizeL};
 
     @media (max-width: 480px) {
       font-size: 1.8rem;

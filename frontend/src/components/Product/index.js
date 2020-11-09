@@ -4,6 +4,8 @@ import {ProductConatiner, Tomato, TomatoImg, Info, Description, ProductTitle,
 import TomatoImage from '../../assets/tomato.jpg';
 import {HeaderConatiner, QuantityT, ProductT, PriceT,
        InfoConatiner, Name, TotalPrice, ProductImg, BLock, ImageConatiner} from '../../style/Product'
+//import {ProductConatiner, ProductImg, InfoConatiner, Description, Quantity,
+   // Button, Total} from '../../style/Product';
 
 
 const Product = () => {
@@ -12,12 +14,12 @@ const Product = () => {
         <Fragment>
             <ProductConatiner>
 
+
             <ProductImg src={TomatoImage} />
 
                 <InfoConatiner>
                 
                     <Info>
-                        
                         <Description>Fresh Tomato from Thurgau</Description>
                     </Info>
 
@@ -28,7 +30,7 @@ const Product = () => {
                     </Quantity>
 
                     <TotalPrice>
-                        <Price>CHF 30</Price>
+                        <Price>CHFXX</Price>
                         <i class="fas fa-trash-alt"></i>
                     </TotalPrice>
 

@@ -67,4 +67,3 @@ export const Logo = styled.img`
     width: 60px;
 `;
 
-

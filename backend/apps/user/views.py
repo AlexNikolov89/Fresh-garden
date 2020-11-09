@@ -36,13 +36,13 @@ class UserRegistration(GenericAPIView):
         except IntegrityError:
             return Response(f"The email address '{email_address}' is already taken.")
 
-        send_mail(
-            'Motion Registration Code',
-            f"Here is your registration code {registration_profile.code}",
-            'scorpio.luna.propulsion@gmail.com',
-            [new_user.email],
-            fail_silently=False,
-        )
+        # send_mail(
+        #     'Motion Registration Code',
+        #     f"Here is your registration code {registration_profile.code}",
+        #     'scorpio.luna.propulsion@gmail.com',
+        #     [new_user.email],
+        #     fail_silently=False,
+        # )
         serializer = self.get_serializer(new_user)
         return Response(serializer.data)
 
