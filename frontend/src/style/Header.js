@@ -1,55 +1,50 @@
 import styled from 'styled-components'
 import {theme} from './index'
+import {NavLink} from "react-router-dom";
 
 
 export const HeaderContainer = styled.div `
-    height: 60px;
+    height: ${theme.controlHeightXL};
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     background-color: ${theme.colorMiddleGreenYellow};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        display: none;
+    }
 `;
 
-export const FormConatiner = styled.div `
-    width: 40%;
+export const FormContainer = styled.div `
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-right: 150px;
+    height: 100%;
+    min-width: 280px;
 `;
 
 export const Icons = styled.div `
     display: flex;
-   i {
-       color: ${theme.colorDarkOliveGreen};
+    min-width: 80px;
+    
+    cursor: default;
+    
+    i.fas {
+       color: ${theme.colorCaputMortuum};
        text-align: center;
        float: right;
-       font-size: 1.6rem;
-       padding: 30px;
-   }
+       font-size: ${theme.fontSizeM};
+       padding: ${theme.spaceDefault};
+       cursor: default;
+    }
 
-   i:hover{
-       cursor: pointer;
-   }
-
-   i:active {
-        color: ${theme.colorMiddleGreenYellow};
-   }
-   span {
-       color: black;
-       margin-left: 5px;
-       color: white;
-       cursor: pointer;
-       position: absolute;
-       top: 0;
-   }
-
-   @media ( max-width: 800px) {
-       display: none;
-   }
+    i.fas:hover, :active {
+        color: ${theme.colorDefaultGrey};
+    }
 `;
 
 export const OpenCart = styled.div `
@@ -57,26 +52,19 @@ export const OpenCart = styled.div `
     bottom: -600px;
 `;
 
-export const Select = styled.select `
-    height: 100px;
-    width: 100px;
-`
 
+export const NavLinkHome = styled(NavLink)``;
 
-export const Logo = styled.img `
-    border-radius: 40px;
-`;
+export const NavLinkAbout = styled(NavLink)``;
 
-export const LogoConatiner = styled.div `
+export const NavLinkProfile = styled(NavLinkAbout)``;
+
+export const LogoContainer = styled.div `
    display: flex;
-   padding-right: 80px;
 `;
 
-export const AboutLogo = styled.img `
+export const Logo = styled.img`
     width: 60px;
-    margin-top: 20px;
-    margin-right: 20px;
-    border-radius: 20px;
 `;
 
 
