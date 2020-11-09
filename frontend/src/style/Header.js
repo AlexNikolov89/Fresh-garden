@@ -22,7 +22,7 @@ export const FormConatiner = styled.div `
 `;
 
 export const Icons = styled.div `
-    display: flex-end;
+    display: flex;
    i {
        color: ${theme.colorDarkOliveGreen};
        text-align: center;
@@ -64,11 +64,19 @@ export const Select = styled.select `
 
 
 export const Logo = styled.img `
+    border-radius: 40px;
 `;
 
 export const LogoConatiner = styled.div `
    display: flex;
+   padding-right: 80px;
+`;
 
+export const AboutLogo = styled.img `
+    width: 60px;
+    margin-top: 20px;
+    margin-right: 20px;
+    border-radius: 20px;
 `;
 
 
