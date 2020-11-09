@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     # own apps
     'apps.user',
     'apps.registration_profile',
+    'apps.product',
+    'apps.cart',
 
 
     # third-party
@@ -128,11 +130,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = '/static-files/'
-STATIC_URL = '/static-files/'
-MEDIA_ROOT = '/media-files/'
-MEDIA_URL = '/media-files/'
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
