@@ -3,19 +3,20 @@ import {
     HeaderContainer,
     Icons,
     OpenCart,
-    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo
+    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon
 } from '../../style/Header';
-import SearchBar from '../SearchBar/index'
+import SearchBar from '../SearchBar'
 import LogoImg from '../../assets/logo_idea.jpg'
 import ShoppingCart from "../ShoppingCart/index";
+import '../../style/Navbar.css'
 
-const Header = ({cart}) => {
+const Header = ({ sticky, element }) => {
     const [open, setOpen] = useState();
     const handleClick = () => setOpen(!open)
 
     return (
         <Fragment>
-            <HeaderContainer>
+            <HeaderContainer className={sticky ? "navbar navbar-sticky" : "navbar"} ref={element}>
 
                 <LogoContainer>
                     <NavLinkHome to='/'><Logo src={LogoImg} /></NavLinkHome>
@@ -31,7 +32,7 @@ const Header = ({cart}) => {
                     <OpenCart>
                         {open && <ShoppingCart />}
                     </OpenCart>
-                    <i className="fas fa-shopping-basket" onClick={handleClick} />
+                    <CartIcon to='/'><i className="fas fa-shopping-basket" onClick={handleClick} /></CartIcon>
                 </Icons>
 
             </HeaderContainer>

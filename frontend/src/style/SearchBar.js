@@ -4,11 +4,10 @@ import {theme} from './index'
 export const Form = styled.form `
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
     width: 100%;
     opacity: 1;
-
 `;
 
 export const CategoryContainer = styled.div`
@@ -17,11 +16,7 @@ export const CategoryContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 33%;
-    
-    &:hover, :focus {
-        background-color: ${theme.colorDefaultGrey};
-    }
+    width: calc(100% / 3 - (${theme.controlHeightXL} / 3));
 `;
 
 export const LocationContainer = styled(CategoryContainer)``;
@@ -31,13 +26,10 @@ export const SearchContainer = styled(CategoryContainer)``;
 export const SearchInput = styled.input`
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    width: 100%;
-    height: calc(100% - 2px);
+    height: 100%;
     min-width: 50px;
     border: none;
     outline: none;
-    
-
 `;
 
 export const CategoryInput = styled(SearchInput)``;
@@ -45,7 +37,7 @@ export const CategoryInput = styled(SearchInput)``;
 export const LocationInput = styled(SearchInput)``;
 
 export const SearchButton = styled.button `
-    height: calc(100% - 2px);
+    height: 100%;
     width: 42px;
     display: flex;
     justify-content: center;
@@ -54,13 +46,15 @@ export const SearchButton = styled.button `
     border: none;
     background: ${theme.colorDefaultWhite};
     padding: ${theme.spaceS};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+
     
     &:hover, :focus {
-        background-color: ${theme.colorDefaultGrey};
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
     }
     
     i.fas {
-        color: ${theme.colorCaputMortuum};
+        color: ${theme.colorDarkOliveGreen};
         font-size: ${theme.fontSizeM};
     }
 `;
@@ -70,20 +64,22 @@ export const CategoryButton = styled(SearchButton)``;
 export const LocationButton = styled(SearchButton)``;
 
 export const SubmitButton = styled(SearchButton)`
-    background-color: ${theme.colorCaputMortuum};
+    height: 100%;
     width: ${theme.controlHeightXL};
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+
     
     i.fas {
-        color: ${theme.colorDefaultGrey};
+        color: ${theme.colorDarkOliveGreen};
     }
     
     &:hover, :focus {
-          background-color: ${theme.colorDefaultGrey};
+          background-color: ${theme.colorMiddleGreenYellowLight};
           
           i.fas {
-              color: ${theme.colorCaputMortuum}
+              color: ${theme.colorDarkOliveGreen}
           }
     }
-    
-
 `;

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import Header from '../components/Header/index';
+import Header from '../components/Header';
 import {TopContainer, Image, Text} from '../style/Homepage';
 import {CheckoutConatiner,
          ProductsConatiner, BoxContainer, TopHeaderConatiner, ProductT, QuantityT, Total,

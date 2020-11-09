@@ -5,16 +5,17 @@ export const CardContainer = styled.div `
     width: 270px;
     height: 410px;
     background: ${theme.colorAlmond};
-    cursor: pointer;
-    box-shadow: ${theme.boxShadow};
+    cursor: default;
+    box-shadow: ${theme.boxShadowLightest};
     box-sizing: border-box;
-    margin-top: 30px;
-    //border-top: 10px solid ${theme.colorDarkOliveGreen};
+    border-radius: ${theme.borderRadiusS};
+    margin: ${theme.spaceXS};
+    border-top: 8px solid ${theme.colorMiddleGreenYellowLight};
 `;
 
 export const TopContainer = styled.div `
     height: 250px;
-    width: 270px;
+    width: 100%;
 `;
 
 export const Image = styled.img `
@@ -22,26 +23,25 @@ export const Image = styled.img `
     width: 100%;
 
     &:hover {
-        opacity: 0.6;
+        opacity: 0.8;
     }
 `;
 
 
-export const BottomConatiner = styled.div `
+export const BottomContainer = styled.div `
 
     i {
         display: flex;
         justify-content: flex-end;
-        font-size: ${theme.fontSizeL};
+        font-size: ${theme.fontSizeDefault};
     }
 
     i:hover {
-        cursor: pointer;
+        cursor: default;
     }
-
  
     i:active {
-         color: ${theme.colorMiddleGreenYellow};
+         color: ${theme.colorMiddleGreenYellowLight};
     }
 `;
 
@@ -52,38 +52,27 @@ export const Info = styled.div `
 `
 
 export const Text = styled.p `
-    font-size: ${theme.fontSizeM};
-    font-weight: bold;
-    color: #5D6D37;
-    width: 50%;
-
-    &:hover {
-        //font-size: 1.3rem;
-        cursor: pointer;
-    }
+    font-size: ${theme.fontSizeDefault};
+    font-weight: ${theme.fontWeightBold};
+    color: ${theme.colorDarkOliveGreen};
+    width: 60%;
 `;
 
 export const Wrapp = styled.div `
     display: flex;
 `;
 
-export const KG = styled.p `
-    margin-top: 10px;
-    font-size: ${theme.fontSizeDefault}
-`;
-
 export const Price = styled.p `
     width: 50%;
     padding-top: 10px;
-    font-size: ${theme.fontSizeDefault}
+    font-size: ${theme.fontSizeS};
     
-    /* span {
-        font-size: ${theme.fontSizeDefault};
-        opacity: 0.4;
-    } */
+    span {
+        font-weight: ${theme.fontWeightBold};
+        opacity: 0.6;
+    }
 `;
 
-export const Date = styled.h4 `
-    padding-top: 10px;
-    font-size: ${theme.fontSizeDefault}
-`
+export const KG = styled(Price)``;
+
+export const Date = styled(Price)``;
