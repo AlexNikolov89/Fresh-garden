@@ -2,12 +2,20 @@ import styled from 'styled-components';
 import {theme} from '../style/index'
 
 export const CheckoutConatiner = styled.div `
-    height: 100%;
     width: 100%;
 `;
 
 export const ProductsConatiner = styled.div `
     background: ${theme.colorBackgroundColor};
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    @media (max-width: 680px) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
 `;
 
 export const BoxContainer = styled.div `
@@ -15,8 +23,8 @@ export const BoxContainer = styled.div `
   padding: 50px; */
   display: flex;
   width: 100%;
-  padding: 50px;
-  
+  padding: 0 100px;
+  padding-top: 40px;
  `;
 
 
@@ -77,14 +85,17 @@ export const Delivery = styled.h4 `
 
 export const PaymentConatiner = styled.aside `
     background: ${theme.colorBackgroundColor};
-    display: block;
     border: 2px solid ${theme.colorDefaultGrey};
     margin: 0 30px;
-    display: block;
-    justify-content: center;
-    border-radius: ${theme.borderRadiusL};
-    height: 100%;
-    box-shadow: ${theme.boxShadowDark}
+    //border-radius: ${theme.borderRadiusL};
+    box-shadow: ${theme.boxShadowDark};
+    width: 40%;
+    padding: 20px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
 `;
 
 export const Subtotal = styled.h4 `
@@ -122,16 +133,16 @@ export const SumConatiner = styled.div `
     justify-content: flex-start;
     margin-left: 180px; */
     width: 100%;
-    padding: 20px ;
+    padding: 10px ;
     display: block;
     //font-size: ${theme.spaceS}
 `;
 
 export const Submit = styled.div `
-    /* display: block;
-    margin-left: 700px;
-    padding: 60px; */
-    margin: 10px 0;
+    display: block;
+    //margin-left: 700px;
+    //padding: 60px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     padding: 0 20px;
@@ -139,11 +150,10 @@ export const Submit = styled.div `
 
 export const ProductWrap = styled.div `
     width: 100%;
-    height: 100%;
-    border: 2px solid ${theme.colorDefaultGrey};
-    border-radius: ${theme.borderRadiusL};
+    //border: 2px solid ${theme.colorDefaultGrey};
+    //border-radius: ${theme.borderRadiusL};
     //background-color: ${theme.colorAlmond};
-    box-shadow: ${theme.boxShadowLight}
+    //box-shadow: ${theme.boxShadowLightest};
 `;
 
 

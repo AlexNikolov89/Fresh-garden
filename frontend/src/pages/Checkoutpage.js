@@ -4,9 +4,9 @@ import {TopContainer, Image, Text} from '../style/Homepage';
 import {CheckoutConatiner,
          ProductsConatiner, BoxContainer, TopHeaderConatiner, ProductT, QuantityT, Total,
          HorizontalLine, PaymentConatiner,
-         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage'
-import TomatoImg from '../assets/tomato.jpg';
+         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
+import Footer from '../components/Footer/index'
 
 
 const Checkoutpage = () => {
@@ -35,6 +35,7 @@ const Checkoutpage = () => {
                     <Product />
                     <Product />
                     <Product />
+                    <Product />
                 </ProductWrap>
 
                 <PaymentConatiner>
@@ -59,7 +60,7 @@ const Checkoutpage = () => {
             </ProductsConatiner>
 
             </CheckoutConatiner>
-
+            <Footer />
         </Fragment>
     )
 }

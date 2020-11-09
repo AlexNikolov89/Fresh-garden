@@ -1,33 +1,32 @@
 import React, {Fragment} from 'react'
-import {ProductConatiner, Tomato, TomatoImg, Info, Description, ProductTitle,
-       Quantity, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total, Delete} from '../../style/Product.js'
+import {ProductContainer, Tomato, TomatoImg, Info, Description, ProductTitle,
+       Quantity, Items, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total, Delete} from '../../style/Product.js'
 import TomatoImage from '../../assets/tomato.jpg';
 import {HeaderConatiner, QuantityT, ProductT, PriceT,
        InfoConatiner, Name, TotalPrice, ProductImg, BLock, ImageConatiner} from '../../style/Product'
-//import {ProductConatiner, ProductImg, InfoConatiner, Description, Quantity,
-   // Button, Total} from '../../style/Product';
 
 
 const Product = () => {
     return (
 
         <Fragment>
-            <ProductConatiner>
+            <ProductContainer>
 
 
             <ProductImg src={TomatoImage} />
 
                 <InfoConatiner>
                 
-                    <Info>
+                    <Info>  
                         <Description>Fresh Tomato from Thurgau</Description>
-                    </Info>
+                        <Items>Quantity: 5 Items</Items>
 
                     <Quantity>
                         <Button><i class="fas fa-chevron-left" /></Button>
                         <ProductQ>15</ProductQ>
                         <Button><i class="fas fa-chevron-right" /></Button>
                     </Quantity>
+                    </Info>
 
                     <TotalPrice>
                         <Price>CHFXX</Price>
@@ -36,7 +35,7 @@ const Product = () => {
 
                 </InfoConatiner>
 
-            </ProductConatiner>
+            </ProductContainer>
         </Fragment>
     )
 }

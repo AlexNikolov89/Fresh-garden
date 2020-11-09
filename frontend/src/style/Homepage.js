@@ -81,10 +81,11 @@ export const About = styled.div `
 `;
 
 export const AboutText = styled.h3 `
-    color: ${theme.colorRandomText};
-    padding: 40px;
-    line-height: 3;
-    font-weight: normal;
-    opacity: 0.7;
+  color: ${theme.colorRandomText};
+  padding: 40px;
+  line-height: 2.0;
+  font-weight: normal;
+  opacity: 0.7;
+  font-size: ${theme.fontSizeDefault}
 `
 
