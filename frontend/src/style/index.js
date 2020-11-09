@@ -14,7 +14,8 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         line-height: 1.6;
         min-height: 100vh;
-        font-family: 'Hind', sans-serif;
+        font-family: "Hind", sans-serif;
+        cursor: default;
     }
 `;
 export const theme = {
@@ -25,6 +26,7 @@ export const theme = {
     colorDefault: '#222222',
     colorAlmond: '#EDDED4',
     colorMiddleGreenYellow: '#B4CB67',
+    colorMiddleGreenYellowLight: '#E1EAC2',
     colorMaxYellowRed: '#FFC370',
     colorDarkOliveGreen: '#5D6D37',
     colorCaputMortuum: '#4F2E2B',
@@ -33,7 +35,7 @@ export const theme = {
     colorRandomText: '#bbbfca',
     colorDefaultGrey: '#D8D8D8',
     colorDefaultText: '#4C4C4C',
-
+    colorDefaultWhite: '#FFFFFF',
     // Fonts (Visual Hierarchy - 3:4 Method)
     fontSizeXXXXXL: "11.9rem",
     fontSizeXXXXL: "8.9rem",
@@ -49,18 +51,15 @@ export const theme = {
     fontWeightLight: '400',
     fontWeightRegular: '500',
     fontWeightBold: '700',
-
     // Properties
     borderRadiusS: "2px",
     borderRadiusDefault: "4px",
     borderRadiusM: "5px",
     borderRadiusL: "8px",
     borderRadiusXL: "24px",
-
     // Animations
     transitionDefault: "0.1s",
     transitionLong: "0.4s",
-
     // Box Shadows:
     boxShadowDark: `-5px 6px 15px 1px rgba(0,0,0,0.50)`,
     boxShadowLight: `-5px 6px 15px 1px rgba(0,0,0,0.25)`,
@@ -69,7 +68,6 @@ export const theme = {
     boxShadowNav: `2px 0 24px 0 rgba(0,0,0,0.04)`,
     boxShadowTiles: `0 2px 24px 0 rgba(0,0,0,0.04)`,
     boxShadowInTiles: `0 1px 3px 0 rgba(0,0,0,0.2)`,
-    
     // Sizes
     controlHeightDefault: "40px",
     controlHeightM: "24px",

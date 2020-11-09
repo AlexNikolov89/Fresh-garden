@@ -34,18 +34,20 @@ Decision Gate 04.11.2020: Investors
     
 # Sprint Week 2
 * Frontend
-    * Homepage
+    * Homepage finish
     * Login
     * Sign Up
-    * Subscription Plan Page
+    * Checkout Page
+    * Add Product Page
+    * Bonus: About Page
 * Backend
     * Everything rel. to Frontend
+* DevOps Deployment
 
 # Sprint Week 3
 * Product Name / Domain
 * Frontend
     * Shopping Cart
-    * Upload Shopping Goods Page
     * Bonus: Profile Page
 * Backend
     * Everything rel. to Frontend
