@@ -3,40 +3,32 @@ import {theme} from './index';
 
 
 
-export const ProductConatiner = styled.div `
+export const ProductContainer = styled.div `
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
     padding: 10px;
     margin-left: 10px;
     cursor: pointer;
     margin-bottom: 15px; 
+    border: 1px solid ${theme.colorDefaultGrey};
+    box-shadow: ${theme.boxShadowLight};
+    width: 100%;
 `;
 
 export const ProductImg = styled.img `
-    width: 15%;
-    border-radius: 10px;
+    width: 25%;
+    border-radius: ${theme.borderRadiusL};
  `;
 
 export const InfoConatiner = styled.div `
     display: flex;
     align-items: center;
     margin-left: 15px;
-    justify-content: space-evenly;
-    
-`;
-
-export const Info = styled.div `
-    display: flex;
-    width: 50%;
-`;
-
-export const Quantity = styled(InfoConatiner) `
-    margin-left: 60px;
-    width: 20%;
+    justify-content: space-between;
 `;
 
 export const TotalPrice = styled(InfoConatiner) `
-    margin-left: 150px;
     width: 30%;
     display: flex;
     
@@ -51,13 +43,16 @@ export const TotalPrice = styled(InfoConatiner) `
     }
 `;
 
+export const Quantity = styled(InfoConatiner) `
+    //margin-left: 30px;
+    width: 20%;
+`;
+
 export const Button = styled.button `
-    width: 40px;
-    height: 40px;
     background: ${theme.colorDarkOliveGreen};
     border: none;
     outline: none;
-    
+    //border-radius: 25%;
 
     i {
         font-size: ${theme.fontSizeM};
@@ -70,28 +65,33 @@ export const Button = styled.button `
     }
 `;
 
+export const Info = styled.div `
+    display: block;
+`;
+
 export const Description = styled.h3 `
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDarkOliveGreen};
-    margin-right: 20px;
 
-    /* @media (max-width: 1000px) {
-        font-size: 0.5rem;
-    }*/
 `;
 
 
 export const Price = styled.h3 `
-margin-left: 20px;
+//margin-left: 20px;
 font-size: ${theme.fontSizeM};
 color: ${theme.colorDefaultText}
 `;
 
 
-export const ProductQ = styled.h3 `
+export const ProductQ = styled.p `
     padding: 0 20px;
     font-size: ${theme.spaceDefault};
+    font-weight: bold;
 `;
+
+export const Items = styled.p `
+    font-size: ${theme.fontSizeDefault}
+`
 
 
 
