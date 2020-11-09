@@ -61,6 +61,7 @@ export const Text = styled.h2 `
     width: 100%;
     color: ${theme.colorTitle};
     text-shadow: grey 0.2em 0.2em 0.2em;
+    font-size: ${theme.fontSizeL};
 
     @media (max-width: 480px) {
       font-size: 1.8rem;
@@ -88,5 +89,6 @@ export const AboutText = styled.h3 `
   line-height: 3;
   font-weight: normal;
   opacity: 0.7;
+  font-size: ${theme.spaceS}
 `
 
