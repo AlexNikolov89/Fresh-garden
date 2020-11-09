@@ -30,22 +30,21 @@
    - backend/api/products/new/ POST: Create/Advertise a new product.
 
    - backend/api/products/user/<int:user_id>/ GET: Get the all the products created by a specific user in chronological order.
-
+       
    - backend/api/products/<int:id>/ DELETE: Delete a product by id (only by owner or product admin).
    
    - backend/api/products?search=<str:search_string>/ GET: Search for a product.
     
-#Ratings
-    //TODO look over it because of keywords
-   - backend/api/ratings/new/<int:user_id>/ POST: create a new review /rating.
+#Review
+   - backend/api/review/new/<int:user_id>/ POST: create a new review.
     
-   - backend/api/ratings/user/<int:user_id>/ GET: Get the list of the reviews/ratings for a single user.
+   - backend/api/review/user/<int:user_id>/ GET: Get the list of the reviews for a single user.
     
-   - backend/api/ratings/<int:rating_id>/ GET: Get a specific review by ID and display all the information.
+   - backend/api/review/<int:rating_id>/ GET: Get a specific review by ID and display all the information.
 
-   - backend/api/ratings/<int:rating_id>/ PATCH: Update a specific review (only by owner).
+   - backend/api/review/<int:rating_id>/ PATCH: Update a specific review (only by owner).
 
-   - backend/api/ratings/<int:rating_id>/ DELETE: Delete a specific review (only by owner).
+   - backend/api/review/<int:rating_id>/ DELETE: Delete a specific review (only by owner).
     
 #Users
    - backend/api/me/ GET: Get the user profile.
@@ -70,8 +69,8 @@
 
 #Wallet(only if producer)
 
-   - backend/api/wallet/ GET: get all orders by user (only by owner).
+   - backend/api/wallet/ GET: get all wallets by user (only by owner).
 
-#Promotion(only if producer)
+#Promotion
 
-   - backend/api/promotion/ GET: get all orders with promotion by user (only by owner).
+   - backend/api/promotion/ GET: get all products starting with promoted products in the front.

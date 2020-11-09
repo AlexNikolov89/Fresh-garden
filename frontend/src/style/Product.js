@@ -1,43 +1,41 @@
 import styled from 'styled-components'
 import {theme} from './index';
 
-export const ProductConatiner = styled.div `
-    border: 1px solid ${theme.colorAlmond};
+
+
+export const ProductContainer = styled.div `
     display: flex;
-    padding: 30px;
-    box-shadow: ${theme.boxShadowLigh};
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 10px;
+    margin-left: 10px;
     cursor: pointer;
-    margin-bottom: 30px; 
-    background-color: ${theme.colorAlmond}
+    margin-bottom: 15px; 
+    border: 1px solid ${theme.colorDefaultGrey};
+    box-shadow: ${theme.boxShadowLight};
+    width: 100%;
 `;
 
 export const ProductImg = styled.img `
-    height: 150px;
-    border-radius: 10px;
-`;
+    width: 25%;
+    border-radius: ${theme.borderRadiusL};
+ `;
 
 export const InfoConatiner = styled.div `
     display: flex;
     align-items: center;
-    margin-left: 40px; 
-`;
-
-export const Info = styled.div `
-    display: block;
-`;
-
-export const Quantity = styled(InfoConatiner) `
-    margin-left: 110px;
-
+    margin-left: 15px;
+    justify-content: space-between;
 `;
 
 export const TotalPrice = styled(InfoConatiner) `
-    margin-left: 250px;
+    width: 30%;
+    display: flex;
     
     i {
-        margin-left: 180px;
-        font-size: 1.8rem;
-        color: white;
+        margin-left: 100px;
+        font-size: ${theme.controlHeightM};
+        color: ${theme.colorDarkOliveGreen};
 
         &:active {
             color: ${theme.colorMiddleGreenYellow}
@@ -45,15 +43,19 @@ export const TotalPrice = styled(InfoConatiner) `
     }
 `;
 
+export const Quantity = styled(InfoConatiner) `
+    //margin-left: 30px;
+    width: 20%;
+`;
+
 export const Button = styled.button `
-    width: 50px;
-    height: 50px;
-    background: ${theme.colorAlmond};
+    background: ${theme.colorDarkOliveGreen};
     border: none;
     outline: none;
+    //border-radius: 25%;
 
     i {
-        font-size: 1.6rem;
+        font-size: ${theme.fontSizeM};
         font-weight: 700;
         color: white;
 
@@ -63,20 +65,33 @@ export const Button = styled.button `
     }
 `;
 
+export const Info = styled.div `
+    display: block;
+`;
+
 export const Description = styled.h3 `
-    font-size: 1.4rem;
-    color: ${theme.colorDarkOliveGreen}
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDarkOliveGreen};
+
 `;
 
 
-export const Name = styled.h2 ``;
-
-export const Price = styled.h3 ``;
-
-
-export const ProductQ = styled.h3 `
-    padding: 0 30px;
+export const Price = styled.h3 `
+//margin-left: 20px;
+font-size: ${theme.fontSizeM};
+color: ${theme.colorDefaultText}
 `;
+
+
+export const ProductQ = styled.p `
+    padding: 0 20px;
+    font-size: ${theme.spaceDefault};
+    font-weight: bold;
+`;
+
+export const Items = styled.p `
+    font-size: ${theme.fontSizeDefault}
+`
 
 
 

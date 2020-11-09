@@ -4,10 +4,9 @@ import {TopContainer, Image, Text} from '../style/Homepage';
 import {CheckoutConatiner,
          ProductsConatiner, BoxContainer, TopHeaderConatiner, ProductT, QuantityT, Total,
          HorizontalLine, PaymentConatiner,
-         Summary, Subtotal,
-         SumConatiner, Tax, Delivery, TotalSum, ButtonPay, Submit, TotalQ } from '../style/Checkoutpage'
-import TomatoImg from '../assets/tomato.jpg';
+         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
+import Footer from '../components/Footer/index'
 
 
 const Checkoutpage = () => {
@@ -26,38 +25,42 @@ const Checkoutpage = () => {
 
                 <BoxContainer>
 
-                    <TopHeaderConatiner>
+                    {/*<TopHeaderConatiner>
                         <ProductT>Product</ProductT>
                         <QuantityT>Quantity</QuantityT>
                         <Total>Total</Total>
-                    </TopHeaderConatiner>
-                
+                    </TopHeaderConatiner>  */}
+
+                <ProductWrap>
                     <Product />
                     <Product />
+                    <Product />
+                    <Product />
+                </ProductWrap>
 
-                </BoxContainer>
-    
-            </ProductsConatiner>
-
-            <HorizontalLine />
-
-            <PaymentConatiner>
+                <PaymentConatiner>
                 <SumConatiner>
                     <Summary>Summary</Summary>
                     <Subtotal>Subtotal: <span>CHF 38.00</span></Subtotal>
                     <Tax>Tax <span>FREE</span></Tax>
                     <Delivery>Delivery <span>CHF 6.50</span></Delivery>
+                    
+                    <hr />
+                    <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
                 </SumConatiner>
 
                 <Submit>
-                    <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
-                    <ButtonPay>Proceed to pay</ButtonPay>
-                </Submit>
+                    <Button>Proceed to Pay</Button>
+                </Submit> 
 
             </PaymentConatiner>
 
-            </CheckoutConatiner>
+                </BoxContainer>
+    
+            </ProductsConatiner>
 
+            </CheckoutConatiner>
+            <Footer />
         </Fragment>
     )
 }
