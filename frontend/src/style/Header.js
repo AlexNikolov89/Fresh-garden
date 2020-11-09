@@ -79,4 +79,3 @@ export const AboutLogo = styled.img `
     border-radius: 20px;
 `;
 
-
