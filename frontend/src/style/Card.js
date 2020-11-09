@@ -32,7 +32,7 @@ export const BottomConatiner = styled.div `
     i {
         display: flex;
         justify-content: flex-end;
-        font-size: 1.6rem;
+        font-size: ${theme.fontSizeL};
     }
 
     i:hover {
@@ -52,8 +52,8 @@ export const Info = styled.div `
 `
 
 export const Text = styled.p `
-    font-size: 1.2rem;
-    font-weight: ${theme.fontSizeBold};
+    font-size: ${theme.fontSizeM};
+    font-weight: bold;
     color: #5D6D37;
     width: 50%;
 
@@ -69,19 +69,21 @@ export const Wrapp = styled.div `
 
 export const KG = styled.p `
     margin-top: 10px;
+    font-size: ${theme.fontSizeDefault}
 `;
 
 export const Price = styled.p `
     width: 50%;
     padding-top: 10px;
-    font-size: 1.0rem;
+    font-size: ${theme.fontSizeDefault}
     
-    span {
-        font-weight: ${theme.fontSizeBold};
+    /* span {
+        font-size: ${theme.fontSizeDefault};
         opacity: 0.4;
-    }
+    } */
 `;
 
 export const Date = styled.h4 `
     padding-top: 10px;
+    font-size: ${theme.fontSizeDefault}
 `
