@@ -11,18 +11,26 @@ export const TopContainer = styled.div `
     background-image: url("${background}");
     background-repeat: no-repeat;
     background-size: cover; 
-    opacity: 0.8;
 `;
 
-export const Image = styled.div `
+export const Image = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
     height: 240px;
+`;
+
+export const Slogan = styled.h2`
+    color: ${theme.colorDefaultWhite};
+    font-size: ${theme.fontSizeXXL};
+    font-weight: ${theme.fontWeightBold};
+    margin: ${theme.spaceDefault};
 `;
 
 export const HorizontalLine = styled.hr `
     width: 80%;
     margin-top: 20px;
-    margin-left: 150px;
     border: 0;
     height: 1px;
     background: #333;

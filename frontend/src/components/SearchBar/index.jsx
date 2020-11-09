@@ -21,25 +21,25 @@ const SearchBar = () => {
                     <CategoryButton>
                         <i class="fas fa-sort"></i>
                     </CategoryButton>
-                    <CategoryInput type='text' />
+                    <CategoryInput type='text' placeholder={"Category"} />
                 </CategoryContainer>
 
                 <LocationContainer>
                     <LocationButton>
                         <i class="fas fa-map-marker-alt"></i>
                     </LocationButton>
-                    <LocationInput type='text' />
+                    <LocationInput type='text' placeholder={"Location"} />
                 </LocationContainer>
 
                 <SearchContainer>
                     <SearchButton>
                         <i className="fas fa-keyboard"></i>
                     </SearchButton>
-                    <SearchInput type='text' />
-                    <SubmitButton type='submit'>
-                        <i className="fas fa-search"></i>
-                    </SubmitButton>
+                    <SearchInput type='text' placeholder={"Search"}/>
                 </SearchContainer>
+                <SubmitButton type='submit'>
+                    <i className="fas fa-search"></i>
+                </SubmitButton>
             </Form>
         </Fragment>
     )
