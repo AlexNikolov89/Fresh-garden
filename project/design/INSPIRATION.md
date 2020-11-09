@@ -5,11 +5,12 @@ By Tuesday 10AM have sketches / inputs for the homepage design. Bonus: names.
 * Simple
 * Modern
 * Mobile oriented (cards)
-* User friendly (faces, few buttons, respect finger reach)
+* User friendly (faces, few buttons rather symbols than text, respect finger reach)
 * Include garden stories?
 
 # Color Schemas
 https://coolors.co/
+https://coolors.co/ffc370-b4cb67-5d6d37-edded4-4f2e2b
 
 # Websites for Inspiration
 https://templated.co/
