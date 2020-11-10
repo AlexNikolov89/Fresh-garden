@@ -3,11 +3,12 @@ import {theme} from './index';
 import {NavLink} from 'react-router-dom'
 
 export const ShoppingCartContainer = styled.div `
-    width: 270px;
+    width: calc(270px + ${theme.spaceS});
     height: fit-content;
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
+    justify-content: flex-start;
+    align-items: center;
     background: ${theme.colorAlmond};
     
     position: sticky;
@@ -39,7 +40,6 @@ export const Name = styled.div `
     color: black;
     font-weight: Normal;
     font-size: 1.3rem;
-    margin-bottom: 0px;
 `;
 
 export const Calc = styled(ImageContainer) `
@@ -80,7 +80,6 @@ export const ButtonSubmit = styled.button `
     border: none;
     position: sticky;
     bottom: 0;
-    margin: 25px 80px;
 
     &:focus { 
         outline: none; 

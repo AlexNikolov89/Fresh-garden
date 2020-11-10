@@ -37,6 +37,7 @@ export const BottomContainer = styled.div `
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
+    height: 100%;
     background: ${theme.colorBackgroundColor};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -46,6 +47,7 @@ export const BottomContainer = styled.div `
 
 export const Box = styled.div `
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
@@ -58,10 +60,23 @@ export const Box = styled.div `
 export const SideBox = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
-    width: 270px;
-    background: red;
+    width: calc(270px + 2 * ${theme.spaceS});
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
+`;
+
+export const PromotedProductsContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: calc(270px + 2 * ${theme.spaceS});
+    padding-top: ${theme.spaceS};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
