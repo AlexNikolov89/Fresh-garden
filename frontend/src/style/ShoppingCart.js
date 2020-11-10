@@ -2,13 +2,17 @@ import styled from 'styled-components'
 import {theme} from './index';
 import {NavLink} from 'react-router-dom'
 
-export const ShoppingCartConatiner = styled.div `
-    width: 370px;
-    height: 100%;
+export const ShoppingCartContainer = styled.div `
+    width: calc(270px + ${theme.spaceS});
+    height: fit-content;
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
-    background: ${theme.colorAlmond}
+    justify-content: flex-start;
+    align-items: center;
+    background: ${theme.colorAlmond};
+    
+    position: sticky;
+    top: calc(0px + ${theme.controlHeightXL});
 `;
 
 export const ImageContainer = styled.div `
@@ -32,11 +36,10 @@ export const Image = styled.img `
 `;
 
 export const Name = styled.div `
-   margin: 18px 20px;
+    margin: 18px 20px;
     color: black;
     font-weight: Normal;
     font-size: 1.3rem;
-    margin-bottom: 0px;
 `;
 
 export const Calc = styled(ImageContainer) `
@@ -64,11 +67,9 @@ export const Price = styled.div `
 
 export const Button = styled.button `
     height: 25px;
-    height: 25px;
     width: 25px;
     border: none;
-    background: ${theme.colorAlmond};
-    
+    background: ${theme.colorAlmond};    
 `;
 
 export const ButtonSubmit = styled.button `
@@ -79,8 +80,6 @@ export const ButtonSubmit = styled.button `
     border: none;
     position: sticky;
     bottom: 0;
-    margin: 25px 80px;
-
 
     &:focus { 
         outline: none; 
@@ -97,8 +96,7 @@ export const HorizontalLine = styled.hr `
     margin-left: 40px;
 `;
 
-export const Total = styled.h3 `
-   
+export const Total = styled.h3`   
     display: flex;
     justify-content: flex-end;
     margin: 10px;

@@ -9,7 +9,7 @@ export const CardContainer = styled.div `
     box-shadow: ${theme.boxShadowLightest};
     box-sizing: border-box;
     border-radius: ${theme.borderRadiusS};
-    margin: ${theme.spaceXS};
+    margin: ${theme.spaceS};
     border-top: 8px solid ${theme.colorMiddleGreenYellowLight};
 `;
 
