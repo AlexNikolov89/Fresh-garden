@@ -11,15 +11,14 @@ import PromotedProducts from "../components/PromotedProducts";
 import {useSelector} from "react-redux";
 
 const Homepage = () => {
-    // const viewCart = useSelector(state => state.cartReducer.viewCart);
-    // console.log("in da Homepage, viewCart ->", viewCart)
+    const viewCart = useSelector(state => state.cartReducer.viewCart);
 
     return (
         <Fragment>
             <HomeContainer>
                 <TopContainer>
                     <Image>
-                        <Slogan>Homegrown. Fresh. Earthy.</Slogan>
+                        <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
                     </Image>
                 </TopContainer>
 
@@ -39,11 +38,10 @@ const Homepage = () => {
                         <Card />
                     </Box>
                     <SideBox>
-                        {/*{viewCart && <ShoppingCart />}*/}
+                        {viewCart && <ShoppingCart />}
                         <PromotedProducts />
                     </SideBox>
                 </BottomContainer>
-
             </HomeContainer>
             <Footer />
         </Fragment>

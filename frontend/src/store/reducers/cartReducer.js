@@ -2,10 +2,10 @@ import { SET_PRODUCTS_ALL, TOGGLE_CART_VIEW } from '../../helpers/constants'
 
 const initialState = {
     productsInCart: [],
-    viewCart: [false],
+    viewCart: false,
 }
 
-export default function productReducer (state = initialState, action) {
+export default function cartReducer (state = initialState, action) {
     switch (action.type) {
         case SET_PRODUCTS_ALL: {
             const newState = {...state}
