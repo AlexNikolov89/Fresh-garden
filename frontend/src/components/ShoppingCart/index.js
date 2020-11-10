@@ -1,9 +1,10 @@
 import React, {Fragment} from 'react';
-import {ShoppingCartConatiner,
-         Quantity, Calc, Top,
-          Text, Image, ImageContainer,
-           ProductInfo, Name, Button,
-            Price, ButtonSubmit, HorizontalLine, Total,} from '../../style/ShoppingCart';
+import {
+    Quantity, Calc, Top,
+    Text, Image, ImageContainer,
+    ProductInfo, Name, Button,
+    Price, ButtonSubmit, HorizontalLine, Total, ShoppingCartContainer,
+} from '../../style/ShoppingCart';
 import Patato from '../../assets/patato.jpg'
 import {NavLink} from 'react-router-dom'
 
@@ -12,7 +13,7 @@ const ShoppingCart = () => {
 
     return(
         <Fragment>
-            <ShoppingCartConatiner>
+            <ShoppingCartContainer>
                 <Top>
                     <Text>Items in your bag</Text>
                 </Top>
@@ -39,7 +40,7 @@ const ShoppingCart = () => {
                 <NavLink to='/checkoutpage'>
                     <ButtonSubmit>Checkout</ButtonSubmit>
                 </NavLink>
-            </ShoppingCartConatiner>
+            </ShoppingCartContainer>
         </Fragment>
     )
 }

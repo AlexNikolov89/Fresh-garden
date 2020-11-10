@@ -9,14 +9,15 @@ import LogoImg from '../../assets/logo_idea.jpg'
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
 import {TOGGLE_CART_VIEW} from "../../helpers/constants";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-const Header = ({ sticky, element }) => {
+const Header = ({ sticky, element, minimal }) => {
+    const viewCart = useSelector(state => state.cartReducer.viewCart)
     const dispatch = useDispatch();
 
     return (
         <Fragment>
-            <HeaderContainer className={sticky ? "navbar navbar-sticky" : "navbar"} ref={element}>
+            <HeaderContainer >
 
                 <LogoContainer>
                     <NavLinkHome to='/'><Logo src={LogoImg} /></NavLinkHome>
@@ -29,7 +30,11 @@ const Header = ({ sticky, element }) => {
                 <Icons >
                     <NavLinkAbout to='/about'><i className="fas fa-info-circle"></i></NavLinkAbout>
                     <NavLinkProfile to='/profile'><i className="fas fa-user-circle" /></NavLinkProfile>
-                    <CartIcon onClick={() => dispatch(cartAction(TOGGLE_CART_VIEW))} to='/'><i className="fas fa-shopping-basket" /></CartIcon>
+                    <CartIcon
+                        onClick={() => dispatch(cartAction(TOGGLE_CART_VIEW))}
+                        className={viewCart ? "active" : "inactive"}>
+                        <i className="fas fa-shopping-basket" />
+                    </CartIcon>
                 </Icons>
 
             </HeaderContainer>

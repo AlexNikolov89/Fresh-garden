@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../assets/Veggies.jpg';
+import background from '../assets/fresh_hands.jpg';
 import {theme} from './index'
 
 export const HomeContainer = styled.div `
@@ -8,15 +8,18 @@ export const HomeContainer = styled.div `
 `;
 
 export const TopContainer = styled.div `
+    width: 100%;    
+    height: 240px;
     background-image: url("${background}");
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
+    background-position-y: center; 
 `;
 
 export const Image = styled.div`
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     width: 100%;
     height: 240px;
 `;
@@ -25,46 +28,44 @@ export const Slogan = styled.h2`
     color: ${theme.colorDefaultWhite};
     font-size: ${theme.fontSizeXXL};
     font-weight: ${theme.fontWeightBold};
-    margin: ${theme.spaceDefault};
-`;
-
-export const HorizontalLine = styled.hr `
-    width: 80%;
-    margin-top: 20px;
-    border: 0;
-    height: 1px;
-    background: #333;
-    background: linear-gradient(to right, #ccc, #333, #ccc);
+    margin-left: ${theme.spaceDefault};
 `;
 
 export const BottomContainer = styled.div `
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
     background: ${theme.colorBackgroundColor};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        flex-direction: column-reverse;
+    }
 `;
 
 export const Box = styled.div `
-    height: 100%;
-    width: 70%;
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 30px; */
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
     justify-content: space-evenly;
-    padding: 40px 0;
     height: calc(100% - 68px);
-    background: ${theme.colorBackgroundColor};  
+    background: ${theme.colorBackgroundColor};
+    margin: ${theme.spaceS};
 `;
 
 export const SideBox = styled.div`
     display: flex;
-    flex-direction: row;
-    flex-flow: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    width: 30%;
-    min-width: calc(271px + ${theme.spaceDefault});
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 270px;
+    background: red;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
 `;
 
 export const Text = styled.h2 `
