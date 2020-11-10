@@ -6,26 +6,16 @@ import {
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
 import Card from '../components/Card/index';
-import {screenSizeBreakPoint} from "../helpers/constants";
 import ShoppingCart from "../components/ShoppingCart";
 import PromotedProducts from "../components/PromotedProducts";
+import {useSelector} from "react-redux";
 
 const Homepage = () => {
-    const showCart = true;
-    const [windowWidth, setWindowWidth] = useState('');
-
-    const handleResize = e => {
-        setWindowWidth(window.innerWidth);
-    }
-
-    useEffect(() => {
-        window.addEventListener("resize", handleResize, false);
-        console.log(windowWidth);
-    });
+    // const viewCart = useSelector(state => state.cartReducer.viewCart);
+    // console.log("in da Homepage, viewCart ->", viewCart)
 
     return (
         <Fragment>
-
             <HomeContainer>
                 <TopContainer>
                     <Image>
@@ -49,13 +39,12 @@ const Homepage = () => {
                         <Card />
                     </Box>
                     <SideBox>
-                        {showCart && <ShoppingCart />}
+                        {/*{viewCart && <ShoppingCart />}*/}
                         <PromotedProducts />
                     </SideBox>
                 </BottomContainer>
 
             </HomeContainer>
-
             <Footer />
         </Fragment>
     )
