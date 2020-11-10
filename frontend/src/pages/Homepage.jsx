@@ -1,16 +1,17 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {
     TopContainer, Image, Box, HomeContainer, Text, HorizontalLine,
-    About, AboutText, BottomContainer, Slogan
+    About, AboutText, BottomContainer, Slogan, SideBox
 } from '../style/Homepage';
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
 import Card from '../components/Card/index';
 import {screenSizeBreakPoint} from "../helpers/constants";
-import useSticky from "../hooks/useSticky";
+import ShoppingCart from "../components/ShoppingCart";
+import PromotedProducts from "../components/PromotedProducts";
 
 const Homepage = () => {
-    const { isSticky, element } = useSticky()
+    const showCart = true;
     const [windowWidth, setWindowWidth] = useState('');
 
     const handleResize = e => {
@@ -47,6 +48,10 @@ const Homepage = () => {
                         <Card />
                         <Card />
                     </Box>
+                    <SideBox>
+                        {showCart && <ShoppingCart />}
+                        <PromotedProducts />
+                    </SideBox>
                 </BottomContainer>
 
             </HomeContainer>

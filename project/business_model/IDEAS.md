@@ -23,3 +23,7 @@ farmer-food.ch
 fresh-garden.ch
 
 # Domain names (add only available domains)
+homegrown.io
+gardn.io
+self-planted.io
+shared-garden.io

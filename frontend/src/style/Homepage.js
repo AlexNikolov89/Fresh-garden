@@ -44,7 +44,7 @@ export const BottomContainer = styled.div `
 
 export const Box = styled.div `
     height: 100%;
-    width: 100%;
+    width: 70%;
     /* display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 30px; */
@@ -55,6 +55,16 @@ export const Box = styled.div `
     padding: 40px 0;
     height: calc(100% - 68px);
     background: ${theme.colorBackgroundColor};  
+`;
+
+export const SideBox = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 30%;
+    min-width: calc(271px + ${theme.spaceDefault});
 `;
 
 export const Text = styled.h2 `
