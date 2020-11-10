@@ -54,6 +54,29 @@ export const Icons = styled.div `
     }
 `;
 
+export const NavLinkAddproduct = styled(NavLink) `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: ${theme.controlHeightXL};
+    cursor: default;
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    i {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, :focus {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }
+`; 
+
 export const NavLinkHome = styled(NavLink)`
     display: flex;
     align-items: center;
