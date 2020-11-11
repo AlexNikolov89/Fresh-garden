@@ -12,12 +12,13 @@ export const HeaderContainer = styled.div `
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    left: 0;
     top: 0;
     background-color: ${theme.colorDefaultWhite};
     border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
-    @media only screen and (max-device-width: ${theme.mediaQueryScreenWidth}){
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
         top: calc(100% - 64px);
         left: 0;
@@ -114,9 +115,28 @@ export const NavLinkProfile = styled(NavLinkAbout)`
 
 `;
 
-export const CartIcon = styled(NavLinkAbout)`
+export const CartIcon = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: ${theme.controlHeightXL};
+    cursor: default;
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, :focus, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }
 `;
 
 export const OpenCart = styled.div`

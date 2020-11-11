@@ -21,5 +21,14 @@ farmerfood.ch
 terrafood.ch
 farmer-food.ch
 fresh-garden.ch
+gardn.io
+self-planted.io
 
 # Domain names (add only available domains)
+shared-garden.io 
+fresh-garden.ch 
+
+greengarden.ch |
+homegrown.io l
+naturally-grown.ch
+seasonal-garden.ch I

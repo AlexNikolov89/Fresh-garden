@@ -19,14 +19,14 @@ const SearchBar = () => {
             <Form>
                 <CategoryContainer>
                     <CategoryButton>
-                        <i class="fas fa-sort"></i>
+                        <i className="fas fa-sort"></i>
                     </CategoryButton>
                     <CategoryInput type='text' placeholder={"Category"} />
                 </CategoryContainer>
 
                 <LocationContainer>
                     <LocationButton>
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i className="fas fa-map-marker-alt"></i>
                     </LocationButton>
                     <LocationInput type='text' placeholder={"Location"} />
                 </LocationContainer>

@@ -96,61 +96,6 @@ const Addproduct = () => {
             
             </AddProductContainer>
             
-            
-            {/*<AddproductContainer>
-                <AddProductForm>
-
-                    <Product>
-                        <Top>
-                            <Image src={ProductImg} />
-                            <Upload>Upload Image</Upload>
-                        </Top>
-
-                        <Bottom>
-                            <Description type='text' placeholder='Product description...' />
-                            <Button>Add Product</Button>
-                        </Bottom>
-                        
-                    </Product>
-
-                    <ProductDetails>
-                        <FormRight>
-                            <Input type='text' placeholder='Name...' />
-                            <Input type='text' placeholder='name@email.com...' />
-                            <Input type='text' placeholder='z.b Zurich..' />
-                            <ChooseCategory>Choose Category</ChooseCategory>
-                            <Category>
-                                <Vegetable>Vegetable</Vegetable>
-                                <Fruit>Fruit</Fruit>
-                            </Category>
-
-                        </FormRight>
-
-                        <FormLeft>
-                            <Input type='text' placeholder='Surname...' />
-                    
-                            <Section>
-                                <Label>Price per:</Label>
-                                <PricePer type='number' placeholder='gr' min="1" max="4" />
-                                <PricePer type='number' placeholder='hg' min="1" max="4" />
-                                <PricePer type='number' placeholder='piece' min="1" max="5" />
-                            </Section>
-                           
-                            <Select>
-                                <Choose>Delivery options</Choose>
-                                <Option>Delivery</Option>
-                                <Option>Pick up</Option>
-                            </Select>
-
-                            <label>Chooce area km/h</label>
-                            <form>
-                                <input type='range' min='0' max='50' />
-                            </form>
-                        </FormLeft>
-                    </ProductDetails>
-                </AddProductForm>
-            </AddproductContainer>  */}
-
         </Fragment>
     )
 }
