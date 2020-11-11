@@ -33,6 +33,7 @@ export const Slogan = styled.h2`
 
 export const BottomContainer = styled.div `
     display: flex;
+    position: relative;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -46,8 +47,7 @@ export const BottomContainer = styled.div `
 `;
 
 export const Box = styled.div `
-    width: 100%;
-    height: 100%;
+    width: calc(100% - calc(270px + 2 * ${theme.spaceS}));
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
@@ -59,11 +59,15 @@ export const Box = styled.div `
 
 export const SideBox = styled.div`
     display: flex;
+    position: absolute;
+    right: 0;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     width: calc(270px + 2 * ${theme.spaceS});
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    background: ${theme.colorBackgroundColor};
+    height: 100%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
@@ -77,7 +81,8 @@ export const PromotedProductsContainer = styled.div`
     justify-content: flex-start;
     width: calc(270px + 2 * ${theme.spaceS});
     padding-top: ${theme.spaceS};
-    
+    background: ${theme.colorBackgroundColor};
+    height: 100%;
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
     }

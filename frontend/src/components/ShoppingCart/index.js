@@ -1,12 +1,9 @@
 import React, {Fragment} from 'react';
 import {
-    Quantity, Calc, Top,
-    Text, Image, ImageContainer,
-    ProductInfo, Name, Button,
-    Price, ButtonSubmit, HorizontalLine, Total, ShoppingCartContainer,
+    ShoppingCartContainer, TopContainer, Title,
+    MiddleContainer, BottomContainer, EmptyCart, CheckoutButton,
 } from '../../style/ShoppingCart';
-import Patato from '../../assets/patato.jpg'
-import {NavLink} from 'react-router-dom'
+import CartItem from "../CartItem";
 
 
 const ShoppingCart = () => {
@@ -14,32 +11,18 @@ const ShoppingCart = () => {
     return(
         <Fragment>
             <ShoppingCartContainer>
-                <Top>
-                    <Text>Items in your bag</Text>
-                </Top>
+                <TopContainer>
+                    <Title>Basket</Title>
+                </TopContainer>
 
-                <ImageContainer>
-                    <Image src={Patato} />
-                    <ProductInfo>
-                        <Name>Patato</Name>
+                <MiddleContainer>
+                    <CartItem />
+                </MiddleContainer>
 
-                        <Calc>
-                            <i class="fas fa-plus-square" />
-                            <Quantity>15</Quantity>
-                            <i class="fas fa-minus-square" />
-                        </Calc>
-
-                    </ProductInfo>
-                    <Price>CHF 30</Price>
-                </ImageContainer>
-
-                <HorizontalLine />
-                    <Total>CHF 50</Total>
-                <HorizontalLine />
-                    
-                <NavLink to='/checkoutpage'>
-                    <ButtonSubmit>Checkout</ButtonSubmit>
-                </NavLink>
+                <BottomContainer>
+                    <EmptyCart><i className="fas fa-trash-alt"></i>Empty Shopping Basket</EmptyCart>
+                    <CheckoutButton to={'/checkout'}>Checkout</CheckoutButton>
+                </BottomContainer>
             </ShoppingCartContainer>
         </Fragment>
     )

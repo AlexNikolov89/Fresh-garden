@@ -12,6 +12,7 @@ export const HeaderContainer = styled.div `
     justify-content: space-between;
     align-items: center;
     position: sticky;
+    z-index: 42;
     left: 0;
     top: 0;
     background-color: ${theme.colorDefaultWhite};
