@@ -1,25 +1,35 @@
 import React, {Fragment} from 'react'
-import {CardContainer, TopContainer, Image, BottomConatiner, Text, Price, Info} from '../../style/Card';
+import {
+    CardContainer, TopContainer,
+    Image, Text, Price, Info, Date, Wrapp, KG, BottomContainer
+} from '../../style/Card';
 import Carrot from '../../assets/carot.jpg'
+import { useState } from 'react';
 
 const Card = () => {
+
+    const [count, setCount] = useState(0);
     return (
         <Fragment>
-
             <CardContainer>
                 <TopContainer>
                     <Image src={Carrot} />
                 </TopContainer>
 
-                <BottomConatiner>
+                <BottomContainer>
                     <Info>
-                        <Text>Fresh Carror</Text>
-                        <Price><span>CHF</span> 2.50-</Price>
-                    </Info>
-                    <i class="fas fa-shopping-basket"></i>
-                </BottomConatiner>
-            </CardContainer>
+                        <Text>Thurgauer Rüebli</Text>
 
+                        <Wrapp>
+                            <Price><span>CHF</span> 3.95-</Price>
+                            <KG>3.95 / Kg</KG>
+                        </Wrapp>
+
+                        <Date>Expiry Date</Date>
+                        <i class="fas fa-shopping-basket"></i>
+                    </Info>
+                </BottomContainer>
+            </CardContainer>
         </Fragment>
     )
 }

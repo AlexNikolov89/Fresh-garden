@@ -1,54 +1,85 @@
 import styled from 'styled-components';
+import {theme} from './index'
 
 export const Form = styled.form `
-    height: 40px;
-    padding: 10px;
-    border-radius: 40px;
-    width: 10%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
 `;
 
-export const Input = styled.input `
-    border: none;
+export const CategoryContainer = styled.div`
+    display: flex;
     outline: none;
-    float: left;
-    color: #EDDED4;
-    font-size: 1.4rem;
-    line-height: 40px;
-    width: 0px;
-    transition: all 0.8s;
-    border-radius: 40px;
-    background-color: #5D6D37;
-
-    &:hover, &:active {
-        width: 800px;
-        padding: 0 6px;
-        border: 1px solid #EDDED4;
-    }
-
-    &:focus {
-        width: 800px;
-        padding: 0 6px;
-    }
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: calc(100% / 3 - (${theme.controlHeightXL} / 3));
 `;
 
-export const Button = styled.button `
+export const LocationContainer = styled(CategoryContainer)``;
+
+export const SearchContainer = styled(CategoryContainer)``;
+
+export const SearchInput = styled.input`
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    height: 100%;
+    min-width: 50px;
     border: none;
-    background: none;
     outline: none;
-    width: 40px;
+`;
+
+export const CategoryInput = styled(SearchInput)``;
+
+export const LocationInput = styled(SearchInput)``;
+
+export const SearchButton = styled.button `
+    height: 100%;
+    width: 42px;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    background: #5D6D37;
+    outline: none;
+    border: none;
+    background: ${theme.colorDefaultWhite};
+    padding: ${theme.spaceS};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
 
-    i {
-        z-index: 1;
-        background: #5D6D37;
-        font-size: 1.6rem;
-        color: black;
-        border-radius: 50px;
-        cursor: pointer;
+    
+    &:hover, :focus {
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    }
+    
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+        font-size: ${theme.fontSizeM};
+    }
+`;
+
+export const CategoryButton = styled(SearchButton)``;
+
+export const LocationButton = styled(SearchButton)``;
+
+export const SubmitButton = styled(SearchButton)`
+    height: 100%;
+    width: ${theme.controlHeightXL};
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+
+    
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, :focus {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
     }
 `;

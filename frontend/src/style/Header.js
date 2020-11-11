@@ -1,47 +1,144 @@
 import styled from 'styled-components'
+import {theme} from './index'
+import {NavLink} from "react-router-dom";
+import React from "react";
+
 
 export const HeaderContainer = styled.div `
-    height: 80px;
+    height: ${theme.controlHeightXL};
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
+    left: 0;
     top: 0;
-    background-color: #5D6D37;
+    background-color: ${theme.colorDefaultWhite};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        position: fixed;
+        top: calc(100% - 64px);
+        left: 0;
+    }
 `;
 
-export const FormConatiner = styled.div `
-    width: 40%;
+export const FormContainer = styled.div `
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-right: 150px;
+    height: 100%;
+    min-width: 280px;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        display: none;
+    }
 `;
 
 export const Icons = styled.div `
-    display: flex-end;
-   i {
-       color: black;
-       text-align: center;
-       float: right;
-       font-size: 1.6rem;
-       padding: 30px;
-   }
-
-   i:hover{
-       font-size: 1.8rem;
-   }
-
-   i:active {
-        color: grey;
-   }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    min-width: calc(3 * ${theme.controlHeightXL});
+    
+    cursor: default;
+    
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+        text-align: center;
+        float: right;
+        font-size: ${theme.fontSizeM};
+        cursor: default;
+    }
 `;
 
-export const Logo = styled.img `
+
+export const NavLinkHome = styled(NavLink)`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    padding: ${theme.spaceS};
+    height: 100%;
 `;
 
-export const LogoConatiner = styled.div `
-   display: flex;
-
+export const NavLinkAbout = styled(NavLink)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: ${theme.controlHeightXL};
+    cursor: default;
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, :focus {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }
 `;
+
+export const NavLinkAddproduct = styled(NavLinkAbout)`
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+`; 
+
+export const NavLinkProfile = styled(NavLinkAbout)``;
+
+export const CartIcon = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: ${theme.controlHeightXL};
+    cursor: default;
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, :focus, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }
+`;
+
+export const OpenCart = styled.div`
+    position: absolute;
+    bottom: -600px;
+`;
+
+export const LogoContainer = styled.div `
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        width: ${theme.controlHeightXL};
+    }
+`;
+
+export const Logo = styled.img`
+    width: 60px;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        width: ${theme.controlHeightXL};
+    }
+`;
+
