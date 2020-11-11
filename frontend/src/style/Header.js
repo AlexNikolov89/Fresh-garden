@@ -55,6 +55,7 @@ export const Icons = styled.div `
     }
 `;
 
+
 export const NavLinkHome = styled(NavLink)`
     display: flex;
     align-items: center;
@@ -87,10 +88,11 @@ export const NavLinkAbout = styled(NavLink)`
     }
 `;
 
-export const NavLinkProfile = styled(NavLinkAbout)`
+export const NavLinkAddproduct = styled(NavLinkAbout)`
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+`; 
 
-`;
+export const NavLinkProfile = styled(NavLinkAbout)``;
 
 export const CartIcon = styled.div`
     display: flex;

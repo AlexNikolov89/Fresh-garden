@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import {
     HeaderContainer,
     Icons,
-    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon
+    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon, NavLinkAddproduct
 } from '../../style/Header';
 import SearchBar from '../SearchBar'
 import LogoImg from '../../assets/logo_idea.jpg'
@@ -28,6 +28,7 @@ const Header = ({ sticky, element, minimal }) => {
                 </FormContainer>
 
                 <Icons >
+                    <NavLinkAddproduct to='addproduct'><i class="fas fa-folder-plus" /></NavLinkAddproduct>
                     <NavLinkAbout to='/about'><i className="fas fa-info-circle"></i></NavLinkAbout>
                     <NavLinkProfile to='/profile'><i className="fas fa-user-circle" /></NavLinkProfile>
                     <CartIcon
