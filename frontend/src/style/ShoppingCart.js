@@ -9,101 +9,182 @@ export const ShoppingCartContainer = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: ${theme.colorAlmond};
-    
+    background: ${theme.colorBackgroundColor};    
     position: sticky;
     top: calc(0px + ${theme.controlHeightXL});
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
 `;
 
-export const ImageContainer = styled.div `
+export const TopContainer = styled.div`
     display: flex;
-    margin-top: 5px;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    
+    height: ${theme.controlHeightDefault};
+    width: 100%;
 `;
 
-export const Top = styled(ImageContainer) `
+export const Title = styled.h3`
+    font-size: ${theme.fontSizeM};
+    font-weight: ${theme.fontWeightRegular};
+    color: ${theme.colorDefaultText};
+`;
+
+export const MiddleContainer = styled.div`
+    display: flex;
     justify-content: center;
+    align-items: flex-start;
+    
+    width: 100%;
+    height: 100%;
 `;
 
-export const Text = styled.p `
-    padding: 3px;
-    color: grey;
-    color: rgba(0, 0, 0, 0.2);
-`;
-
-export const Image = styled.img `
-    margin: 20px;
-    height: 100px;
-`;
-
-export const Name = styled.div `
-    margin: 18px 20px;
-    color: black;
-    font-weight: Normal;
-    font-size: 1.3rem;
-`;
-
-export const Calc = styled(ImageContainer) `
+export const ProductContainer = styled.div`
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+        
+    height: 130px;
+    width: 100%;
+`;
 
-    i {
-        height: 25px;
-        width: 25px;
-        color: ${theme.colorMiddleGreenYellow};
-        display: flex;
-        justify-content: center;
+export const LeftContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 70%;
+    height: 100%;
+`;
+
+export const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%;
+    width: 100%;
+`;
+
+export const Image = styled.img`
+    background: green;
+    border-radius: ${theme.borderRadiusS};
+    
+    height: 90px;
+    width: 90px;
+`;
+
+export const DetailContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: ${theme.spaceS};
+    
+    height: 70%;
+    width: 100%;
+`;
+
+export const ProductName = styled.h4`
+    font-size: ${theme.fontSizeDefault};
+    font-weight: ${theme.fontWeightRegular};
+    color: ${theme.colorDefaultText};
+`;
+
+export const QuantityContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+`;
+
+export const Decrement = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    border: 1px solid ${theme.colorMiddleGreenYellowLight};    
+    border-radius: ${theme.borderRadiusS};
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    height: 35px;
+    width: 35px;
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, :focus, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
     }
 `;
 
-export const Quantity = styled.p `
-     margin-top: 30px;
-     font-weight: Bold;
+export const Increment = styled(Decrement)``;
+
+export const Count = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    height: 35px;
+    width: 35px;
 `;
 
-export const Price = styled.div `
-    margin: 40px 20px;
-    font-weight: ${theme.fontSizeBold};
-
+export const RightContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;   
+    height: 70%; 
+    width: 100%;
 `;
 
-export const Button = styled.button `
-    height: 25px;
-    width: 25px;
+export const Delete = styled(Decrement)`
     border: none;
-    background: ${theme.colorAlmond};    
-`;
-
-export const ButtonSubmit = styled.button `
-    height: 50px;
-    width: 200px;
-    border-radius: 28px;
-    background: ${theme.colorMiddleGreenYellow};
-    border: none;
-    position: sticky;
-    bottom: 0;
-
-    &:focus { 
-        outline: none; 
-        cursor: pointer;
+    background: none;
+    
+    &:hover, :focus, &.active {
+        border: none;
+        background: none;
+        i.fas {
+            color: ${theme.colorDarkRed};
         }
-
-    &:active {
-        background: ${theme.colorDarkOliveGreen}
     }
 `;
 
-export const HorizontalLine = styled.hr `
-    width: 300px;
-    margin-left: 40px;
+export const Price = styled(ProductName)`
+  height: 19px;
 `;
 
-export const Total = styled.h3`   
+export const BottomContainer = styled.div`
     display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-    padding-right: 60px;
+    justify-content: flex-start;
+    align-items: center;
+    
+    height: 80px;
+    width: 100%;
 `;
 
-export const ProductInfo = styled.div `
-    display: block;
-`
+export const EmptyCart = styled(Delete)`
+    color: ${theme.colorDefaultText};
+`;
 
+export const CheckoutButton = styled(NavLink)`
+    height: ${theme.controlHeightL};
+    width: 70%;
+    border-radius: 26px;
+    color: ${theme.colorDarkOliveGreen};
+    background: ${theme.colorMiddleGreenYellowVeryLight};
+    border: none;    
+    cursor: default;
+
+    &:hover {
+        background: ${theme.colorMiddleGreenYellowLight}
+    }
+`;

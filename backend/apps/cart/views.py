@@ -1,40 +1,75 @@
-# from rest_framework.generics import GenericAPIView, ListAPIView
-#
-# from apps.cart.models import Cart
-# from apps.cart.serializers import CartSerializer
-# from rest_framework.permissions import IsAuthenticated
-# from rest_framework.response import Response
-#
-#
-# class AddToCart(GenericAPIView):
-#     """
-#     POST:
-#     Toggle Add product to cart by logged in users
-#     """
-#     queryset = Cart
-#     serializer_class = CartSerializer
-#     lookup_url_kwarg = 'product_id'
-#
-#     def post(self, request, *args, **kwargs):
-#         target_product = self.get_object()
-#         logged_in_user = self.request.product
-#         if target_product in logged_in_user.products.all():
-#             logged_in_user.products.remove(target_product)
-#         else:
-#             logged_in_user.products.add(target_product)
-#         return Response(self.get_serializer(logged_in_user).data)
-#
-#
-# class GetListOfProductsInCart(ListAPIView):
-#     """
-#     GET: list of all the products in the cart.
-#     """
-#     permission_classes = (IsAuthenticated,)
-#     queryset = Cart.objects.all()
-#     serializer_class = CartSerializer
-#
-#     def get(self, request, *args, **kwargs):
-#         user = self.request.user
-#         cart_items = user.cart_items.all()
-#         serializer = self.get_serializer(cart_items, many=True)
-#         return Response(serializer.data)
+from apps.product.models import Product
+from cart.cart import Cart
+from rest_framework import status
+from rest_framework.generics import CreateAPIView, DestroyAPIView, UpdateAPIView, RetrieveDestroyAPIView, ListAPIView
+
+from rest_framework.response import Response
+
+
+class CartAddItem(CreateAPIView):
+    """
+    POST: Add product to cart by product id
+    """
+
+    def create(self, request, *args, **kwargs):
+        cart = Cart(request)
+        product = Product.objects.get(id=kwargs['id'])
+        cart.add(product=product)
+        return Response(cart.cart, status=status.HTTP_200_OK)
+
+
+class CartRemoveItem(DestroyAPIView):
+    """
+    DELETE: Remove item from cart by product id
+    """
+
+    def destroy(self, request, *args, **kwargs):
+        cart = Cart(request)
+        product = Product.objects.get(id=kwargs['id'])
+        cart.remove(product)
+        return Response(cart.cart, status=status.HTTP_204_NO_CONTENT)
+
+
+class CartIncrementQuantity(UpdateAPIView):
+    """
+    PATCH: Increment quantity of item in cart by product id
+    """
+
+    def update(self, request, *args, **kwargs):
+        cart = Cart(request)
+        product = Product.objects.get(id=kwargs['id'])
+        cart.add(product=product)
+        return Response(cart.cart, status=status.HTTP_200_OK)
+
+
+class CartDecrementQuantity(UpdateAPIView):
+    """
+    PATCH: Decrement quantity of item in cart by product id
+    """
+
+    def update(self, request, *args, **kwargs):
+        cart = Cart(request)
+        product = Product.objects.get(id=kwargs['id'])
+        cart.decrement(product=product)
+        return Response(cart.cart, status=status.HTTP_200_OK)
+
+
+class ClearCartView(RetrieveDestroyAPIView):
+    """
+    DELETE: Clear cart
+    """
+
+    def destroy(self, request, *args, **kwargs):
+        cart = Cart(request)
+        cart.clear()
+        return Response(cart.cart, status=status.HTTP_204_NO_CONTENT)
+
+
+class CartDetailsView(ListAPIView):
+    """
+    GET: get cart details
+    """
+
+    def get(self, request, *args, **kwargs):
+        cart = Cart(request)
+        return Response(cart.cart, status=status.HTTP_200_OK)

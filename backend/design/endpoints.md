@@ -58,11 +58,15 @@
    - backend/api/users/<int:user_id>/ GET: get a specific user profile.
    
 #Cart
-   - backend/api/cart/ GET: get all products added to a cart by user id (only by owner).
+   - backend/api/cart/cart-detail/ GET: get all products added to a cart (only by owner).
    
-   - backend/api/cart/<int:product_id>/ PATCH: Update a specific cart (only by owner).
+   - backend/api/cart/item-clear/<int:id>/ DELETE: Remove item from cart by product id (only by owner).
 
-   - backend/api/cart/<int:product_id>/ DELETE: Delete a specific cart item (only by owner).
+   - backend/api/cart/item_increment/<int:id>/ PATCH: Increment quantity of item in cart by product id.
+   
+   - backend/api/cart/item_decrement/<int:id>/ PATCH: Decrement quantity of item in cart by product id.
+
+   - backend/api/cart/cart_clear/ DELETE: Clear cart (only by owner).
    
 #Order
    - backend/api/order/ GET: get all orders by user (only by owner).

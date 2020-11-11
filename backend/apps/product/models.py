@@ -19,7 +19,7 @@ class Product(models.Model):
         blank=True
     )
     name = models.CharField(
-        max_length=200,
+        max_length=255,
     )
     category = models.CharField(
         max_length=200,
@@ -38,17 +38,16 @@ class Product(models.Model):
         null=True,
     )
     price = models.FloatField(
-        null=True,
     )
-    # TODO related to the model Promotion
+
     promotion = models.FloatField(
         null=True,
         blank=True
     )
     image = models.ImageField(
-        upload_to=user_directory_path,
+        upload_to='products/',
         blank=True,
-        null=False
+        default='products/kopfsalat.jpg'
     )
     deliver_within_radius = models.IntegerField(
         null=True,
@@ -62,30 +61,6 @@ class Product(models.Model):
         null=True,
         blank=True
     )
-    # COST_PER = [
-    #     ({price}, '/g'),
-    #     ({price}, '/kg'),
-    #     ({price}, 'piece'),
-    # ]
-    # # [...]
-    # cost_per = models.JSONField(
-    #     choices=COST_PER,
-    #     default="",
-    # )
-    # shipping = models.ManyToManyField(
-    #     to=User,
-    #     related_name='products',
-    #     on_delete=models.CASCADE,
-    #     null=True,
-    #     blank=True
-    # )
-    # order_products = models.ManyToOneRel(
-    #      to=User,
-    #      related_name='products',
-    #      on_delete=models.CASCADE,
-    #      null=True,
-    #      blank=True
-    # )
 
     def __str__(self):
         return f"{self.author}: {self.name[0:100]}"
