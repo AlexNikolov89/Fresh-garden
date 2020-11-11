@@ -1,26 +1,36 @@
 import styled from 'styled-components'
 import {theme} from './index';
 import {NavLink} from 'react-router-dom'
+import {GenericButton} from "./Buttons";
 
 export const ShoppingCartContainer = styled.div `
-    width: calc(270px + ${theme.spaceS});
+    width: calc(270px + 2 * ${theme.spaceS});
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: ${theme.colorBackgroundColor};    
+    background: ${theme.colorMiddleGreenYellowVeryLight};    
     position: sticky;
+    padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border: 1px solid ${theme.colorMiddleGreenYellowLight};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        position: fixed;
+        height: 70vh;
+        top: 10%; 
+        left: auto;
+        overflow-y: scroll;
+    }
 `;
 
 export const TopContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    
+    border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
     height: ${theme.controlHeightDefault};
     width: 100%;
 `;
@@ -33,20 +43,23 @@ export const Title = styled.h3`
 
 export const MiddleContainer = styled.div`
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: flex-start;
     
     width: 100%;
-    height: 100%;
+    height: auto;
 `;
 
 export const ProductContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    z-index: 43;
         
-    height: 130px;
+    height: 100px;
     width: 100%;
 `;
 
@@ -72,8 +85,8 @@ export const Image = styled.img`
     background: green;
     border-radius: ${theme.borderRadiusS};
     
-    height: 90px;
-    width: 90px;
+    height: 70px;
+    width: 70px;
 `;
 
 export const DetailContainer = styled.div`
@@ -107,16 +120,16 @@ export const Decrement = styled.div`
     font-size: ${theme.fontSizeDefault};
     border: 1px solid ${theme.colorMiddleGreenYellowLight};    
     border-radius: ${theme.borderRadiusS};
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
-    height: 35px;
-    width: 35px;
+    background-color: ${theme.colorMiddleGreenYellowLight};
+    height: 25px;
+    width: 25px;
     i.fas {
         color: ${theme.colorDarkOliveGreen};
     }
     
-    &:hover, :focus, &.active {
+    &:hover, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          border: 1px solid ${theme.colorDarkOliveGreen};
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }
@@ -130,10 +143,12 @@ export const Count = styled.div`
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
     border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
     border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
-    height: 35px;
-    width: 35px;
+    height: 25px;
+    width: 25px;
+    background-color: ${theme.colorBackgroundColor};
 `;
 
 export const RightContainer = styled.div`
@@ -149,7 +164,7 @@ export const Delete = styled(Decrement)`
     border: none;
     background: none;
     
-    &:hover, :focus, &.active {
+    &:hover, &.active {
         border: none;
         background: none;
         i.fas {
@@ -164,27 +179,35 @@ export const Price = styled(ProductName)`
 
 export const BottomContainer = styled.div`
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     
-    height: 80px;
+    height: 100px;
     width: 100%;
 `;
 
 export const EmptyCart = styled(Delete)`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     color: ${theme.colorDefaultText};
+    width: 100%;
+    height: ${theme.controlHeightDefault};
 `;
 
-export const CheckoutButton = styled(NavLink)`
-    height: ${theme.controlHeightL};
-    width: 70%;
-    border-radius: 26px;
-    color: ${theme.colorDarkOliveGreen};
-    background: ${theme.colorMiddleGreenYellowVeryLight};
-    border: none;    
-    cursor: default;
+export const EmptyCartIcon = styled.div``;
 
+export const TextField = styled.p`
+    margin: ${theme.spaceS};
+    font-size: ${theme.fontSizeS};
+`;
+
+export const CheckoutButton = styled(GenericButton)`
+    background-color: ${theme.colorMiddleGreenYellowLight};
+    
     &:hover {
-        background: ${theme.colorMiddleGreenYellowLight}
+        border: 1px solid ${theme.colorDarkOliveGreen};
     }
 `;

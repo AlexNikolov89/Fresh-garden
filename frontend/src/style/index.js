@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
     }
     html, body {
         font-weight: 400;
@@ -17,6 +18,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Hind", sans-serif;
         cursor: default;
     }
+    
+    ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 `;
 export const theme = {
     // Media Queries:
@@ -72,8 +78,8 @@ export const theme = {
     boxShadowInTiles: `0 1px 3px 0 rgba(0,0,0,0.2)`,
     // Sizes
     controlHeightDefault: "40px",
-    controlHeightM: "24px",
-    controlHeightS: "32px",
+    controlHeightS: "24px",
+    controlHeightM: "36px",
     controlHeightL: "48px",
     controlHeightXL: "64px",
     spaceXXS: "4px",
