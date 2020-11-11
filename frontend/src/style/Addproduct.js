@@ -32,38 +32,66 @@ export const Slogan = styled.h2`
 export const BottomConatiner = styled.div `
     display: block;
     background: ${theme.colorBackgroundColor};
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 `;
 
 export const AddCardForm = styled.div `
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: 80px;
+    justify-content: center;
     width: 70%;
     height: 100%;
+
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        width: 100%;
+    }
+`;
+
+export const Title = styled.h1 `
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    color: ${theme.colorDefaultGrey};
+    font-size: ${theme.fontSizeL};
+    font-weight: normal;
 `;
 
 export const CardOverview = styled.aside `
-    border: 1px solid green;
     width: 30%;
+    padding-top: 100px;
+
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        
+    }
 `;
 
 export const Form = styled.form `
-    border: 1px solid ${theme.colorDefaultGrey};
+    //border: 1px solid ${theme.colorDefaultGrey};
     height: 100%;
-    padding: 20px 150px;
+    width: 100%;
+    //padding: ${theme.controlHeightL} 0;
+    padding-bottom: 50px; 
     border-radius: 8px;
     border: ${theme.boxShadowLight};
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: ${theme.colorBackgroundColor}
 `;
 
 export const Input = styled.input `
      width: 500px;
-     height: 50px;
+     height: ${theme.controlHeightL};
      padding: 10px;
      margin: 10px;
      border: none;
      border-bottom: 1px solid ${theme.colorDefaultGrey};
-     font-size: ${theme.fontSizeDefault};
+     font-size: ${theme.fontSizeS};
      color: ${theme.colorRandomText};
      background: ${theme.colorBackgroundColor};
      outline: none;
@@ -74,19 +102,19 @@ export const Unit = styled.div `
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 60%;
-    padding: 0 150px
-`
+    padding-top: 20px;
+`;
 
 export const DropDownHeader = styled.div `
-    height: 50px;
+    height: ${theme.controlHeightL};
     width: 100px;
     font-size: 15px;
-    border-radius: 8px;
+    //border-radius: 8px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid ${theme.colorDefaultGrey};
+    color: ${theme.colorDefaultText}
 `;
 
 export const DropdownContainer = styled.div `
@@ -122,14 +150,17 @@ export const List = styled.li `
     display: flex;
     justify-content: center;
     &:hover {
-        background: grey;
+        background: ${theme.colorDefaultGrey};
     }
 `;
 
 export const Label = styled.label `
     padding-right: 60px;
+    //font-size: ${theme.fontSizeDefault};
+    //color: ${theme.colorDefaultText};
     font-size: ${theme.fontSizeDefault};
-    color: ${theme.colorDefaultText};
+    color: ${theme.colorDefaultGrey};
+    font-weight: bold;
     background: ${theme.colorBackgroundColor};
     
 `;
@@ -137,28 +168,34 @@ export const Label = styled.label `
 export const Price = styled(Input) `
     width: 100px;
     border: 1px solid ${theme.colorDefaultGrey};
-    height: 40px;
+    height: ${theme.controlHeightDefault};
+    color: ${theme.colorDefaultText}
 `;
 
 export const Delivery = styled.div `
-    padding-top: 60px;
+    padding-top: ${theme.controlHeightL};
     display: flex;
     justify-content: center;
     font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultGrey};
+    font-weight: bold;
 `;
 
 export const ButtonContainer = styled.div `
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 30px;
+    height: ${theme.controlHeightS};
     margin-top: 30px;
+
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        
+    }
 `;
+
 
 export const Button = styled.button `
     width: 150px;
-    height: 50px;
-    border-radius: 25px;
+    height: ${theme.spaceXL};
+    cursor: pointer;
+    border-radius: ${theme.borderRadiusXL};
     margin: 0 30px;
     border: none;
     outline: none;
@@ -169,7 +206,7 @@ export const Button = styled.button `
 
 
 export const Slider = styled.input `
-    width: 75%;
+    width: 100%;
     -webkit-appearance: none;
     background: ${theme.colorMiddleGreenYellow};
     //background: linear-gradient(90deg, ${theme.colorDarkOliveGreen} 60%, rgba(214, 214, 214) 60%);
@@ -177,7 +214,7 @@ export const Slider = styled.input `
     opacity: 0.7;
     -webkit-transition: 0.2s;
     transition: opacity 0.2s;
-    border-radius: 12px;
+    border-radius: ${theme.borderRadiusL};
     box-shadow: ${theme.boxShadowLight};
 
     ::-webkit-slider-thumb {
@@ -199,26 +236,58 @@ export const SliderConatiner = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
-    color: grey;
     margin: 80px;
-
+    width: 30%;
 `;
 
 export const Fruit = styled(Button) `
-    background: darkorange;
+    background: ${theme.colorOrangeDefault};
 `;
 
 export const Vegetable = styled(Button) `
-    background: darkgreen;
+    background: ${theme.colorMiddleGreenYellow};
 `;
 
-export const CategoryLabel = styled(Delivery) `
-    padding: 20px 0px;
+export const CategoryLabel = styled(Label) `
+    padding: ${theme.spaceDefault} 0px;
 `;
 
 export const CategoryContainer = styled.div `
     display: flex;
     justify-content: center;
+`;
+
+export const Upload = styled.div `
+    display: flex;
+    flex-direction: column;
+    padding: ${theme.controlHeightL} 0;
+`;
+
+export const ButtonUpload = styled(Button) ``;
+
+export const UploadLabel = styled(Label) `
+    justify-content: center;
+    padding: ${theme.spaceL};
+`;
+
+export const Description = styled.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeS};
+`;
+
+export const DescriptionLabel = styled(Label) `
+    padding: ${theme.spaceS};
+`;
+
+export const TextArea = styled.textarea `
+    font-size: ${theme.fontSizeDefault};
+    border: 1px solid ${theme.colorDefaultGrey};
+    padding: ${theme.spaceS};
+    outline: none;
+    width: 200%;
 `;
 
 

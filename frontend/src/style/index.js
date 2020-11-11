@@ -37,6 +37,7 @@ export const theme = {
     colorDefaultGrey: '#D8D8D8',
     colorDefaultText: '#4C4C4C',
     colorDefaultWhite: '#FFFFFF',
+    colorOrangeDefault: '#ffa62b',
     // Fonts (Visual Hierarchy - 3:4 Method)
     fontSizeXXXXXL: "11.9rem",
     fontSizeXXXXL: "8.9rem",
