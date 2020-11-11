@@ -3,12 +3,12 @@ import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
         AddCardForm, CardOverview, Form, Unit, DropdownContainer, DropDownHeader,
         DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
-        CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider} from '../style/Addproduct'
-import Background from '../assets/img-five.jpg'
-import ProductImg from '../assets/img-one.jpg'
+        CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider,
+        Upload, UploadLabel, ButtonUpload, Description, DescriptionLabel, TextArea, Title} from '../style/Addproduct'
+import Footer from '../components/Footer/index.js'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
-import styled from 'styled-components';
+
 
 const Addproduct = () => {
 
@@ -44,6 +44,7 @@ const Addproduct = () => {
 
                 <BottomConatiner>
                     <AddCardForm>
+                        <Title>Advertise Your product</Title>
                         <Form>
                             <Input type='text' placeholder='Name...' />
                             <Input type='text' placeholder='name@email.com...' />
@@ -51,7 +52,7 @@ const Addproduct = () => {
 
                             <Unit>
                                 <Label>Price:</Label>
-                                <Price type='number' min='0' max='4' />
+                                <Price type='text' min='0' max='4' />
                                 <Label>CHF</Label>
                                 <DropdownContainer>
                                     <DropDownHeader onClick={onClick}>
@@ -86,16 +87,26 @@ const Addproduct = () => {
                                 <Vegetable>Vegetable</Vegetable>
                                 <Fruit>Fruit</Fruit>
                             </CategoryContainer>
+
+                            <Upload>
+                                <UploadLabel>Add product image</UploadLabel>
+                                <ButtonUpload>Upload</ButtonUpload>
+                            </Upload>
+
+                            <Description>
+                                <DescriptionLabel>Add some desription</DescriptionLabel>
+                                <TextArea  />
+                            </Description>
                         </Form>
                     </AddCardForm>
-
+                    
                     <CardOverview>
-
+                        <Card />
                     </CardOverview>
                 </BottomConatiner>
             
             </AddProductContainer>
-            
+            <Footer />
         </Fragment>
     )
 }
