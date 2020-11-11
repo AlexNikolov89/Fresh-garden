@@ -82,7 +82,7 @@ export const DropDownHeader = styled.div `
     height: 50px;
     width: 100px;
     font-size: 15px;
-    border-radius: 8px;
+    border-radius: ${theme.borderRadiusL};
     display: flex;
     justify-content: center;
     align-items: center;
