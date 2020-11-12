@@ -42,7 +42,7 @@ export const Icons = styled.div `
     justify-content: center;
     align-items: center;
     height: 100%;
-    min-width: calc(4 * ${theme.controlHeightXL});
+    min-width: calc(5 * ${theme.controlHeightXL});
     
     cursor: default;
     
@@ -89,6 +89,8 @@ export const NavLinkAbout = styled(NavLink)`
 export const NavLinkProfile = styled(NavLinkAbout)``;
 
 export const NavLinkShop = styled(NavLinkAbout)``;
+
+export const NavLinkAddProduct = styled(NavLinkAbout)``;
 
 export const CartIcon = styled.div`
     display: flex;
