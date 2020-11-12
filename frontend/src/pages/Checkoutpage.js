@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import Header from '../components/Header';
 import {TopContainer, Image, Text} from '../style/Homepage';
 import {CheckoutConatiner,
-         ProductsConatiner, BoxContainer, TopHeaderConatiner, ProductT, QuantityT, Total,
+         ProductsConatiner, BoxContainer, Wrapp, TopHeaderConatiner, ProductT, QuantityT, Total,
          HorizontalLine, PaymentConatiner,
          Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
@@ -30,7 +30,7 @@ const Checkoutpage = () => {
                         <QuantityT>Quantity</QuantityT>
                         <Total>Total</Total>
                     </TopHeaderConatiner>  */}
-
+                <Wrapp>
                 <ProductWrap>
                     <Product />
                     <Product />
@@ -54,6 +54,7 @@ const Checkoutpage = () => {
                 </Submit> 
 
             </PaymentConatiner>
+            </Wrapp>
 
                 </BoxContainer>
     
