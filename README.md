@@ -18,6 +18,7 @@ add purpose
 <strong>Backend and Docker</strong>
 
 8. Build the docker image: <code>$ docker build -t registry_name .</code>
+* Troubleshoot dockerify: <code>$ docker builder prune -a </code> repeat step 8.
 9. Setup PyCharm with a remote interpreter for the docker container:
 * PyCharm settings > Build, Execution, Deployment > Docker > virtual path "/backend" and local path "C:\Users\MyUser\PycharmProjects\motion-deploy\backend"
 * PyCharm settings > Project > Add Interpreter > Docker Compose > Service: "backend" + Python interpreter path "/opt/conda/envs/backend/bin/python"
