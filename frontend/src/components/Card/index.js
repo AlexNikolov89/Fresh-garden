@@ -8,7 +8,6 @@ import {
     UpperContainer,
     ProductName,
     Location,
-    ExpiryDate,
     DeliveryOptions,
     PickUpIcon,
     DeliveryIcon,
@@ -23,14 +22,16 @@ import Carrot from '../../assets/images/carot.jpg'
 import defaultRuth from '../../assets/defaultRuth.PNG'
 import { ReactComponent as PromoIcon} from '../../assets/icons/disc_2.svg';
 
-const Card = () => {
+const Card = ({product, isLoading, promoted}) => {
+    console.log("in da Card, product ->", product)
+    console.log("in da Card, isLoading ->", isLoading)
 
     return (
         <Fragment>
             <CardContainer>
                 <TopContainer>
-                    <PromotionIcon><PromoIcon /></PromotionIcon>
-                    <Image src={Carrot} />
+                    {promoted ? <PromotionIcon><PromoIcon /></PromotionIcon> : null}
+                    <Image src={"image" in product ? product.image : Carrot} />
                 </TopContainer>
 
                 <BottomContainer>

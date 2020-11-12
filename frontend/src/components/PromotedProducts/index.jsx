@@ -5,11 +5,10 @@ import {PromotedProductsContainer} from "../../style/Homepage";
 
 const PromotedProducts = () => {
     return (
-
         <Fragment>
             <PromotedProductsContainer>
-                <Card promoted={true} />
-                <Card promoted={true} />
+                {/*<Card promoted={true} />*/}
+                {/*<Card promoted={true} />*/}
             </PromotedProductsContainer>
         </Fragment>
     )

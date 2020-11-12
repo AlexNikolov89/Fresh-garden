@@ -36,7 +36,7 @@ const Header = ({ sticky, element, minimal }) => {
                 </FormContainer>
 
                 <Icons >
-                    <NavLinkShop to='/'><i className="fas fa-store"></i></NavLinkShop>
+                    <NavLinkShop to='/shop'><i className="fas fa-store"></i></NavLinkShop>
                     <NavLinkAddProduct to='/addproduct'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
                     <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
                     <NavLinkProfile to='/profile'><i className="fas fa-user"></i></NavLinkProfile>
