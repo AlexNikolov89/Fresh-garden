@@ -22,6 +22,8 @@ export const HeaderContainer = styled.div `
         position: fixed;
         top: calc(100% - 64px);
         left: 0;
+        justify-content: center;
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
     }
 `;
 
@@ -30,19 +32,20 @@ export const FormContainer = styled.div `
     justify-content: center;
     text-align: center;
     height: 100%;
-    min-width: 200px;
+    width: 100%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
-        display: none;
+        width: ${theme.controlHeightXL};
     }
 `;
 
 export const Icons = styled.div `
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
-    min-width: calc(5 * ${theme.controlHeightXL});
+    width: 100%;
+    max-width: calc(5 * ${theme.controlHeightXL});
     
     cursor: default;
     
@@ -129,7 +132,7 @@ export const LogoContainer = styled.div `
     justify-content: center;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
-        width: ${theme.controlHeightXL};
+        display: none;
     }
 `;
 

@@ -1,14 +1,14 @@
 import React, {Fragment} from 'react'
 import Card from "../Card";
-import {PromotedProductsContainer} from "../../style/Homepage";
+import {Box, PromotedProductsContainer} from "../../style/Homepage";
 
 
-const PromotedProducts = () => {
+const PromotedProducts = ({products}) => {
+    const productSelection = products.filter((products) => products.promotion)
     return (
         <Fragment>
             <PromotedProductsContainer>
-                {/*<Card promoted={true} />*/}
-                {/*<Card promoted={true} />*/}
+                {productSelection.map((product) => <Card product={product} key={product.id}/>)}
             </PromotedProductsContainer>
         </Fragment>
     )

@@ -47,8 +47,7 @@ export const BottomContainer = styled.div `
 `;
 
 export const Box = styled.div `
-    width: calc(100% - calc(270px + 2 * ${theme.spaceS}));
-    height: auto;
+    width: calc(100% - calc(5 * ${theme.controlHeightXL}));
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
@@ -56,6 +55,8 @@ export const Box = styled.div `
     height: calc(100% - 68px);
     background: ${theme.colorBackgroundColor};
     margin-top: ${theme.spaceS};
+    padding-bottom: 70px;
+
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
@@ -64,20 +65,22 @@ export const Box = styled.div `
 
 export const SideBox = styled.div`
     display: flex;
-    position: absolute;
+    position: relative;
     right: 0;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    width: calc(270px + 2 * ${theme.spaceS});
+    width: calc(5 * ${theme.controlHeightXL});
     border-left: 1px solid ${theme.colorMiddleGreenYellowLight};
     background: ${theme.colorBackgroundColor};
     height: auto;
-    
+    padding-bottom: 70px;
+
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
         position: relative;
         overflow: hidden;
+        border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
 
     }
 `;
@@ -87,7 +90,7 @@ export const PromotedProductsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: calc(270px + 2 * ${theme.spaceS} - 1px);
+    width: calc(5 * ${theme.controlHeightXL} - 1px);
     padding-top: ${theme.spaceS};
     background: ${theme.colorBackgroundColor};
     height: 100%;
@@ -102,7 +105,6 @@ export const Text = styled.h2 `
     justify-content: center;
     text-align: center;
     padding: 50px;
-    font-size: 1.8rem;
     height: 40px;
     width: 100%;
     color: ${theme.colorTitle};

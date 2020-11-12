@@ -6,7 +6,6 @@ const initialState = {
 }
 
 export default function productReducer (state = initialState, action) {
-    console.log("in da productReducer, payload ->", action.payload)
     switch (action.type) {
         case SET_PRODUCTS_ALL: {
             const newState = {...state}

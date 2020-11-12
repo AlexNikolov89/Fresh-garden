@@ -55,11 +55,11 @@ const Homepage = () => {
 
                 <BottomContainer>
                     <Box>
-                        {products.map((product) => <Card product={product} isLoading={isLoading}/>)}
+                        {products.map((product) => <Card product={product} key={product.id}/>)}
                     </Box>
                     <SideBox>
                         {viewCart && <ShoppingCart />}
-                        <PromotedProducts products={products} isLoading={isLoading}/>
+                        <PromotedProducts products={products} />
                     </SideBox>
                 </BottomContainer>
             </HomeContainer>
