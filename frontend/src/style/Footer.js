@@ -13,5 +13,5 @@ export const FooterConatiner = styled.div `
 
 export const Text = styled.p `
     color: ${theme.colorDarkOliveGreen};
-    font-size: 1.0rem;
+    font-size: ${theme.fontSizeS};
 `

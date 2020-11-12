@@ -13,7 +13,7 @@ add
 6. Start frontend react app <code>$ npm start</code>
 7. Happy Hacking!
 8. Add, commit and push your local branch <code>$ git add . $ git commit -m "message" $ git push origin your-branch-name</code>
-9. Create a merge request to the remote <strong>development</strong> branch on gitlab
+9. Create a merge self to the remote <strong>development</strong> branch on gitlab
 
 # Troubleshoot and manipulate running server
 * Go into the running container: <code>$ docker exec -ti container_id bash</code> (<code>docker ps</code> for id)

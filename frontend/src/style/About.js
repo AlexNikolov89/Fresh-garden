@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {theme} from './index';
-import background from '../assets/organic_table.png'
+import background from '../assets/images/organic_table.png'
 
 export const AboutContainer = styled.div `
     width: 100%;
