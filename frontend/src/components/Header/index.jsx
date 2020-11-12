@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import {
     HeaderContainer,
     Icons,
-    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon, NavLinkAddproduct
+    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon, NavLinkShop
 } from '../../style/Header';
 import SearchBar from '../SearchBar'
 import LogoImg from '../../assets/logo_idea.jpg'
@@ -28,9 +28,9 @@ const Header = ({ sticky, element, minimal }) => {
                 </FormContainer>
 
                 <Icons >
-                    <NavLinkAddproduct to='addproduct'><i class="fas fa-folder-plus" /></NavLinkAddproduct>
-                    <NavLinkAbout to='/about'><i className="fas fa-info-circle"></i></NavLinkAbout>
-                    <NavLinkProfile to='/profile'><i className="fas fa-user-circle" /></NavLinkProfile>
+                    <NavLinkShop to='/'><i className="fas fa-store"></i></NavLinkShop>
+                    <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
+                    <NavLinkProfile to='/profile'><i className="fas fa-user"></i></NavLinkProfile>
                     <CartIcon
                         onClick={() => dispatch(cartAction(TOGGLE_CART_VIEW))}
                         className={viewCart ? "active" : "inactive"}>

@@ -17,12 +17,12 @@ const SearchBar = () => {
     return (
         <Fragment>
             <Form>
-                <CategoryContainer>
-                    <CategoryButton>
-                        <i className="fas fa-sort"></i>
-                    </CategoryButton>
-                    <CategoryInput type='text' placeholder={"Category"} />
-                </CategoryContainer>
+                {/*<CategoryContainer>*/}
+                {/*    <CategoryButton>*/}
+                {/*        <i className="fas fa-sort"></i>*/}
+                {/*    </CategoryButton>*/}
+                {/*    <CategoryInput type='text' placeholder={"Category"} />*/}
+                {/*</CategoryContainer>*/}
 
                 <LocationContainer>
                     <LocationButton>
