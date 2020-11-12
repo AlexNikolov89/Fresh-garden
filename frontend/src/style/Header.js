@@ -55,6 +55,7 @@ export const Icons = styled.div `
     }
 `;
 
+
 export const NavLinkHome = styled(NavLink)`
     display: flex;
     align-items: center;

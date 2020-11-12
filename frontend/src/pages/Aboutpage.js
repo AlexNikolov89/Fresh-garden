@@ -4,7 +4,7 @@ import { About } from '../style/Homepage'
 const Aboutpage = () => {
     return (
         <div>
-            About Us !
+           <p>About Us !</p> 
         </div>
     )
 }
