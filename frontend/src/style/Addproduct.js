@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../assets/Veggies.jpg';
+import background from '../assets/images/Veggies.jpg';
 import {theme} from './index';
 import {GenericButton} from './Buttons'
 import { ProductContainer } from './Product';
@@ -312,8 +312,3 @@ export const UploadImage = styled.input `
   border-radius: 2px;
   margin: 30px 0;
 `
-
-
-
-
-
