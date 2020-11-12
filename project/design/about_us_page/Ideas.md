@@ -1,7 +1,4 @@
-# Landingpage inspiration:
-
-- www.landingfolio.com/inspiration/post/getnodis
-
-- www.landingfolio.com/inspiration/post/sendspark
-
-- www.landingfolio.com/inspiration/post/designjoy
+# Examples
+https://www.landingfolio.com/inspiration/post/kiff
+https://www.landingfolio.com/inspiration/post/scrapingbee
+https://www.landingfolio.com/inspiration/post/idonethis
