@@ -1,12 +1,7 @@
 import styled from 'styled-components';
-<<<<<<< HEAD
 import background from '../assets/images/Veggies.jpg';
-import {theme} from './index'
-=======
-import background from '../assets/Veggies.jpg';
 import {theme} from './index';
 import {GenericButton} from './Buttons'
->>>>>>> f6514212ab2045226264e8001bfd294ea44bd022
 import { ProductContainer } from './Product';
 
 export const AddProductContainer = styled.div `
@@ -317,8 +312,3 @@ export const UploadImage = styled.input `
   border-radius: 2px;
   margin: 30px 0;
 `
-
-
-
-
-

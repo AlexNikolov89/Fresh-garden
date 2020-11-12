@@ -127,7 +127,7 @@ export const SignUp = () => {
                         <form onSubmit={stepTwoHandler}>
                             <p>We’ve sent a confirmation code to your email<br/>{email}</p>
                             <p>Development: your code to copy is {code}</p>
-                            <BigPurpleButton id="submit" type="submit" value="Continue"></BigPurpleButton>
+                            <GenericButton id="submit" type="submit" value="Continue"></GenericButton>
                         </form>
                         <StepTwoIconSVG id='stepTwoIcon'/>
                     </StepTwoContainer>
@@ -170,7 +170,7 @@ export const SignUp = () => {
                                 </LayoutContainerForm>
                                 <p>{message}</p>
                             </FormWrapper>
-                            <BigPurpleButton id="submit" type="submit" value="Complete"></BigPurpleButton>
+                            <GenericButton id="submit" type="submit" value="Complete"></GenericButton>
                         </form>
                         <StepThreeIconSVG id='stepThreeIcon'/>
                     </StepThreeContainer>
