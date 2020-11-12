@@ -25,6 +25,11 @@ export const BoxContainer = styled.div `
   width: 100%;
   padding: 0 100px;
   padding-top: 40px;
+
+  @media (max-width: ${theme.mediaQueryScreenWidth}){
+        flex-direction: column;
+        padding: 0 70px;
+    }
  `;
 
 
@@ -33,7 +38,9 @@ export const Description = styled.p `
 `;
 
 export const Product = styled.h3 `
-
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
 `;
 
 export const Info = styled.div `
@@ -96,6 +103,12 @@ export const PaymentConatiner = styled.aside `
     flex-wrap: wrap;
     flex-direction: column;
 
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        //flex-direction: row;
+        width: 80%;
+        margin-bottom: 60px;
+    }
+
 `;
 
 export const Subtotal = styled.h4 `
@@ -154,6 +167,9 @@ export const ProductWrap = styled.div `
     //border-radius: ${theme.borderRadiusL};
     //background-color: ${theme.colorAlmond};
     //box-shadow: ${theme.boxShadowLightest};
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
 `;
 
 

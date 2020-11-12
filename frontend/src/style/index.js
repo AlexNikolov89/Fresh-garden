@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-overflow-scrolling: touch;
     }
     html, body {
         font-weight: 400;
@@ -17,6 +18,11 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Hind", sans-serif;
         cursor: default;
     }
+    
+    ::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
 `;
 export const theme = {
     // Media Queries:
@@ -37,6 +43,9 @@ export const theme = {
     colorDefaultGrey: '#D8D8D8',
     colorDefaultText: '#4C4C4C',
     colorDefaultWhite: '#FFFFFF',
+    colorDarkPurple: '#69122F',
+    colorDarkRed: '#B4041E',
+    colorDarkBlue: '#045076',
     // Fonts (Visual Hierarchy - 3:4 Method)
     fontSizeXXXXXL: "11.9rem",
     fontSizeXXXXL: "8.9rem",
@@ -69,10 +78,18 @@ export const theme = {
     boxShadowNav: `2px 0 24px 0 rgba(0,0,0,0.04)`,
     boxShadowTiles: `0 2px 24px 0 rgba(0,0,0,0.04)`,
     boxShadowInTiles: `0 1px 3px 0 rgba(0,0,0,0.2)`,
+    boxShadowInset: `inset 0 3px 5px rgba(0,0,0,0.225)`,
+    boxShadowGradient:
+        `0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+        0 12.5px 10px rgba(0, 0, 0, 0.06),
+        0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+        0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+        0 100px 80px rgba(0, 0, 0, 0.12)`,
     // Sizes
     controlHeightDefault: "40px",
-    controlHeightM: "24px",
-    controlHeightS: "32px",
+    controlHeightS: "24px",
+    controlHeightM: "36px",
     controlHeightL: "48px",
     controlHeightXL: "64px",
     spaceXXS: "4px",
