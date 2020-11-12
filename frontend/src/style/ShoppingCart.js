@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {theme} from './index';
-import {NavLink} from 'react-router-dom'
 import {GenericButton} from "./Buttons";
 
 export const ShoppingCartContainer = styled.div `

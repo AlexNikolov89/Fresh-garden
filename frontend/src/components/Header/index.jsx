@@ -2,7 +2,15 @@ import React, {Fragment} from 'react'
 import {
     HeaderContainer,
     Icons,
-    NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon, NavLinkShop
+    NavLinkHome,
+    NavLinkAbout,
+    NavLinkProfile,
+    FormContainer,
+    LogoContainer,
+    Logo,
+    CartIcon,
+    NavLinkShop,
+    NavLinkAddProduct
 } from '../../style/Header';
 import SearchBar from '../SearchBar'
 import LogoImg from '../../assets/logo_idea.jpg'
@@ -29,6 +37,7 @@ const Header = ({ sticky, element, minimal }) => {
 
                 <Icons >
                     <NavLinkShop to='/'><i className="fas fa-store"></i></NavLinkShop>
+                    <NavLinkAddProduct to='/addproduct'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
                     <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
                     <NavLinkProfile to='/profile'><i className="fas fa-user"></i></NavLinkProfile>
                     <CartIcon
