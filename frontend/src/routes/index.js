@@ -1,17 +1,24 @@
 import React, {Fragment} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Homepage from '../pages/Homepage';
-import Checkoutpage from '../pages/Checkoutpage'
-import About from '../pages/Aboutpage';
+import Checkout from '../pages/Checkoutpage'
+import About from '../pages/About';
+import Addproduct from '../pages/Addproduct.jsx'
+import Profile from "../pages/Profile";
+import AuthComponent from "../HOC/AuthComponent";
 
 
 export const Routes = () => {
     return <Fragment>
                 <Router>
                     <Switch>
-                        <Route path='/' component={Homepage} exact />
-                        <Route path='/checkoutpage' component={Checkoutpage} exact />
+                        <Route path="/profile" component={AuthComponent(Profile)} exact />
+                        <Route path="/login" component={Profile} exact />
+                        <Route path='/checkout' component={Checkout} exact />
                         <Route path='/about' component={About} exact />
+                        <Route path='/addproduct' component={Addproduct} exact />
+                        <Route path='/shop' component={Homepage} exact />
+                        <Route path='/*' component={Homepage} exact />
                     </Switch>
                 </Router>
             </Fragment>

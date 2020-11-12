@@ -46,11 +46,12 @@ export const SearchButton = styled.button `
     border: none;
     background: ${theme.colorDefaultWhite};
     padding: ${theme.spaceS};
+    margin-right: ${theme.spaceXXS};
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-
     
     &:hover, :focus {
         background-color: ${theme.colorMiddleGreenYellowVeryLight};
+        box-shadow: ${theme.boxShadowInset};
     }
     
     i.fas {
@@ -67,9 +68,7 @@ export const SubmitButton = styled(SearchButton)`
     height: 100%;
     width: ${theme.controlHeightXL};
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
-    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-
+    margin-right: 0;
     
     i.fas {
         color: ${theme.colorDarkOliveGreen};
@@ -77,7 +76,8 @@ export const SubmitButton = styled(SearchButton)`
     
     &:hover, :focus {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          
+          box-shadow: ${theme.boxShadowInset};
+
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }

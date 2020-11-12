@@ -2,7 +2,7 @@ import baseUrl from "../../helpers/baseUrl";
 
 
 export const valiAction = (code, email, username, first_name, last_name, password) => async (dispatch, getState) => {
-    const url = `${baseUrl}auth/registration/validation/`;
+    const url = `${baseUrl}auth/registration/validate/`;
     const config = {
         method: 'POST',
         headers: new Headers({
@@ -13,5 +13,6 @@ export const valiAction = (code, email, username, first_name, last_name, passwor
 
     const response = await fetch(url, config)
     const data = await response.json();
+    console.log(data);
     return data
 };

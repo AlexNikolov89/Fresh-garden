@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../assets/fresh_hands.jpg';
+import background from '../assets/images/fresh_hands.jpg';
 import {theme} from './index'
 
 export const HomeContainer = styled.div `
@@ -33,6 +33,7 @@ export const Slogan = styled.h2`
 
 export const BottomContainer = styled.div `
     display: flex;
+    position: relative;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
@@ -46,27 +47,38 @@ export const BottomContainer = styled.div `
 `;
 
 export const Box = styled.div `
-    width: 100%;
-    height: 100%;
+    width: calc(100% - calc(270px + 2 * ${theme.spaceS}));
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-flow: wrap;
     justify-content: space-evenly;
     height: calc(100% - 68px);
     background: ${theme.colorBackgroundColor};
-    margin: ${theme.spaceS};
+    margin-top: ${theme.spaceS};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
 `;
 
 export const SideBox = styled.div`
     display: flex;
+    position: absolute;
+    right: 0;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     width: calc(270px + 2 * ${theme.spaceS});
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorMiddleGreenYellowLight};
+    background: ${theme.colorBackgroundColor};
+    height: auto;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
+        position: relative;
+        overflow: hidden;
+
     }
 `;
 
@@ -75,8 +87,10 @@ export const PromotedProductsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: calc(270px + 2 * ${theme.spaceS});
+    width: calc(270px + 2 * ${theme.spaceS} - 1px);
     padding-top: ${theme.spaceS};
+    background: ${theme.colorBackgroundColor};
+    height: 100%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;

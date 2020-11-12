@@ -2,23 +2,28 @@ import styled from 'styled-components'
 import {theme} from './index';
 
 
-
 export const ProductContainer = styled.div `
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 10px;
+    padding: 15px;
     margin-left: 10px;
     cursor: pointer;
     margin-bottom: 15px; 
     border: 1px solid ${theme.colorDefaultGrey};
-    box-shadow: ${theme.boxShadowLight};
+    box-shadow: ${theme.boxShadowLighter};
     width: 100%;
+    border-radius: ${theme.borderRadiusS};
+    
+
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
 `;
 
 export const ProductImg = styled.img `
     width: 25%;
-    border-radius: ${theme.borderRadiusL};
+    border-radius: ${theme.borderRadiusS};
  `;
 
 export const InfoConatiner = styled.div `
@@ -28,70 +33,103 @@ export const InfoConatiner = styled.div `
     justify-content: space-between;
 `;
 
-export const TotalPrice = styled(InfoConatiner) `
-    width: 30%;
-    display: flex;
-    
-    i {
-        margin-left: 100px;
-        font-size: ${theme.controlHeightM};
-        color: ${theme.colorDarkOliveGreen};
+export const Description = styled.h3 `
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDarkOliveGreen};
+    padding-bottom: 10px;
+    padding-left: 10px;
+`;
 
-        &:active {
-            color: ${theme.colorMiddleGreenYellow}
-        }
-    }
+export const Items = styled.p `
+    font-size: ${theme.fontSizeDefault};
+    padding: 10px;
 `;
 
 export const Quantity = styled(InfoConatiner) `
     //margin-left: 30px;
-    width: 20%;
+    width: 45%;
 `;
 
-export const Button = styled.button `
-    background: ${theme.colorDarkOliveGreen};
-    border: none;
-    outline: none;
-    //border-radius: 25%;
-
-    i {
-        font-size: ${theme.fontSizeM};
-        font-weight: 700;
-        color: white;
-
-        &:active {
-            color: ${theme.colorMiddleGreenYellow}
-        }
+export const Increment = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
+    border-radius: ${theme.borderRadiusS};
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    height: 30px;
+    width: 30px;
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
     }
+    
+    &:hover, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          box-shadow: ${theme.boxShadowInset};
+
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }
+`;
+
+export const Decrement = styled(Increment) ``;
+
+export const Count = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    height: 30px;
+    width: 30px;
+    background-color: ${theme.colorBackgroundColor};
 `;
 
 export const Info = styled.div `
     display: block;
 `;
 
-export const Description = styled.h3 `
-    font-size: ${theme.fontSizeDefault};
-    color: ${theme.colorDarkOliveGreen};
+export const TotalPrice = styled(InfoConatiner) `
+    width: 30%;
+    display: flex;
 
+    /* &:hover, &.active {
+        border: none;
+        background: none;
+        i  {
+            color: ${theme.colorDarkRed};
+            margin-left: 100px;
+        }
+    } */
 `;
-
 
 export const Price = styled.h3 `
 //margin-left: 20px;
-font-size: ${theme.fontSizeM};
+font-size: ${theme.fontSizeDefault};
 color: ${theme.colorDefaultText}
 `;
 
+export const Delete = styled.button `
+    border: none;
+    outline: none;
+    background: ${theme.colorBackgroundColor};
 
-export const ProductQ = styled.p `
-    padding: 0 20px;
-    font-size: ${theme.spaceDefault};
-    font-weight: bold;
+    i {
+        margin-left: 50px;
+        font-size: ${theme.fontSizeM};
+        color: ${theme.colorDarkOliveGreen};
+
+        &:hover, &.active {
+        border: none;
+        background: none;
+        color: ${theme.colorDarkRed};
+        box-shadow: ${theme.boxShadowInset};
+    }
 `;
-
-export const Items = styled.p `
-    font-size: ${theme.fontSizeDefault}
-`
 
 
 
