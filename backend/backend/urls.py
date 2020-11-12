@@ -15,9 +15,12 @@ Including another URLConf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt import views as jwt_views
 from django.conf.urls.static import static
 from django.conf import settings
+
+
 urlpatterns = [
     path('backend/api/admin/', admin.site.urls),
     path('backend/api/auth/', include('apps.user.urls')),
@@ -26,7 +29,7 @@ urlpatterns = [
     path('backend/api/auth/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_refresh'),
     path('backend/api/products/', include('apps.product.urls')),
     path('backend/api/products/user/', include('apps.user.urls')),
-    # path('backend/api/cart/', include('apps.cart.urls')),
+    path('backend/api/cart/', include('apps.cart.urls')),
     path('backend/api/', include('apps.product.urls')),
     # # path('backend/api/search/', include('apps.user.urls')),
     # # path('backend/api/category/', include('apps.user.urls')),
@@ -37,8 +40,6 @@ urlpatterns = [
     # path('backend/api/users/', include('apps.user.urls')),
     # path('backend/api/home/', include('apps.user.urls')),
 ]
-
-# TODO split them up in different url files
 
 
 if settings.DEBUG:

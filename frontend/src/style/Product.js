@@ -14,6 +14,11 @@ export const ProductContainer = styled.div `
     border: 1px solid ${theme.colorDefaultGrey};
     box-shadow: ${theme.boxShadowLight};
     width: 100%;
+
+    /* @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 660px;
+    
+    } */
 `;
 
 export const ProductImg = styled.img `
