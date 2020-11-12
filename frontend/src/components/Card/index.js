@@ -3,7 +3,7 @@ import {
     CardContainer, TopContainer,
     Image, Text, Price, Info, Date, Wrapp, KG, BottomContainer
 } from '../../style/Card';
-import Carrot from '../../assets/carot.jpg'
+import Carrot from '../../assets/images/carot.jpg'
 import { useState } from 'react';
 
 const Card = () => {

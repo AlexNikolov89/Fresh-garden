@@ -4,8 +4,8 @@ import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
         DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
         CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider} from '../style/Addproduct'
-import Background from '../assets/img-five.jpg'
-import ProductImg from '../assets/img-one.jpg'
+import Background from '../assets/images/img-five.jpg'
+import ProductImg from '../assets/images/img-one.jpg'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
 import styled from 'styled-components';

@@ -5,7 +5,7 @@ import {
     ProductInfo, Name, Button,
     Price, ButtonSubmit, HorizontalLine, Total, ShoppingCartContainer,
 } from '../../style/ShoppingCart';
-import Patato from '../../assets/patato.jpg'
+import Patato from '../../assets/images/patato.jpg'
 import {NavLink} from 'react-router-dom'
 
 

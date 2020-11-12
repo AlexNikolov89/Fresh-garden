@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {ProductContainer, Tomato, TomatoImg, Info, Description, ProductTitle,
        Quantity, Items, QueantityT, TotalQ, Button, ProductQ, TotatlP, Price, Total, Delete} from '../../style/Product.js'
-import TomatoImage from '../../assets/tomato.jpg';
+import TomatoImage from '../../assets/images/tomato.jpg';
 import {HeaderConatiner, QuantityT, ProductT, PriceT,
        InfoConatiner, Name, TotalPrice, ProductImg, BLock, ImageConatiner} from '../../style/Product'
 

@@ -2,7 +2,7 @@ version: '3'
 
 services:
   backend:
-    image: docker push registry.gitlab.propulsion-home.ch/full-stack/batch-13-aug-2020/final-projects/local-farmers/project-pinocchio:latest
+    image: registry.gitlab.propulsion-home.ch/full-stack/batch-13-aug-2020/final-projects/local-farmers/project-pinocchio:latest
     restart: always
     env_file:
       - ./envs/dev.env

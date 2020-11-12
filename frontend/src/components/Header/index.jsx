@@ -5,7 +5,7 @@ import {
     NavLinkHome, NavLinkAbout, NavLinkProfile, FormContainer, LogoContainer, Logo, CartIcon, NavLinkAddproduct
 } from '../../style/Header';
 import SearchBar from '../SearchBar'
-import LogoImg from '../../assets/logo_idea.jpg'
+import LogoImg from '../../assets/images/logo_idea.jpg'
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
 import {TOGGLE_CART_VIEW} from "../../helpers/constants";

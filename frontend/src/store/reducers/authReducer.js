@@ -1,7 +1,7 @@
 import { SET_TOKEN } from '../../helpers/constants'
 
 const initialState = {
-    token: undefined, //localStorage.getItem("token")
+    token: null, //localStorage.getItem("token")
 }
 
 export default function authReducer (state = initialState, action) {

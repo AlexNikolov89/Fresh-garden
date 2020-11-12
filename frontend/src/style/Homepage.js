@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../assets/fresh_hands.jpg';
+import background from '../assets/images/fresh_hands.jpg';
 import {theme} from './index'
 
 export const HomeContainer = styled.div `
