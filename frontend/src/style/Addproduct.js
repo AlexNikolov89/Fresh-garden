@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+<<<<<<< HEAD
 import background from '../assets/images/Veggies.jpg';
 import {theme} from './index'
+=======
+import background from '../assets/Veggies.jpg';
+import {theme} from './index';
+import {GenericButton} from './Buttons'
+>>>>>>> f6514212ab2045226264e8001bfd294ea44bd022
 import { ProductContainer } from './Product';
 
 export const AddProductContainer = styled.div `
@@ -197,17 +203,16 @@ export const ButtonContainer = styled.div `
 `;
 
 
-export const Button = styled.button `
+export const Button = styled(GenericButton) `
     width: 150px;
-    height: ${theme.spaceXL};
-    cursor: pointer;
-    border-radius: ${theme.borderRadiusXL};
+    //height: ${theme.spaceXL};
+    //border-radius: ${theme.borderRadiusXL};
     margin: 0 30px;
-    border: none;
-    outline: none;
-    font-size: ${theme.fontSizeDefault};
-    background: ${theme.colorMiddleGreenYellowLight};
-    color: ${theme.colorDefaultWhite}
+    //border: none;
+    //outline: none;
+    //font-size: ${theme.fontSizeDefault};
+    //background: ${theme.colorMiddleGreenYellowLight};
+    //color: ${theme.colorDefaultWhite}
 `;
 
 
@@ -246,12 +251,15 @@ export const SliderConatiner = styled.div `
     width: 30%;
 `;
 
-export const Fruit = styled(Button) `
-    background: ${theme.colorOrangeDefault};
+export const Fruit = styled(GenericButton) `
+    background: ${theme.colorMaxYellowRed};
+    width: 150px;
 `;
 
-export const Vegetable = styled(Button) `
+export const Vegetable = styled( GenericButton) `
     background: ${theme.colorMiddleGreenYellow};
+    width: 150px;
+    margin: 0 30px;
 `;
 
 export const CategoryLabel = styled(Label) `
@@ -269,7 +277,10 @@ export const Upload = styled.div `
     padding: ${theme.controlHeightL} 0;
 `;
 
-export const ButtonUpload = styled(Button) ``;
+export const ButtonUpload = styled(GenericButton) `
+    width: 150px;
+    margin: 0 30px;
+`;
 
 export const UploadLabel = styled(Label) `
     justify-content: center;
@@ -296,10 +307,16 @@ export const TextArea = styled.textarea `
     width: 200%;
 `;
 
-export const Submit = styled(Button) `
+export const Submit = styled(GenericButton) `
     margin-top: 70px;
     background-color: ${theme.colorDarkOliveGreen};
 `;
+
+export const UploadImage = styled.input `
+  width: 200px;
+  border-radius: 2px;
+  margin: 30px 0;
+`
 
 
 
