@@ -1,6 +1,6 @@
 import React, {Fragment, useState, useRef} from 'react';
 import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
-        AddCardForm, CardOverview, Form, Unit, DropdownContainer, DropDownHeader,
+        AddCardForm, CardOverview, Form, Unit, Dropdown, Option, Select, DropdownContainer, DropDownHeader,
         DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
         CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider,
@@ -57,7 +57,58 @@ const Addproduct = () => {
                 <Header />
 
                 <BottomConatiner>
+
                     <AddCardForm>
+                        <Title>Upload your vegetable and fruits</Title>
+
+                        <Form>
+                            <Input type='text' placeholder=' Add your product name' />
+                            <Input type='text' placeholder='Give your location' />
+                        </Form>
+
+                        <Description>
+                            <DescriptionLabel>Add some desription</DescriptionLabel>
+                            <TextArea  />
+                        </Description>
+
+                        <Unit>
+                            <Label>Price</Label>
+                            <Price type='text' min='0' max='4' />
+                            <Label>CHF</Label>
+
+                            <Dropdown>
+                                <Select value={isActive} onChange={(e) => {setIsActive(e.target.value)}}>
+                                    <Option value='Kg'>Kg</Option>
+                                    <Option value='Pc'>Pc</Option>
+                                </Select>
+                            </Dropdown>
+                        </Unit>
+
+                        <Delivery>Delivery options</Delivery>
+                        <ButtonContainer>
+                            <Button>Delivery</Button>
+                            <Button>Pick up</Button>
+                        </ButtonContainer>
+
+                        <SliderConatiner>
+                            <Slider type='range' min={0} max={50} value={value} onChange={updateRange} />
+                        </SliderConatiner>
+
+                        <CategoryLabel>Select category</CategoryLabel>
+                        <CategoryContainer>
+                            <Vegetable>Vegetable</Vegetable>
+                            <Fruit>Fruit</Fruit>
+                        </CategoryContainer>
+
+                        <Upload>
+                            <UploadLabel>Add product image</UploadLabel>
+                            <UploadImage type='file' onChange={onChangePicture} />
+                        </Upload>
+
+                        <Submit value='Submit'>Confirm</Submit>
+
+                    </AddCardForm>
+                    {/*<AddCardForm>
                         <Title>Advertise Your product</Title>
                         <Form onSubmit={handleSubmit}>
                             <Input type='text' placeholder='Name...' onChange={(e) => setName(e.target.value)} />
@@ -116,7 +167,7 @@ const Addproduct = () => {
                             <Submit value='Submit'>Confirm</Submit>
                         </Form>
                         
-                    </AddCardForm>
+                                            </AddCardForm>*/}
                     
                     <CardOverview>
                         <Card />
