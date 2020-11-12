@@ -303,8 +303,8 @@ export const TextArea = styled.textarea `
 `;
 
 export const Submit = styled(GenericButton) `
+    width: 200px;
     margin-top: 70px;
-    background-color: ${theme.colorDarkOliveGreen};
 `;
 
 export const UploadImage = styled.input `

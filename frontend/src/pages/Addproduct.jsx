@@ -20,11 +20,10 @@ const Addproduct = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [location, setLocation] = useState('');
+    const [description, setDescription] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(name);
-        console.log(email);
     }
 
     const onClick = () => setIsActive(!isActive);
