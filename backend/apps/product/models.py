@@ -45,9 +45,9 @@ class Product(models.Model):
         blank=True
     )
     image = models.ImageField(
-        upload_to='products/',
+        upload_to=user_directory_path,
         blank=True,
-        default='products/kopfsalat.jpg'
+        null=True
     )
     deliver_within_radius = models.IntegerField(
         null=True,
