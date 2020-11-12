@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import {theme} from '../style/index'
+import {theme} from '../style/index';
+import {GenericButton} from './Buttons'
 
 export const CheckoutConatiner = styled.div `
     width: 100%;
@@ -23,12 +24,12 @@ export const BoxContainer = styled.div `
   padding: 50px; */
   display: flex;
   width: 100%;
-  padding: 0 100px;
+  padding: 0 150px;
   padding-top: 40px;
 
   @media (max-width: ${theme.mediaQueryScreenWidth}){
         flex-direction: column;
-        padding: 0 70px;
+        padding: 0 20px;
     }
  `;
 
@@ -65,20 +66,7 @@ export const TopHeaderConatiner = styled.div `
     border: 1px solid ${theme.colorRandomText};
 `;
 
-export const Button = styled.button `
-    height: 50px;
-    width: 200px;
-    background: ${theme.colorDarkOliveGreen};
-    border: none;
-    border-radius: 25px;
-    color: white;
-    outline: none;
-    font-size: ${theme.fontSizeDefault};
-
-    &:active {
-        background: ${theme.colorMiddleGreenYellow}
-    }
-`;
+export const Button = styled(GenericButton) ``;
 
 export const Delivery = styled.h4 `
     color: ${theme.colorDefaultText};
@@ -92,10 +80,10 @@ export const Delivery = styled.h4 `
 
 export const PaymentConatiner = styled.aside `
     background: ${theme.colorBackgroundColor};
-    border: 2px solid ${theme.colorDefaultGrey};
-    margin: 0 30px;
+    border: 1px solid ${theme.colorDefaultGrey};
+    
     //border-radius: ${theme.borderRadiusL};
-    box-shadow: ${theme.boxShadowDark};
+    box-shadow: ${theme.boxShadowLighter};
     width: 40%;
     padding: 20px;
     height: 400px;
@@ -105,7 +93,7 @@ export const PaymentConatiner = styled.aside `
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         //flex-direction: row;
-        width: 80%;
+        width: 70%;
         margin-bottom: 60px;
     }
 
@@ -163,11 +151,24 @@ export const Submit = styled.div `
 
 export const ProductWrap = styled.div `
     width: 100%;
+    padding-right: 60px;
     //border: 2px solid ${theme.colorDefaultGrey};
     //border-radius: ${theme.borderRadiusL};
     //background-color: ${theme.colorAlmond};
     //box-shadow: ${theme.boxShadowLightest};
     @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
+`;
+
+export const Wrapp = styled.div `
+    display: flex;
+    flex-direction: row;
+    padding: 0 80px;
+
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+        flex-direction: column;
         width: 100%;
     }
 `;
