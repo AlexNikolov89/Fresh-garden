@@ -10,11 +10,13 @@ export const ShoppingCartContainer = styled.div `
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: ${theme.colorMiddleGreenYellowVeryLight};    
+    background: ${theme.colorBackgroundColor};    
     position: sticky;
     padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
     border: 1px solid ${theme.colorMiddleGreenYellowLight};
+    box-shadow: ${theme.boxShadowLight};
+    z-index: 45;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
@@ -82,7 +84,7 @@ export const ImageContainer = styled.div`
 `;
 
 export const Image = styled.img`
-    background: green;
+    background: grey;
     border-radius: ${theme.borderRadiusS};
     
     height: 70px;
@@ -118,9 +120,9 @@ export const Decrement = styled.div`
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellowLight};    
+    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
     border-radius: ${theme.borderRadiusS};
-    background-color: ${theme.colorMiddleGreenYellowLight};
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
     height: 25px;
     width: 25px;
     i.fas {
@@ -129,7 +131,8 @@ export const Decrement = styled.div`
     
     &:hover, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          border: 1px solid ${theme.colorDarkOliveGreen};
+          box-shadow: ${theme.boxShadowInset};
+
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }
@@ -144,8 +147,8 @@ export const Count = styled.div`
     align-items: center;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     height: 25px;
     width: 25px;
     background-color: ${theme.colorBackgroundColor};
@@ -183,11 +186,15 @@ export const BottomContainer = styled.div`
     justify-content: space-evenly;
     align-items: center;
     
-    height: 100px;
+    height: 120px;
     width: 100%;
 `;
 
-export const EmptyCart = styled(Delete)`
+export const Total = styled(Price)`
+    align-self: flex-end;
+`;
+
+export const EmptyCart = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -197,7 +204,7 @@ export const EmptyCart = styled(Delete)`
     height: ${theme.controlHeightDefault};
 `;
 
-export const EmptyCartIcon = styled.div``;
+export const EmptyCartIcon = styled(Delete)``;
 
 export const TextField = styled.p`
     margin: ${theme.spaceS};
@@ -205,9 +212,5 @@ export const TextField = styled.p`
 `;
 
 export const CheckoutButton = styled(GenericButton)`
-    background-color: ${theme.colorMiddleGreenYellowLight};
-    
-    &:hover {
-        border: 1px solid ${theme.colorDarkOliveGreen};
-    }
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
 `;

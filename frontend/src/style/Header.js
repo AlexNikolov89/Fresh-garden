@@ -17,7 +17,6 @@ export const HeaderContainer = styled.div `
     top: 0;
     background-color: ${theme.colorDefaultWhite};
     border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
@@ -31,7 +30,7 @@ export const FormContainer = styled.div `
     justify-content: center;
     text-align: center;
     height: 100%;
-    min-width: 280px;
+    min-width: 200px;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         display: none;
@@ -43,7 +42,7 @@ export const Icons = styled.div `
     justify-content: center;
     align-items: center;
     height: 100%;
-    min-width: calc(3 * ${theme.controlHeightXL});
+    min-width: calc(4 * ${theme.controlHeightXL});
     
     cursor: default;
     
@@ -73,25 +72,23 @@ export const NavLinkAbout = styled(NavLink)`
     width: ${theme.controlHeightXL};
     cursor: default;
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
     i.fas {
         color: ${theme.colorDarkOliveGreen};
     }
     
-    &:hover, :focus {
+    &:hover, :focus, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          box-shadow: ${theme.boxShadowInset};
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }
     }
 `;
 
-export const NavLinkProfile = styled(NavLinkAbout)`
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+export const NavLinkProfile = styled(NavLinkAbout)``;
 
-`;
+export const NavLinkShop = styled(NavLinkAbout)``;
 
 export const CartIcon = styled.div`
     display: flex;
@@ -101,16 +98,16 @@ export const CartIcon = styled.div`
     width: ${theme.controlHeightXL};
     cursor: default;
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    
+
     i.fas {
         color: ${theme.colorDarkOliveGreen};
     }
     
     &:hover, :focus, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          //border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+          box-shadow: ${theme.boxShadowInset};
+
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }

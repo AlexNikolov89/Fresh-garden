@@ -10,11 +10,11 @@ export const GenericButton = styled.button`
     border: none;    
     cursor: default;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellow};
     outline: none;
 
     
-    &:hover {
+    &:hover, :focus {
+        box-shadow: ${theme.boxShadowInset};
         background: ${theme.colorMiddleGreenYellowLight};
     }
 `;
