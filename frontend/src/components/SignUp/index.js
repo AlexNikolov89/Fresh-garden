@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { regAction } from '../../store/actions/regAction';
 import { valiAction } from '../../store/actions/valiAction';
 import { useDispatch } from 'react-redux';
-import { BigPurpleButton } from '../../style/Buttons'
+import { GenericButton } from '../../style/Buttons'
 import { FormWrapper, StepOneContainer, StepTwoContainer, StepThreeContainer, EmailSignUpContainer, EmailInputContainer, FirstnameInputContainer, LastnameInputContainer, PasswordInputContainer, PasswordRepeatInputContainer, UsernameInputContainer, ValidationCodeContainer, LayoutContainerLeft, LayoutContainerRight, LayoutContainerForm } from '../../style/Login'
 import congrats from '../../assets/images/congrats.png';
 import { SignIn } from '../SignIn';
@@ -111,7 +111,7 @@ export const SignUp = () => {
                                 </div>
                             </EmailSignUpContainer>
                             <p>{message}</p>
-                            <BigPurpleButton id="submit" type="submit" value="Continue"></BigPurpleButton>
+                            <GenericButton id="submit" type="submit" value="Continue"></GenericButton>
                         </form>
                         <StepOneIconSVG id='stepOneIcon'/>
                     </StepOneContainer>

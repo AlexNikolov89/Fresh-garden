@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {Container, LoginContainer, LoginMainContainer, RightContainer} from "../style/Login";
 import {HeaderContainer} from "../style/Header";
-import {SignUpButton} from "../style/Buttons";
+import {GenericButton} from "../style/Buttons";
 import {SignIn} from "../components/SignIn";
 import {SignUp} from "../components/SignUp";
 
@@ -18,7 +18,7 @@ export const Login = () => {
                 <HeaderContainer>
                     <header>
                         {toggleSwitch ? <>Don't have an account?</> : <>Already have an account?</>}
-                        <SignUpButton onClick={() => setToggleSwitch(!toggleSwitch)}>{toggleSwitch ? <>Sign Up</> : <>Sign In</>}</SignUpButton>
+                        <GenericButton onClick={() => setToggleSwitch(!toggleSwitch)}>{toggleSwitch ? <>Sign Up</> : <>Sign In</>}</GenericButton>
                     </header>
                 </HeaderContainer>
                 <RightContainer>

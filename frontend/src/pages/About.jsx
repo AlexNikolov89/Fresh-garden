@@ -1,13 +1,13 @@
 import React, {Fragment} from 'react'
 //import { About } from '../style/Homepage'
-import Background from '../assets/casket.jpg'
+import Background from '../assets/images/casket.jpg'
 import Header from '../components/Header/index.jsx'
 import {AboutContainer, TopContainer, Image, Slogan, ImageContainer, BackgroundImg,
         BottomContainer, Title, Text, HorizontalLine, ImagesContainer, Image1,
         Image2, Image3} from '../style/About'
-import ImageOne from '../assets/img-one.jpg';
-import ImageTwo from '../assets/img-five.jpg';
-import ImageThree from '../assets/img-two.jpg';
+import ImageOne from '../assets/images/img-one.jpg';
+import ImageTwo from '../assets/images/img-five.jpg';
+import ImageThree from '../assets/images/img-two.jpg';
 
 const About = () => {
     return (

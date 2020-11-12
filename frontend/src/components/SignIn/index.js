@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { authAction } from '../../store/actions/authAction';
 import { useDispatch } from 'react-redux';
 import { FormContainer, PasswordSignInContainer, UsernameSignInInputContainer, StepLoginContainer } from '../../style/Login'
-import { BigPurpleButton } from '../../style/Buttons'
+import { GenericButton } from '../../style/Buttons'
 import { ReactComponent as UserIconSVG} from '../../assets/svgs/avatar.svg';
 import { ReactComponent as PasswordIconSVG} from '../../assets/svgs/password.svg';
 
@@ -49,7 +49,7 @@ export const SignIn = ({ newEmail }) => {
                     </PasswordSignInContainer>
                     {<p>{message}</p>}
                 </FormContainer>
-                <BigPurpleButton id="submit" type="submit" value="Sign In"></BigPurpleButton>
+                <GenericButton id="submit" type="submit" value="Sign In"></GenericButton>
             </form>
         </StepLoginContainer>
     </>)

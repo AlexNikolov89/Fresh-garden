@@ -19,7 +19,7 @@ import {
     Stock,
     PriceContainer, CurrencyTag, PriceTag, Unit, UpperRightContainer, UpperLeftContainer, AddToCart, PromotionIcon
 } from '../../style/Card';
-import Carrot from '../../assets/carot.jpg'
+import Carrot from '../../assets/images/carot.jpg'
 import defaultRuth from '../../assets/defaultRuth.PNG'
 import { ReactComponent as PromoIcon} from '../../assets/icons/disc_2.svg';
 
