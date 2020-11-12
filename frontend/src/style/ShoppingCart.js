@@ -1,109 +1,216 @@
 import styled from 'styled-components'
 import {theme} from './index';
 import {NavLink} from 'react-router-dom'
+import {GenericButton} from "./Buttons";
 
 export const ShoppingCartContainer = styled.div `
-    width: calc(270px + ${theme.spaceS});
+    width: calc(270px + 2 * ${theme.spaceS});
     height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: ${theme.colorAlmond};
-    
+    background: ${theme.colorBackgroundColor};    
     position: sticky;
+    padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
-`;
-
-export const ImageContainer = styled.div `
-    display: flex;
-    margin-top: 5px;
-`;
-
-export const Top = styled(ImageContainer) `
-    justify-content: center;
-`;
-
-export const Text = styled.p `
-    padding: 3px;
-    color: grey;
-    color: rgba(0, 0, 0, 0.2);
-`;
-
-export const Image = styled.img `
-    margin: 20px;
-    height: 100px;
-`;
-
-export const Name = styled.div `
-    margin: 18px 20px;
-    color: black;
-    font-weight: Normal;
-    font-size: 1.3rem;
-`;
-
-export const Calc = styled(ImageContainer) `
-    display: flex;
-
-    i {
-        height: 25px;
-        width: 25px;
-        color: ${theme.colorMiddleGreenYellow};
-        display: flex;
-        justify-content: center;
+    border: 1px solid ${theme.colorMiddleGreenYellowLight};
+    box-shadow: ${theme.boxShadowLight};
+    z-index: 45;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        position: fixed;
+        height: 70vh;
+        top: 10%; 
+        left: auto;
+        overflow-y: scroll;
     }
 `;
 
-export const Quantity = styled.p `
-     margin-top: 30px;
-     font-weight: Bold;
+export const TopContainer = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    height: ${theme.controlHeightDefault};
+    width: 100%;
 `;
 
-export const Price = styled.div `
-    margin: 40px 20px;
-    font-weight: ${theme.fontSizeBold};
-
+export const Title = styled.h3`
+    font-size: ${theme.fontSizeM};
+    font-weight: ${theme.fontWeightRegular};
+    color: ${theme.colorDefaultText};
 `;
 
-export const Button = styled.button `
+export const MiddleContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+    width: 100%;
+    height: auto;
+`;
+
+export const ProductContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    z-index: 43;
+        
+    height: 100px;
+    width: 100%;
+`;
+
+export const LeftContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 70%;
+    height: 100%;
+`;
+
+export const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100%;
+    width: 100%;
+`;
+
+export const Image = styled.img`
+    background: grey;
+    border-radius: ${theme.borderRadiusS};
+    
+    height: 70px;
+    width: 70px;
+`;
+
+export const DetailContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: ${theme.spaceS};
+    
+    height: 70%;
+    width: 100%;
+`;
+
+export const ProductName = styled.h4`
+    font-size: ${theme.fontSizeDefault};
+    font-weight: ${theme.fontWeightRegular};
+    color: ${theme.colorDefaultText};
+`;
+
+export const QuantityContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+`;
+
+export const Decrement = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
+    border-radius: ${theme.borderRadiusS};
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
     height: 25px;
     width: 25px;
-    border: none;
-    background: ${theme.colorAlmond};    
-`;
+    i.fas {
+        color: ${theme.colorDarkOliveGreen};
+    }
+    
+    &:hover, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          box-shadow: ${theme.boxShadowInset};
 
-export const ButtonSubmit = styled.button `
-    height: 50px;
-    width: 200px;
-    border-radius: 28px;
-    background: ${theme.colorMiddleGreenYellow};
-    border: none;
-    position: sticky;
-    bottom: 0;
-
-    &:focus { 
-        outline: none; 
-        cursor: pointer;
-        }
-
-    &:active {
-        background: ${theme.colorDarkOliveGreen}
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
     }
 `;
 
-export const HorizontalLine = styled.hr `
-    width: 300px;
-    margin-left: 40px;
-`;
+export const Increment = styled(Decrement)``;
 
-export const Total = styled.h3`   
+export const Count = styled.div`
     display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-    padding-right: 60px;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    height: 25px;
+    width: 25px;
+    background-color: ${theme.colorBackgroundColor};
 `;
 
-export const ProductInfo = styled.div `
-    display: block;
-`
+export const RightContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;   
+    height: 70%; 
+    width: 100%;
+`;
 
+export const Delete = styled(Decrement)`
+    border: none;
+    background: none;
+    
+    &:hover, &.active {
+        border: none;
+        background: none;
+        i.fas {
+            color: ${theme.colorDarkRed};
+        }
+    }
+`;
+
+export const Price = styled(ProductName)`
+  height: 19px;
+`;
+
+export const BottomContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    height: 120px;
+    width: 100%;
+`;
+
+export const Total = styled(Price)`
+    align-self: flex-end;
+`;
+
+export const EmptyCart = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: ${theme.colorDefaultText};
+    width: 100%;
+    height: ${theme.controlHeightDefault};
+`;
+
+export const EmptyCartIcon = styled(Delete)``;
+
+export const TextField = styled.p`
+    margin: ${theme.spaceS};
+    font-size: ${theme.fontSizeS};
+`;
+
+export const CheckoutButton = styled(GenericButton)`
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+`;
