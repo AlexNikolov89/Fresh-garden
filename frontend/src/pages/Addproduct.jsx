@@ -4,7 +4,7 @@ import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
         DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
         CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider,
-        Upload, UploadLabel, ButtonUpload, Description, DescriptionLabel, TextArea, Title} from '../style/Addproduct'
+        Upload, UploadLabel, ButtonUpload, Description, DescriptionLabel, TextArea, Title, Submit} from '../style/Addproduct'
 import Footer from '../components/Footer/index.js'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
@@ -97,7 +97,10 @@ const Addproduct = () => {
                                 <DescriptionLabel>Add some desription</DescriptionLabel>
                                 <TextArea  />
                             </Description>
+
+                            <Submit>Confirm</Submit>
                         </Form>
+                        
                     </AddCardForm>
                     
                     <CardOverview>

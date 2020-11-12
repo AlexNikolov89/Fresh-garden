@@ -35,6 +35,10 @@ export const BottomConatiner = styled.div `
     display: flex;
     flex-direction: row;
     justify-content: center;
+
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        flex-direction: column;
+    }
 `;
 
 export const AddCardForm = styled.div `
@@ -64,7 +68,9 @@ export const CardOverview = styled.aside `
     padding-top: 100px;
 
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
-        
+     margin-top: -100px;
+     //padding-bottom: 20px;
+     padding: 80px 28%;
     }
 `;
 
@@ -288,6 +294,11 @@ export const TextArea = styled.textarea `
     padding: ${theme.spaceS};
     outline: none;
     width: 200%;
+`;
+
+export const Submit = styled(Button) `
+    margin-top: 70px;
+    background-color: ${theme.colorDarkOliveGreen};
 `;
 
 

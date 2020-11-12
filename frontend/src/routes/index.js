@@ -2,7 +2,7 @@ import React, {Fragment} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Homepage from '../pages/Homepage';
 import Checkoutpage from '../pages/Checkoutpage'
-import About from '../pages/Aboutpage';
+import About from '../pages/About';
 import Addproduct from '../pages/Addproduct.jsx'
 
 
