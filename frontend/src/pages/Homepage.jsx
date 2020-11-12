@@ -12,6 +12,7 @@ import {useSelector} from "react-redux";
 
 const Homepage = () => {
     const viewCart = useSelector(state => state.cartReducer.viewCart);
+    // const products = useSelector(state => state.productsReducer.allProducts);
 
     return (
         <Fragment>
@@ -26,6 +27,7 @@ const Homepage = () => {
 
                 <BottomContainer>
                     <Box>
+                        {/*{products.map((product) => <Card product={product} />)}*/}
                         <Card />
                         <Card />
                         <Card />
