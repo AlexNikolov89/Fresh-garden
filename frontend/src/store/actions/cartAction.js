@@ -3,6 +3,8 @@ import baseUrl from "../../helpers/baseUrl";
 import {NOT_LOGGED_IN, RESET_NOT_LOGGED_IN, TOGGLE_CART_VIEW} from "../../helpers/constants";
 
 export const setCartData = (type, data) => {
+            console.log("in da cartAction payload", data)
+
     return {
         type: type,
         payload: data,
@@ -30,10 +32,10 @@ export const cartAction = (urlPath, method, type, body) => async (dispatch, getS
         const data = await response.json();
 
         if (data.code === 'token_not_valid') {
-            type = NOT_LOGGED_IN;
-            dispatch(setCartData(type));
+            const newType = NOT_LOGGED_IN;
+            dispatch(setCartData(newType));
         } else {
-            dispatch(setCartData(data, type));
+            dispatch(setCartData(type, data));
         }
     }
 };

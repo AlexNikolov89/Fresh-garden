@@ -90,17 +90,22 @@ export const NavLinkAbout = styled(NavLink)`
 `;
 
 export const NavLinkProfile = styled(NavLinkAbout)`
-    &.default {
-        background-color: ${theme.colorMiddleGreenYellowVeryLight};
-    }
     &.impulse {
         background-color: ${theme.colorDarkRed};
     }
     &.fade {
         background-color: ${theme.colorMiddleGreenYellowVeryLight};
-        -webkit-transition: background-color 1000ms linear;
-        -ms-transition: background-color 1000ms linear;
-        transition: background-color 1000ms linear;
+        -webkit-transition: background-color 750ms linear;
+        -ms-transition: background-color 750ms linear;
+        transition: background-color 750ms linear;
+        
+        &:hover, :focus, &.active {
+            background-color: ${theme.colorMiddleGreenYellowLight};
+            box-shadow: ${theme.boxShadowInset};
+            i.fas {
+                color: ${theme.colorDarkOliveGreen}
+            }
+        }        
     }
 `;
 

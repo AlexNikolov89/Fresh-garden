@@ -29,15 +29,24 @@ import {
 import Carrot from '../../assets/images/carot.jpg'
 import defaultRuth from '../../assets/defaultRuth.PNG'
 import { ReactComponent as PromoIcon} from '../../assets/icons/disc_2.svg';
+import {cartAction} from "../../store/actions/cartAction";
+import {useDispatch} from "react-redux";
+import {ADD_TO_CART} from "../../helpers/constants";
 
 const Card = ({product}) => {
+    const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
     const priceSuffix = product.price % 1 ? '0' : '';
 
     const addToCartHandler = () => {
-        // TODO use the redux store and backend cart stock
+        // TODO resolve conflict issue of two parties ordering complete stock
+        const fetchNewCart = async () => {
+            await dispatch(cartAction(`cart/add/${product.id}/`, 'POST', ADD_TO_CART))
+        }
+        fetchNewCart();
+
         if (availableStock === 0) return
-        setAvailableStock(availableStock - 1)
+        return setAvailableStock(availableStock - 1)
     }
 
     return (

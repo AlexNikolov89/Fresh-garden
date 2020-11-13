@@ -29,6 +29,7 @@ const Header = ({ sticky, element, minimal }) => {
     const [classLabel, setClassLabel] = useState('default')
 
     // lights up the profile navigation button if not logged in
+    // TODO also do this for the "add product" page
     useEffect(() => {
         const redirectCheck = async () => {
             if (redirectFlagRedux && !redirectFlagComponent) {
@@ -43,10 +44,7 @@ const Header = ({ sticky, element, minimal }) => {
         }
         redirectCheck()
     },)
-    console.log("----------render-----------")
-    console.log("redirectSugg1", redirectFlagComponent)
-    console.log("redirectSugg1Redux", redirectFlagRedux)
-    console.log("classLabel", classLabel)
+
 
     return (
         <Fragment>

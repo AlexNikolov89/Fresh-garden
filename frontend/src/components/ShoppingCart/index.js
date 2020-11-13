@@ -12,8 +12,11 @@ import {cartAction} from "../../store/actions/cartAction";
 
 const ShoppingCart = () => {
     const cart = useSelector(state => state.cartReducer.cartDetails);
+    const cartTotal = useSelector(state => state.cartReducer.cartTotal);
     const dispatch = useDispatch();
     const history = useHistory();
+    const priceSuffix = cartTotal % 1 ? '0' : '';
+    console.log("in da shoppingcart", cart)
 
     useEffect(() => {
         const fetchCart = async () => {
@@ -31,15 +34,11 @@ const ShoppingCart = () => {
                 </TopContainer>
 
                 <MiddleContainer>
-                    <CartItem />
-                    <CartItem />
-                    <CartItem />
-                    <CartItem />
-                    <CartItem />
+                    {Object.keys(cart).map(item => <CartItem item={item} key={item.product_id} />)}
                 </MiddleContainer>
 
                 <BottomContainer>
-                    <Total>CHF 32.50</Total>
+                    <Total>CHF {cartTotal + priceSuffix}</Total>
                     <EmptyCart>
                         <EmptyCartIcon><i className="fas fa-trash-alt" /></EmptyCartIcon>
                         <TextField>Empty Shopping Basket</TextField>
