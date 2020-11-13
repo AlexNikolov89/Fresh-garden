@@ -12,22 +12,20 @@ import ImageThree from '../assets/images/img-two.jpg';
 const About = () => {
     return (
         <Fragment>
-           
+
             <AboutContainer>
-
-                <Header />
-
                 <TopContainer>
                     <Image>
-                    {/*<Slogan>Welcome to our Fresh Garden</Slogan>  */}
-                    <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
+                        {/*<Slogan>Welcome to our Fresh Garden</Slogan>  */}
+                        <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
                     </Image>
                 </TopContainer>
+
+                <Header />
 
                 <ImageContainer>
                     <BackgroundImg src={Background} />
                 </ImageContainer>
-                
 
                 <BottomContainer>
 
@@ -63,7 +61,6 @@ const About = () => {
                 
                 </BottomContainer>
             </AboutContainer>
-
         </Fragment>
     )
 }

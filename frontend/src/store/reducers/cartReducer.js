@@ -1,16 +1,25 @@
-import { SET_PRODUCTS_ALL, TOGGLE_CART_VIEW } from '../../helpers/constants'
+import {ADD_TO_CART, NOT_LOGGED_IN, RESET_NOT_LOGGED_IN, SET_CART, TOGGLE_CART_VIEW} from '../../helpers/constants'
 
 const initialState = {
-    productsInCart: [],
+    cartDetails: [],
     viewCart: false,
+    redirectFlag: false,
+    cartTotal: 0.00,
 }
 
 export default function cartReducer (state = initialState, action) {
+    console.log("in da type", action.type)
+    console.log("in da cartReducer payload", action.payload)
     switch (action.type) {
-        case SET_PRODUCTS_ALL: {
+        case SET_CART: {
             const newState = {...state}
-            newState.productsInCart = action.payload
-            newState.productsInCart.reverse()
+            newState.cartDetails = action.payload
+            // const subTotal = (item) => {
+            //     return item.price * item.quantity
+            // }
+            // let newCartTotal =+ action.payload.map(item => subTotal(item))
+            // newState.cartTotal = newCartTotal
+            console.log("inside",newState)
             return newState
         }
         case TOGGLE_CART_VIEW: {
@@ -18,6 +27,17 @@ export default function cartReducer (state = initialState, action) {
             newState.viewCart = !state.viewCart
             return newState
         }
+        case NOT_LOGGED_IN: {
+            const newState = {...state}
+            newState.redirectFlag = true;
+            return newState
+        }
+        case RESET_NOT_LOGGED_IN: {
+            const newState = {...state}
+            newState.redirectFlag = false;
+            return newState
+        }
+
         default: {
             return state
         }

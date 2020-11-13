@@ -20,7 +20,7 @@ export const Image = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    height: 300px;
+    height: 240px;
 `;
 
 export const Slogan = styled.h2`
