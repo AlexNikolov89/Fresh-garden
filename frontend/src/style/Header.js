@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import {theme} from './index'
 import {NavLink} from "react-router-dom";
-import React from "react";
 
 
 export const HeaderContainer = styled.div `
@@ -90,7 +89,20 @@ export const NavLinkAbout = styled(NavLink)`
     }
 `;
 
-export const NavLinkProfile = styled(NavLinkAbout)``;
+export const NavLinkProfile = styled(NavLinkAbout)`
+    &.default {
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    }
+    &.impulse {
+        background-color: ${theme.colorDarkRed};
+    }
+    &.fade {
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
+        -webkit-transition: background-color 1000ms linear;
+        -ms-transition: background-color 1000ms linear;
+        transition: background-color 1000ms linear;
+    }
+`;
 
 export const NavLinkShop = styled(NavLinkAbout)``;
 
