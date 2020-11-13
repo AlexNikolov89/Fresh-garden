@@ -5,6 +5,10 @@ import {GlobalStyle, theme} from './style/index';
 import {Routes} from './routes/index'
 import {Provider} from "react-redux";
 import store from "./store";
+import {setToken} from "./store/actions/authAction";
+
+const token = localStorage.getItem("token");
+store.dispatch(setToken(token));
 
 
 ReactDOM.render(

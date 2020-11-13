@@ -57,11 +57,20 @@ export const PromotionIcon = styled.div`
         font-size: ${theme.fontSizeM};
     }
 `;
+export const ImageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 250px;
+`;
 
 export const Image = styled.img`
-    height: 250px;
-    width: 270px;
-
+    height: 100%;
+    width: -moz-available;
+    width: 100%;
+    object-fit: cover;
     border-radius: ${theme.borderRadiusS};
 `;
 
@@ -147,6 +156,10 @@ export const DeliveryIcon = styled.div`
     }
 `;
 
+export const DeliveryDistance = styled(Location)`
+    align-self: flex-end;
+`;
+
 export const SellerContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -189,6 +202,9 @@ export const StockContainer = styled(PriceContainer)`
 
 export const Stock = styled(Count)`
     border: 1px solid ${theme.colorMiddleGreenYellowLight};
+    min-width: 25px;
+    width: fit-content;
+    padding: 4px;
 `;
 
 export const AddToCart = styled.div`

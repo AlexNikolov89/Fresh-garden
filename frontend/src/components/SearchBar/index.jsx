@@ -17,13 +17,6 @@ const SearchBar = () => {
     return (
         <Fragment>
             <Form>
-                {/*<CategoryContainer>*/}
-                {/*    <CategoryButton>*/}
-                {/*        <i className="fas fa-sort"></i>*/}
-                {/*    </CategoryButton>*/}
-                {/*    <CategoryInput type='text' placeholder={"Category"} />*/}
-                {/*</CategoryContainer>*/}
-
                 <LocationContainer>
                     <LocationButton>
                         <i className="fas fa-map-marker-alt"></i>
