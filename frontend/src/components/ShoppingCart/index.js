@@ -26,11 +26,11 @@ const ShoppingCart = () => {
         return function cleanup() {};
     }, [dispatch]);
 
-    const cartItems = () => {
-        for (const item in cart) {
-            return <CartItem item={item} key={cart[item].id}/>
-        }
-    }
+    // const cartItems = () => {
+    //     for (const item in cart) {
+    //         return <CartItem item={item} key={cart[item].id}/>
+    //     }
+    // }
 
     return(
         <Fragment>
@@ -42,7 +42,7 @@ const ShoppingCart = () => {
                 <MiddleContainer>
                     {/*{Object.keys(cart).map(item => <CartItem item={item} key={item.product_id} />)}*/}
                     {/*{cart.map(item => <CartItem item={item} key={item.product_id} />)}*/}
-                    {cartItems}
+                    {/*{cartItems}*/}
                 </MiddleContainer>
 
                 <BottomContainer>

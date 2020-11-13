@@ -49,7 +49,6 @@ const Header = ({ sticky, element, minimal }) => {
     return (
         <Fragment>
             <HeaderContainer >
-
                 <LogoContainer>
                     <NavLinkHome to='/shop'><Logo src={LogoImg} /></NavLinkHome>
                 </LogoContainer>
@@ -58,7 +57,7 @@ const Header = ({ sticky, element, minimal }) => {
                     {location.pathname === '/shop' ? <SearchBar /> : null}
                 </FormContainer>
 
-                <Icons >
+                <Icons>
                     {location.pathname === '/shop' ? (
                         <CartIcon
                             onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}
@@ -69,13 +68,8 @@ const Header = ({ sticky, element, minimal }) => {
                     <NavLinkShop to='/shop'><i className="fas fa-store"></i></NavLinkShop>
                     <NavLinkAddProduct to='/addproduct'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
                     <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
-                    <NavLinkProfile
-                        to='/profile'
-                        className={classLabel}>
-                        <i className="fas fa-user"></i>
-                    </NavLinkProfile>
+                    <NavLinkProfile to='/profile' className={classLabel}><i className="fas fa-user"></i></NavLinkProfile>
                 </Icons>
-
             </HeaderContainer>
         </Fragment>
     )
