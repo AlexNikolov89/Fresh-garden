@@ -4,35 +4,43 @@ import {theme} from './index'
 export const Form = styled.form `
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
     width: 100%;
     opacity: 1;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        justify-content: flex-end;
+        width: ${theme.controlHeightXL};
+    }
 `;
 
-export const CategoryContainer = styled.div`
+export const LocationContainer = styled.div`
     display: flex;
     outline: none;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
-    width: calc(100% / 3 - (${theme.controlHeightXL} / 3));
+    width: 30%;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        display: none;
+    }
 `;
 
-export const LocationContainer = styled(CategoryContainer)``;
-
-export const SearchContainer = styled(CategoryContainer)``;
+export const SearchContainer = styled(LocationContainer)`
+    width: 70%;
+`;
 
 export const SearchInput = styled.input`
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
     height: 100%;
+    width: 100%;
     min-width: 50px;
     border: none;
     outline: none;
 `;
-
-export const CategoryInput = styled(SearchInput)``;
 
 export const LocationInput = styled(SearchInput)``;
 
@@ -60,8 +68,6 @@ export const SearchButton = styled.button `
     }
 `;
 
-export const CategoryButton = styled(SearchButton)``;
-
 export const LocationButton = styled(SearchButton)``;
 
 export const SubmitButton = styled(SearchButton)`
@@ -69,6 +75,7 @@ export const SubmitButton = styled(SearchButton)`
     width: ${theme.controlHeightXL};
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
     margin-right: 0;
+    justify-self: flex-start;
     
     i.fas {
         color: ${theme.colorDarkOliveGreen};

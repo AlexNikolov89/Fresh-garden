@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Homepage from '../pages/Homepage';
 import Checkout from '../pages/Checkoutpage'
 import About from '../pages/About';

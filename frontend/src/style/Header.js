@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import {theme} from './index'
 import {NavLink} from "react-router-dom";
-import React from "react";
 
 
 export const HeaderContainer = styled.div `
@@ -22,6 +21,8 @@ export const HeaderContainer = styled.div `
         position: fixed;
         top: calc(100% - 64px);
         left: 0;
+        justify-content: center;
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
     }
 `;
 
@@ -30,19 +31,20 @@ export const FormContainer = styled.div `
     justify-content: center;
     text-align: center;
     height: 100%;
-    min-width: 200px;
+    width: 100%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
-        display: none;
+        width: ${theme.controlHeightXL};
     }
 `;
 
 export const Icons = styled.div `
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     height: 100%;
-    min-width: calc(5 * ${theme.controlHeightXL});
+    width: 100%;
+    max-width: calc(5 * ${theme.controlHeightXL});
     
     cursor: default;
     
@@ -87,7 +89,25 @@ export const NavLinkAbout = styled(NavLink)`
     }
 `;
 
-export const NavLinkProfile = styled(NavLinkAbout)``;
+export const NavLinkProfile = styled(NavLinkAbout)`
+    &.impulse {
+        background-color: ${theme.colorDarkRed};
+    }
+    &.fade {
+        background-color: ${theme.colorMiddleGreenYellowVeryLight};
+        -webkit-transition: background-color 750ms linear;
+        -ms-transition: background-color 750ms linear;
+        transition: background-color 750ms linear;
+        
+        &:hover, :focus, &.active {
+            background-color: ${theme.colorMiddleGreenYellowLight};
+            box-shadow: ${theme.boxShadowInset};
+            i.fas {
+                color: ${theme.colorDarkOliveGreen}
+            }
+        }        
+    }
+`;
 
 export const NavLinkShop = styled(NavLinkAbout)``;
 
@@ -129,7 +149,7 @@ export const LogoContainer = styled.div `
     justify-content: center;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
-        width: ${theme.controlHeightXL};
+        display: none;
     }
 `;
 

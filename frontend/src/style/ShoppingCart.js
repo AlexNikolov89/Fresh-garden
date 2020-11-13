@@ -3,7 +3,7 @@ import {theme} from './index';
 import {GenericButton} from "./Buttons";
 
 export const ShoppingCartContainer = styled.div `
-    width: calc(270px + 2 * ${theme.spaceS});
+    width: calc(5 * ${theme.controlHeightXL});
     height: fit-content;
     display: flex;
     flex-direction: column;
@@ -13,16 +13,19 @@ export const ShoppingCartContainer = styled.div `
     position: sticky;
     padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
-    border: 1px solid ${theme.colorMiddleGreenYellowLight};
-    box-shadow: ${theme.boxShadowLight};
+    //box-shadow: ${theme.boxShadowLight};
     z-index: 45;
+    overflow-y: scroll;
+    max-height: 70vh;
+    box-shadow: ${theme.boxShadowGradient}, 0 80px 50px 30px white;
+
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
         height: 70vh;
         top: 10%; 
         left: auto;
-        overflow-y: scroll;
+        box-shadow: ${theme.boxShadowGradient}, 0 0 50px 50px white;
     }
 `;
 
@@ -176,7 +179,7 @@ export const Delete = styled(Decrement)`
 `;
 
 export const Price = styled(ProductName)`
-  height: 19px;
+    height: 19px;
 `;
 
 export const BottomContainer = styled.div`

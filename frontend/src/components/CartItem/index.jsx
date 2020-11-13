@@ -11,20 +11,21 @@ import {
     ProductName, QuantityContainer, RightContainer
 } from "../../style/ShoppingCart";
 
-const CartItem = () => {
-
+const CartItem = ({item}) => {
+    const priceSuffix = item.price % 1 ? '0' : '';
+    console.log("in da cartitem", item)
     return(
         <Fragment>
             <ProductContainer>
                     <LeftContainer>
                         <ImageContainer>
-                            <Image src={defaultImage} />
+                            <Image src={item.image ? item.image : defaultImage} />
                         </ImageContainer>
                         <DetailContainer>
-                            <ProductName>Auberschin</ProductName>
+                            <ProductName>{item.name ? item.name : "Default Rüebli"}</ProductName>
                             <QuantityContainer>
                                 <Decrement><i className="fas fa-minus"></i></Decrement>
-                                <Count>7</Count>
+                                <Count>{item.quantity ? item.quantity : "0"}</Count>
                                 <Increment><i className="fas fa-plus"></i></Increment>
                             </QuantityContainer>
                         </DetailContainer>
@@ -32,7 +33,7 @@ const CartItem = () => {
 
                     <RightContainer>
                         <Delete><i className="fas fa-trash-alt"></i></Delete>
-                        <Price>CHF 6.50</Price>
+                        <Price>CHF {item.price ? item.price * item.quantity + priceSuffix : "6.80"}</Price>
                     </RightContainer>
                 </ProductContainer>
         </Fragment>
