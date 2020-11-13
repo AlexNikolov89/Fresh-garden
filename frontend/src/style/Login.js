@@ -7,6 +7,41 @@ export const LoginMainContainer = styled.div`
     display: flex;
 `
 
+export const LoginHeader = styled.header`
+    display: flex;
+    flex-direction: column;
+    font-size: ${theme.fontSizeM};
+    margin-top: 20px;
+    margin-left: 30px;
+`
+
+export const UserIconLogin = styled.div`
+  margin-right: ${theme.spaceXS};
+    margin-top: ${theme.spaceXS};
+    i {
+      font-size: ${theme.fontSizeDefault};
+      color: ${theme.colorDefault};
+    }
+`;
+
+export const PasswordIconLogin = styled.div`
+  margin-right: ${theme.spaceXS};
+    margin-top: ${theme.spaceXS};
+    i {
+      font-size: ${theme.fontSizeDefault};
+      color: ${theme.colorDefault};
+    }
+`;
+
+export const EmailIconSignUp = styled.div`
+  margin-right: ${theme.spaceXS};
+    margin-top: ${theme.spaceXS};
+    i {
+      font-size: ${theme.fontSizeDefault};
+      color: ${theme.colorDefault};
+    }
+`;
+
 
 export const Container = styled.section`
     display: flex;
@@ -26,7 +61,7 @@ export const RightContainer = styled.main`
     h2 {
         display: flex;
         justify-content: center;
-        font-size: 4rem;
+        font-size: ${theme.fontSizeXXXL};
         line-height: 47px;
         margin-bottom: 45px;
         color: ${theme.colorTitle};
@@ -64,7 +99,7 @@ export const LoginContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100vh - 80px - 26px);
+    height: calc(100vh - 60px - 26px);
     //padding-top: calc(128px - 20px); mark
 
     #signUpSuccess {
@@ -82,6 +117,7 @@ export const LoginContainer = styled.div`
         opacity: 100%;
         line-height: 26px;
         font-size: 1.6rem;
+        margin-top: 5px;
 
         &#user, &#password {
             width: 100%;
@@ -116,22 +152,22 @@ export const StepOneContainer = styled.div`
 
     #stepOneIcon {
         flex: 0;
-        min-height: 9px;
-        min-width: 27px;
-        margin: 55px 0 62px 0;
+        margin-top: min(100px, 60px);
+        margin-bottom: calc(300px + 100px + 9px);
+        min-height: 60px;
     }
 `
 export const StepLoginContainer = styled(StepOneContainer)`
     #submit {
-        margin-top: min(160px, 140px);
-        margin-bottom: calc(55px + 62px + 9px);
+        margin-top: min(150px, 60px);
+        margin-bottom: calc(300px + 85px + 9px);
         min-height: 60px;
     }
 `
 
 export const StepTwoContainer = styled(StepOneContainer)`
     img {
-        margin-top: calc(43px - 37px);
+        margin-top: calc(55px - 37px);
         margin-bottom: 41px;
         height: 81px;
         width: 81px;
@@ -145,9 +181,9 @@ export const StepTwoContainer = styled(StepOneContainer)`
 
     #stepTwoIcon {
         flex: 0;
-        min-height: 9px;
-        min-width: 27px;
-        margin: 55px 0 62px 0;
+        margin-top: min(10px, 60px);
+        margin-bottom: calc(300px + 90px + 9px);
+        min-height: 60px;
     }
 `
 
@@ -162,9 +198,9 @@ export const StepThreeContainer = styled(StepOneContainer)`
 
     #stepThreeIcon {
         flex: 0;
-        min-height: 9px;
-        min-width: 27px;
-        margin: 55px 0 62px 0;
+        margin-top: min(10px, 60px);
+        margin-bottom: calc(300px + 70px + 9px);
+        min-height: 60px;
     }
 `
 
@@ -197,6 +233,7 @@ export const BaseInputContainer = styled.div`
     input {
         width: 100%;
         height: 26px;
+        background-color: ${theme.colorBackgroundColor};
     }
 
 `
@@ -213,6 +250,11 @@ export const EmailSignUpContainer = styled(BaseInputContainer)`
     align-items: flex-start;
     flex-direction: column;
     width: 340px;
+    margin-top: 35px;
+    
+    i {
+      margin-top: 10px;
+    }
 
     div {
         width: 100%;
@@ -220,7 +262,9 @@ export const EmailSignUpContainer = styled(BaseInputContainer)`
 
     input {
         width: 100%;
-        height: 24px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        background-color: ${theme.colorBackgroundColor};
     }
 
     svg {
@@ -233,7 +277,7 @@ export const EmailSignUpContainer = styled(BaseInputContainer)`
     }
     
     p {
-        padding-left: 39px;
+        padding-left: 26px; 
         height: 100%;
         font-size: 1.2rem;
         color: rgba(0, 0, 0, 0.5);
@@ -243,6 +287,7 @@ export const EmailSignUpContainer = styled(BaseInputContainer)`
 export const UsernameInputContainer = styled(BaseInputContainer)`
     flex-direction: column;
     align-items: flex-start;
+    background-color: ${theme.colorBackgroundColor};
 `
 export const FirstnameInputContainer = styled(BaseInputContainer)``
 export const LastnameInputContainer = styled(BaseInputContainer)``
