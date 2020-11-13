@@ -11,7 +11,6 @@ import Card from '../components/Card/index.js'
 
 
 const Addproduct = () => {
-
     const options = ['Kg', 'Pc.']
     const [isActive, setIsActive] = useState(false);
     const [selectedOption, setSelectOption] = useState(null);
@@ -119,7 +118,7 @@ const Addproduct = () => {
                     </AddCardForm>
                     
                     <CardOverview>
-                        <Card />
+                        {/*<Card product={product}/>*/}
                     </CardOverview>
                 </BottomConatiner>
             

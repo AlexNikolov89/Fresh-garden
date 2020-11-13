@@ -80,8 +80,6 @@ TEMPLATES = [
     },
 ]
 
-CART_SESSION_ID = 'cart'
-
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
