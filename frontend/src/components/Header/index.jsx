@@ -12,7 +12,7 @@ import {
     NavLinkShop,
     NavLinkAddProduct
 } from '../../style/Header';
-import SearchBar from '../SearchBar'
+import SearchBar from './SearchBar'
 import LogoImg from '../../assets/images/logo_idea.jpg'
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
