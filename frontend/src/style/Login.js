@@ -10,9 +10,14 @@ export const LoginMainContainer = styled.div`
 export const LoginHeader = styled.header`
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     font-size: ${theme.fontSizeM};
     margin-top: 20px;
-    margin-left: 30px;
+    margin-right: 30px;
+`
+
+export const LoginQuestion = styled.div`
+  margin-right: 30px;
 `
 
 export const UserIconLogin = styled.div`

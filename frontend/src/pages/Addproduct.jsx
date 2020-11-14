@@ -170,7 +170,7 @@ const Addproduct = () => {
                                             </AddCardForm>*/}
                     
                     <CardOverview>
-                        <Card />
+                        {/*<Card />*/}
                     </CardOverview>
                 </BottomConatiner>
             

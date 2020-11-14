@@ -17,10 +17,6 @@ class ProductMinimalSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     author = UserSerializer(read_only=True)
-    # reviews_counter = serializers.SerializerMethodField()
-    #
-    # def get_reviews_counter(self, product):
-    #     return product.fk_review_product.all().count()
 
     class Meta:
         model = Product

@@ -16,29 +16,56 @@ class Product(models.Model):
         related_name='fk_product_to_user',
         on_delete=models.CASCADE,
         null=True,
-        blank=True
     )
     name = models.CharField(
-        max_length=255,
+        max_length=40,
     )
+
+    class Category(models.TextChoices):
+        Fruit = ('fruit', 'fruit')
+        Vegetable = ('vegetable', 'vegetable')
+        Other = ('other', 'other')
+
     category = models.CharField(
-        max_length=200,
+        max_length=10,
+        choices=Category.choices,
+        default=Category.Fruit,
     )
+
+    def is_upperclass(self):
+        return self.category in {
+            self.category.fruit,
+            self.category.vegetable,
+            self.category.other,
+        }
+
     location = models.CharField(
         max_length=80,
         blank=True,
         default=""
     )
-    email = models.EmailField(
-        unique=True,
-        null=True,
-        blank=True
-    )
+
     stock = models.IntegerField(
         null=True,
     )
     price = models.FloatField(
     )
+
+    class Unit(models.TextChoices):
+        kg = ('kg', 'kg')
+        piece = ('piece', 'piece')
+
+    units = models.CharField(
+        max_length=10,
+        choices=Unit.choices,
+        default=Unit.kg,
+    )
+
+    def is_upperclass(self):
+        return self.units in {
+            self.units.kg,
+            self.units.piece,
+        }
 
     promotion = models.FloatField(
         null=True,
@@ -46,8 +73,7 @@ class Product(models.Model):
     )
     image = models.ImageField(
         upload_to=user_directory_path,
-        blank=True,
-        null=True
+        null=True,
     )
     deliver_within_radius = models.IntegerField(
         null=True,
@@ -64,3 +90,4 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.author}: {self.name[0:100]}"
+

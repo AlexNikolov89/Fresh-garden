@@ -1,5 +1,12 @@
 import React, { useState } from 'react'
-import {Container, LoginContainer, LoginHeader, LoginMainContainer, RightContainer} from "../style/Login";
+import {
+    Container,
+    LoginContainer,
+    LoginHeader,
+    LoginMainContainer,
+    LoginQuestion,
+    RightContainer
+} from "../style/Login";
 import {HeaderContainer} from "../style/Header";
 import {SignUpButton} from "../style/Buttons";
 import {SignIn} from "../components/SignIn";
@@ -16,7 +23,7 @@ export const Login = () => {
         <LoginMainContainer>
             <Container>
                     <LoginHeader>
-                        {toggleSwitch ? <>Don't have an account?</> : <>Already have an account?</>}
+                        <LoginQuestion>{toggleSwitch ? <>Don't have an account?</> : <>Already have an account?</>}</LoginQuestion>
                         <SignUpButton onClick={() => setToggleSwitch(!toggleSwitch)}>{toggleSwitch ? <>Sign Up</> : <>Sign In</>}</SignUpButton>
                     </LoginHeader>
                 <RightContainer>
