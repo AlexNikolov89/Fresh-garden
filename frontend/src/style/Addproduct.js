@@ -42,7 +42,7 @@ export const BottomConatiner = styled.div `
     }
 `;
 
-export const AddCardForm = styled.div `
+export const AddCardForm = styled.form `
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -62,6 +62,7 @@ export const Title = styled.h1 `
     color: ${theme.colorTitle};
     font-size: ${theme.fontSizeL};
     font-weight: normal;
+
 `;
 
 export const CardOverview = styled.aside `
@@ -75,7 +76,7 @@ export const CardOverview = styled.aside `
     }
 `;
 
-export const Form = styled.form `
+export const Form = styled.div `
     //border: 1px solid ${theme.colorDefaultGrey};
     height: 100%;
     width: 100%;
@@ -246,6 +247,16 @@ export const SliderConatiner = styled.div `
     width: 30%;
 `;
 
+export const Left = styled.p `
+    font-size: 16px;
+    padding-top: 60px;
+`;
+
+export const Right = styled.p `
+    font-size: 16px;
+    padding-top: 60px;
+`;
+
 export const Fruit = styled(GenericButton) `
     background: ${theme.colorMaxYellowRed};
     width: 150px;
@@ -314,43 +325,6 @@ export const Submit = styled(GenericButton) `
     margin-left: 40%;
 `;
 
-
-/* export const DropDownHeader = styled.div `
-    height: ${theme.controlHeightL};
-    width: 100px;
-    font-size: 15px;
-    //border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid ${theme.colorDefaultGrey};
-    color: ${theme.colorDefaultText}
-`;
-
-export const DropdownContainer = styled.div `
-    width: 20%;
-    height: 50px;
-`;
-
-export const DropdownList = styled.ul `
-  background: ${theme.colorBackgroundColor};
-  border: 1px solid ${theme.colorDefaultGrey};
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: ${theme.fontSizeDefault};
-  &:first-child {
-    //padding-top: ${theme.spaceXS};
-  }
-`;
-
-export const DropDownListContainer = styled.div `
-    width: 100px;
-    border: 1px solid ${theme.colorDefaultGrey};
-`; */
-
 export const List = styled.li `
     list-style: none;
     height: 30px;
@@ -363,3 +337,5 @@ export const List = styled.li `
         background: ${theme.colorDefaultGrey};
     }
 `;
+
+

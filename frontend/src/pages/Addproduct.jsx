@@ -1,7 +1,7 @@
 import React, {Fragment, useState, useRef} from 'react';
 import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
         AddCardForm, CardOverview, Form, Unit, Dropdown, Option, Select, ButtonDelivery, ButtonPickUp, DropdownContainer, DropDownHeader,
-        DropDownListContainer, DropdownList, List, Price,
+        Left, Right, DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
         CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider,
         Upload, UploadLabel, ButtonUpload, Description, DescriptionLabel, TextArea, Title, Submit, UploadImage} from '../style/Addproduct'
@@ -18,7 +18,7 @@ const Addproduct = () => {
        description: '',
        price: '',
        image: '',
-       selectedOption: null,
+       selectedOption: '',
        image: null,
     })
 
@@ -31,8 +31,7 @@ const Addproduct = () => {
 
     const changeHandler = e => {
         setProduct({...product, [e.target.name]: e.target.value});
-        //setProduct({...product, []})
-        console.log(e.target.files)
+        //setProduct({...product, [e.target.name]: e.target.files[0]})
     }
 
     const handleSubmit = e => {
@@ -43,6 +42,8 @@ const Addproduct = () => {
     const updateRange = (e, data) => {
         setValue(data);
     }
+
+
 
     // const onChangeImage = e => {
     //     setImage(URL.createObjectURL(e.target.files[0]));
@@ -65,13 +66,13 @@ const Addproduct = () => {
 
                 <BottomConatiner>
 
-                    <AddCardForm>
+                    <AddCardForm onChange={handleSubmit}>
                         <Title>Want to sell your Vegetables?</Title>
 
-                        <Form onChange={handleSubmit}>
+                        <Form>
                             <Input type='text'
                              placeholder='Name your vegetables'
-                             required
+                             required='Required'
                              name='name'
                              onChange={changeHandler} />
 
@@ -111,7 +112,9 @@ const Addproduct = () => {
                         </ButtonContainer>
 
                         <SliderConatiner>
+                            <Left>1.5Km</Left>
                             <Slider type='range' min={1.5} max={50} value={value} onChange={updateRange} />
+                            <Right>50Km</Right>
                         </SliderConatiner>
 
                         <CategoryLabel>Select category</CategoryLabel>
@@ -125,7 +128,7 @@ const Addproduct = () => {
                             <UploadImage type='file'
                             name='image'
                             onClick={changeHandler} 
-                            required
+                            required='Required'
                             />
                         </Upload>
 
