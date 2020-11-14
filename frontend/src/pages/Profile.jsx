@@ -11,10 +11,12 @@ import {Login} from "./Login";
 import { useHistory, useLocation } from "react-router-dom";
 import AvatarImg from '../assets/defaultRuth.PNG';
 import Card from '../components/Card/index.js'
+import {useSelector} from "react-redux";
 
 const Profile = () => {
     const history = useHistory();
     const location = useLocation();
+     const products = useSelector(state => state.productReducer.productsAll);
 
     return (
         <Fragment>
@@ -62,8 +64,9 @@ const Profile = () => {
 
                 </BottomContainer>
 
-                
-                    {/*<Card />  */}
+                 <div>
+                     {products.map((product) => <Card product={product} key={product.id}/>)}
+                 </div>
             </HomeContainer>
             <Footer />
         </Fragment>

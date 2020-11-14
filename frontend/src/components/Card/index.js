@@ -33,10 +33,15 @@ import {cartAction} from "../../store/actions/cartAction";
 import {useDispatch} from "react-redux";
 import {ADD_TO_CART} from "../../helpers/constants";
 
-const Card = ({product, changeIcon}) => {
+const Card = ({product, changeIcon, unit}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
     const priceSuffix = product.price % 1 === 0 ? '' : '0';
+    const [productUnit, setProductUnit] = useState(null)
+    //const unitHandler = () => {
+        //if (unit) setProductUnit (unit) else setProductUnit(product.unit)
+    //}
+    //unitHandler();
 
     const addToCartHandler = () => {
         // TODO resolve conflict issue of two parties ordering complete stock
@@ -85,8 +90,7 @@ const Card = ({product, changeIcon}) => {
                         <PriceContainer>
                             <CurrencyTag>CHF</CurrencyTag>
                             <PriceTag>{product.price ? product.price + priceSuffix : "6.90"}</PriceTag>
-                            <Unit>/ {product.unit ? product.unit : "Kg"}</Unit>
-                            {/*<Unit>{unit === 'kg' ? 'Kg' : 'Pc'}</Unit>  */}
+                            <Unit>{productUnit ? productUnit : "na"}</Unit>
                         </PriceContainer>
                     </LowerContainer>
                 </BottomContainer>

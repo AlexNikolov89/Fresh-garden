@@ -101,7 +101,7 @@ const Addproduct = () => {
                             <Dropdown>
                                 <Select>
                                     <Option onClick={() => setUnit('kg')}>Kg</Option>
-                                    <Option onClick={() => setUnit('pc')}>Pc</Option> 
+                                    <Option onClick={() => setUnit('pc')}>pc.</Option>
                                 </Select>
                             </Dropdown>
                         </Unit>
