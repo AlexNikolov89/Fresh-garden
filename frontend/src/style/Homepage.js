@@ -5,6 +5,7 @@ import {theme} from './index'
 export const HomeContainer = styled.div `
     height: 100%;
     width: 100%;
+    min-height: calc(100vh - 240px - 64px - 48px);
 `;
 
 export const TopContainer = styled.div `
@@ -40,6 +41,8 @@ export const BottomContainer = styled.div `
     width: 100%;
     height: 100%;
     background: ${theme.colorBackgroundColor};
+    min-height: calc(100vh - 240px - 64px - 48px);
+
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         flex-direction: column-reverse;
@@ -56,6 +59,8 @@ export const Box = styled.div `
     background: ${theme.colorBackgroundColor};
     margin-top: ${theme.spaceS};
     padding-bottom: 70px;
+    min-height: calc(100vh - 240px - 64px - 48px);
+
 
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -75,6 +80,8 @@ export const SideBox = styled.div`
     background: ${theme.colorBackgroundColor};
     height: auto;
     padding-bottom: 70px;
+    min-height: calc(100vh - 240px - 64px - 48px);
+
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;

@@ -35,7 +35,7 @@ export const productAction = (urlPath, method, type, body) => async (dispatch, g
     }
     const config = createConfig();
 
-    const response = await fetch(url, config).catch((error) => console.log('in post fetch:', error));
+    const response = await fetch(url, config).catch((error) => console.log('in product fetch:', error));
     const data = await response.json();
 
     dispatch(setProductData(type, data));

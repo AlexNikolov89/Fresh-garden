@@ -29,8 +29,30 @@ export const LocationContainer = styled.div`
     }
 `;
 
-export const AutoCompleteContainer = styled(ShoppingCartContainer)`
+export const AutocompleteContainer = styled(ShoppingCartContainer)`
     font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    min-width: calc(2 * 42px + 2 * 95px + 2 * ${theme.spaceXXS});
+    min-height: ${theme.controlHeightXL};
+    width: calc(100% - 7.5 * ${theme.controlHeightXL} + ${theme.spaceXXS});
+    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    position: absolute;
+    padding: 0;
+    box-shadow: ${theme.boxShadowGradient}, 20px 40px 50px 30px white, -20px 40px 50px 30px white;
+    background-color: ${theme.colorDefaultWhite};
+
+`;
+
+export const AutocompleteOne = styled.button`
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    background-color: ${theme.colorDefaultWhite};
+    border: none;
+    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    width: 100%;
+    height: ${theme.controlHeightXL};
+    outline: none;    
 `;
 
 export const SearchContainer = styled(LocationContainer)`
@@ -42,7 +64,8 @@ export const SearchInput = styled.input`
     color: ${theme.colorDefaultText};
     height: 100%;
     width: 100%;
-    min-width: 50px;
+    padding-right: ${theme.spaceXXS}; 
+    min-width: calc(42px + 50px);
     border: none;
     outline: none;
 `;
@@ -59,15 +82,11 @@ export const SearchButton = styled.button `
     align-items: center;
     outline: none;
     border: none;
+    border-radius: 0;
     background: ${theme.colorDefaultWhite};
     padding: ${theme.spaceS};
     margin-right: ${theme.spaceXXS};
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    
-    &:hover {
-        background-color: ${theme.colorMiddleGreenYellowVeryLight};
-        box-shadow: ${theme.boxShadowInset};
-    }
     
     i.fas {
         color: ${theme.colorDarkOliveGreen};
