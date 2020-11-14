@@ -22,7 +22,7 @@ const Profile = () => {
                 </TopContainer>
 
                 <Header />
-
+                
                 <BottomContainer>
                   {location.pathname === '/login' && <Login/>}
                     {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}
