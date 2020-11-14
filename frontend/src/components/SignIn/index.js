@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { authAction } from '../../store/actions/authAction';
 import { useDispatch } from 'react-redux';
-import { FormContainer, PasswordSignInContainer, UsernameSignInInputContainer, StepLoginContainer } from '../../style/Login'
-import { GenericButton } from '../../style/Buttons'
-import { ReactComponent as UserIconSVG} from '../../assets/svgs/avatar.svg';
-import { ReactComponent as PasswordIconSVG} from '../../assets/svgs/password.svg';
+import {
+    FormContainer,
+    PasswordSignInContainer,
+    UsernameSignInInputContainer,
+    StepLoginContainer,
+    UserIconLogin, PasswordIconLogin
+} from '../../style/Login'
+import { SignInButton } from '../../style/Buttons'
 
 
 export const SignIn = ({ newEmail }) => {
@@ -40,16 +44,16 @@ export const SignIn = ({ newEmail }) => {
             <h2>Sign In</h2>
                 <FormContainer>
                     <UsernameSignInInputContainer>
-                        <label htmlFor="user"><UserIconSVG /></label>
+                        <UserIconLogin><i className="fas fa-user"></i></UserIconLogin>
                         <input type="text" id="user" name="user" value={email} onChange={handleEmail} placeholder="Username"></input>
                     </UsernameSignInInputContainer>
                     <PasswordSignInContainer>
-                        <label htmlFor="password"><PasswordIconSVG /></label>
+                        <PasswordIconLogin><i className="fas fa-lock"></i></PasswordIconLogin>
                         <input type="password" id="password" name="password" value={password} onChange={handlePassword} placeholder="Password"></input>
                     </PasswordSignInContainer>
                     {<p>{message}</p>}
                 </FormContainer>
-                <GenericButton id="submit" type="submit" value="Sign In"></GenericButton>
+                <SignInButton id="submit" type="submit" value="Sign In">SIGN IN</SignInButton>
             </form>
         </StepLoginContainer>
     </>)

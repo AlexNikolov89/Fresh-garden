@@ -20,7 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     ::-webkit-scrollbar {
-    height: 0;
     width: 0;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }

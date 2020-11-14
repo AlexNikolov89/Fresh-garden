@@ -80,6 +80,9 @@ TEMPLATES = [
     },
 ]
 
+CART_SESSION_ID = 'cart'
+CART_AUTH_URL_NAMESPACE = 'cart'
+
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
@@ -149,8 +152,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=2),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=2)
 }
-
-CART_SESSION_ID = 'cart'
 
 AUTH_USER_MODEL = 'user.User'
 

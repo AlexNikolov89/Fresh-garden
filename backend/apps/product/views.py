@@ -33,7 +33,7 @@ class ProductListCreateAPIView(ListCreateAPIView):
         if search_string:
             queryset = queryset.filter(
                 Q(name__icontains=search_string)
-                | Q(author__username__icontains=search_string)
+                | Q(location__icontains=search_string)
                 | Q(author__first_name__icontains=search_string)
                 | Q(author__last_name__icontains=search_string)
             )
