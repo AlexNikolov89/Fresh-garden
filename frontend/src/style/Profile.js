@@ -115,8 +115,6 @@ export const City = styled(Address) ``;
 export const ZipCode = styled(Address) ``;
 
 export const Contact = styled.div `
-    /* display: flex;
-    justify-content: center; */
     margin-left: ${theme.spaceDefault};
 `;
 
