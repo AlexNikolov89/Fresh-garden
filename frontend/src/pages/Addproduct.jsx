@@ -1,6 +1,6 @@
 import React, {Fragment, useState, useRef} from 'react';
 import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
-        AddCardForm, CardOverview, Form, Unit, Dropdown, Option, Select, ButtonDelivery, ButtonPickUp, DropdownContainer, DropDownHeader,
+        AddCardForm, CardOverview, Form, Unit, Dropdown, Option, Select, DropdownContainer, DropDownHeader,
         DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
         CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider,
@@ -12,43 +12,36 @@ import Card from '../components/Card/index.js'
 
 const Addproduct = () => {
 
-    const [product, setProduct] = useState({
-       name: '',
-       location: '',
-       description: '',
-       price: '',
-       image: '',
-       selectedOption: null,
-       image: null,
-    })
-
-    const [category, setCategory] = useState('')
-    const [changeIcon, setChangeIcon] = useState('');
-    const [unit, setUnit] = useState('')
+    const options = ['Kg', 'Pc.']
+    const [isActive, setIsActive] = useState(false);
+    const [selectedOption, setSelectOption] = useState(null);
     const [value, setValue] = useState([0, 20]);
-    const [submit, setSubmit] = useState(false);
-
-
-    const changeHandler = e => {
-        setProduct({...product, [e.target.name]: e.target.value});
-        //setProduct({...product, []})
-        console.log(e.target.files)
-    }
+    const [image, setImage] = useState(null);
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [location, setLocation] = useState('');
 
     const handleSubmit = e => {
         e.preventDefault();
-        setSubmit(true);
+        console.log(name);
+        console.log(email);
+    }
+
+    const onClick = () => setIsActive(!isActive);
+
+    const onOptionClicked = value => () => {
+        setSelectOption(value);
+        setIsActive(false);
+        console.log(selectedOption);
     }
 
     const updateRange = (e, data) => {
         setValue(data);
     }
 
-    // const onChangeImage = e => {
-    //     setImage(URL.createObjectURL(e.target.files[0]));
-    // }
-
-
+    const onChangePicture = e => {
+        setImage(URL.createObjectURL(e.target.files[0]));
+    }
 
     return (
         <Fragment>
@@ -66,75 +59,118 @@ const Addproduct = () => {
                 <BottomConatiner>
 
                     <AddCardForm>
-                        <Title>Want to sell your Vegetables?</Title>
+                        <Title>Upload your vegetable and fruits</Title>
 
-                        <Form onChange={handleSubmit}>
-                            <Input type='text'
-                             placeholder='Name your vegetables'
-                             required
-                             name='name'
-                             onChange={changeHandler} />
-
-                            <Input type='text'
-                             placeholder='Give your location'
-                             name='location'
-                              onChange={changeHandler}
-                               />
+                        <Form>
+                            <Input type='text' placeholder=' Add your product name' />
+                            <Input type='text' placeholder='Give your location' />
                         </Form>
 
                         <Description>
-                            <DescriptionLabel>Describe your products and how grew them...</DescriptionLabel>
-                            <TextArea type='text' 
-                            name='description' 
-                            onChange={changeHandler} 
-                            />
+                            <DescriptionLabel>Add some desription</DescriptionLabel>
+                            <TextArea  />
                         </Description>
 
                         <Unit>
                             <Label>Price</Label>
-                            <Price type='number' value="0" step=".5" min='0'
-                            name='price' 
-                            onChange={changeHandler}   required />
+                            <Price type='text' min='0' max='4' />
                             <Label>CHF</Label>
 
                             <Dropdown>
-                                <Select>
-                                    <Option onClick={() => setUnit('kg')}>Kg</Option>
-                                    <Option onClick={() => setUnit('pc')}>Pc</Option> 
+                                <Select value={isActive} onChange={(e) => {setIsActive(e.target.value)}}>
+                                    <Option value='Kg'>Kg</Option>
+                                    <Option value='Pc'>Pc</Option>
                                 </Select>
                             </Dropdown>
                         </Unit>
 
+                        <Delivery>Delivery options</Delivery>
                         <ButtonContainer>
-                            <ButtonDelivery onClick={() => setChangeIcon("delivery")}>Delivery</ButtonDelivery>
-                            <ButtonPickUp onClick={() => setChangeIcon("pickup")}>Pick up</ButtonPickUp>
+                            <Button>Delivery</Button>
+                            <Button>Pick up</Button>
                         </ButtonContainer>
 
                         <SliderConatiner>
-                            <Slider type='range' min={1.5} max={50} value={value} onChange={updateRange} />
+                            <Slider type='range' min={0} max={50} value={value} onChange={updateRange} />
                         </SliderConatiner>
 
                         <CategoryLabel>Select category</CategoryLabel>
-                        <CategoryContainer required>
-                            <Vegetable onClick={() => setCategory('vegetable')}>Vegetable</Vegetable>
-                            <Fruit onClick={() => setCategory('fruit')}>Fruit</Fruit>
+                        <CategoryContainer>
+                            <Vegetable>Vegetable</Vegetable>
+                            <Fruit>Fruit</Fruit>
                         </CategoryContainer>
 
                         <Upload>
                             <UploadLabel>Add product image</UploadLabel>
-                            <UploadImage type='file'
-                            name='image'
-                            onClick={changeHandler} 
-                            required
-                            />
+                            <UploadImage type='file' onChange={onChangePicture} />
                         </Upload>
 
                         <Submit value='Submit'>Confirm</Submit>
 
                     </AddCardForm>
+                    {/*<AddCardForm>
+                        <Title>Advertise Your product</Title>
+                        <Form onSubmit={handleSubmit}>
+                            <Input type='text' placeholder='Name...' onChange={(e) => setName(e.target.value)} />
+                            <Input type='text' placeholder='name@email.com...' onChange={(e) => setEmail(e.target.value)} />
+                            <Input type='text' placeholder='z.b Zurich..' onChange={(e) => setLocation(e.target.value)} />
+
+                            <Unit>
+                                <Label>Price:</Label>
+                                <Price type='text' min='0' max='4' />
+                                <Label>CHF</Label>
+                                <DropdownContainer>
+                                    <DropDownHeader onClick={onClick}>
+                                   {selectedOption || 'Units'}
+                                    </DropDownHeader>
+                                    {isActive && (
+                                    <DropDownListContainer>
+                                        <DropdownList>
+                                            {options.map(option => (
+                                                <List onClick={onOptionClicked(option)} key={Math.random()}>
+                                                    {option}
+                                                </List>
+                                            ))}
+                                        </DropdownList>
+                                    </DropDownListContainer>
+                                )}
+                                </DropdownContainer>
+                            </Unit>
+                            
+                            <Delivery>Delivery options</Delivery>
+                            <ButtonContainer>
+                                <Button>Delivery</Button>
+                                <Button>Pick up</Button>
+                            </ButtonContainer>
+                            
+                            <SliderConatiner>
+                                <Slider type='range' min={0} max={50} value={value} onChange={updateRange} />
+                            </SliderConatiner>
+
+                                <CategoryLabel>Select category</CategoryLabel>
+                            <CategoryContainer>
+                                <Vegetable>Vegetable</Vegetable>
+                                <Fruit>Fruit</Fruit>
+                            </CategoryContainer>
+
+                            <Upload>
+                                <UploadLabel>Add product image</UploadLabel>
+                                <UploadImage type='file' onChange={onChangePicture} />
+                                <ButtonUpload>Upload</ButtonUpload>
+                            </Upload>
+
+                            <Description>
+                                <DescriptionLabel>Add some desription</DescriptionLabel>
+                                <TextArea  />
+                            </Description>
+
+                            <Submit value='Submit'>Confirm</Submit>
+                        </Form>
+                        
+                                            </AddCardForm>*/}
                     
                     <CardOverview>
-                        <Card product={product} changeIcon={changeIcon} unit={unit} category={category} /> 
+                        {/*<Card />*/}
                     </CardOverview>
                 </BottomConatiner>
             

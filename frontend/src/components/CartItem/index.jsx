@@ -13,7 +13,7 @@ import {
 
 const CartItem = ({item}) => {
     const priceSuffix = item.price % 1 ? '0' : '';
-    console.log("in da CartItem, item ->", item)
+    console.log("in da cartitem", item)
     return(
         <Fragment>
             <ProductContainer>
@@ -22,7 +22,7 @@ const CartItem = ({item}) => {
                             <Image src={item.image ? item.image : defaultImage} />
                         </ImageContainer>
                         <DetailContainer>
-                            <ProductName>{item.name ? item.name : "Default Auberschin"}</ProductName>
+                            <ProductName>{item.name ? item.name : "Default Rüebli"}</ProductName>
                             <QuantityContainer>
                                 <Decrement><i className="fas fa-minus"></i></Decrement>
                                 <Count>{item.quantity ? item.quantity : "0"}</Count>
