@@ -33,10 +33,15 @@ import {cartAction} from "../../store/actions/cartAction";
 import {useDispatch} from "react-redux";
 import {ADD_TO_CART} from "../../helpers/constants";
 
-const Card = ({product}) => {
+const Card = ({product, changeIcon, unit}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
-    const priceSuffix = product.price % 1 ? '0' : '';
+    const priceSuffix = product.price % 1 === 0 ? '' : '0';
+    const [productUnit, setProductUnit] = useState(null)
+    //const unitHandler = () => {
+        //if (unit) setProductUnit (unit) else setProductUnit(product.unit)
+    //}
+    //unitHandler();
 
     const addToCartHandler = () => {
         // TODO resolve conflict issue of two parties ordering complete stock
@@ -63,7 +68,7 @@ const Card = ({product}) => {
                             <ProductName>{product ? product.name : "Default Rüeblis"}</ProductName>
                             <Location>Garden @ {product.location ? product.location : "Default Dürnten"}</Location>
                             <DeliveryOptions>
-                                <PickUpIcon><i className="fas fa-hiking"></i></PickUpIcon>
+                                <PickUpIcon>{changeIcon === 'pickup' ? (<i className="fas fa-hiking"></i>) : (<i className="fas fa-truck"></i>)}</PickUpIcon>
                                 {product.deliver_within_radius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
                                 {product.deliver_within_radius && <DeliveryDistance>up to {product.deliver_within_radius}km</DeliveryDistance>}
                             </DeliveryOptions>
@@ -85,7 +90,7 @@ const Card = ({product}) => {
                         <PriceContainer>
                             <CurrencyTag>CHF</CurrencyTag>
                             <PriceTag>{product.price ? product.price + priceSuffix : "6.90"}</PriceTag>
-                            <Unit>/ {product.unit ? product.unit : "Kg"}</Unit>
+                            <Unit>{productUnit ? productUnit : "na"}</Unit>
                         </PriceContainer>
                     </LowerContainer>
                 </BottomContainer>
