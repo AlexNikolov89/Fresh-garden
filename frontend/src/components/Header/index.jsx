@@ -12,13 +12,13 @@ import {
     NavLinkShop,
     NavLinkAddProduct
 } from '../../style/Header';
-import SearchBar from '../SearchBar'
 import LogoImg from '../../assets/images/logo_idea.jpg'
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
 import {RESET_NOT_LOGGED_IN, TOGGLE_CART_VIEW} from "../../helpers/constants";
 import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
+import SearchBar from "./SearchBar";
 
 const Header = ({ sticky, element, minimal }) => {
     const location = useLocation();

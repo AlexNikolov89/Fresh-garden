@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {
     CardContainer,
     TopContainer,
@@ -24,19 +24,44 @@ import {
     UpperLeftContainer,
     AddToCart,
     PromotionIcon,
-    DeliveryDistance, ExpiryDate, ImageContainer
+    DeliveryDistance, ExpiryDate, ImageContainer, PortraitContainer
 } from '../../style/Card';
-import Carrot from '../../assets/images/carot.jpg'
-import defaultRuth from '../../assets/defaultRuth.PNG'
+import defaultImage from '../../assets/images/default_pumpkin.jpg'
+import defaultImageAuthor from '../../assets/images/default_farmer.jpg'
 import { ReactComponent as PromoIcon} from '../../assets/icons/disc_2.svg';
 import {cartAction} from "../../store/actions/cartAction";
 import {useDispatch} from "react-redux";
 import {ADD_TO_CART} from "../../helpers/constants";
 
-const Card = ({product}) => {
+
+const Card = ({product, changeIcon}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
-    const priceSuffix = product.price % 1 ? '0' : '';
+    const [name, setName] = useState('First Lastname')
+    const [productName, setProductName] = useState('Product Name')
+    const [expirationDate, setExpirationDate] = useState('01.01.2021')
+    const [image, setImage] = useState(defaultImage)
+    const [imageAuthor, setImageAuthor] = useState(defaultImageAuthor)
+    const [location, setLocation] = useState('Location')
+    const [unit, setUnit] = useState('na')
+    const [price, setPrice] = useState("0.00")
+
+    // formatting backend information and handling the real time render of the "addproduct" page
+    useEffect(() => {
+        const unitFormatter = () => {
+            if (product.units === 'kg') setUnit('Kg')
+            if (product.units === 'piece') setUnit('pc.')
+            if (product.image) setImage(product.image)
+            if (product.author && product.author.profile_picture) setImageAuthor(product.author.profile_picture)
+            if (product.author && product.author.first_name && product.author.last_name) setName(product.author.first_name + ' ' + product.author.last_name)
+            if (product.name) setProductName(product.name)
+            if (product.location) setLocation(product.location)
+            if (product.price % 1) {setPrice(product.price)} else setPrice(product.price + '.00')
+            if (product.expiration_date) setExpirationDate(product.expiration_date)
+        }
+        unitFormatter();
+        return function cleanup() {};
+    },[product])
 
     const addToCartHandler = () => {
         // TODO resolve conflict issue of two parties ordering complete stock
@@ -44,7 +69,6 @@ const Card = ({product}) => {
             await dispatch(cartAction(`cart/add/${product.id}/`, 'POST', ADD_TO_CART))
         }
         fetchNewCart();
-
         if (availableStock === 0) return
         return setAvailableStock(availableStock - 1)
     }
@@ -54,29 +78,27 @@ const Card = ({product}) => {
             <CardContainer>
                 <TopContainer>
                     {product.promotion && <PromotionIcon><PromoIcon /></PromotionIcon>}
-                    <ImageContainer><Image src={product.image ? product.image : Carrot} /></ImageContainer>
+                    <ImageContainer><Image src={image} /></ImageContainer>
                 </TopContainer>
-
                 <BottomContainer>
                     <UpperContainer>
                         <UpperLeftContainer>
-                            <ProductName>{product ? product.name : "Default Rüeblis"}</ProductName>
-                            <Location>Garden @ {product.location ? product.location : "Default Dürnten"}</Location>
+                            <ProductName>{productName}</ProductName>
+                            <Location>Garden @{location}</Location>
                             <DeliveryOptions>
-                                <PickUpIcon><i className="fas fa-hiking"></i></PickUpIcon>
+                                <PickUpIcon>{changeIcon === 'pickup' ? (<i className="fas fa-hiking"></i>) : (<i className="fas fa-truck"></i>)}</PickUpIcon>
                                 {product.deliver_within_radius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
                                 {product.deliver_within_radius && <DeliveryDistance>up to {product.deliver_within_radius}km</DeliveryDistance>}
                             </DeliveryOptions>
-                            <ExpiryDate>Expiration {product.expiration_date ? product.expiration_date : "01.01.2021"}</ExpiryDate>
+                            <ExpiryDate>Ad expiration {expirationDate}</ExpiryDate>
                         </UpperLeftContainer>
                         <UpperRightContainer>
                             <SellerContainer>
-                                <Portrait src={product.author ? product.author.profile_picture : defaultRuth} />
-                                <SellerName>{product.author ? product.author.first_name + ' ' + product.author.last_name : "Default Ruth"}</SellerName>
+                                <PortraitContainer><Portrait src={imageAuthor} /></PortraitContainer>
+                                <SellerName>{name}</SellerName>
                             </SellerContainer>
                         </UpperRightContainer>
                     </UpperContainer>
-
                     <LowerContainer>
                         <StockContainer>
                             <Stock>{product.stock ? availableStock : "0"}</Stock>
@@ -84,8 +106,8 @@ const Card = ({product}) => {
                         </StockContainer>
                         <PriceContainer>
                             <CurrencyTag>CHF</CurrencyTag>
-                            <PriceTag>{product.price ? product.price + priceSuffix : "6.90"}</PriceTag>
-                            <Unit>/ {product.unit ? product.unit : "Kg"}</Unit>
+                            <PriceTag>{price}</PriceTag>
+                            <Unit>/ {unit}</Unit>
                         </PriceContainer>
                     </LowerContainer>
                 </BottomContainer>
@@ -93,5 +115,4 @@ const Card = ({product}) => {
         </Fragment>
     )
 }
-
 export  default Card;

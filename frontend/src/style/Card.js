@@ -123,6 +123,7 @@ export const ProductName = styled.p`
     font-size: ${theme.fontSizeDefault};
     font-weight: ${theme.fontWeightRegular};
     color: ${theme.colorDefaultText};
+    //text-wrap: normal;
 `;
 
 export const Location = styled.p`
@@ -167,12 +168,20 @@ export const SellerContainer = styled.div`
     align-items: flex-end;    
 `;
 
-export const Portrait = styled.img`
+export const PortraitContainer = styled.div`
     height: 70px;
     width: 70px;
     border-radius: 100%;
     background: grey;
     box-shadow: ${theme.boxShadowInset};
+`;
+
+export const Portrait = styled.img`
+    height: 100%;
+    width: -moz-available;
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
 `;
 
 export const SellerName = styled(Location)`

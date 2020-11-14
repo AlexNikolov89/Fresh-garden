@@ -56,7 +56,7 @@ const Homepage = () => {
                 <Header />
 
                 <BottomContainer>
-                    {true && <Loading />}
+                    {false && <Loading />}
                     <Box>
                         {products.map((product) => <Card product={product} key={product.id}/>)}
                     </Box>
