@@ -30,6 +30,9 @@ export const LocationContainer = styled.div`
 `;
 
 export const AutocompleteContainer = styled(ShoppingCartContainer)`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
     min-width: calc(2 * 42px + 2 * 95px + 2 * ${theme.spaceXXS});
@@ -45,6 +48,10 @@ export const AutocompleteContainer = styled(ShoppingCartContainer)`
 `;
 
 export const AutocompleteOne = styled.button`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;    
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
     background-color: ${theme.colorDefaultWhite};
@@ -52,8 +59,19 @@ export const AutocompleteOne = styled.button`
     border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     width: 100%;
     height: ${theme.controlHeightXL};
-    outline: none;    
+    outline: none;
+    text-align: left;
+    padding-left: ${theme.spaceXS};
+    
+    i {
+        margin-right: ${theme.spaceXS};
+        font-size: ${theme.fontSizeS};
+        color: ${theme.colorDarkOliveGreen};
+    }  
 `;
+
+export const AutocompleteTwo = styled(AutocompleteOne)``;
+export const AutocompleteThree = styled(AutocompleteOne)``;
 
 export const SearchContainer = styled(LocationContainer)`
     width: 50%;
