@@ -15,8 +15,8 @@ const ShoppingCart = () => {
     const cartTotal = useSelector(state => state.cartReducer.cartTotal);
     const dispatch = useDispatch();
     const history = useHistory();
-    const priceSuffix = cartTotal % 1 === 0 ? '' : '0';
-    console.log("in da ShoppingCart, cart ->", cart)
+    const priceSuffix = cartTotal % 1 ? '0' : '';
+    console.log("in da shoppingcart", cart)
 
     useEffect(() => {
         const fetchCart = async () => {
@@ -26,12 +26,6 @@ const ShoppingCart = () => {
         return function cleanup() {};
     }, [dispatch]);
 
-    // const cartItems = () => {
-    //     for (const item in cart) {
-    //         return <CartItem item={item} key={cart[item].id}/>
-    //     }
-    // }
-
     return(
         <Fragment>
             <ShoppingCartContainer>
@@ -40,13 +34,11 @@ const ShoppingCart = () => {
                 </TopContainer>
 
                 <MiddleContainer>
-                    {/*{Object.keys(cart).map(item => <CartItem item={item} key={item.product_id} />)}*/}
-                    {/*{cart.map(item => <CartItem item={item} key={item.product_id} />)}*/}
-                    {/*{cartItems}*/}
+                    {Object.keys(cart).map(item => <CartItem item={item} key={item.product_id} />)}
                 </MiddleContainer>
 
                 <BottomContainer>
-                    <Total>CHF {cartTotal ? cartTotal + priceSuffix : "0.00"}</Total>
+                    <Total>CHF {cartTotal + priceSuffix}</Total>
                     <EmptyCart>
                         <EmptyCartIcon><i className="fas fa-trash-alt" /></EmptyCartIcon>
                         <TextField>Empty Shopping Basket</TextField>

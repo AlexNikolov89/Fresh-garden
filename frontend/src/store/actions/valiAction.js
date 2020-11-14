@@ -13,5 +13,6 @@ export const valiAction = (code, email, username, first_name, last_name, passwor
 
     const response = await fetch(url, config)
     const data = await response.json();
+    console.log(data);
     return data
 };

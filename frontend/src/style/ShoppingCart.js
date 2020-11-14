@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import {theme} from './index';
 import {GenericButton} from "./Buttons";
-import {NavLink} from "react-router-dom";
 
 export const ShoppingCartContainer = styled.div `
     width: calc(5 * ${theme.controlHeightXL});
@@ -214,22 +213,6 @@ export const TextField = styled.p`
     font-size: ${theme.fontSizeS};
 `;
 
-export const CheckoutButton = styled(NavLink)`
-    height: ${theme.controlHeightM};
-    width: 70%;
-    border-radius: 26px;
-    color: ${theme.colorDefaultText};
-    background: ${theme.colorMiddleGreenYellowVeryLight};
-    border: none;    
-    cursor: default;
-    font-size: ${theme.fontSizeDefault};
-    outline: none;
-    text-decoration: none;
-    text-align: center;
-    padding-top: 6px;
-    
-    &:hover, :focus {
-        box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorMiddleGreenYellowLight};
-    }
+export const CheckoutButton = styled(GenericButton)`
+    background-color: ${theme.colorMiddleGreenYellowVeryLight};
 `;
