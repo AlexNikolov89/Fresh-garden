@@ -36,7 +36,7 @@ import {ADD_TO_CART} from "../../helpers/constants";
 const Card = ({product, changeIcon}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
-    const priceSuffix = product.price % 1 ? '0' : '';
+    const priceSuffix = product.price % 1 === 0 ? '' : '0';
 
     const addToCartHandler = () => {
         // TODO resolve conflict issue of two parties ordering complete stock
