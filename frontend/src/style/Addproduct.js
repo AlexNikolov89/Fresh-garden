@@ -59,7 +59,7 @@ export const Title = styled.h1 `
     display: flex;
     justify-content: center;
     padding: 40px;
-    color: ${theme.colorDefaultText};
+    color: ${theme.colorTitle};
     font-size: ${theme.fontSizeL};
     font-weight: normal;
 `;
@@ -165,7 +165,8 @@ export const Price = styled(Input) `
     width: 100px;
     border: 1px solid ${theme.colorDefaultGrey};
     height: ${theme.controlHeightDefault};
-    color: ${theme.colorDefaultText}
+    color: ${theme.colorDefaultText};
+    background: ${theme.colorDefaultWhite}
 `;
 
 export const Delivery = styled.div `
@@ -188,12 +189,27 @@ export const ButtonContainer = styled.div `
     }
 `;
 
-
-export const Button = styled(GenericButton) `
+export const ButtonDelivery = styled.button `
     width: 150px;
     margin: 0 30px;
-    background: ${theme.colorAlmond};
-    color: ${theme.colorDefaultText}
+    height: ${theme.controlHeightM};
+    border-radius: 26px;
+    background: ${theme.colorDarkPurple};
+    color: ${theme.colorDefaultWhite};
+    border: none;    
+    cursor: default;
+    outline: none;
+
+    &:hover, :focus {
+        box-shadow: ${theme.boxShadowInset};
+    }
+`;
+
+export const ButtonPickUp = styled(ButtonDelivery) `
+    width: 150px;
+    margin: 0 30px;
+    background: ${theme.colorDarkBlue};
+    color: ${theme.colorDefaultWhite};
 `;
 
 export const Slider = styled.input `

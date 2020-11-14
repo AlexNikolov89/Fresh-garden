@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {theme} from './index'
+import {ShoppingCartContainer} from "./ShoppingCart";
 
 export const Form = styled.form `
     display: flex;
@@ -21,15 +22,19 @@ export const LocationContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    width: 30%;
+    width: 50%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         display: none;
     }
 `;
 
+export const AutoCompleteContainer = styled(ShoppingCartContainer)`
+    font-size: ${theme.fontSizeDefault};
+`;
+
 export const SearchContainer = styled(LocationContainer)`
-    width: 70%;
+    width: 50%;
 `;
 
 export const SearchInput = styled.input`
@@ -41,6 +46,8 @@ export const SearchInput = styled.input`
     border: none;
     outline: none;
 `;
+
+
 
 export const LocationInput = styled(SearchInput)``;
 
@@ -57,7 +64,7 @@ export const SearchButton = styled.button `
     margin-right: ${theme.spaceXXS};
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
-    &:hover, :focus {
+    &:hover {
         background-color: ${theme.colorMiddleGreenYellowVeryLight};
         box-shadow: ${theme.boxShadowInset};
     }
@@ -81,7 +88,7 @@ export const SubmitButton = styled(SearchButton)`
         color: ${theme.colorDarkOliveGreen};
     }
     
-    &:hover, :focus {
+    &:hover {
           background-color: ${theme.colorMiddleGreenYellowLight};
           box-shadow: ${theme.boxShadowInset};
 
