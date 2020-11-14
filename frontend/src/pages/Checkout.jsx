@@ -9,7 +9,7 @@ import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
 
 
-const Checkoutpage = () => {
+const Checkout = () => {
     return (
         <Fragment>
 
@@ -66,4 +66,4 @@ const Checkoutpage = () => {
     )
 }
 
-export default Checkoutpage;
+export default Checkout;
