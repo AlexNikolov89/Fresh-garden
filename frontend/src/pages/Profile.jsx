@@ -21,7 +21,7 @@ const Profile = () => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            await dispatch(userAction('me/', 'GET', 'GET_USER'));
+            await dispatch(userAction('users/me/', 'GET', 'GET_USER'));
             setIsLoading(false);
         }
         fetchUser()
@@ -53,9 +53,9 @@ const Profile = () => {
 
                         <Title>About my garden</Title>
                             <AboutGarden>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br /> 
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
-                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br /> 
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br />
                             </AboutGarden>
 
                             <Title>Location</Title>
