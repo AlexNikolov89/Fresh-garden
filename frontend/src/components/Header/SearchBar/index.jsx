@@ -40,37 +40,43 @@ const SearchBar = () => {
             return setShowAutocomplete(false)
         } else setShowAutocomplete(true)
 
-        console.log("in SearchBar, response _>", response)
         if (response.features[0]) setAutocompleteOne(response.features[0].place_name_en)
         if (response.features[1]) setAutocompleteTwo(response.features[1].place_name_en)
         if (response.features[2]) setAutocompleteThree(response.features[2].place_name_en)
     }
 
-    const autocompleteHandler = (e, location) => {
+    const autocompleteHandler = async (e, location) => {
         e.preventDefault();
         setLocationString(location)
         setShowAutocomplete(false)
+        let splitLocationString = locationString.split(",",1).toString()
+        await dispatch(productAction('products/?search=' + splitLocationString, 'GET', SET_PRODUCTS_ALL));
     }
 
     const searchHandler = async e => {
         const inputValue = e.currentTarget.value
         setSearchString(inputValue)
+        setShowAutocomplete(false)
+        let space = ''
+        let splitLocationString = locationString.split(",",1).toString()
+        if (splitLocationString[0] !== '') space = ' '
 
-        await dispatch(productAction('products/?search=' + locationString + inputValue, 'GET', SET_PRODUCTS_ALL));
+        await dispatch(productAction('products/?search=' + splitLocationString + space + inputValue, 'GET', SET_PRODUCTS_ALL));
     }
 
     const submitSearchHandler = async e => {
         e.preventDefault()
-        const response = await dispatch(productAction('products/' + locationString + searchString, 'GET', SET_PRODUCTS_ALL));
-        console.log("in da SearchBar, searchResponse", response)
+        setShowAutocomplete(false)
+        let space = ''
+        let splitLocationString = locationString.split(",",1).toString()
+        if (splitLocationString[0] !== '') space = ' '
+
+        await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_ALL));
     }
 
     return (
         <Fragment>
             <Form
-                // autocomplete={"off"}
-                // autocomplete={"false"}
-                autocomplete={"nope"}
                 onSubmit={submitSearchHandler}>
                 <LocationContainer>
                     <LocationButton onClick={(e) => e.preventDefault()}>
@@ -78,17 +84,11 @@ const SearchBar = () => {
                     </LocationButton>
                     <LocationInput
                         name={'location'}
-                        type={'search'}
-                        // id={() =>
-                        //     console.log(Math.floor(Math.random() * 9))
-                        //     return {`location${Math.floor(Math.random() * 9)}`
-                        // }}
+                        type={'text'}
                         placeholder={"Location"}
                         onChange={locationHandler}
                         value={locationString}
-                        // autocomplete={"off"}
-                        // autocomplete={"false"}
-                        // autocomplete={"nope"}
+                        autoComplete={"off"}
                     />
                 </LocationContainer>
 
@@ -125,6 +125,8 @@ const SearchBar = () => {
                         placeholder={"Search"}
                         onChange={searchHandler}
                         value={searchString}
+                        autoComplete={"off"}
+
                     />
                 </SearchContainer>
                 <SubmitButton type='submit'>

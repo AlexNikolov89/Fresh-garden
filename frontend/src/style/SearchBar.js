@@ -64,9 +64,10 @@ export const AutocompleteOne = styled.button`
     padding-left: ${theme.spaceXS};
     
     i {
-        margin-right: ${theme.spaceXS};
         font-size: ${theme.fontSizeS};
         color: ${theme.colorDarkOliveGreen};
+        margin-left: ${theme.spaceXS};
+        margin-right: ${theme.spaceS};
     }  
 `;
 
