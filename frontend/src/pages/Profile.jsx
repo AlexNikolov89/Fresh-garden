@@ -11,9 +11,22 @@ import {Login} from "./Login";
 import { useHistory, useLocation } from "react-router-dom";
 import AvatarImg from '../assets/defaultRuth.PNG';
 import Card from '../components/Card/index.js'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {userAction} from "../store/actions/userAction";
 
 const Profile = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            await dispatch(userAction('me/', 'GET', 'GET_USER'));
+            setIsLoading(false);
+        }
+        fetchUser()
+
+    }, [dispatch]);
 
     return (
         <Fragment>
@@ -27,8 +40,8 @@ const Profile = () => {
                 <Header />
 
                 <BottomContainer>
-                  {/*{location.pathname === '/login' && <Login/>}  */}
-                    {/*{location.pathname === '/profile' && <p>you habe profile! pliiiis</p>} */}
+                  {/*{location.pathname === '/login' && <Login/>}*/}
+                  {/*  {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}*/}
                     <UserProfileContainer>
                         <AvatarContainer>
                             <Avatar src={AvatarImg} alt='avatar' />
@@ -61,9 +74,11 @@ const Profile = () => {
 
                 </BottomContainer>
 
-                {/*} <div>
-                     {products.map((product) => <Card product={product} key={product.id}/>)}
-    </div> */}
+                <div>
+                     {/*{products.map((product) =>*/}
+                     {/*    <Card product={product} key={product.id}/>*/}
+                     {/*    )}*/}
+                </div>
             </HomeContainer>
             <Footer />
         </Fragment>

@@ -238,7 +238,7 @@ export const CategoryContainer = styled.div `
     justify-content: center;
     padding: 25px 0;
 `;
-export const Upload = styled.div `
+export const Upload = styled.form `
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -10,7 +10,7 @@ import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
 import Footer from '../components/Footer/index.js'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
-import {authAction} from '../store/actions/authAction'
+import {authAction} from '../store/actions/authAction';
 
 
 
@@ -30,6 +30,9 @@ const Addproduct = () => {
     const [unit, setUnit] = useState('')
     const [value, setValue] = useState([0, 20]);
     const [submit, setSubmit] = useState(false);
+
+    const history = useHistory();
+
     
     
     const changeHandler = e => {
@@ -57,7 +60,7 @@ const Addproduct = () => {
                 </TopContainer>
                 <Header />
                 <BottomConatiner>
-                    <AddCardForm onChange={handleSubmit}>
+                    <AddCardForm onChange={handleSubmit} enctype="multipart/form-data">
                         <Title>Want to sell your Vegetables?</Title>
                         <Form>
                             <Input type='text'
@@ -114,7 +117,7 @@ const Addproduct = () => {
                             />
                         </Upload>
                         <Submit value='Submit'
-                        onClick={e =>  window.location.href='/shop'}
+                        onClick={e => history.push('/shop')}
                         >
                         Confirm
                         </Submit>
