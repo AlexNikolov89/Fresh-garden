@@ -27,7 +27,7 @@ const Profile = () => {
                 <Header />
 
                 <BottomContainer>
-                  {location.pathname === '/login' && <Login/>}
+                  {/*{location.pathname === '/login' && <Login/>}  */}
                     {/*{location.pathname === '/profile' && <p>you habe profile! pliiiis</p>} */}
                     <UserProfileContainer>
                         <AvatarContainer>
@@ -61,9 +61,9 @@ const Profile = () => {
 
                 </BottomContainer>
 
-                 <div>
+                {/*} <div>
                      {products.map((product) => <Card product={product} key={product.id}/>)}
-                 </div>
+    </div> */}
             </HomeContainer>
             <Footer />
         </Fragment>
