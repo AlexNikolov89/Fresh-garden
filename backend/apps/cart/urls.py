@@ -2,6 +2,7 @@ from django.urls import path
 from .views import CartAddItem, CartRemoveItem, CartIncrementQuantity, CartDecrementQuantity, ClearCartView, \
     CartDetailsView
 
+app_name = 'cart'
 urlpatterns = [
     path('add/<int:id>/', CartAddItem.as_view(), name='cart_add'),
     path('item_clear/<int:id>/', CartRemoveItem.as_view(), name='item_clear'),

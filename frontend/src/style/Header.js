@@ -154,7 +154,7 @@ export const LogoContainer = styled.div `
 `;
 
 export const Logo = styled.img`
-    width: 60px;
+    width: ${theme.controlHeightXL};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};

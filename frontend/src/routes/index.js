@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Homepage from '../pages/Homepage';
-import Checkout from '../pages/Checkoutpage'
+import Checkout from '../pages/Checkout'
 import About from '../pages/About';
 import Addproduct from '../pages/Addproduct.jsx'
 import Profile from "../pages/Profile";

@@ -3,11 +3,27 @@ import { useHistory } from "react-router-dom";
 import { regAction } from '../../store/actions/regAction';
 import { valiAction } from '../../store/actions/valiAction';
 import { useDispatch } from 'react-redux';
-import { GenericButton } from '../../style/Buttons'
-import { FormWrapper, StepOneContainer, StepTwoContainer, StepThreeContainer, EmailSignUpContainer, EmailInputContainer, FirstnameInputContainer, LastnameInputContainer, PasswordInputContainer, PasswordRepeatInputContainer, UsernameInputContainer, ValidationCodeContainer, LayoutContainerLeft, LayoutContainerRight, LayoutContainerForm } from '../../style/Login'
-import congrats from '../../assets/images/congrats.png';
+import {GenericButton, SignInButton, SignUpButton} from '../../style/Buttons'
+import {
+    FormWrapper,
+    StepOneContainer,
+    StepTwoContainer,
+    StepThreeContainer,
+    EmailSignUpContainer,
+    EmailInputContainer,
+    FirstnameInputContainer,
+    LastnameInputContainer,
+    PasswordInputContainer,
+    PasswordRepeatInputContainer,
+    UsernameInputContainer,
+    ValidationCodeContainer,
+    LayoutContainerLeft,
+    LayoutContainerRight,
+    LayoutContainerForm,
+    EmailIconSignUp
+} from '../../style/Login'
+import congrats from '../../assets/images/checkmark_done.png';
 import { SignIn } from '../SignIn';
-import { ReactComponent as EmailIconSVG } from '../../assets/svgs/mail.svg';
 import { ReactComponent as StepOneIconSVG } from '../../assets/svgs/stepOne.svg';
 import { ReactComponent as StepTwoIconSVG } from '../../assets/svgs/stepTwo.svg';
 import { ReactComponent as StepThreeIconSVG } from '../../assets/svgs/stepThree.svg';
@@ -106,12 +122,11 @@ export const SignUp = () => {
                             <EmailSignUpContainer>
                                 <p>Email</p>
                                 <div>
-                                    <label htmlFor="user"><EmailIconSVG /></label>
-                                    <input type="text" id="user" name="user" value={email} onChange={handleEmail} placeholder="Email"></input>
+                                    <EmailIconSignUp htmlFor="user"><i className="fas fa-envelope"></i><input type="text" id="user" name="user" value={email} onChange={handleEmail} placeholder="Email"/></EmailIconSignUp>
                                 </div>
                             </EmailSignUpContainer>
                             <p>{message}</p>
-                            <GenericButton id="submit" type="submit" value="Continue"></GenericButton>
+                            <SignInButton id="submit" type="submit" value="Continue">Sign Up</SignInButton>
                         </form>
                         <StepOneIconSVG id='stepOneIcon'/>
                     </StepOneContainer>
@@ -127,7 +142,7 @@ export const SignUp = () => {
                         <form onSubmit={stepTwoHandler}>
                             <p>We’ve sent a confirmation code to your email<br/>{email}</p>
                             <p>Development: your code to copy is {code}</p>
-                            <GenericButton id="submit" type="submit" value="Continue"></GenericButton>
+                            <SignInButton id="submit" type="submit" value="Continue">Continue</SignInButton>
                         </form>
                         <StepTwoIconSVG id='stepTwoIcon'/>
                     </StepTwoContainer>
@@ -170,7 +185,7 @@ export const SignUp = () => {
                                 </LayoutContainerForm>
                                 <p>{message}</p>
                             </FormWrapper>
-                            <GenericButton id="submit" type="submit" value="Complete"></GenericButton>
+                            <SignInButton id="submit" type="submit" value="Complete">Complete</SignInButton>
                         </form>
                         <StepThreeIconSVG id='stepThreeIcon'/>
                     </StepThreeContainer>

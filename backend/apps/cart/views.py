@@ -73,3 +73,11 @@ class CartDetailsView(ListAPIView):
     def get(self, request, *args, **kwargs):
         cart = Cart(request)
         return Response(cart.cart, status=status.HTTP_200_OK)
+
+# class CheckOutCartView(UpdateAPIView):
+#     """
+#     PATCH: Checkout current Cart and decrease the stock of the chosen items.
+#     """
+#     def update(self, request, *args, **kwargs):
+#         cart = Cart(request)
+#         product = Product.objects.get()

@@ -10,7 +10,6 @@ import {setToken} from "./store/actions/authAction";
 const token = localStorage.getItem("token");
 store.dispatch(setToken(token));
 
-
 ReactDOM.render(
   <Provider store={store}>
       <ThemeProvider theme={theme}>

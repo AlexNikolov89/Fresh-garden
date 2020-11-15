@@ -30,10 +30,26 @@ class ProductListCreateAPIView(ListCreateAPIView):
     def get(self, request, *args, **kwargs):
         queryset = self.get_queryset()
         search_string = self.request.query_params.get('search')
+
         if search_string:
+            appendix_fulltext = "¬"
+            appendix_location = "¬"
+            if len(search_string.split(" ")) > 1:
+                appendix_location = search_string.split(" ")[1]
+            if len(search_string.split(" ")) > 2:
+                appendix_fulltext = search_string.split(" ")[2]
+            if len(search_string.split(" ")) > 0:
+                appendix_location = search_string.split(" ")[0]
+            if len(search_string.split(" ")) > 1:
+                appendix_fulltext = search_string.split(" ")[1]
+            # TODO make this searches with AND operators for having the right intersection
+            # TODO resolve issue with author__first_name not functioning
             queryset = queryset.filter(
                 Q(name__icontains=search_string)
-                | Q(author__username__icontains=search_string)
+                | Q(name__icontains=appendix_fulltext)
+                | Q(location__icontains=search_string)
+                | Q(location__icontains=appendix_location)
+                | Q(category__icontains=search_string)
                 | Q(author__first_name__icontains=search_string)
                 | Q(author__last_name__icontains=search_string)
             )

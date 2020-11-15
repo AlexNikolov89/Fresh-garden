@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react'
 import Card from "../Card";
-import {PromotedProductsContainer} from "../../style/Homepage";
+import {Box, PromotedProductsContainer} from "../../style/Homepage";
 
 
 const PromotedProducts = ({products}) => {
