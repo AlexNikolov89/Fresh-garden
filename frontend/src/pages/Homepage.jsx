@@ -55,8 +55,8 @@ const Homepage = () => {
 
                 <Header />
 
+                {isLoading ? <Loading /> : (
                 <BottomContainer>
-                    {false && <Loading />}
                     <Box>
                         {products.map((product) => <Card product={product} key={product.id}/>)}
                     </Box>
@@ -65,6 +65,7 @@ const Homepage = () => {
                     <PromotedProducts products={products} />
                     </SideBox>
                 </BottomContainer>
+                )}
             </HomeContainer>
             <Footer />
         </Fragment>
