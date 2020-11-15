@@ -8,8 +8,6 @@ const initialState = {
 }
 
 export default function cartReducer (state = initialState, action) {
-    console.log("in da type", action.type)
-    console.log("in da cartReducer payload", action.payload)
     switch (action.type) {
         case SET_CART: {
             const newState = {...state}

@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {
     CardContainer,
     TopContainer,
@@ -24,24 +24,75 @@ import {
     UpperLeftContainer,
     AddToCart,
     PromotionIcon,
-    DeliveryDistance, ExpiryDate, ImageContainer
+    DeliveryDistance,
+    ExpiryDate,
+    ImageContainer,
+    PortraitContainer,
+    PickUpContainer,
+    DeliveryContainer,
+    ExpiryContainer,
+    ExpiryIcon
 } from '../../style/Card';
-import Carrot from '../../assets/images/carot.jpg'
-import defaultRuth from '../../assets/defaultRuth.PNG'
+import defaultImage from '../../assets/images/default_pumpkin.jpg'
+import defaultImageAuthor from '../../assets/images/default_farmer.jpg'
 import { ReactComponent as PromoIcon} from '../../assets/icons/disc_2.svg';
 import {cartAction} from "../../store/actions/cartAction";
 import {useDispatch} from "react-redux";
 import {ADD_TO_CART} from "../../helpers/constants";
 
-const Card = ({product, changeIcon, unit}) => {
+
+const Card = ({product, changeIcon}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
-    const priceSuffix = product.price % 1 === 0 ? '' : '0';
-    const [productUnit, setProductUnit] = useState(null)
-    //const unitHandler = () => {
-        //if (unit) setProductUnit (unit) else setProductUnit(product.unit)
-    //}
-    //unitHandler();
+    const [name, setName] = useState('First Lastname')
+    const [productName, setProductName] = useState('Product Name')
+    const [expirationDate, setExpirationDate] = useState('01.01.2021')
+    const [image, setImage] = useState(defaultImage)
+    const [imageAuthor, setImageAuthor] = useState(defaultImageAuthor)
+    const [location, setLocation] = useState('Location')
+    const [unit, setUnit] = useState('na')
+    const [price, setPrice] = useState("0.00")
+    const [renderedStock, setRenderedStock] = useState(1)
+    const [style, setStyle] = useState(null)
+    const [styleDiscount, setStyleDiscount] = useState(null)
+    const [discountedPrice, setDiscountedPrice] = useState('')
+    const [deliveryRadius, setDeliveryRadius] = useState(null)
+
+    // formatting backend information and handling the real time render of the "addproduct" page
+    useEffect(() => {
+        const unitFormatter = () => {
+            if (product.stock) setAvailableStock(product.stock)
+            if (product.stock && product.stock <= 99) setRenderedStock(product.stock)
+            if (product.stock && product.stock > 99) setRenderedStock('99+')
+            if (product.units === 'kg') setUnit('Kg')
+            if (product.units === 'piece') setUnit('pc.')
+            if (product.image) setImage(product.image)
+            if (product.author && product.author.profile_picture) setImageAuthor(product.author.profile_picture)
+            if (product.author && product.author.first_name && product.author.last_name) setName(product.author.first_name + ' ' + product.author.last_name)
+            if (product.name) setProductName(product.name)
+            if (product.location) setLocation(product.location)
+            if (product.price) setPrice((Math.ceil(product.price * 20)/20).toFixed(2))
+            if (product.expiration_date) setExpirationDate(product.expiration_date)
+            if (product.deliver_within_radius) setDeliveryRadius(product.deliver_within_radius)
+            if (product.promotion) {
+                setDiscountedPrice((Math.ceil((product.price / product.promotion) * 20)/20).toFixed(2))
+                let styleObject = {
+                    textDecoration: "line-through",
+                    fontSize: "1.2rem",
+                    alignSelf: "center",
+                    margin: "2px",
+                }
+                setStyle(styleObject)
+                styleObject = {
+                    color: "#5D6D37",
+                    marginLeft: 0,
+                }
+                setStyleDiscount(styleObject)
+            }
+        }
+        unitFormatter();
+        return function cleanup() {};
+    },[product])
 
     const addToCartHandler = () => {
         // TODO resolve conflict issue of two parties ordering complete stock
@@ -49,9 +100,12 @@ const Card = ({product, changeIcon, unit}) => {
             await dispatch(cartAction(`cart/add/${product.id}/`, 'POST', ADD_TO_CART))
         }
         fetchNewCart();
-
         if (availableStock === 0) return
-        return setAvailableStock(availableStock - 1)
+        console.log("available before....", availableStock)
+        setAvailableStock(availableStock - 1)
+        console.log("available after......", availableStock)
+        if (availableStock - 1 > 99) return setRenderedStock('99+')
+        if (availableStock - 1 <= 99) return setRenderedStock(availableStock - 1)
     }
 
     return (
@@ -59,38 +113,44 @@ const Card = ({product, changeIcon, unit}) => {
             <CardContainer>
                 <TopContainer>
                     {product.promotion && <PromotionIcon><PromoIcon /></PromotionIcon>}
-                    <ImageContainer><Image src={product.image ? product.image : Carrot} /></ImageContainer>
+                    <ImageContainer><Image src={image} /></ImageContainer>
                 </TopContainer>
-
                 <BottomContainer>
                     <UpperContainer>
                         <UpperLeftContainer>
-                            <ProductName>{product ? product.name : "Default Rüeblis"}</ProductName>
-                            <Location>Garden @ {product.location ? product.location : "Default Dürnten"}</Location>
+                            <ProductName>{productName}</ProductName>
                             <DeliveryOptions>
-                                <PickUpIcon>{changeIcon === 'pickup' ? (<i className="fas fa-hiking"></i>) : (<i className="fas fa-truck"></i>)}</PickUpIcon>
-                                {product.deliver_within_radius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
-                                {product.deliver_within_radius && <DeliveryDistance>up to {product.deliver_within_radius}km</DeliveryDistance>}
+                                <DeliveryContainer>
+                                    {deliveryRadius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
+                                    {deliveryRadius && <DeliveryDistance>delivery up to {deliveryRadius}km</DeliveryDistance>}
+                                </DeliveryContainer>
+                                <PickUpContainer>
+                                    <PickUpIcon><i className="fas fa-hiking"></i></PickUpIcon>
+                                    <Location>{deliveryRadius ? "or pick up @" : "pick up @"}{location}</Location>
+                                </PickUpContainer>
+                                <ExpiryContainer>
+                                    <ExpiryIcon><i className="fas fa-seedling"></i></ExpiryIcon>
+                                    <ExpiryDate>ad expires {expirationDate}</ExpiryDate>
+                                </ExpiryContainer>
                             </DeliveryOptions>
-                            <ExpiryDate>Expiration {product.expiration_date ? product.expiration_date : "01.01.2021"}</ExpiryDate>
                         </UpperLeftContainer>
                         <UpperRightContainer>
                             <SellerContainer>
-                                <Portrait src={product.author ? product.author.profile_picture : defaultRuth} />
-                                <SellerName>{product.author ? product.author.first_name + ' ' + product.author.last_name : "Default Ruth"}</SellerName>
+                                <PortraitContainer><Portrait src={imageAuthor} /></PortraitContainer>
+                                <SellerName>{name}</SellerName>
                             </SellerContainer>
                         </UpperRightContainer>
                     </UpperContainer>
-
                     <LowerContainer>
                         <StockContainer>
-                            <Stock>{product.stock ? availableStock : "0"}</Stock>
+                            <Stock>{renderedStock}</Stock>
                             <AddToCart onClick={addToCartHandler}><i className="fas fa-shopping-basket"></i></AddToCart>
                         </StockContainer>
                         <PriceContainer>
                             <CurrencyTag>CHF</CurrencyTag>
-                            <PriceTag>{product.price ? product.price + priceSuffix : "6.90"}</PriceTag>
-                            <Unit>{productUnit ? productUnit : "na"}</Unit>
+                            <PriceTag style={style}>{price}</PriceTag>
+                            {product.promotion && <PriceTag style={styleDiscount}>{discountedPrice}</PriceTag>}
+                            <Unit>/ {unit}</Unit>
                         </PriceContainer>
                     </LowerContainer>
                 </BottomContainer>
@@ -98,5 +158,4 @@ const Card = ({product, changeIcon, unit}) => {
         </Fragment>
     )
 }
-
 export  default Card;

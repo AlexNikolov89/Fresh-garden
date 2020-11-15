@@ -11,6 +11,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory, useLocation} from "react-router-dom";
 import {productAction} from "../store/actions/productAction";
 import {SET_PRODUCTS_ALL} from "../helpers/constants";
+import {Loading} from "../components/Loading";
 
 const Homepage = () => {
     const dispatch = useDispatch();
@@ -34,6 +35,7 @@ const Homepage = () => {
     // fetching all products
     useEffect(() => {
         const fetchProducts = async () => {
+            setIsLoading(true)
             await dispatch(productAction('products/', 'GET', SET_PRODUCTS_ALL));
             setIsLoading(false);
         }
@@ -53,15 +55,17 @@ const Homepage = () => {
 
                 <Header />
 
+                {isLoading ? <Loading /> : (
                 <BottomContainer>
                     <Box>
                         {products.map((product) => <Card product={product} key={product.id}/>)}
                     </Box>
                     <SideBox>
-                        {viewCart && <ShoppingCart />}
-                        <PromotedProducts products={products} />
+                        {viewCart && <ShoppingCart/>}
+                    <PromotedProducts products={products} />
                     </SideBox>
                 </BottomContainer>
+                )}
             </HomeContainer>
             <Footer />
         </Fragment>
