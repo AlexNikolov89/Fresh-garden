@@ -96,13 +96,20 @@ export const UpperContainer = styled.div`
 `;
 
 export const UpperLeftContainer = styled.div`
+    width: 160px;
+    height: 95px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export const UpperRightContainer = styled.div`
+    width: calc(270px - 160px - 32px);
+    height: 95px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -120,40 +127,60 @@ export const LowerContainer = styled.div`
 `;
 
 export const ProductName = styled.p`
+    overflow: scroll;
+    width: 100%;
     font-size: ${theme.fontSizeDefault};
     font-weight: ${theme.fontWeightRegular};
     color: ${theme.colorDefaultText};
-    //text-wrap: normal;
 `;
 
 export const Location = styled.p`
+    overflow: scroll;
+    width: 100%;
     font-size: ${theme.fontSizeS};
     font-weight: ${theme.fontWeightLight};
     color: ${theme.colorDefaultText};
 `;
 
 export const DeliveryOptions = styled.div`
+    height: 60px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
 `;
 
+export const PickUpContainer = styled.div`
+    height: calc(100% / 3);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+`;
+
+export const DeliveryContainer = styled(PickUpContainer)``;
+export const ExpiryContainer = styled(PickUpContainer)``;
+
 export const PickUpIcon = styled.div`
-    margin-right: ${theme.spaceXS};
-    margin-top: ${theme.spaceXS};
+    margin-right: 12px;
     i {
-      font-size: ${theme.fontSizeDefault};
-      color: ${theme.colorDarkPurple};
+        font-size: ${theme.fontSizeDefault};
+        color: ${theme.colorDarkPurple};
     }
 `;
 
 export const DeliveryIcon = styled.div`
-    margin-right: ${theme.spaceXS};
-    margin-top: ${theme.spaceXS};
+    margin-right: 4px;
     i {
-      font-size: ${theme.fontSizeDefault};
-      color: ${theme.colorDarkBlue};
+        font-size: ${theme.fontSizeDefault};
+        color: ${theme.colorDarkBlue};
+    }
+`;
+
+export const ExpiryIcon = styled(PickUpIcon)`
+    margin-right: 8px;
+    i {
+        color: ${theme.colorDarkGold};
     }
 `;
 
@@ -162,6 +189,7 @@ export const DeliveryDistance = styled(Location)`
 `;
 
 export const SellerContainer = styled.div`
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -185,7 +213,11 @@ export const Portrait = styled.img`
 `;
 
 export const SellerName = styled(Location)`
+    overflow: scroll;
+    white-space: nowrap;
+    text-align: end;
     margin-top: ${theme.spaceXXS}
+    
 `;
 
 export const ExpiryDate = styled(Location)``;
@@ -236,14 +268,19 @@ export const AddToCart = styled.div`
 `;
 
 export const CurrencyTag = styled(Location)`
+    width: auto;
     align-self: center;
     font-weight: ${theme.fontWeightLight};
     color: ${theme.colorDefaultText};
 `;
 
 export const PriceTag = styled(ProductName)`
+    width: auto;
     margin-left: ${theme.spaceXXS};
     margin-right: ${theme.spaceXXS};
 `;
 
-export const Unit = styled(ProductName)``;
+export const Unit = styled(ProductName)`
+    width: auto;
+
+`;

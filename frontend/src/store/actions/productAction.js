@@ -11,7 +11,7 @@ export const setProductData = (type, data) => {
 export const productAction = (urlPath, method, type, body) => async (dispatch, getState) => {
     const { authReducer:{ token } } = getState();
     const url = baseUrl + urlPath;
-
+    console.log("urlpath SEARCHSTRING----------", urlPath)
     // creating fetch config header depending on request type
     const createConfig = () => {
         if (method !== 'GET') {
@@ -37,7 +37,6 @@ export const productAction = (urlPath, method, type, body) => async (dispatch, g
 
     const response = await fetch(url, config);
     const data = await response.json();
-    console.log("in da productAction, data", response)
 
     dispatch(setProductData(type, data));
 };

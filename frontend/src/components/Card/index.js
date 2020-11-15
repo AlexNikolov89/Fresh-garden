@@ -24,7 +24,14 @@ import {
     UpperLeftContainer,
     AddToCart,
     PromotionIcon,
-    DeliveryDistance, ExpiryDate, ImageContainer, PortraitContainer
+    DeliveryDistance,
+    ExpiryDate,
+    ImageContainer,
+    PortraitContainer,
+    PickUpContainer,
+    DeliveryContainer,
+    ExpiryContainer,
+    ExpiryIcon
 } from '../../style/Card';
 import defaultImage from '../../assets/images/default_pumpkin.jpg'
 import defaultImageAuthor from '../../assets/images/default_farmer.jpg'
@@ -45,10 +52,18 @@ const Card = ({product, changeIcon}) => {
     const [location, setLocation] = useState('Location')
     const [unit, setUnit] = useState('na')
     const [price, setPrice] = useState("0.00")
+    const [renderedStock, setRenderedStock] = useState(1)
+    const [style, setStyle] = useState(null)
+    const [styleDiscount, setStyleDiscount] = useState(null)
+    const [discountedPrice, setDiscountedPrice] = useState('')
+    const [deliveryRadius, setDeliveryRadius] = useState(null)
 
     // formatting backend information and handling the real time render of the "addproduct" page
     useEffect(() => {
         const unitFormatter = () => {
+            if (product.stock) setAvailableStock(product.stock)
+            if (product.stock && product.stock <= 99) setRenderedStock(product.stock)
+            if (product.stock && product.stock > 99) setRenderedStock('99+')
             if (product.units === 'kg') setUnit('Kg')
             if (product.units === 'piece') setUnit('pc.')
             if (product.image) setImage(product.image)
@@ -56,8 +71,24 @@ const Card = ({product, changeIcon}) => {
             if (product.author && product.author.first_name && product.author.last_name) setName(product.author.first_name + ' ' + product.author.last_name)
             if (product.name) setProductName(product.name)
             if (product.location) setLocation(product.location)
-            if (product.price % 1) {setPrice(product.price)} else setPrice(product.price + '.00')
+            if (product.price) setPrice((Math.ceil(product.price * 20)/20).toFixed(2))
             if (product.expiration_date) setExpirationDate(product.expiration_date)
+            if (product.deliver_within_radius) setDeliveryRadius(product.deliver_within_radius)
+            if (product.promotion) {
+                setDiscountedPrice((Math.ceil((product.price / product.promotion) * 20)/20).toFixed(2))
+                let styleObject = {
+                    textDecoration: "line-through",
+                    fontSize: "1.2rem",
+                    alignSelf: "center",
+                    margin: "2px",
+                }
+                setStyle(styleObject)
+                styleObject = {
+                    color: "#5D6D37",
+                    marginLeft: 0,
+                }
+                setStyleDiscount(styleObject)
+            }
         }
         unitFormatter();
         return function cleanup() {};
@@ -70,7 +101,11 @@ const Card = ({product, changeIcon}) => {
         }
         fetchNewCart();
         if (availableStock === 0) return
-        return setAvailableStock(availableStock - 1)
+        console.log("available before....", availableStock)
+        setAvailableStock(availableStock - 1)
+        console.log("available after......", availableStock)
+        if (availableStock - 1 > 99) return setRenderedStock('99+')
+        if (availableStock - 1 <= 99) return setRenderedStock(availableStock - 1)
     }
 
     return (
@@ -84,13 +119,20 @@ const Card = ({product, changeIcon}) => {
                     <UpperContainer>
                         <UpperLeftContainer>
                             <ProductName>{productName}</ProductName>
-                            <Location>Garden @{location}</Location>
                             <DeliveryOptions>
-                                <PickUpIcon>{changeIcon === 'pickup' ? (<i className="fas fa-hiking"></i>) : (<i className="fas fa-truck"></i>)}</PickUpIcon>
-                                {product.deliver_within_radius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
-                                {product.deliver_within_radius && <DeliveryDistance>up to {product.deliver_within_radius}km</DeliveryDistance>}
+                                <DeliveryContainer>
+                                    {deliveryRadius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
+                                    {deliveryRadius && <DeliveryDistance>delivery up to {deliveryRadius}km</DeliveryDistance>}
+                                </DeliveryContainer>
+                                <PickUpContainer>
+                                    <PickUpIcon><i className="fas fa-hiking"></i></PickUpIcon>
+                                    <Location>{deliveryRadius ? "or pick up @" : "pick up @"}{location}</Location>
+                                </PickUpContainer>
+                                <ExpiryContainer>
+                                    <ExpiryIcon><i className="fas fa-seedling"></i></ExpiryIcon>
+                                    <ExpiryDate>ad expires {expirationDate}</ExpiryDate>
+                                </ExpiryContainer>
                             </DeliveryOptions>
-                            <ExpiryDate>Ad expiration {expirationDate}</ExpiryDate>
                         </UpperLeftContainer>
                         <UpperRightContainer>
                             <SellerContainer>
@@ -101,12 +143,13 @@ const Card = ({product, changeIcon}) => {
                     </UpperContainer>
                     <LowerContainer>
                         <StockContainer>
-                            <Stock>{product.stock ? availableStock : "0"}</Stock>
+                            <Stock>{renderedStock}</Stock>
                             <AddToCart onClick={addToCartHandler}><i className="fas fa-shopping-basket"></i></AddToCart>
                         </StockContainer>
                         <PriceContainer>
                             <CurrencyTag>CHF</CurrencyTag>
-                            <PriceTag>{price}</PriceTag>
+                            <PriceTag style={style}>{price}</PriceTag>
+                            {product.promotion && <PriceTag style={styleDiscount}>{discountedPrice}</PriceTag>}
                             <Unit>/ {unit}</Unit>
                         </PriceContainer>
                     </LowerContainer>
