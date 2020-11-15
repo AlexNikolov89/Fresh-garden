@@ -1,4 +1,6 @@
-import React, {Fragment, useState, useRef} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {useHistory, useLocation} from "react-router-dom";
 import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
         AddCardForm, CardOverview, Form, Unit, Dropdown, Option, Select, ButtonDelivery, ButtonPickUp, DropdownContainer, DropDownHeader,
         Left, Right, DropDownListContainer, DropdownList, List, Price,
@@ -8,6 +10,11 @@ import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
 import Footer from '../components/Footer/index.js'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
+import {authAction} from '../store/actions/authAction'
+
+
+
+
 const Addproduct = () => {
     const [product, setProduct] = useState({
        name: '',
@@ -23,10 +30,13 @@ const Addproduct = () => {
     const [unit, setUnit] = useState('')
     const [value, setValue] = useState([0, 20]);
     const [submit, setSubmit] = useState(false);
+    
+    
     const changeHandler = e => {
         setProduct({...product, [e.target.name]: e.target.value});
         //setProduct({...product, [e.target.name]: e.target.files[0]})
     }
+    
     const handleSubmit = e => {
         e.preventDefault();
         setSubmit(true);
@@ -103,7 +113,11 @@ const Addproduct = () => {
                             required='Required'
                             />
                         </Upload>
-                        <Submit value='Submit'>Confirm</Submit>
+                        <Submit value='Submit'
+                        onClick={e =>  window.location.href='/shop'}
+                        >
+                        Confirm
+                        </Submit>
                     </AddCardForm>
                     <CardOverview>
                         <Card product={product} changeIcon={changeIcon} unit={unit} category={category} /> 

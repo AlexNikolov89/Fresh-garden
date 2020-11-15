@@ -14,9 +14,6 @@ import Card from '../components/Card/index.js'
 import {useSelector} from "react-redux";
 
 const Profile = () => {
-    const history = useHistory();
-    const location = useLocation();
-     const products = useSelector(state => state.productReducer.productsAll);
 
     return (
         <Fragment>
