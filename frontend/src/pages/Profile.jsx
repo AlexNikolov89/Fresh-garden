@@ -1,22 +1,31 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {
-    TopContainer, Image, Box, HomeContainer, Text, HorizontalLine,
-    About, AboutText, Slogan, SideBox
-} from '../style/Homepage';
+    TopContainer, Image, HomeContainer, Slogan} from '../style/Homepage';
 import {UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, City, ButtonEdit, 
     BottomContainer, UserInfoContainer, AboutGarden, Title, Info, Email, Contact, Mobile} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
-import {Login} from "./Login";
-import { useHistory, useLocation } from "react-router-dom";
-import AvatarImg from '../assets/defaultRuth.PNG';
+//import {Login} from "./Login";
+import { useLocation } from "react-router-dom";
+//import AvatarImg from '../assets/defaultRuth.PNG';
 import Card from '../components/Card/index.js'
-import {useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
+import {userAction} from "../store/actions/userAction";
+import {connect} from 'react-redux';
 
-const Profile = () => {
-    const history = useHistory();
-    const location = useLocation();
-     const products = useSelector(state => state.productReducer.productsAll);
+const Profile = ({author}) => {
+    const { first_name, last_name, email, description, phone, address, zip, city, avatar } = author
+    //const { pathname } = useLocation();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+
+        const fetchUser = async () => {
+            await dispatch(userAction('users/me/', 'GET', 'GET_USER'));
+        }
+        fetchUser()
+
+    }, [dispatch]);
 
     return (
         <Fragment>
@@ -30,47 +39,58 @@ const Profile = () => {
                 <Header />
 
                 <BottomContainer>
-                  {location.pathname === '/login' && <Login/>}
-                    {/*{location.pathname === '/profile' && <p>you habe profile! pliiiis</p>} */}
+                  {/*{pathname === '/login' && <Login/>}*/}
+                  {/*  {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}*/}
                     <UserProfileContainer>
                         <AvatarContainer>
-                            <Avatar src={AvatarImg} alt='avatar' />
-                            <Name>Name Lastname</Name>
-                            <Email>some_name@gmail.com</Email>
+                            <Avatar src={avatar || 'https://via.placeholder.com/50x50'} alt='avatar' />
+                            <Name>{`${first_name} ${last_name}`}</Name>
+                            <Email>{email}</Email>
                             <ButtonEdit>Edit Profile</ButtonEdit>
                         </AvatarContainer>
                         <UserInfoContainer>
 
                         <Title>About my garden</Title>
                             <AboutGarden>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br /> 
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
-                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br /> 
+                            {/*Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />*/}
+                            {/*sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />*/}
+                            {/*magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br />*/}
+                                {description}
                             </AboutGarden>
 
                             <Title>Location</Title>
                             <Info>
-                            <ZipCode>8400</ZipCode>
-                            <Address>Bahnhofstrasse 1</Address>
-                            <City>Zurich</City>
+                            <ZipCode>{zip}</ZipCode>
+                            <Address>{address}</Address>
+                            <City>{city}</City>
                             </Info>
 
                             <Title>Tel. Number</Title>
                             <Contact>
-                                <Mobile>079 555 333 22</Mobile>
+                                <Mobile>{phone}</Mobile>
                             </Contact>
                         </UserInfoContainer>
                     </UserProfileContainer>
 
                 </BottomContainer>
 
-                 <div>
-                     {products.map((product) => <Card product={product} key={product.id}/>)}
-                 </div>
+                <div>
+                     {/*{products.map((product) =>*/}
+                     {/*    <Card product={product} key={product.id}/>*/}
+                     {/*    )}*/}
+
+                </div>
             </HomeContainer>
             <Footer />
         </Fragment>
     )
 }
 
-export default Profile;
+const mapStateToProps = state => {
+    return {
+        author: state.userProfileReducer.author
+    };
+};
+
+
+export default connect(mapStateToProps, {userAction}) (Profile);
