@@ -9,7 +9,7 @@ import Footer from '../components/Footer/index.js'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";
-import {newProductAction} from "../store/actions/userAction";
+import {productAction} from "../store/actions/productAction";
 import {CREATE_NEW_PRODUCT} from "../helpers/constants";
 import {useHistory, useLocation} from "react-router-dom";
 
@@ -24,13 +24,14 @@ const Addproduct = () => {
     const [changeIcon, setChangeIcon] = useState('');
     const [value, setValue] = useState([0, 20]);
     const [submit, setSubmit] = useState(false);
+
     const [product, setProduct] = useState({
         name: 'Sweet Sugar Pumpkin',
         location: 'Rapperswil-Jona',
         description: '',
         price: "12.90",
         selectedOption: '',
-        image: null,
+        file: null,
         units: 'piece',
         author: {
             first_name: 'Fred',
@@ -39,23 +40,23 @@ const Addproduct = () => {
     })
 
     // TODO build here a fetch function and in the store the userAction, userProfileReducer for the "author" object
-    useEffect(() => {
-        const createProduct = async () => {
-            await dispatch(newProductAction('products/new/', 'POST', CREATE_NEW_PRODUCT));
-        }
-        createProduct()
-
-    }, [dispatch]);
+    // useEffect(() => {
+    //     const createProduct = async () => {
+    //         await dispatch(productAction('products/new/', 'POST', CREATE_NEW_PRODUCT));
+    //     }
+    //     createProduct()
+    //
+    // }, [dispatch]);
 
 
     const changeHandler = e => {
         setProduct({...product, [e.target.name]: e.target.value});
     }
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault();
-        // const body = `{ "content": "${newProduct}" }`;
-        // dispatch(newProductAction('products/new/', 'POST', CREATE_NEW_PRODUCT, body));
+        const body = `{ "content": "${product}" }`;
+        dispatch(productAction('products/new/', 'POST', CREATE_NEW_PRODUCT, body));
 
 ;        const redirect = () => {
             const path = location.pathname;
@@ -65,6 +66,8 @@ const Addproduct = () => {
         }
         redirect()
     }
+
+
 
     const handleChange = e => {
         e.preventDefault();
@@ -84,7 +87,8 @@ const Addproduct = () => {
                 </TopContainer>
                 <Header />
                 <BottomConatiner>
-                    <AddCardForm onChange={handleChange}>
+                    <AddCardForm>
+                    <form onChange={handleChange}>
                         <Title>Want to sell your Vegetables?</Title>
                         <Form>
                             <Input
@@ -145,7 +149,9 @@ const Addproduct = () => {
                             <Fruit onClick={() => setCategory('fruit')}>Fruit</Fruit>
                             <Mushrooms>Mashrooms</Mushrooms>
                         </CategoryContainer>
-                        <Upload>
+                        </form>
+
+                        <Upload enctype="multipart/form-data">
                             <UploadLabel>Add product image</UploadLabel>
                             <UploadImage type='file'
                             name='image'
@@ -154,7 +160,7 @@ const Addproduct = () => {
                             />
                         </Upload>
                          <Submit value='Submit' onSubmit={handleSubmit}>Confirm</Submit>
-                    </AddCardForm>
+                        </AddCardForm>
                         {/*TODO add expiration date input*/}
                     <CardOverview>
                         {/*TODO try do everything in variable "product" with "setProduct(...product, [variableName]: newValue"*/}

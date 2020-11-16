@@ -35,7 +35,7 @@ export const BottomConatiner = styled.div `
         flex-direction: column;
     }
 `;
-export const AddCardForm = styled.form `
+export const AddCardForm = styled.div `
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
