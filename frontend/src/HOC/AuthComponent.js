@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import baseUrl from "../helpers/baseUrl";
 
+
 export default WrappedComponent => (props) => {
-        const authenticationError = useSelector(state => state.authReducer.authenticationError)
         const history = useHistory();
         const location = useLocation();
         const tokenLocal = localStorage.getItem("token");
@@ -13,7 +13,7 @@ export default WrappedComponent => (props) => {
         useEffect(() => {
             const userRedirect = async () => {
                 const path = location.pathname;
-                const url = `${baseUrl}auth/token/verify`;
+                const url = `${baseUrl}auth/token/verify/`;
                 const token = tokenRedux ? tokenRedux : tokenLocal ? tokenLocal : "null"
                 const config = {
                     method: 'POST',
@@ -25,17 +25,19 @@ export default WrappedComponent => (props) => {
                 };
                 const response = await fetch(url, config);
                 const data = await response.json();
-                const verified = data ? false : true;
+                const evaluateData = (arg) => {
+                    return Object.keys(arg).length === 0;
+                };
+                const verified = evaluateData(data);
                 console.log("HOC------------tokenLocal", tokenLocal)
                 console.log("HOC------------tokenRedux", tokenRedux)
-
                 if (token) {
                     console.log("HOC------------tokenCombined", token)
                 } else console.log("HOC------------tokenCombined FALSE")
-                console.log("HOC------------path", path)
+                console.log("HOC------------dataSUCCESS _> {}", data)
                 console.log("HOC------------verified", verified)
-                console.log("HOC------------in HOC authError", authenticationError)
-                if (path.includes('/user') && !verified) {
+                console.log("HOC------------path", path)
+                if (path.includes('/user/profile') && !verified) {
                     console.log("HOC------------pushOne /user/login")
                     history.push('/user/login');
                 } else if (path.includes('/user/login') && verified) {
@@ -46,9 +48,9 @@ export default WrappedComponent => (props) => {
                     history.push('/user/login');
                 }
             };
-            userRedirect();
+            userRedirect()
 
-        }, [authenticationError, tokenRedux, tokenLocal, history, location]);
+        }, [tokenRedux, tokenLocal, history, location]);
 
         return <WrappedComponent {...props} />
 }

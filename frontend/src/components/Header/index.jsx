@@ -20,7 +20,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-const Header = ({ sticky, element, minimal }) => {
+const Header = () => {
     const location = useLocation();
     const viewCart = useSelector(state => state.cartReducer.viewCart)
     const dispatch = useDispatch();
