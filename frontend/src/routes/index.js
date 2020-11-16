@@ -14,7 +14,7 @@ export const Routes = () => {
                     <Switch>
                         <Route path="/profile" component={AuthComponent(Profile)} exact />
                         <Route path="/login" component={Profile} exact />
-                        <Route path='/checkout' component={Checkout} exact />
+                        <Route path='/checkout' component={AuthComponent(Profile)} exact />
                         <Route path='/about' component={About} exact />
                         <Route path='/addproduct' component={Addproduct} exact />
                         <Route path='/shop' component={Homepage} exact />
