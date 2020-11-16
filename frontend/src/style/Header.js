@@ -15,7 +15,6 @@ export const HeaderContainer = styled.div `
     left: 0;
     top: 0;
     background-color: ${theme.colorDefaultWhite};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
@@ -80,13 +79,23 @@ export const NavLinkAbout = styled(NavLink)`
         color: ${theme.colorDarkOliveGreen};
     }
     
-    &:hover, :focus, &.active {
+    &:hover {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          box-shadow: ${theme.boxShadowLight};
+
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }
+    
+    :focus, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
           box-shadow: ${theme.boxShadowInset};
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }
-    }
+    }    
+
 `;
 
 export const NavLinkProfile = styled(NavLinkAbout)`
@@ -98,14 +107,6 @@ export const NavLinkProfile = styled(NavLinkAbout)`
         -webkit-transition: background-color 750ms linear;
         -ms-transition: background-color 750ms linear;
         transition: background-color 750ms linear;
-        
-        &:hover, :focus, &.active {
-            background-color: ${theme.colorMiddleGreenYellowLight};
-            box-shadow: ${theme.boxShadowInset};
-            i.fas {
-                color: ${theme.colorDarkOliveGreen}
-            }
-        }        
     }
 `;
 
@@ -125,16 +126,22 @@ export const CartIcon = styled.div`
     i.fas {
         color: ${theme.colorDarkOliveGreen};
     }
-    
-    &:hover, :focus, &.active {
+        &:hover {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          //border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-          box-shadow: ${theme.boxShadowInset};
+          box-shadow: ${theme.boxShadowLight};
 
           i.fas {
               color: ${theme.colorDarkOliveGreen}
           }
     }
+    
+    :focus, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          box-shadow: ${theme.boxShadowInset};
+          i.fas {
+              color: ${theme.colorDarkOliveGreen}
+          }
+    }   
 `;
 
 export const OpenCart = styled.div`

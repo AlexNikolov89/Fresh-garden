@@ -34,7 +34,7 @@ export const SignUpButton = styled.button`
     margin-top: 10px;
 
     
-    &:hover, :focus {
+    &:hover {
         box-shadow: ${theme.boxShadowInset};
         background: ${theme.colorMiddleGreenYellowLight};
     }

@@ -4,7 +4,6 @@ import Homepage from '../pages/Homepage';
 import Checkout from '../pages/Checkout'
 import About from '../pages/About';
 import Addproduct from '../pages/Addproduct.jsx'
-import Profile from "../pages/Profile";
 import AuthComponent from "../HOC/AuthComponent";
 
 

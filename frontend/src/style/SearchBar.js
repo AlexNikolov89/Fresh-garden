@@ -37,13 +37,16 @@ export const AutocompleteContainer = styled(ShoppingCartContainer)`
     color: ${theme.colorDefaultText};
     min-width: calc(2 * 42px + 2 * 95px + 2 * ${theme.spaceXXS});
     min-height: ${theme.controlHeightXL};
-    width: calc(100% - 7.5 * ${theme.controlHeightXL} + ${theme.spaceXXS});
+    width: calc(67% - 7.5 * ${theme.controlHeightXL} + ${theme.spaceXXS});
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     position: absolute;
     padding: 0;
+    top: calc{${theme.controlHeightXL} - 1px;
     box-shadow: ${theme.boxShadowGradient}, 20px 40px 50px 30px white, -20px 40px 50px 30px white;
     background-color: ${theme.colorDefaultWhite};
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+
 
 `;
 

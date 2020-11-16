@@ -12,10 +12,11 @@ import Card from '../components/Card/index.js'
 import {useDispatch} from "react-redux";
 import {userAction} from "../store/actions/userAction";
 import {connect} from 'react-redux';
+import {Login} from "./Login";
 
 const Profile = ({author}) => {
     const { first_name, last_name, email, description, phone, address, zip, city, avatar } = author
-    //const { pathname } = useLocation();
+    const location = useLocation();
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -39,38 +40,38 @@ const Profile = ({author}) => {
                 <Header />
 
                 <BottomContainer>
-                  {/*{pathname === '/login' && <Login/>}*/}
-                  {/*  {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}*/}
-                    <UserProfileContainer>
-                        <AvatarContainer>
-                            <Avatar src={avatar || 'https://via.placeholder.com/50x50'} alt='avatar' />
-                            <Name>{`${first_name} ${last_name}`}</Name>
-                            <Email>{email}</Email>
-                            <ButtonEdit>Edit Profile</ButtonEdit>
-                        </AvatarContainer>
-                        <UserInfoContainer>
+                    {location.pathname === '/login' && <Login/>}
+                    {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}
+                    {/*<UserProfileContainer>*/}
+                    {/*    <AvatarContainer>*/}
+                    {/*        <Avatar src={avatar || 'https://via.placeholder.com/50x50'} alt='avatar' />*/}
+                    {/*        <Name>{`${first_name} ${last_name}`}</Name>*/}
+                    {/*        <Email>{email}</Email>*/}
+                    {/*        <ButtonEdit>Edit Profile</ButtonEdit>*/}
+                    {/*    </AvatarContainer>*/}
+                    {/*    <UserInfoContainer>*/}
 
-                        <Title>About my garden</Title>
-                            <AboutGarden>
-                            {/*Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />*/}
-                            {/*sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />*/}
-                            {/*magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br />*/}
-                                {description}
-                            </AboutGarden>
+                    {/*    <Title>About my garden</Title>*/}
+                    {/*        <AboutGarden>*/}
+                    {/*        /!*Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />*!/*/}
+                    {/*        /!*sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />*!/*/}
+                    {/*        /!*magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br />*!/*/}
+                    {/*            {description}*/}
+                    {/*        </AboutGarden>*/}
 
-                            <Title>Location</Title>
-                            <Info>
-                            <ZipCode>{zip}</ZipCode>
-                            <Address>{address}</Address>
-                            <City>{city}</City>
-                            </Info>
+                    {/*        <Title>Location</Title>*/}
+                    {/*        <Info>*/}
+                    {/*        <ZipCode>{zip}</ZipCode>*/}
+                    {/*        <Address>{address}</Address>*/}
+                    {/*        <City>{city}</City>*/}
+                    {/*        </Info>*/}
 
-                            <Title>Tel. Number</Title>
-                            <Contact>
-                                <Mobile>{phone}</Mobile>
-                            </Contact>
-                        </UserInfoContainer>
-                    </UserProfileContainer>
+                    {/*        <Title>Tel. Number</Title>*/}
+                    {/*        <Contact>*/}
+                    {/*            <Mobile>{phone}</Mobile>*/}
+                    {/*        </Contact>*/}
+                    {/*    </UserInfoContainer>*/}
+                    {/*</UserProfileContainer>*/}
 
                 </BottomContainer>
 
@@ -85,12 +86,3 @@ const Profile = ({author}) => {
         </Fragment>
     )
 }
-
-const mapStateToProps = state => {
-    return {
-        author: state.userProfileReducer.author
-    };
-};
-
-
-export default connect(mapStateToProps, {userAction}) (Profile);
