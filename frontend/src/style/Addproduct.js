@@ -35,13 +35,14 @@ export const BottomConatiner = styled.div `
         flex-direction: column;
     }
 `;
-export const AddCardForm = styled.form `
+export const AddCardForm = styled.div `
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     width: 70%;
     height: 100%;
+    
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: 100%;
     }
@@ -228,6 +229,10 @@ export const Vegetable = styled( GenericButton) `
     width: 150px;
     margin: 0 30px;
 `;
+export const Mushrooms = styled(GenericButton) `
+    width: 150px;
+    margin: 0 30px;
+`;
 export const CategoryLabel = styled(Label) `
     text-align: center;
     padding: 20px 0;
@@ -238,7 +243,7 @@ export const CategoryContainer = styled.div `
     justify-content: center;
     padding: 25px 0;
 `;
-export const Upload = styled.div `
+export const Upload = styled.form `
     display: flex;
     flex-direction: column;
     justify-content: center;
