@@ -2,8 +2,8 @@ import {GET_USER} from '../../helpers/constants';
 
 const initialState = {
     author: {
-        first_name: '',
-        last_name: '',
+        firstName: '',
+        lastName: '',
         avatar: '',
         location: '',
         description: '',
@@ -22,7 +22,7 @@ export const userProfileReducer = (state = initialState, action) => {
         case GET_USER: {
             return {
                 ...state,
-                meData: {...action.payload},
+                author: {...action.payload},
                 error: null
             }
         }
