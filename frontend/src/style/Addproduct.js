@@ -42,6 +42,7 @@ export const AddCardForm = styled.form `
     justify-content: center;
     width: 70%;
     height: 100%;
+    
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: 100%;
     }
@@ -225,6 +226,10 @@ export const Fruit = styled(GenericButton) `
 `;
 export const Vegetable = styled( GenericButton) `
     background: ${theme.colorMiddleGreenYellow};
+    width: 150px;
+    margin: 0 30px;
+`;
+export const Mushrooms = styled(GenericButton) `
     width: 150px;
     margin: 0 30px;
 `;

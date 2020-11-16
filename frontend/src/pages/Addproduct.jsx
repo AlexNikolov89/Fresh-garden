@@ -1,20 +1,29 @@
-import React, {Fragment, useState, useRef} from 'react';
+import React, {Fragment, useState, useRef, useEffect} from 'react';
 import {AddProductContainer, TopContainer, Image, Slogan, BottomConatiner,
         AddCardForm, CardOverview, Form, Unit, Dropdown, Option, Select, ButtonDelivery, ButtonPickUp, DropdownContainer, DropDownHeader,
         Left, Right, DropDownListContainer, DropdownList, List, Price,
         Delivery, Button, ButtonContainer, SliderConatiner, Input,
-        CategoryContainer, CategoryLabel, Vegetable, Fruit, Label, Slider,
+        CategoryContainer, CategoryLabel, Vegetable, Fruit, Mushrooms, Label, Slider,
         Upload, UploadLabel, ButtonUpload, Description, DescriptionLabel, TextArea, Title, Submit, UploadImage} from '../style/Addproduct'
 import Footer from '../components/Footer/index.js'
 import Header from '../components/Header/index';
 import Card from '../components/Card/index.js'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {newProductAction} from "../store/actions/userAction";
+import {CREATE_NEW_PRODUCT} from "../helpers/constants";
+import {useHistory, useLocation} from "react-router-dom";
 
 
 const Addproduct = () => {
-    // TODO build here a fetch function and in the store the userAction, userReducer for the "author" object
-    // const author = useSelector(state => state.userReducer.userInfo)
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const location = useLocation();
+    const author = useSelector(state => state.userProfileReducer.userInfo)
+    const [category, setCategory] = useState('')
+    const [changeIcon, setChangeIcon] = useState('');
+    const [value, setValue] = useState([0, 20]);
+    const [submit, setSubmit] = useState(false);
     const [product, setProduct] = useState({
         name: 'Sweet Sugar Pumpkin',
         location: 'Rapperswil-Jona',
@@ -29,25 +38,42 @@ const Addproduct = () => {
         },
     })
 
-    const [category, setCategory] = useState('')
-    const [changeIcon, setChangeIcon] = useState('');
-    const [value, setValue] = useState([0, 20]);
-    const [submit, setSubmit] = useState(false);
+    // TODO build here a fetch function and in the store the userAction, userProfileReducer for the "author" object
+    useEffect(() => {
+        const createProduct = async () => {
+            await dispatch(newProductAction('products/new/', 'POST', CREATE_NEW_PRODUCT));
+        }
+        createProduct()
+
+    }, [dispatch]);
+
 
     const changeHandler = e => {
         setProduct({...product, [e.target.name]: e.target.value});
-        //setProduct({...product, [e.target.name]: e.target.files[0]})
     }
+
     const handleSubmit = e => {
+        e.preventDefault();
+        // const body = `{ "content": "${newProduct}" }`;
+        // dispatch(newProductAction('products/new/', 'POST', CREATE_NEW_PRODUCT, body));
+
+;        const redirect = () => {
+            const path = location.pathname;
+            if (path === '/') {
+                return history.push('/shop')
+            }
+        }
+        redirect()
+    }
+
+    const handleChange = e => {
         e.preventDefault();
         setSubmit(true);
     }
     const updateRange = (e, data) => {
         setValue(data);
     }
-    // const onChangeImage = e => {
-    //     setImage(URL.createObjectURL(e.target.files[0]));
-    // }
+
     return (
         <Fragment>
             <AddProductContainer>
@@ -58,7 +84,7 @@ const Addproduct = () => {
                 </TopContainer>
                 <Header />
                 <BottomConatiner>
-                    <AddCardForm onChange={handleSubmit}>
+                    <AddCardForm onChange={handleChange}>
                         <Title>Want to sell your Vegetables?</Title>
                         <Form>
                             <Input
@@ -117,6 +143,7 @@ const Addproduct = () => {
                             {/*TODO make an "other" option for mushrooms for example*/}
                             <Vegetable onClick={() => setCategory('vegetable')}>Vegetable</Vegetable>
                             <Fruit onClick={() => setCategory('fruit')}>Fruit</Fruit>
+                            <Mushrooms>Mashrooms</Mushrooms>
                         </CategoryContainer>
                         <Upload>
                             <UploadLabel>Add product image</UploadLabel>
@@ -126,9 +153,9 @@ const Addproduct = () => {
                             required='Required'
                             />
                         </Upload>
-                        <Submit value='Submit'>Confirm</Submit>
-                        {/*TODO add expiration date input*/}
+                         <Submit value='Submit' onSubmit={handleSubmit}>Confirm</Submit>
                     </AddCardForm>
+                        {/*TODO add expiration date input*/}
                     <CardOverview>
                         {/*TODO try do everything in variable "product" with "setProduct(...product, [variableName]: newValue"*/}
                         {/*TODO with this approach you only have to give the "product" as props - nothing else*/}
