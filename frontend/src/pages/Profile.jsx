@@ -14,9 +14,13 @@ import {useHistory} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
 import {connect} from 'react-redux';
 import Banner from "../components/Header/Banner";
+import {cartAction} from "../store/actions/cartAction";
+import authReducer from "../store/reducers/authReducer";
+import {authAction} from "../store/actions/authAction";
+import {LOGOUT_UNSET_TOKEN} from "../helpers/constants";
 
 const Profile = ({author}) => {
-    //const { pathname } = useLocation();
+    const productsAll = useSelector(state => state.productReducer.productsAll)
     const user = useSelector(state => state.userProfileReducer.author)
     const dispatch = useDispatch();
     const history = useHistory();
@@ -29,26 +33,33 @@ const Profile = ({author}) => {
     const [address, setAddress] = useState('');
     const [avatar, setAvatar] = useState(defaultAvatar);
     const [zip, setZip] = useState('');
+    const [products, setProducts] = useState('')
 
     useEffect(() => {
-
         const fetchUser = async () => {
             await dispatch(userAction('users/me/', 'GET', 'GET_USER'));
         }
         fetchUser()
-
+        return function cleanup() {};
     }, [dispatch]);
 
     useEffect(() => {
         const userInfo = () => {
             if(user.location) setLocation(user.location);
             if(user.zip) setLocation(user.location);
+            if(productsAll){
+                // const filterProducts = (input) => {
+                //     return input.filter((product) => product.author.first_name === user.first_name || product.author.last_name === user.last_name)
+                // }
+                //const newSet = filterProducts(productsAll)
+                //setProducts(() => productsAll.filter((product) => product.author.first_name === user.first_name || product.author.last_name === user.last_name))
+            }
         }
         userInfo()
     })
 
     const logout = () => {
-       localStorage.removeItem('token');
+       dispatch(authAction('', '', LOGOUT_UNSET_TOKEN))
        history.push('/user/login')
     }
 
@@ -87,18 +98,14 @@ const Profile = ({author}) => {
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
                                 {description}
                             </AboutGarden>
-
-
-                            {/*{location && <Title>My Pickup location</Title>}*/}
+                            {location && <Title>My Pickup location</Title>}
                             <Info>
                             <ZipCode>{zip}</ZipCode>
                             <Address>{address}</Address>
                             {/*<City>{city}</City>*/}
                             </Info>
-
                                 <Title>Tel. Number</Title>
                             <Contact>
-
                                 <Mobile>{phone}</Mobile>
                             </Contact>
                         </UserInfoContainer>
@@ -107,10 +114,7 @@ const Profile = ({author}) => {
                 </BottomContainer>
 
                 <CardContainer>
-                     {/*{products.map((product) =>*/}
-                     {/*    <Card product={product} key={product.id}/>*/}
-                     {/*    )}*/}
-
+                     {products && products.map((product) => <Card product={product} key={product.id}/>)}
                 </CardContainer>
             </HomeContainer>
             <Footer />
