@@ -1,22 +1,33 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {
     TopContainer, Image, HomeContainer, Slogan} from '../style/Homepage';
-import {UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, City, ButtonEdit, 
-    BottomContainer, UserInfoContainer, AboutGarden, Title, Info, Email, Contact, Mobile} from '../style/Profile'
+import {TitleContainer, UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, City, ButtonEdit,
+    BottomContainer, CardContainer, UserInfoContainer, AboutGarden, MainTitle, Title, Info, Email, Contact, Mobile, LogOut} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
 //import {Login} from "./Login";
 import { useLocation } from "react-router-dom";
-//import AvatarImg from '../assets/defaultRuth.PNG';
+import defaultAvatar from '../assets/defaultRuth.PNG';
 import Card from '../components/Card/index.js'
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
 import {connect} from 'react-redux';
 
 const Profile = ({author}) => {
-    const { first_name, last_name, email, description, phone, address, zip, city, avatar } = author
     //const { pathname } = useLocation();
+    const user = useSelector(state => state.userProfileReducer.author)
     const dispatch = useDispatch();
+    let history = useHistory();
+    const [location, setLocation] = useState('')
+    const [firstName, setFirstName] = useState('Jane');
+    const [lastName, setLastName] = useState('Doe');
+    const [email, setEmail] = useState('jane@gmail.com');
+    const [description, setDescription] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [avatar, setAvatar] = useState(defaultAvatar);
+    const [zip, setZip] = useState('');
 
     useEffect(() => {
 
@@ -26,6 +37,26 @@ const Profile = ({author}) => {
         fetchUser()
 
     }, [dispatch]);
+
+    useEffect(() => {
+        const userInfo = () => {
+            if(user.location) setLocation(user.location);
+            if(user.zip) setLocation(user.location);
+        }
+        userInfo()
+    })
+
+    const logout = () => {
+       localStorage.removeItem('token');
+       history.push('/login')
+    }
+
+    // useEffect(() => {
+    //     const updateUserData = async () => {
+    //         await  dispatch(userAction('users/me/', 'PATCH', 'UPDATE_USER_DATA'))
+    //     }
+    //     updateUserData();
+    // }, [dispatch])
 
     return (
         <Fragment>
@@ -38,35 +69,42 @@ const Profile = ({author}) => {
 
                 <Header />
 
+                    <TitleContainer>
+                         <MainTitle>Profile</MainTitle>
+                        <LogOut onClick={logout}>Logout</LogOut>
+                     </TitleContainer>
+
                 <BottomContainer>
+
                   {/*{pathname === '/login' && <Login/>}*/}
                   {/*  {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}*/}
                     <UserProfileContainer>
                         <AvatarContainer>
-                            <Avatar src={avatar || 'https://via.placeholder.com/50x50'} alt='avatar' />
-                            <Name>{`${first_name} ${last_name}`}</Name>
+                            <Avatar src={avatar} alt='avatar' />
+                            <Name>{`${firstName} ${lastName}`}</Name>
                             <Email>{email}</Email>
                             <ButtonEdit>Edit Profile</ButtonEdit>
                         </AvatarContainer>
                         <UserInfoContainer>
 
-                        <Title>About my garden</Title>
+                        <Title>About me and my garden</Title>
                             <AboutGarden>
-                            {/*Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />*/}
-                            {/*sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />*/}
-                            {/*magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br />*/}
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
+                            sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
                                 {description}
                             </AboutGarden>
 
-                            <Title>Location</Title>
+
+                            {/*{location && <Title>My Pickup location</Title>}*/}
                             <Info>
                             <ZipCode>{zip}</ZipCode>
                             <Address>{address}</Address>
-                            <City>{city}</City>
+                            {/*<City>{city}</City>*/}
                             </Info>
 
-                            <Title>Tel. Number</Title>
+                                <Title>Tel. Number</Title>
                             <Contact>
+
                                 <Mobile>{phone}</Mobile>
                             </Contact>
                         </UserInfoContainer>
@@ -74,23 +112,23 @@ const Profile = ({author}) => {
 
                 </BottomContainer>
 
-                <div>
+                <CardContainer>
                      {/*{products.map((product) =>*/}
                      {/*    <Card product={product} key={product.id}/>*/}
                      {/*    )}*/}
 
-                </div>
+                </CardContainer>
             </HomeContainer>
             <Footer />
         </Fragment>
     )
 }
 
-const mapStateToProps = state => {
-    return {
-        author: state.userProfileReducer.author
-    };
-};
+// const mapStateToProps = state => {
+//     return {
+//         author: state.userProfileReducer.author
+//     };
+// };
 
 
-export default connect(mapStateToProps, {userAction}) (Profile);
+export default Profile;

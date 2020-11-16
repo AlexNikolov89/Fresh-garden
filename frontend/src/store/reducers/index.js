@@ -5,6 +5,6 @@ import cartReducer from "./cartReducer";
 import {userProfileReducer} from './userProfileReducer';
 
 
-const rootReducer = combineReducers({ authReducer, productReducer, cartReducer, userProfileReducer: userProfileReducer });
+const rootReducer = combineReducers({ authReducer, productReducer, cartReducer, userProfileReducer });
 
 export default rootReducer

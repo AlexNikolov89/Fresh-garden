@@ -25,3 +25,5 @@ export const authAction = (email, password) => async (dispatch, getState) => {
     localStorage.setItem("token", data.access);
     return data
 };
+
+
