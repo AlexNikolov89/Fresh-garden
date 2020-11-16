@@ -17,13 +17,16 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         font-family: "Hind", sans-serif;
         cursor: default;
-    }
+        
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }  
     
     ::-webkit-scrollbar {
-    height: 0;
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
+        height: 0;
+        width: 0;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
 `;
 export const theme = {
     // Media Queries:
@@ -47,6 +50,7 @@ export const theme = {
     colorDarkPurple: '#69122F',
     colorDarkRed: '#B4041E',
     colorDarkBlue: '#045076',
+    colorDarkGold: '#B8860B',
     // Fonts (Visual Hierarchy - 3:4 Method)
     fontSizeXXXXXL: "11.9rem",
     fontSizeXXXXL: "8.9rem",
