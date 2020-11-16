@@ -13,12 +13,13 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
 import {connect} from 'react-redux';
+import Banner from "../components/Header/Banner";
 
 const Profile = ({author}) => {
     //const { pathname } = useLocation();
     const user = useSelector(state => state.userProfileReducer.author)
     const dispatch = useDispatch();
-    let history = useHistory();
+    const history = useHistory();
     const [location, setLocation] = useState('')
     const [firstName, setFirstName] = useState('Jane');
     const [lastName, setLastName] = useState('Doe');
@@ -48,7 +49,7 @@ const Profile = ({author}) => {
 
     const logout = () => {
        localStorage.removeItem('token');
-       history.push('/login')
+       history.push('/user/login')
     }
 
     // useEffect(() => {
@@ -61,11 +62,7 @@ const Profile = ({author}) => {
     return (
         <Fragment>
             <HomeContainer>
-                <TopContainer>
-                    <Image>
-                        <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
-                    </Image>
-                </TopContainer>
+                <Banner/>
 
                 <Header />
 
@@ -75,9 +72,6 @@ const Profile = ({author}) => {
                      </TitleContainer>
 
                 <BottomContainer>
-
-                  {/*{pathname === '/login' && <Login/>}*/}
-                  {/*  {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}*/}
                     <UserProfileContainer>
                         <AvatarContainer>
                             <Avatar src={avatar} alt='avatar' />
@@ -123,12 +117,6 @@ const Profile = ({author}) => {
         </Fragment>
     )
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         author: state.userProfileReducer.author
-//     };
-// };
 
 
 export default Profile;

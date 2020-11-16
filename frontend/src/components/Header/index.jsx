@@ -55,25 +55,19 @@ const Header = ({ sticky, element, minimal }) => {
                 </LogoContainer>
 
                 <FormContainer>
-                    {location.pathname === '/shop' ? <SearchBar /> : null}
+                    {location.pathname === '/shop' && <SearchBar />}
                 </FormContainer>
 
                 <Icons >
-                    {location.pathname === '/shop' ? (
-                        <CartIcon
-                            onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}
-                            className={viewCart ? "active" : "inactive"}>
-                            <i className="fas fa-shopping-basket" />
-                        </CartIcon>
-                    ) : null }
                     <NavLinkShop to='/shop'><i className="fas fa-store"></i></NavLinkShop>
-                    <NavLinkAddProduct to='/addproduct'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
+                    <NavLinkProfile to='/user/profile' className={classLabel}><i className="fas fa-user"></i></NavLinkProfile>
+                    <NavLinkAddProduct to='/upload'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
                     <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
-                    <NavLinkProfile
-                        to='/profile'
-                        className={classLabel}>
-                        <i className="fas fa-user"></i>
-                    </NavLinkProfile>
+                    <CartIcon
+                        onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}
+                        className={viewCart ? "active" : "inactive"}>
+                        <i className="fas fa-shopping-basket" />
+                    </CartIcon>
                 </Icons>
 
             </HeaderContainer>

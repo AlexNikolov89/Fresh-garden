@@ -29,10 +29,11 @@ export const SignIn = ({ newEmail }) => {
 
     const handleSubmit = async e => {
         e.preventDefault();
+        localStorage.removeItem('token');
         const authResponse = await dispatch(authAction(email, password));
         //TODO debbug the part where the user tried a wrong password and try again, but fails even with the right credentials
         if (authResponse.access) {
-            history.push('/profile');
+            history.push('/user/profile');
         } else if (authResponse.detail) {
             setMessage(authResponse.detail)
         }
