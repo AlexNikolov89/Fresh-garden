@@ -80,6 +80,7 @@ TEMPLATES = [
     },
 ]
 
+
 CART_SESSION_ID = 'cart'
 CART_AUTH_URL_NAMESPACE = 'cart'
 
