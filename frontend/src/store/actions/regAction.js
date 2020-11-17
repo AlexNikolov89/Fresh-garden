@@ -13,6 +13,6 @@ export const regAction = (email) => async (dispatch, getState) => {
 
     const response = await fetch(url, config)
     const data = await response.json();
-    // return data
-    return data.email
+    return data
 };
+

@@ -10,14 +10,14 @@ export const LoginMainContainer = styled.div`
 export const LoginHeader = styled.header`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     font-size: ${theme.fontSizeM};
     margin-top: 20px;
-    margin-right: 30px;
+    margin-left: 30px;
 `
 
 export const LoginQuestion = styled.div`
-  margin-right: 30px;
+    color: ${theme.colorDefaultText};
 `
 
 export const UserIconLogin = styled.div`
@@ -39,7 +39,7 @@ export const PasswordIconLogin = styled.div`
 `;
 
 export const EmailIconSignUp = styled.div`
-  margin-right: ${theme.spaceXS};
+    margin-right: ${theme.spaceXS};
     margin-top: ${theme.spaceXS};
     i {
       font-size: ${theme.fontSizeDefault};
@@ -105,7 +105,7 @@ export const LoginContainer = styled.div`
     align-items: center;
     width: 100%;
     height: calc(100vh - 60px - 26px);
-    //padding-top: calc(128px - 20px); mark
+    padding-top: calc(128px - 20px); mark
 
     #signUpSuccess {
         color: rgba(0, 0, 0, 0.5);
@@ -152,32 +152,36 @@ export const StepOneContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-top: 70px;
+    padding-top: 60px;
     height: 100%;
 
     #stepOneIcon {
         flex: 0;
-        margin-top: min(100px, 60px);
-        margin-bottom: calc(300px + 100px + 9px);
+        margin-top: min(100px,30px);
+        margin-bottom: calc(200px + 100px + 9px);
         min-height: 60px;
     }
 `
 export const StepLoginContainer = styled(StepOneContainer)`
     #submit {
         margin-top: min(150px, 60px);
-        margin-bottom: calc(300px + 85px + 9px);
-        min-height: 60px;
+        margin-bottom: calc(305px + 85px + 9px);
     }
 `
 
 export const StepTwoContainer = styled(StepOneContainer)`
     img {
         margin-top: calc(55px - 37px);
-        margin-bottom: 41px;
+        margin-bottom: 30px;
         height: 81px;
         width: 81px;
+        color: ${theme.colorDarkOliveGreen};
     }
-
+   
+    h2 {
+    margin-top: 56px;
+   
+    }
     p {
         color: rgba(0, 0, 0, .5);
         font-size: 1.6rem;
@@ -186,8 +190,8 @@ export const StepTwoContainer = styled(StepOneContainer)`
 
     #stepTwoIcon {
         flex: 0;
-        margin-top: min(10px, 60px);
-        margin-bottom: calc(300px + 90px + 9px);
+        margin-top: min(100px,30px);
+        margin-bottom: calc(155px + 100px + 9px);
         min-height: 60px;
     }
 `
@@ -198,14 +202,14 @@ export const StepThreeContainer = styled(StepOneContainer)`
     }
 
     button {
-        margin-bottom: 56px;
+        margin-top: 27px;
     }
 
     #stepThreeIcon {
         flex: 0;
         margin-top: min(10px, 60px);
         margin-bottom: calc(300px + 70px + 9px);
-        min-height: 60px;
+        min-height: 92px;
     }
 `
 
@@ -229,6 +233,7 @@ export const BaseInputContainer = styled.div`
         color: rgba(0, 0, 0, .5);
         font-size: 1.2rem;
         line-height: 12px;
+        ${theme.colorDefaultGrey};
     }
 
     label {
@@ -239,9 +244,13 @@ export const BaseInputContainer = styled.div`
         width: 100%;
         height: 26px;
         background-color: ${theme.colorBackgroundColor};
+        
+        ::placeholder{
+          color: ${theme.colorDefaultGrey};
+        }
     }
-
-`
+    
+`;
 
 export const ValidationCodeContainer = styled(BaseInputContainer)`
     width: 560px;
@@ -270,6 +279,7 @@ export const EmailSignUpContainer = styled(BaseInputContainer)`
         margin-left: 10px;
         margin-bottom: 20px;
         background-color: ${theme.colorBackgroundColor};
+        
     }
 
     svg {
@@ -287,6 +297,7 @@ export const EmailSignUpContainer = styled(BaseInputContainer)`
         font-size: 1.2rem;
         color: rgba(0, 0, 0, 0.5);
     }
+    
 `
 
 export const UsernameInputContainer = styled(BaseInputContainer)`
@@ -301,8 +312,10 @@ export const PasswordRepeatInputContainer = styled(BaseInputContainer)``
 
 export const UsernameSignInInputContainer = styled(BaseInputContainer)`
     width: 340px;
-`
-export const PasswordSignInContainer = styled(UsernameSignInInputContainer)``
+`;
+export const PasswordSignInContainer = styled(UsernameSignInInputContainer)`
+    color: ${theme.colorDefaultGrey};
+`;
 
 export const LayoutContainerForm = styled.div`
     display: flex;
