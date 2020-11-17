@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import {theme} from '../style/index';
-import {GenericButton} from './Buttons'
+import {GenericButton, StandardButton} from './Buttons'
 
 export const CheckoutConatiner = styled.div `
     width: 100%;
 `;
 
-export const ProductsConatiner = styled.div `
+export const MainContainer = styled.div `
     background: ${theme.colorBackgroundColor};
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +66,6 @@ export const TopHeaderConatiner = styled.div `
     border: 1px solid ${theme.colorRandomText};
 `;
 
-export const Button = styled(GenericButton) ``;
 
 export const Delivery = styled.h4 `
     color: ${theme.colorDefaultText};
@@ -78,55 +77,45 @@ export const Delivery = styled.h4 `
     }
 `;
 
-export const PaymentConatiner = styled.aside `
-    background: ${theme.colorBackgroundColor};
-    border: 1px solid ${theme.colorDefaultGrey};
-    
-    //border-radius: ${theme.borderRadiusL};
-    box-shadow: ${theme.boxShadowLighter};
-    width: 40%;
-    padding: 20px;
-    height: 400px;
+export const LeftConatiner = styled.div`
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-
+    align-items: center;
+    width: 60%;
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-        //flex-direction: row;
-        width: 70%;
-        margin-bottom: 60px;
-    }
-
-`;
-
-export const Subtotal = styled.h4 `
-    color: ${theme.colorDefaultText};
-    font-size: ${theme.fontSizeDefault};
-
-    span {
-        color: ${theme.colorDefaultText};
-        margin-left: 20px;
+        width: 100%;
     }
 `;
 
-export const Summary = styled.h3 `
-    color: grey;
-    margin-bottom: 30px;
-    font-size: ${theme.fontSizeM}
+export const RightConatiner = styled.aside `
+     border: 1px solid red;
+     width: 40$;
+     display: flex;
+ justify-content: center;
+ 
+     //background: ${theme.colorBackgroundColor};
+    // border: 1px solid ${theme.colorDefaultGrey};
+    //
+    // //border-radius: ${theme.borderRadiusL};
+    // box-shadow: ${theme.boxShadowLighter};
+    width: 40%;
+    // padding: 20px;
+    // height: 400px;
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex-direction: column;
+    //
+    // @media (max-width: ${theme.mediaQueryScreenWidth}){
+    //     //flex-direction: row;
+    //     width: 70%;
+    //     margin-bottom: 60px;
+    // }
+
 `;
 
-export const Tax = styled.h4 `
-    color: ${theme.colorDefaultText};
-    font-size: ${theme.fontSizeDefault};
-
-    span {
-        margin-left: 60px;
-    }
-`;
-
-export const TotalSum = styled.h3 `
-    padding: 20px 0;
-    font-size: ${theme.spaceDefault}
+export const PaymentConatiner = styled.div `
+ width: 350px;
+ border: 1px solid green;
 `;
 
 export const SumConatiner = styled.div `
@@ -139,6 +128,31 @@ export const SumConatiner = styled.div `
     //font-size: ${theme.spaceS}
 `;
 
+export const Summary = styled.h3 `
+    color: grey;
+    margin-bottom: 30px;
+    font-size: ${theme.fontSizeM}
+`;
+
+export const SellerContainer = styled.div `
+ width: 100%;
+ border: 1px solid green;
+`;
+
+export const ButtonsContainer = styled.form `
+ display: flex;
+ flex-direction: column;
+ padding-top: 15px;
+`;
+
+export const Radio = styled.input `
+width: 50px;
+`;
+
+export const TotalSum = styled.h3 `
+    float: right;
+`;
+
 export const Submit = styled.div `
     display: block;
     //margin-left: 700px;
@@ -149,29 +163,9 @@ export const Submit = styled.div `
     padding: 0 20px;
 `;
 
-export const ProductWrap = styled.div `
-    width: 100%;
-    padding-right: 60px;
-    //border: 2px solid ${theme.colorDefaultGrey};
-    //border-radius: ${theme.borderRadiusL};
-    //background-color: ${theme.colorAlmond};
-    //box-shadow: ${theme.boxShadowLightest};
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-        width: 100%;
-    }
-`;
+export const Button = styled(StandardButton) ``;
 
-export const Wrapp = styled.div `
-    display: flex;
-    flex-direction: row;
-    padding: 0 80px;
 
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-        width: 100%;
-        flex-direction: column;
-        width: 100%;
-    }
-`;
 
 
 

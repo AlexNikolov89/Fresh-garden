@@ -2,9 +2,9 @@ import React, {Fragment} from 'react'
 import Header from '../components/Header';
 import {TopContainer, Image, Text} from '../style/Homepage';
 import {CheckoutConatiner,
-         ProductsConatiner, BoxContainer, Wrapp, TopHeaderConatiner, ProductT, QuantityT, Total,
-         HorizontalLine, PaymentConatiner,
-         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
+         MainContainer, BoxContainer, RightConatiner, SellerContainer, ButtonsContainer, TopHeaderConatiner, ProductT, QuantityT, Total,
+         HorizontalLine, PaymentConatiner, Radio,
+         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, LeftConatiner, Button, Submit, TotalQ } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
 
@@ -20,8 +20,8 @@ const Checkout = () => {
             </TopContainer>
                 <Header />
 
-            <ProductsConatiner>
-                <Text>-Your Order Items-</Text>
+            <MainContainer>
+                <Text>Checkout</Text>
 
                 <BoxContainer>
 
@@ -30,35 +30,51 @@ const Checkout = () => {
                         <QuantityT>Quantity</QuantityT>
                         <Total>Total</Total>
                     </TopHeaderConatiner>  */}
-                <Wrapp>
-                <ProductWrap>
+
+                <LeftConatiner>
                     <Product />
                     <Product />
                     <Product />
-                    <Product />
-                </ProductWrap>
+                </LeftConatiner>
 
-                <PaymentConatiner>
-                <SumConatiner>
-                    <Summary>Summary</Summary>
-                    <Subtotal>Subtotal: <span>CHF 38.00</span></Subtotal>
-                    <Tax>Tax <span>FREE</span></Tax>
-                    <Delivery>Delivery <span>CHF 6.50</span></Delivery>
-                    
-                    <hr />
-                    <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
-                </SumConatiner>
+               <RightConatiner>
+                    <PaymentConatiner>
+                    <SumConatiner>
+                        <Summary>Summary</Summary>
 
-                <Submit>
-                    <Button>Proceed to Pay</Button>
-                </Submit> 
+                        <SellerContainer>
+                            {/*<SellerName></SellerName>*/}
+                        </SellerContainer>
 
-            </PaymentConatiner>
-            </Wrapp>
+                        <hr />
 
+                            <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
+
+                        <ButtonsContainer>
+                            <div>
+                            <Radio type='radio' /><i className="fas fa-hand-holding-usd" />
+                            </div>
+                            <div>
+                            <Radio type='radio' /><i className="fas fa-credit-card" />
+                            </div>
+                            <div>
+                            <Radio type='radio' />Fresh Token
+                            </div>
+                            </ButtonsContainer>
+
+                        <Submit>
+                            <Button>Pay</Button>
+                        </Submit>
+
+                    </SumConatiner>
+
+
+
+               </PaymentConatiner>
+                </RightConatiner>
                 </BoxContainer>
     
-            </ProductsConatiner>
+            </MainContainer>
 
             </CheckoutConatiner>
             <Footer />

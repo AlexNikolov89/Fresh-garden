@@ -6,15 +6,11 @@ export const ProductContainer = styled.div `
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    padding: 15px;
-    margin-left: 10px;
+    padding: 5px;
     cursor: pointer;
-    margin-bottom: 15px; 
     border: 1px solid ${theme.colorDefaultGrey};
-    box-shadow: ${theme.boxShadowLighter};
-    width: 100%;
-    border-radius: ${theme.borderRadiusS};
-    
+    width: 450px;
+    height: 140px;
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
@@ -22,32 +18,84 @@ export const ProductContainer = styled.div `
 `;
 
 export const ProductImg = styled.img `
-    width: 25%;
+    width: 160px;
+    height: 130px;
     border-radius: ${theme.borderRadiusS};
  `;
 
 export const InfoConatiner = styled.div `
     display: flex;
     align-items: center;
-    margin-left: 15px;
-    justify-content: space-between;
-`;
-
-export const Description = styled.h3 `
-    font-size: ${theme.fontSizeDefault};
-    color: ${theme.colorDarkOliveGreen};
-    padding-bottom: 10px;
     padding-left: 10px;
+    width: 60%;
 `;
 
-export const Items = styled.p `
+export const Info = styled.div `
+ width: 100%;
+`;
+
+
+export const ProductTitle = styled.h3 `
+ font-size: ${theme.fontSizeDefault};
+ color: ${theme.colorTitle};
+`;
+
+export const Seller = styled.p `
+ font-size: ${theme.fontSizeDefault};
+`;
+
+export const StockDiv = styled.div `
+ display: flex;
+ padding-left: 30px;
+`;
+
+export const Wrap = styled.div `
+ margin-top: 15px;
+`;
+
+export const AvailibleStock = styled.div `
+  display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: ${theme.fontSizeDefault};
-    padding: 10px;
+    color: ${theme.colorDefaultText};
+    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    //border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    height: 30px;
+    width: 30px;
+    background-color: ${theme.colorBackgroundColor};
 `;
 
-export const Quantity = styled(InfoConatiner) `
-    //margin-left: 30px;
-    width: 45%;
+export const Count = styled.div `
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    height: 30px;
+    width: 30px;
+    background-color: white;
+`;
+
+export const WrapPrice = styled.div `
+ display: flex;
+`;
+
+export const PriceContainer = styled.div `
+ display: flex;
+ margin-left: 100px;
+ font-size: ${theme.fontSizeDefault}
+`;
+
+export const Price = styled.h4 `
+`;
+
+export const Unit = styled.div ``;
+
+export const Quantity = styled.div `
+    display: flex; 
+   //padding-right: 60px;  
 `;
 
 export const Increment = styled.div `
@@ -55,7 +103,7 @@ export const Increment = styled.div `
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
+    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     border-radius: ${theme.borderRadiusS};
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
     height: 30px;
@@ -63,7 +111,7 @@ export const Increment = styled.div `
     i.fas {
         color: ${theme.colorDarkOliveGreen};
     }
-    
+
     &:hover, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
           box-shadow: ${theme.boxShadowInset};
@@ -76,60 +124,23 @@ export const Increment = styled.div `
 
 export const Decrement = styled(Increment) ``;
 
-export const Count = styled.div `
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: ${theme.fontSizeDefault};
-    color: ${theme.colorDefaultText};
-    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    height: 30px;
-    width: 30px;
-    background-color: ${theme.colorBackgroundColor};
-`;
-
-export const Info = styled.div `
-    display: block;
-`;
-
-export const TotalPrice = styled(InfoConatiner) `
-    width: 30%;
-    display: flex;
-
-    /* &:hover, &.active {
-        border: none;
-        background: none;
-        i  {
-            color: ${theme.colorDarkRed};
-            margin-left: 100px;
+export const Delete = styled.div `
+ float: right;
+  border: none;
+  background: none;
+  
+        i {
+            color: ${theme.colorDarkOliveGreen};
+            font-size: ${theme.fontSizeM};
         }
-    } */
-`;
-
-export const Price = styled.h3 `
-//margin-left: 20px;
-font-size: ${theme.fontSizeDefault};
-color: ${theme.colorDefaultText}
-`;
-
-export const Delete = styled.button `
-    border: none;
-    outline: none;
-    background: ${theme.colorBackgroundColor};
-
-    i {
-        margin-left: 50px;
-        font-size: ${theme.fontSizeM};
-        color: ${theme.colorDarkOliveGreen};
-
-        &:hover, &.active {
+         &:hover, &.active {
         border: none;
         background: none;
         color: ${theme.colorDarkRed};
         box-shadow: ${theme.boxShadowInset};
     }
 `;
+
 
 
 
