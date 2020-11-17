@@ -1,76 +1,139 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {
-    TopContainer, Image, Box, HomeContainer, Text, HorizontalLine,
-    About, AboutText, Slogan, SideBox
-} from '../style/Homepage';
-import {UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, City, ButtonEdit, 
-    BottomContainer, UserInfoContainer, AboutGarden, Title, Info, Email, Contact, Mobile} from '../style/Profile'
+    TopContainer, Image, HomeContainer, Slogan} from '../style/Homepage';
+import {TitleContainer, UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, City, ButtonEdit,
+    BottomContainer, CardContainer, UserInfoContainer, AboutGarden, MainTitle, Title, Info, Email, Contact, Mobile, LogOut} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
-import {Login} from "./Login";
-import { useHistory, useLocation } from "react-router-dom";
-import AvatarImg from '../assets/defaultRuth.PNG';
+//import {Login} from "./Login";
+import { useLocation } from "react-router-dom";
+import defaultAvatar from '../assets/defaultRuth.PNG';
 import Card from '../components/Card/index.js'
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useHistory} from 'react-router-dom'
+import {userAction} from "../store/actions/userAction";
+import {connect} from 'react-redux';
+import Banner from "../components/Header/Banner";
+import {cartAction} from "../store/actions/cartAction";
+import authReducer from "../store/reducers/authReducer";
+import {authAction} from "../store/actions/authAction";
+import {LOGOUT_UNSET_TOKEN, SET_PRODUCTS_ALL} from "../helpers/constants";
+import {productAction} from "../store/actions/productAction";
 
-const Profile = () => {
+const Profile = ({author}) => {
+    const productsAll = useSelector(state => state.productReducer.productsAll)
+    const user = useSelector(state => state.userProfileReducer.author)
+    const dispatch = useDispatch();
     const history = useHistory();
-    const location = useLocation();
-     const products = useSelector(state => state.productReducer.productsAll);
+    const [location, setLocation] = useState('')
+    const [firstName, setFirstName] = useState('Jane');
+    const [lastName, setLastName] = useState('Doe');
+    const [email, setEmail] = useState('jane@gmail.com');
+    const [description, setDescription] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const [avatar, setAvatar] = useState(defaultAvatar);
+    const [zip, setZip] = useState('');
+    const [products, setProducts] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
+
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            await dispatch(userAction('users/me/', 'GET', 'GET_USER'));
+        }
+        fetchUser()
+        return function cleanup() {};
+    }, [dispatch]);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            setIsLoading(true)
+            await dispatch(productAction('products/', 'GET', SET_PRODUCTS_ALL));
+            setIsLoading(false);
+        }
+        fetchProducts()
+        return function cleanup() {};
+    }, [dispatch]);
+
+    useEffect(() => {
+        const userInfo = () => {
+            if(user.location) setLocation(user.location);
+            if(user.zip) setLocation(user.location);
+            // if(productsAll) {
+            //     const newProductSet = productsAll.filter((element) => element.author === user)
+            //     console.log("in Profile newProductSet", newProductSet)
+            //     return setProducts(newProductSet)
+            // }
+            if(productsAll) setProducts(productsAll)
+        }
+        userInfo()
+        return function cleanup() {};
+    },)
+
+    const logout = () => {
+       dispatch(authAction('', '', LOGOUT_UNSET_TOKEN))
+       history.push('/user/login')
+    }
+
+    // useEffect(() => {
+    //     const updateUserData = async () => {
+    //         await  dispatch(userAction('users/me/', 'PATCH', 'UPDATE_USER_DATA'))
+    //     }
+    //     updateUserData();
+    // }, [dispatch])
 
     return (
         <Fragment>
             <HomeContainer>
-                <TopContainer>
-                    <Image>
-                        <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
-                    </Image>
-                </TopContainer>
+                <Banner/>
 
                 <Header />
 
+                    <TitleContainer>
+                         <MainTitle>Profile</MainTitle>
+                        <LogOut onClick={logout}>Logout</LogOut>
+                     </TitleContainer>
+
                 <BottomContainer>
-                  {location.pathname === '/login' && <Login/>}
-                    {/*{location.pathname === '/profile' && <p>you habe profile! pliiiis</p>} */}
                     <UserProfileContainer>
                         <AvatarContainer>
-                            <Avatar src={AvatarImg} alt='avatar' />
-                            <Name>Name Lastname</Name>
-                            <Email>some_name@gmail.com</Email>
+                            <Avatar src={avatar} alt='avatar' />
+                            <Name>{`${firstName} ${lastName}`}</Name>
+                            <Email>{email}</Email>
                             <ButtonEdit>Edit Profile</ButtonEdit>
                         </AvatarContainer>
                         <UserInfoContainer>
 
-                        <Title>About my garden</Title>
+                        <Title>About me and my garden</Title>
                             <AboutGarden>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br /> 
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
-                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et <br /> 
+                                {description}
                             </AboutGarden>
-
-                            <Title>Location</Title>
+                            {location && <Title>My Pickup location</Title>}
                             <Info>
-                            <ZipCode>8400</ZipCode>
-                            <Address>Bahnhofstrasse 1</Address>
-                            <City>Zurich</City>
+                            <ZipCode>{zip}</ZipCode>
+                            <Address>{address}</Address>
+                            {/*<City>{city}</City>*/}
                             </Info>
-
-                            <Title>Tel. Number</Title>
+                                <Title>Tel. Number</Title>
                             <Contact>
-                                <Mobile>079 555 333 22</Mobile>
+                                <Mobile>{phone}</Mobile>
                             </Contact>
                         </UserInfoContainer>
                     </UserProfileContainer>
 
                 </BottomContainer>
 
-                 <div>
-                     {products.map((product) => <Card product={product} key={product.id}/>)}
-                 </div>
+                <CardContainer id={"hello"}>
+                     {products && products.map((product) => <Card product={product} key={product.id}/>)}
+                </CardContainer>
             </HomeContainer>
             <Footer />
         </Fragment>
     )
 }
+
 
 export default Profile;

@@ -15,7 +15,6 @@ export const HeaderContainer = styled.div `
     left: 0;
     top: 0;
     background-color: ${theme.colorDefaultWhite};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
@@ -49,7 +48,7 @@ export const Icons = styled.div `
     cursor: default;
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
         text-align: center;
         float: right;
         font-size: ${theme.fontSizeM};
@@ -77,16 +76,26 @@ export const NavLinkAbout = styled(NavLink)`
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
     }
     
-    &:hover, :focus, &.active {
+    &:hover {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          box-shadow: ${theme.boxShadowLighter};
+
+          i.fas {
+              color: ${theme.colorDefaultText}
+          }
+    }
+    
+    :focus, &.active {
           background-color: ${theme.colorMiddleGreenYellowLight};
           box-shadow: ${theme.boxShadowInset};
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
-    }
+    }    
+
 `;
 
 export const NavLinkProfile = styled(NavLinkAbout)`
@@ -98,14 +107,6 @@ export const NavLinkProfile = styled(NavLinkAbout)`
         -webkit-transition: background-color 750ms linear;
         -ms-transition: background-color 750ms linear;
         transition: background-color 750ms linear;
-        
-        &:hover, :focus, &.active {
-            background-color: ${theme.colorMiddleGreenYellowLight};
-            box-shadow: ${theme.boxShadowInset};
-            i.fas {
-                color: ${theme.colorDarkOliveGreen}
-            }
-        }        
     }
 `;
 
@@ -123,18 +124,24 @@ export const CartIcon = styled.div`
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
 
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
     }
-    
-    &:hover, :focus, &.active {
+        &:hover {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          //border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-          box-shadow: ${theme.boxShadowInset};
+          box-shadow: ${theme.boxShadowLighter};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
     }
+    
+    :focus, &.active {
+          background-color: ${theme.colorMiddleGreenYellowLight};
+          box-shadow: ${theme.boxShadowInset};
+          i.fas {
+              color: ${theme.colorDefaultText}
+          }
+    }   
 `;
 
 export const OpenCart = styled.div`

@@ -11,7 +11,6 @@ export const HomeContainer = styled.div `
 export const TopContainer = styled.div `
     width: 100%;    
     height: 240px;
-    background-image: url("${background}");
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center; 
@@ -27,7 +26,7 @@ export const Image = styled.div`
 
 export const Slogan = styled.h2`
     color: ${theme.colorDefaultWhite};
-    font-size: ${theme.fontSizeXXL};
+    font-size: ${theme.fontSizeXXL};    
     font-weight: ${theme.fontWeightBold};
     margin-left: ${theme.spaceDefault};
 `;

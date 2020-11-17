@@ -36,7 +36,7 @@ urlpatterns = [
     # # path('backend/api/reviews/like/', include('apps.user.urls')),
     # # path('backend/api/reviews/likes/', include('apps.user.urls')),
     # # path('backend/api/reviews/comments/', include('apps.user.urls')),
-    # path('backend/api/users/', include('apps.user.urls')),
+    path('backend/api/users/', include('apps.user.urls')),
     # path('backend/api/home/', include('apps.user.urls')),
 ]
 
