@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {theme} from './index';
+import React from "react";
 
 export const AboutMainContainer = styled.main`
     display: flex;
@@ -152,6 +153,29 @@ export const SubscriptionPlanOne = styled.div`
 export const SubscriptionPlanTwo = styled(SubscriptionPlanOne)``
 export const SubscriptionPlanThree = styled(SubscriptionPlanOne)``
 
+export const TopSubPart = styled.div`
+  display: flex;
+  height: 200px;
+  width: 300px;
+  background-color: black;
+`;
+
+export const BottomSubPart = styled(TopSubPart)``
+
+export const UpperHalveContainer = styled.div`
+  display: flex;
+  height: 100px;
+  width: 300px;
+  background-color: #3e8f3e;
+`;
+
+export const LowerHalveContainer = styled.div`
+  display: flex;
+  height: 100px;
+  width: 300px;
+  background-color: #8a6d3b;
+`;
+
 export const MeetTheTeamContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -223,18 +247,26 @@ export const RightProfileContainer = styled.div`
     width: auto;
     justify-content: space-evenly;
     margin-left: ${theme.spaceM};
-    
-    h4 {
-      font-size: ${theme.fontSizeS};
-      color: ${theme.colorDefaultGrey};
-    }
-    
-    p {
-      font-size: ${theme.fontSizeM};
-    }
 `;
 
+export const RightProfileTitle = styled.h4`
+    font-size: ${theme.fontSizeS};
+    color: ${theme.colorDefaultGrey};
+`;
+
+export const RightProfileP = styled.p`
+    font-size: ${theme.fontSizeM}; 
+`
+
 export const ProfileImage = styled.img`
+    height: 100%;
+    width: -moz-available;
+    width: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+`;
+
+export const ProfileImageContainer = styled.div`
     display: flex;
     justify-self: center;
     align-self: center;

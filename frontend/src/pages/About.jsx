@@ -3,7 +3,7 @@ import Header from '../components/Header/index.jsx'
 import {
     AboutMainContainer,
     AleksandraContainer,
-    AlexContainer,
+    AlexContainer, BottomSubPart,
     FirstDiv,
     FirstLeftContainer,
     FirstRightContainer,
@@ -11,11 +11,11 @@ import {
     HeaderAboutContainer,
     Image,
     LeftProfileContainer,
-    LinkedInLink,
+    LinkedInLink, LowerHalveContainer,
     MeetTheTeamContainer,
     MeetTheTeamHeader,
-    ProfileImage,
-    RightProfileContainer,
+    ProfileImage, ProfileImageContainer,
+    RightProfileContainer, RightProfileP, RightProfileTitle,
     SamiContainer,
     SecondDiv,
     SecondLeftContainer,
@@ -29,8 +29,8 @@ import {
     TheDevTeam,
     ThirdDiv,
     ThirdLeftContainer,
-    ThirdRightContainer,
-    TopSubscriptionText
+    ThirdRightContainer, TopSubPart,
+    TopSubscriptionText, UpperHalveContainer
 } from "../style/About";
 import FreshGarden1 from '../assets/images/freshgarden1.jpg'
 import FreshGarden2 from '../assets/images/freshgarden2.jpg'
@@ -85,9 +85,22 @@ const About = () => {
                             </p>
                         </TopSubscriptionText>
                         <SubscriptionModelContainer>
-                            <SubscriptionPlanOne></SubscriptionPlanOne>
-                            <SubscriptionPlanTwo></SubscriptionPlanTwo>
-                            <SubscriptionPlanThree></SubscriptionPlanThree>
+                            <SubscriptionPlanOne>
+                                <TopSubPart>
+                                    <UpperHalveContainer>
+                                    </UpperHalveContainer>
+                                </TopSubPart>
+                                <BottomSubPart>
+                                </BottomSubPart>
+                            </SubscriptionPlanOne>
+                            <SubscriptionPlanTwo>
+                                <TopSubPart></TopSubPart>
+                                <BottomSubPart></BottomSubPart>
+                            </SubscriptionPlanTwo>
+                            <SubscriptionPlanThree>
+                                <TopSubPart></TopSubPart>
+                                <BottomSubPart></BottomSubPart>
+                            </SubscriptionPlanThree>
                         </SubscriptionModelContainer>
                     </SubscriptionMainContainer>
                     <MeetTheTeamContainer>
@@ -95,14 +108,16 @@ const About = () => {
                             <TheDevTeam>
                                 <AlexContainer>
                                     <LeftProfileContainer>
-                                        <ProfileImage src={Sami}></ProfileImage>
+                                        <ProfileImageContainer>
+                                            <ProfileImage src={Sami}></ProfileImage>
+                                        </ProfileImageContainer>
                                         <h2>Sami Ben Ali</h2>
                                         <p>Zürich, Switzerland</p>
                                     </LeftProfileContainer>
                                     <RightProfileContainer>
-                                        <h4>Project Role</h4><p>Backend Developer</p>
-                                        <h4>Project Quote</h4><p>"To easy to be true gg ez"</p>
-                                        <h4>Social</h4>
+                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
+                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
+                                        <RightProfileTitle>Social</RightProfileTitle>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
@@ -111,14 +126,16 @@ const About = () => {
                                 </AlexContainer>
                                 <AleksandraContainer>
                                     <LeftProfileContainer>
-                                        <ProfileImage src={Sami}></ProfileImage>
+                                        <ProfileImageContainer>
+                                            <ProfileImage src={Sami}></ProfileImage>
+                                        </ProfileImageContainer>
                                         <h2>Sami Ben Ali</h2>
                                         <p>Zürich, Switzerland</p>
                                     </LeftProfileContainer>
                                     <RightProfileContainer>
-                                        <h4>Project Role</h4><p>Backend Developer</p>
-                                        <h4>Project Quote</h4><p>"To easy to be true gg ez"</p>
-                                        <h4>Social</h4>
+                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
+                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
+                                        <RightProfileTitle>Social</RightProfileTitle>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
@@ -127,14 +144,16 @@ const About = () => {
                                 </AleksandraContainer>
                                 <SamiContainer>
                                     <LeftProfileContainer>
-                                        <ProfileImage src={Sami}></ProfileImage>
+                                        <ProfileImageContainer>
+                                            <ProfileImage src={Sami}></ProfileImage>
+                                        </ProfileImageContainer>
                                         <h2>Sami Ben Ali</h2>
                                         <p>Zürich, Switzerland</p>
                                     </LeftProfileContainer>
                                     <RightProfileContainer>
-                                            <h4>Project Role</h4><p>Backend Developer</p>
-                                        <h4>Project Quote</h4><p>"To easy to be true gg ez"</p>
-                                        <h4>Social</h4>
+                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
+                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
+                                        <RightProfileTitle>Social</RightProfileTitle>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
