@@ -107,7 +107,7 @@ export const NavLinkProfile = styled(NavLinkAbout)`
         -webkit-transition: background-color 750ms linear;
         -ms-transition: background-color 750ms linear;
         transition: background-color 750ms linear;
-    }
+    }    
 `;
 
 export const NavLinkShop = styled(NavLinkAbout)``;
