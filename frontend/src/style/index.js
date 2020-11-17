@@ -37,6 +37,7 @@ export const theme = {
     colorAlmond: '#EDDED4',
     colorMiddleGreenYellow: '#B4CB67',
     colorMiddleGreenYellowLight: '#B7C892',
+    colorMiddleGreenYellowLightHover: '#C9D6AE',
     colorMiddleGreenYellowVeryLight: '#E1EAC2',
     colorMaxYellowRed: '#FFC370',
     colorDarkOliveGreen: '#5D6D37',

@@ -6,7 +6,7 @@ from apps.user.views import UserListSearch, GetSpecificUser, GetLoggedUser, User
 urlpatterns = [
     path('', UserListSearch.as_view()),
     path('me/', GetLoggedUser.as_view()),
-    # path('list/', GetListOfAllUsers.as_view()),
+    path('list/', UserListSearch.as_view()),
     path('registration/', UserRegistration.as_view()),
     path('registration/validate/', ValidateUpdateRegistration.as_view()),
     path('?search=<str:search_string>/', UserListSearch.as_view()),
