@@ -1,17 +1,20 @@
 // action creator
 import baseUrl from "../../helpers/baseUrl";
+import {SET_PRODUCTS_SUBSET} from "../../helpers/constants";
 
-export const setProductData = (type, data) => {
+export const setProductData = (type, payload) => {
     return {
         type: type,
-        payload: data,
+        payload: payload,
     }
 }
 
-export const productAction = (urlPath, method, type, body) => async (dispatch, getState) => {
+export const productAction = (urlPath, method, type, body, payload) => async (dispatch, getState) => {
+    if (type === SET_PRODUCTS_SUBSET) {
+        return dispatch(setProductData(type, payload))
+    }
     const { authReducer:{ token } } = getState();
     const url = baseUrl + urlPath;
-    console.log("urlpath SEARCHSTRING----------", urlPath)
     // creating fetch config header depending on request type
     const createConfig = () => {
         if (method !== 'GET') {
@@ -37,6 +40,5 @@ export const productAction = (urlPath, method, type, body) => async (dispatch, g
 
     const response = await fetch(url, config);
     const data = await response.json();
-
     dispatch(setProductData(type, data));
 };

@@ -22,7 +22,7 @@ import {
     LayoutContainerForm,
     EmailIconSignUp
 } from '../../style/Login'
-import congrats from '../../assets/images/checkmark_done.png';
+import congrats from '../../assets/svgs/checkmark_black.svg';
 import { SignIn } from '../SignIn';
 import { ReactComponent as StepOneIconSVG } from '../../assets/svgs/stepOne.svg';
 import { ReactComponent as StepTwoIconSVG } from '../../assets/svgs/stepTwo.svg';
@@ -68,10 +68,10 @@ export const SignUp = () => {
      const stepOneHandler = async e => {
         e.preventDefault();
         const re = /\S+@\S+\.\S+/;
+
         if (re.test(email)) {
             const regResponse = await dispatch(regAction(email))
-            if (regResponse === email) {
-                setCode(regResponse)
+            if (regResponse.email === email) {
                 setRegistrationState('stepTwo')
             } else {
                 setMessage(regResponse)
@@ -85,6 +85,7 @@ export const SignUp = () => {
 
     const stepTwoHandler = e => {
         e.preventDefault();
+        setMessage('')
         setRegistrationState('stepThree')
     }
 
@@ -126,7 +127,7 @@ export const SignUp = () => {
                                 </div>
                             </EmailSignUpContainer>
                             <p>{message}</p>
-                            <SignInButton id="submit" type="submit" value="Continue">Sign Up</SignInButton>
+                            <SignInButton id="submit" type="submit" value="Continue">SIGN UP</SignInButton>
                         </form>
                         <StepOneIconSVG id='stepOneIcon'/>
                     </StepOneContainer>
@@ -141,7 +142,6 @@ export const SignUp = () => {
                         <img src={congrats} alt='Check mark' />
                         <form onSubmit={stepTwoHandler}>
                             <p>We’ve sent a confirmation code to your email<br/>{email}</p>
-                            <p>Development: your code to copy is {code}</p>
                             <SignInButton id="submit" type="submit" value="Continue">Continue</SignInButton>
                         </form>
                         <StepTwoIconSVG id='stepTwoIcon'/>

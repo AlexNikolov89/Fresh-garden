@@ -11,21 +11,23 @@ export const ShoppingCartContainer = styled.div `
     justify-content: flex-start;
     align-items: center;
     background: ${theme.colorBackgroundColor};    
-    position: sticky;
+    position: absolute;
     padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
     //box-shadow: ${theme.boxShadowLight};
     z-index: 45;
     overflow-y: scroll;
     max-height: 70vh;
-    box-shadow: ${theme.boxShadowGradient}, 0 80px 50px 30px white;
+    box-shadow: ${theme.boxShadowGradient}, 0 50px 50px 30px white;
 
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
         height: 70vh;
-        top: 10%; 
-        left: auto;
+        width: calc(5 * ${theme.controlHeightXL});        
+        margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+        left: 0;
+        right: 0;        
         box-shadow: ${theme.boxShadowGradient}, 0 0 50px 50px white;
     }
 `;
@@ -34,8 +36,8 @@ export const TopContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-top: 1px solid ${theme.colorOne};
+    border-bottom: 1px solid ${theme.colorOne};
     height: ${theme.controlHeightDefault};
     width: 100%;
 `;
@@ -61,7 +63,7 @@ export const ProductContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-bottom: 1px solid ${theme.colorOne};
     z-index: 43;
         
     height: 100px;
@@ -123,21 +125,21 @@ export const Decrement = styled.div`
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
+    border: 1px solid ${theme.colorOneHover};    
     border-radius: ${theme.borderRadiusS};
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOneHover};
     height: 25px;
     width: 25px;
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorOneDark};
     }
     
     &:hover, &.active {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowInset};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorOneDark}
           }
     }
 `;
@@ -150,8 +152,8 @@ export const Count = styled.div`
     align-items: center;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-top: 1px solid ${theme.colorOneHover};
+    border-bottom: 1px solid ${theme.colorOneHover};
     height: 25px;
     width: 25px;
     background-color: ${theme.colorBackgroundColor};
