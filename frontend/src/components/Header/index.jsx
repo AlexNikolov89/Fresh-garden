@@ -59,9 +59,18 @@ const Header = () => {
                 </FormContainer>
 
                 <Icons >
-                    <NavLinkShop to='/shop'><i className="fas fa-store"></i></NavLinkShop>
-                    <NavLinkProfile to='/user/profile' className={classLabel}><i className="fas fa-user"></i></NavLinkProfile>
                     <NavLinkAddProduct to='/upload'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
+                    <NavLinkShop
+                        to='/shop'
+                        isActive={() => ['/shop', '/', '/checkout', '/order'].includes(location.pathname)}>
+                        <i className="fas fa-store"></i>
+                    </NavLinkShop>
+                    <NavLinkProfile
+                        to='/user/profile'
+                        className={classLabel}
+                        isActive={() => ['/user/profile', '/user/login'].includes(location.pathname)}>
+                        <i className="fas fa-user"></i>
+                    </NavLinkProfile>
                     <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
                     <CartIcon
                         onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}

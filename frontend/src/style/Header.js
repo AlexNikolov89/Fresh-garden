@@ -48,7 +48,7 @@ export const Icons = styled.div `
     cursor: default;
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
         text-align: center;
         float: right;
         font-size: ${theme.fontSizeM};
@@ -76,15 +76,15 @@ export const NavLinkAbout = styled(NavLink)`
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
     }
     
     &:hover {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          box-shadow: ${theme.boxShadowLight};
+          box-shadow: ${theme.boxShadowLighter};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
     }
     
@@ -92,7 +92,7 @@ export const NavLinkAbout = styled(NavLink)`
           background-color: ${theme.colorMiddleGreenYellowLight};
           box-shadow: ${theme.boxShadowInset};
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
     }    
 
@@ -124,14 +124,14 @@ export const CartIcon = styled.div`
     background-color: ${theme.colorMiddleGreenYellowVeryLight};
 
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
     }
         &:hover {
           background-color: ${theme.colorMiddleGreenYellowLight};
-          box-shadow: ${theme.boxShadowLight};
+          box-shadow: ${theme.boxShadowLighter};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
     }
     
@@ -139,7 +139,7 @@ export const CartIcon = styled.div`
           background-color: ${theme.colorMiddleGreenYellowLight};
           box-shadow: ${theme.boxShadowInset};
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
     }   
 `;

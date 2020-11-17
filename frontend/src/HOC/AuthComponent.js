@@ -29,26 +29,16 @@ export default WrappedComponent => (props) => {
                     return Object.keys(arg).length === 0;
                 };
                 const verified = evaluateData(data);
-                console.log("HOC------------tokenLocal", tokenLocal)
-                console.log("HOC------------tokenRedux", tokenRedux)
-                if (token) {
-                    console.log("HOC------------tokenCombined", token)
-                } else console.log("HOC------------tokenCombined FALSE")
-                console.log("HOC------------dataSUCCESS _> {}", data)
-                console.log("HOC------------verified", verified)
-                console.log("HOC------------path", path)
                 if (path.includes('/user/profile') && !verified) {
-                    console.log("HOC------------pushOne /user/login")
                     history.push('/user/login');
                 } else if (path.includes('/user/login') && verified) {
-                    console.log("HOC------------pushTwo /user/profile")
                     history.push('/user/profile');
                 } else if (!verified) {
-                    console.log("HOC------------pushThree /user/login", response)
                     history.push('/user/login');
                 }
             };
             userRedirect()
+            return function cleanup() {};
 
         }, [tokenRedux, tokenLocal, history, location]);
 

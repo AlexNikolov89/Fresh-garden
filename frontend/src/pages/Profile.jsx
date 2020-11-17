@@ -17,7 +17,8 @@ import Banner from "../components/Header/Banner";
 import {cartAction} from "../store/actions/cartAction";
 import authReducer from "../store/reducers/authReducer";
 import {authAction} from "../store/actions/authAction";
-import {LOGOUT_UNSET_TOKEN} from "../helpers/constants";
+import {LOGOUT_UNSET_TOKEN, SET_PRODUCTS_ALL} from "../helpers/constants";
+import {productAction} from "../store/actions/productAction";
 
 const Profile = ({author}) => {
     const productsAll = useSelector(state => state.productReducer.productsAll)
@@ -34,6 +35,8 @@ const Profile = ({author}) => {
     const [avatar, setAvatar] = useState(defaultAvatar);
     const [zip, setZip] = useState('');
     const [products, setProducts] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
+
 
     useEffect(() => {
         const fetchUser = async () => {
@@ -44,19 +47,29 @@ const Profile = ({author}) => {
     }, [dispatch]);
 
     useEffect(() => {
+        const fetchProducts = async () => {
+            setIsLoading(true)
+            await dispatch(productAction('products/', 'GET', SET_PRODUCTS_ALL));
+            setIsLoading(false);
+        }
+        fetchProducts()
+        return function cleanup() {};
+    }, [dispatch]);
+
+    useEffect(() => {
         const userInfo = () => {
             if(user.location) setLocation(user.location);
             if(user.zip) setLocation(user.location);
-            if(productsAll){
-                // const filterProducts = (input) => {
-                //     return input.filter((product) => product.author.first_name === user.first_name || product.author.last_name === user.last_name)
-                // }
-                //const newSet = filterProducts(productsAll)
-                //setProducts(() => productsAll.filter((product) => product.author.first_name === user.first_name || product.author.last_name === user.last_name))
-            }
+            // if(productsAll) {
+            //     const newProductSet = productsAll.filter((element) => element.author === user)
+            //     console.log("in Profile newProductSet", newProductSet)
+            //     return setProducts(newProductSet)
+            // }
+            if(productsAll) setProducts(productsAll)
         }
         userInfo()
-    })
+        return function cleanup() {};
+    },)
 
     const logout = () => {
        dispatch(authAction('', '', LOGOUT_UNSET_TOKEN))
@@ -113,7 +126,7 @@ const Profile = ({author}) => {
 
                 </BottomContainer>
 
-                <CardContainer>
+                <CardContainer id={"hello"}>
                      {products && products.map((product) => <Card product={product} key={product.id}/>)}
                 </CardContainer>
             </HomeContainer>

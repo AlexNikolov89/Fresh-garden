@@ -68,7 +68,7 @@ export const AutocompleteOne = styled.button`
     
     i {
         font-size: ${theme.fontSizeS};
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
         margin-left: ${theme.spaceXS};
         margin-right: ${theme.spaceS};
     }  
@@ -111,7 +111,7 @@ export const SearchButton = styled.button `
     border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
         font-size: ${theme.fontSizeM};
     }
 `;
@@ -126,7 +126,7 @@ export const SubmitButton = styled(SearchButton)`
     justify-self: flex-start;
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorDefaultText};
     }
     
     &:hover {
@@ -134,7 +134,7 @@ export const SubmitButton = styled(SearchButton)`
           box-shadow: ${theme.boxShadowInset};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorDefaultText}
           }
     }
 `;
