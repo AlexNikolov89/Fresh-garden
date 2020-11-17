@@ -11,7 +11,7 @@ export const TopContainer = styled.div `
     /* background-image: url("${background}");
     background-repeat: no-repeat;
     background-size: cover; */
-    background-color: ${theme.colorDarkOliveGreen};
+    background-color: ${theme.colorOneDark};
     background: linear-gradient(to bottom, #003300 0%, #006600 63%);
 `;
 

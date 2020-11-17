@@ -185,7 +185,7 @@ export const ButtonPickUp = styled(ButtonDelivery) `
 export const Slider = styled.input `
     width: 100%;
     -webkit-appearance: none;
-    background: ${theme.colorMiddleGreenYellow};
+    background: ${theme.colorOne};
     outline: none;
     opacity: 0.7;
     -webkit-transition: 0.2s;
@@ -225,7 +225,7 @@ export const Fruit = styled(GenericButton) `
     width: 150px;
 `;
 export const Vegetable = styled( GenericButton) `
-    background: ${theme.colorMiddleGreenYellow};
+    background: ${theme.colorOne};
     width: 150px;
     margin: 0 30px;
 `;
@@ -278,7 +278,7 @@ export const UploadImage = styled.input `
 `
 export const Submit = styled(GenericButton) `
     margin: 30px 0;
-    background-color: ${theme.colorDarkOliveGreen};
+    background-color: ${theme.colorOneDark};
     width: 20%;
     margin-left: 40%;
 `;

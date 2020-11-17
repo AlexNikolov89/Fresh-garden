@@ -36,12 +36,15 @@ export const theme = {
 
     // Project Colors:
     colorOneDark: '#5D6D37',
-    colorOneDarkHover: '#5D6D37',
+    colorOneDarkHover: '#B7C892',
+    colorOne: '#B7C892',
+    colorOneHover: '#C9D6AE',
     colorTwoDark: '#4C4C4C',
-    colorTwoDarkHover: '#B7C892',
+    colorTwoDarkHover: '#ADADAD',
     colorMainTitle: '#5D6D37',
     colorDefaultText: '#4C4C4C',
     colorBackgroundColor:'#fcf9f4',
+
     colorDarkPurple: '#69122F',
     colorDarkRed: '#B4041E',
     colorDarkBlue: '#045076',
@@ -50,13 +53,13 @@ export const theme = {
 
     // Color Backlog:
     colorAlmond: '#EDDED4',
-    colorDefaultGrey: '#ADADAD',
+    // colorDefaultGrey: '#ADADAD',
     colorMiddleGreenYellow: '#B4CB67',
-    colorMiddleGreenYellowLight: '#B7C892',
-    colorMiddleGreenYellowLightHover: '#C9D6AE',
-    colorMiddleGreenYellowVeryLight: '#E1EAC2',
+    // colorOne: '#B7C892',
+    // colorOneHover: '#C9D6AE',
+    // colorOneHover: '#E1EAC2',
     colorMaxYellowRed: '#FFC370',
-    colorDarkOliveGreen: '#5D6D37',
+    // colorOneDark: '#5D6D37',
     colorCaputMortuum: '#4F2E2B',
     colorTitle: '#5D6D37',
     colorRandomText: '#bbbfca',

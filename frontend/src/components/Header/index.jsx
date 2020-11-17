@@ -27,6 +27,7 @@ const Header = () => {
     const redirectFlagRedux = useSelector(state => state.cartReducer.redirectFlag)
     const [redirectFlagComponent, setRedirectFlagComponent] = useState(false)
     const [classLabel, setClassLabel] = useState('default')
+    console.log("flag redux---------",redirectFlagRedux)
 
     // lights up the profile navigation button if not logged in
     // TODO also do this for the "add product" page
@@ -68,7 +69,7 @@ const Header = () => {
                     <NavLinkProfile
                         to='/user/profile'
                         className={classLabel}
-                        isActive={() => ['/user/profile', '/user/login'].includes(location.pathname)}>
+                        isActive={() => ['user/profile', 'user/login'].includes(location.pathname)}>
                         <i className="fas fa-user"></i>
                     </NavLinkProfile>
                     <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>

@@ -34,8 +34,8 @@ export const TopContainer = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-top: 1px solid ${theme.colorMiddleGreenYellowLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-top: 1px solid ${theme.colorOne};
+    border-bottom: 1px solid ${theme.colorOne};
     height: ${theme.controlHeightDefault};
     width: 100%;
 `;
@@ -61,7 +61,7 @@ export const ProductContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-bottom: 1px solid ${theme.colorOne};
     z-index: 43;
         
     height: 100px;
@@ -123,21 +123,21 @@ export const Decrement = styled.div`
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
+    border: 1px solid ${theme.colorOneHover};    
     border-radius: ${theme.borderRadiusS};
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOneHover};
     height: 25px;
     width: 25px;
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorOneDark};
     }
     
     &:hover, &.active {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowInset};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorOneDark}
           }
     }
 `;
@@ -150,8 +150,8 @@ export const Count = styled.div`
     align-items: center;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-top: 1px solid ${theme.colorOneHover};
+    border-bottom: 1px solid ${theme.colorOneHover};
     height: 25px;
     width: 25px;
     background-color: ${theme.colorBackgroundColor};

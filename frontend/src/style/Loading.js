@@ -29,7 +29,7 @@ export const ExternalContainerLoader = styled.div`
     }
 
     .spinner > div {
-      background-color: ${theme.colorMiddleGreenYellowVeryLight};
+      background-color: ${theme.colorOneHover};
       height: 100%;
       width: 6px;
       display: inline-block;

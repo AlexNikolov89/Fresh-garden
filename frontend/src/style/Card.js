@@ -16,10 +16,10 @@ export const CardContainer = styled.div `
     margin: ${theme.spaceS};
 
     &.vegetable {
-        border-top: 8px solid ${theme.colorMiddleGreenYellowLight};
+        border-top: 8px solid ${theme.colorOne};
     }
     &.fruit {
-        border-top: 8px solid ${theme.colorMiddleGreenYellowLight};
+        border-top: 8px solid ${theme.colorOne};
     }
 `;
 
@@ -48,7 +48,7 @@ export const PromotionIcon = styled.div`
     svg {
         width: 35px;
         height: 35px;
-        fill: ${theme.colorDarkOliveGreen};
+        fill: ${theme.colorOneDark};
 
     }
 
@@ -242,7 +242,7 @@ export const StockContainer = styled(PriceContainer)`
 `;
 
 export const Stock = styled(Count)`
-    border: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border: 1px solid ${theme.colorOne};
     min-width: 25px;
     width: fit-content;
     padding: 4px;
@@ -259,7 +259,7 @@ export const AddToCart = styled.div`
 
     i {
         font-size: ${theme.fontSizeDefault};
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorOneDark};
     }
     
     &:hover, :focus, &.active {
