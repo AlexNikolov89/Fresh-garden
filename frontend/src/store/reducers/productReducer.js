@@ -3,6 +3,7 @@ import {SET_PRODUCTS_ALL, CREATE_NEW_PRODUCT, SET_PRODUCTS_SUBSET} from '../../h
 const initialState = {
     productsAll: [],
     newProduct: [],
+    productsSubset: [],
 }
 
 export default function productReducer (state = initialState, action) {
@@ -17,13 +18,14 @@ export default function productReducer (state = initialState, action) {
         }
         case SET_PRODUCTS_SUBSET: {
             const newState = {...state}
-            console.log("productReducer SUBSET, payload", action.payload.length)
+            console.log("productReducer SUBSET, payload", action.payload)
             if (action.payload && action.payload.length !== 0) {
-                console.log("productReducer: INSIDE IF, payload")
+                console.log("productReducer: INSIDE IF FIRED, payload")
                 newState.productsSubset = action.payload
                 newState.productsSubset.reverse()
                 return newState
-            } else return newState
+            } else if (action.payload.length !== 0) newState.productsSubset = []
+            return newState
         }
         case CREATE_NEW_PRODUCT: {
             const newState = {...state}

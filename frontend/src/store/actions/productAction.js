@@ -40,8 +40,6 @@ export const productAction = (urlPath, method, type, body, payload) => async (di
     const config = createConfig();
 
     const response = await fetch(url, config);
-    console.log(response)
     const data = await response.json();
-
     dispatch(setProductData(type, data));
 };

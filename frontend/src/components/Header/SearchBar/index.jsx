@@ -53,12 +53,14 @@ const SearchBar = () => {
         e.preventDefault();
         setLocationString(location)
         setShowAutocomplete(false)
-        let splitLocationString = locationString.split(",",1).toString()
+        let splitLocationString = locationString.split(",", 1).toString()
         await dispatch(productAction('products/?search=' + splitLocationString, 'GET', SET_PRODUCTS_ALL));
     }
 
     const searchHandler = async e => {
         const inputString = e.currentTarget.value
+        if (inputString === ' ') return
+
         let payload = []
         setSearchString(inputString)
 
@@ -68,9 +70,8 @@ const SearchBar = () => {
             if (productsAll === false) return
 
             for (const word of inputString.split(' ')) {
-                let wordStrip = word
-                if (word === false || word === '' || word === ' ' || word === undefined) return
-                else wordStrip = word
+                let wordStrip = word.toLowerCase()
+                // if (word === ' ') break; else wordStrip = word
                 const searchStringObject = {
                     author: {
                         first_name: wordStrip,
@@ -88,23 +89,32 @@ const SearchBar = () => {
                     for (const object of searchStringArray) {
                         console.log("SEARCH---- inner loop, object", object.author.first_name)
                         console.log("SEARCH---- inner loop, product", product.author.first_name)
-                        console.log("SEARCH---- TRUTHNESS", (object.author.first_name).includes(product.author.first_name))
-                        return (object.author.first_name).includes(product.author.first_name);
+                        console.log("SEARCH---- TRUTHNESS", (object.author.first_name.includes(product.author.first_name.toLowerCase())))
+                        return (product.author.first_name.toLowerCase().includes(object.author.first_name))
+                            || (product.author.last_name.toLowerCase().includes(object.author.last_name))
+                            || (product.category.toLowerCase().includes(object.category))
+                            || (product.location.toLowerCase().includes(object.location))
+                            || (product.name.toLowerCase().includes(object.name));
+
+                        // || (object.location.toLocaleLowerCase()).includes(product.location.toLocaleLowerCase())
+                        // || (object.category.toLocaleLowerCase()).includes(product.category.toLocaleLowerCase())
+                        // || (object.name.toLocaleLowerCase()).includes(product.name.toLocaleLowerCase())) return true
                     }
                 }
                 const match = searchMatchChecker(product)
-                if (match && payload.every((payloadProduct) => payloadProduct !== product)) payload.push(product)
+                if (match) payload.push(product)
+                // payload.every((payloadProduct) => payloadProduct !== product)
             }
         }
         createProductsSubset()
-        await dispatch(productAction('','', SET_PRODUCTS_SUBSET,'', payload))
+        await dispatch(productAction('', '', SET_PRODUCTS_SUBSET, '', payload))
     }
 
     const submitSearchHandler = async e => {
         e.preventDefault()
         setShowAutocomplete(false)
         let space = ''
-        let splitLocationString = locationString.split(",",1).toString()
+        let splitLocationString = locationString.split(",", 1).toString()
         if (splitLocationString[0] !== '') space = ' '
 
         await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_SUBSET));
@@ -149,7 +159,7 @@ const SearchBar = () => {
                             {autocompleteThree}
                         </AutocompleteThree>}
                     </AutocompleteContainer>
-                ) : null }
+                ) : null}
 
                 <SearchContainer>
                     <SearchButton onClick={(e) => e.preventDefault()}>
