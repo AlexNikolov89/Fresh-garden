@@ -12,6 +12,7 @@ import {useHistory, useLocation} from "react-router-dom";
 import {productAction} from "../store/actions/productAction";
 import {SET_PRODUCTS_ALL} from "../helpers/constants";
 import {Loading} from "../components/Loading";
+import Banner from "../components/Header/Banner";
 
 const Homepage = () => {
     const dispatch = useDispatch();
@@ -47,12 +48,7 @@ const Homepage = () => {
     return (
         <Fragment>
             <HomeContainer>
-                <TopContainer>
-                    <Image>
-                        <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
-                    </Image>
-                </TopContainer>
-
+                <Banner />
                 <Header />
 
                 {isLoading ? <Loading /> : (

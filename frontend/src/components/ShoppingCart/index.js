@@ -43,7 +43,8 @@ const ShoppingCart = () => {
                         <EmptyCartIcon><i className="fas fa-trash-alt" /></EmptyCartIcon>
                         <TextField>Empty Shopping Basket</TextField>
                     </EmptyCart>
-                    <CheckoutButton to={'/checkout'}>Checkout</CheckoutButton>
+                    {/*<CheckoutButton onClick={() => history.push('/checkout')}>Checkout</CheckoutButton>*/}
+                    <CheckoutButton>Checkout</CheckoutButton>
                 </BottomContainer>
             </ShoppingCartContainer>
         </Fragment>

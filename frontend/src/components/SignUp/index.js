@@ -199,7 +199,7 @@ export const SignUp = () => {
             }
 
             default:
-                history.push("/profile");
+                history.push("/user/profile");
                 break;
         }
     }

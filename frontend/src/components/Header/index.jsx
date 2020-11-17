@@ -20,7 +20,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
 
-const Header = ({ sticky, element, minimal }) => {
+const Header = () => {
     const location = useLocation();
     const viewCart = useSelector(state => state.cartReducer.viewCart)
     const dispatch = useDispatch();
@@ -55,25 +55,28 @@ const Header = ({ sticky, element, minimal }) => {
                 </LogoContainer>
 
                 <FormContainer>
-                    {location.pathname === '/shop' ? <SearchBar /> : null}
+                    {location.pathname === '/shop' && <SearchBar />}
                 </FormContainer>
 
                 <Icons >
-                    {location.pathname === '/shop' ? (
-                        <CartIcon
-                            onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}
-                            className={viewCart ? "active" : "inactive"}>
-                            <i className="fas fa-shopping-basket" />
-                        </CartIcon>
-                    ) : null }
-                    <NavLinkShop to='/shop'><i className="fas fa-store"></i></NavLinkShop>
-                    <NavLinkAddProduct to='/addproduct'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
-                    <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
+                    <NavLinkAddProduct to='/upload'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
+                    <NavLinkShop
+                        to='/shop'
+                        isActive={() => ['/shop', '/', '/checkout', '/order'].includes(location.pathname)}>
+                        <i className="fas fa-store"></i>
+                    </NavLinkShop>
                     <NavLinkProfile
-                        to='/profile'
-                        className={classLabel}>
+                        to='/user/profile'
+                        className={classLabel}
+                        isActive={() => ['/user/profile', '/user/login'].includes(location.pathname)}>
                         <i className="fas fa-user"></i>
                     </NavLinkProfile>
+                    <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
+                    <CartIcon
+                        onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}
+                        className={viewCart ? "active" : "inactive"}>
+                        <i className="fas fa-shopping-basket" />
+                    </CartIcon>
                 </Icons>
 
             </HeaderContainer>
