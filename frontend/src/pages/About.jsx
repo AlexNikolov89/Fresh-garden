@@ -3,15 +3,15 @@ import Header from '../components/Header/index.jsx'
 import {
     AboutMainContainer,
     AleksandraContainer,
-    AlexContainer, BottomSubPart,
+    AlexContainer, BottomHalveUpperContainer, BottomSubPart, BottomSubscriptionText,
     FirstDiv,
     FirstLeftContainer,
-    FirstRightContainer,
+    FirstRightContainer, FirstSectionContainer,
     GitHubLink,
     HeaderAboutContainer,
     Image,
     LeftProfileContainer,
-    LinkedInLink, LowerHalveContainer,
+    LinkedInLink,
     MeetTheTeamContainer,
     MeetTheTeamHeader,
     ProfileImage, ProfileImageContainer,
@@ -20,22 +20,23 @@ import {
     SecondDiv,
     SecondLeftContainer,
     SecondRightContainer,
-    SocialLinks,
+    SocialLinks, SubscriptionButtonContainer,
     SubscriptionMainContainer,
     SubscriptionModelContainer,
     SubscriptionPlanOne,
     SubscriptionPlanThree,
-    SubscriptionPlanTwo,
+    SubscriptionPlanTwo, SubscriptionPrice, SubscriptionTitle,
     TheDevTeam,
     ThirdDiv,
     ThirdLeftContainer,
     ThirdRightContainer, TopSubPart,
-    TopSubscriptionText, UpperHalveContainer
+    TopSubscriptionText, UpperHalveBottomContainer, UpperHalveContainer
 } from "../style/About";
 import FreshGarden1 from '../assets/images/freshgarden1.jpg'
 import FreshGarden2 from '../assets/images/freshgarden2.jpg'
 import FreshGarden3 from '../assets/images/freshgarden3.jpg'
 import Sami from '../assets/images/Sami.jpg'
+import {SubscribeButton} from "../style/Buttons";
 
 
 const About = () => {
@@ -44,39 +45,36 @@ const About = () => {
                 <Header />
                 <AboutMainContainer>
                     <HeaderAboutContainer>About</HeaderAboutContainer>
-                    <FirstDiv>
-                        <FirstLeftContainer>What is freshgarden.ch?
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore <br/>
-                            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br/>
-                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum<br/> dolor sit amet,
-                            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.
-                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </p>
-                        </FirstLeftContainer>
-                        <FirstRightContainer><Image src={FreshGarden1} /></FirstRightContainer>
-                    </FirstDiv>
-                    <SecondDiv>
-                        <SecondLeftContainer><Image src={FreshGarden2} /></SecondLeftContainer>
-                        <SecondRightContainer>How do I trade goods?
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore <br/>
-                            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br/>
-                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum<br/> dolor sit amet,
-                            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.
-                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </p>
-                        </SecondRightContainer>
-                    </SecondDiv>
-                    <ThirdDiv>
-                        <ThirdLeftContainer>How do I pay the seller?
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore <br/>
-                            et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br/>
-                            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum<br/> dolor sit amet,
-                            consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,sed diam voluptua.
-                            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                            </p>
-                        </ThirdLeftContainer>
-                        <ThirdRightContainer><Image src={FreshGarden3} /></ThirdRightContainer>
-                    </ThirdDiv>
+                    <FirstSectionContainer>
+                        <FirstDiv>
+                            <FirstLeftContainer>What is freshgarden.ch?
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br/>
+                                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et.<br/>
+                                consetetur sadipscing elitr, sed diam nonumy sed diam voluptua. At vero.
+                                </p>
+                            </FirstLeftContainer>
+                            <FirstRightContainer><Image src={FreshGarden1} /></FirstRightContainer>
+                        </FirstDiv>
+                        <SecondDiv>
+                            <SecondLeftContainer><Image src={FreshGarden2} /></SecondLeftContainer>
+                            <SecondRightContainer>How do I trade goods?
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br/>
+                                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et.<br/>
+                                consetetur sadipscing elitr, sed diam nonumy sed diam voluptua. At vero.
+                                </p>
+                            </SecondRightContainer>
+                        </SecondDiv>
+                        <ThirdDiv>
+                            <ThirdLeftContainer>How do I pay the seller?
+                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br/>
+                                et dolore magna aliquyam erat, sed diam voluptua. At vero eos et.<br/>
+                                consetetur sadipscing elitr, sed diam nonumy sed diam voluptua. At vero.
+                                </p>
+                            </ThirdLeftContainer>
+                            <ThirdRightContainer><Image src={FreshGarden3} /></ThirdRightContainer>
+                        </ThirdDiv>
+                    </FirstSectionContainer>
+
                     <SubscriptionMainContainer>
                         <TopSubscriptionText>Can I promote a product?
                             <p>
@@ -88,21 +86,73 @@ const About = () => {
                             <SubscriptionPlanOne>
                                 <TopSubPart>
                                     <UpperHalveContainer>
+                                        <SubscriptionTitle>BASIC</SubscriptionTitle>
                                     </UpperHalveContainer>
+                                    <UpperHalveBottomContainer>
+                                        <SubscriptionPrice>FREE</SubscriptionPrice>
+                                    </UpperHalveBottomContainer>
                                 </TopSubPart>
                                 <BottomSubPart>
+                                    <BottomHalveUpperContainer>
+                                        <BottomSubscriptionText>
+                                            <i className="fas fa-check-circle"></i>All Features<br/>
+                                            <i className="fas fa-check-circle"></i>Chat Support<br/>
+                                            <i className="fas fa-check-circle"></i>Free Server
+                                        </BottomSubscriptionText>
+                                    </BottomHalveUpperContainer>
+                                    <SubscriptionButtonContainer>
+                                        <SubscribeButton>SELECT</SubscribeButton>
+                                    </SubscriptionButtonContainer>
                                 </BottomSubPart>
                             </SubscriptionPlanOne>
                             <SubscriptionPlanTwo>
-                                <TopSubPart></TopSubPart>
-                                <BottomSubPart></BottomSubPart>
+                                <TopSubPart>
+                                    <UpperHalveContainer>
+                                        <SubscriptionTitle>FRESHGARDEN</SubscriptionTitle>
+                                    </UpperHalveContainer>
+                                    <UpperHalveBottomContainer>
+                                        <SubscriptionPrice>8.90 $</SubscriptionPrice>
+                                    </UpperHalveBottomContainer>
+                                </TopSubPart>
+                                <BottomSubPart>
+                                    <BottomHalveUpperContainer>
+                                        <BottomSubscriptionText>
+                                            <i className="fas fa-check-circle"></i>All Features<br/>
+                                            <i className="fas fa-check-circle"></i>Chat Support<br/>
+                                            <i className="fas fa-check-circle"></i>Free Server
+                                        </BottomSubscriptionText>
+                                    </BottomHalveUpperContainer>
+                                    <SubscriptionButtonContainer>
+                                        <SubscribeButton>SELECT</SubscribeButton>
+                                    </SubscriptionButtonContainer>
+                                </BottomSubPart>
                             </SubscriptionPlanTwo>
                             <SubscriptionPlanThree>
-                                <TopSubPart></TopSubPart>
-                                <BottomSubPart></BottomSubPart>
+                                <TopSubPart>
+                                    <UpperHalveContainer>
+                                        <SubscriptionTitle>FRESHGARDEN+</SubscriptionTitle>
+                                    </UpperHalveContainer>
+                                    <UpperHalveBottomContainer>
+                                        <SubscriptionPrice>14.90 $</SubscriptionPrice>
+                                    </UpperHalveBottomContainer>
+                                </TopSubPart>
+                                <BottomSubPart>
+                                    <BottomHalveUpperContainer>
+                                        <BottomSubscriptionText>
+                                            <i className="fas fa-check-circle"></i>All Features<br/>
+                                            <i className="fas fa-check-circle"></i>Chat Support<br/>
+                                            <i className="fas fa-check-circle"></i>Free Server
+                                        </BottomSubscriptionText>
+                                    </BottomHalveUpperContainer>
+                                    <SubscriptionButtonContainer>
+                                        <SubscribeButton>SELECT</SubscribeButton>
+                                    </SubscriptionButtonContainer>
+                                </BottomSubPart>
                             </SubscriptionPlanThree>
                         </SubscriptionModelContainer>
                     </SubscriptionMainContainer>
+
+
                     <MeetTheTeamContainer>
                         <MeetTheTeamHeader>Meet the DevTeam</MeetTheTeamHeader>
                             <TheDevTeam>
