@@ -35,7 +35,7 @@ export const InfoConatiner = styled.div `
 
 export const Description = styled.h3 `
     font-size: ${theme.fontSizeDefault};
-    color: ${theme.colorDarkOliveGreen};
+    color: ${theme.colorOneDark};
     padding-bottom: 10px;
     padding-left: 10px;
 `;
@@ -55,21 +55,21 @@ export const Increment = styled.div `
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};    
+    border: 1px solid ${theme.colorOneHover};    
     border-radius: ${theme.borderRadiusS};
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOneHover};
     height: 30px;
     width: 30px;
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorOneDark};
     }
     
     &:hover, &.active {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowInset};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorOneDark}
           }
     }
 `;
@@ -82,8 +82,8 @@ export const Count = styled.div `
     align-items: center;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    border-top: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-top: 1px solid ${theme.colorOneHover};
+    border-bottom: 1px solid ${theme.colorOneHover};
     height: 30px;
     width: 30px;
     background-color: ${theme.colorBackgroundColor};
@@ -121,7 +121,7 @@ export const Delete = styled.button `
     i {
         margin-left: 50px;
         font-size: ${theme.fontSizeM};
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorOneDark};
 
         &:hover, &.active {
         border: none;

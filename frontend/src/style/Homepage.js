@@ -75,7 +75,7 @@ export const SideBox = styled.div`
     justify-content: flex-end;
     align-items: center;
     width: calc(5 * ${theme.controlHeightXL});
-    border-left: 1px solid ${theme.colorMiddleGreenYellowLight};
+    border-left: 1px solid ${theme.colorOne};
     background: ${theme.colorBackgroundColor};
     height: auto;
     padding-bottom: 70px;
@@ -86,7 +86,7 @@ export const SideBox = styled.div`
         width: 100%;
         position: relative;
         overflow: hidden;
-        border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+        border-bottom: 1px solid ${theme.colorOne};
 
     }
 `;

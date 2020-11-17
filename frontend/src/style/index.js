@@ -33,26 +33,36 @@ export const theme = {
     // Media Queries:
     mediaQueryScreenWidth: '680px',
 
-    // Colors:
-    colorDefault: '#222222',
-    colorAlmond: '#EDDED4',
-    colorMiddleGreenYellow: '#B4CB67',
-    colorMiddleGreenYellowLight: '#B7C892',
-    colorMiddleGreenYellowLightHover: '#C9D6AE',
-    colorMiddleGreenYellowVeryLight: '#E1EAC2',
-    colorMaxYellowRed: '#FFC370',
-    colorDarkOliveGreen: '#5D6D37',
-    colorCaputMortuum: '#4F2E2B',
-    colorBackgroundColor:'#fcf9f4',
-    colorTitle: '#5D6D37',
-    colorRandomText: '#bbbfca',
-    colorDefaultGrey: '#D8D8D8',
+    // Project Colors:
+    colorOneDark: '#5D6D37',
+    colorOneDarkHover: '#B7C892',
+    colorOne: '#B7C892',
+    colorOneHover: '#C9D6AE',
+    colorTwoDark: '#4C4C4C',
+    colorTwoDarkHover: '#ADADAD',
+    colorMainTitle: '#5D6D37',
     colorDefaultText: '#4C4C4C',
-    colorDefaultWhite: '#FFFFFF',
+    colorBackgroundColor:'#fcf9f4',
+
     colorDarkPurple: '#69122F',
     colorDarkRed: '#B4041E',
     colorDarkBlue: '#045076',
     colorDarkGold: '#B8860B',
+    colorDefaultWhite: '#FFFFFF',
+
+    // Color Backlog:
+    colorAlmond: '#EDDED4',
+    // colorDefaultGrey: '#ADADAD',
+    colorMiddleGreenYellow: '#B4CB67',
+    // colorOne: '#B7C892',
+    // colorOneHover: '#C9D6AE',
+    // colorOneHover: '#E1EAC2',
+    colorMaxYellowRed: '#FFC370',
+    // colorOneDark: '#5D6D37',
+    colorCaputMortuum: '#4F2E2B',
+    colorTitle: '#5D6D37',
+    colorRandomText: '#bbbfca',
+
     // Fonts (Visual Hierarchy - 3:4 Method)
     fontSizeXXXXXL: "11.9rem",
     fontSizeXXXXL: "8.9rem",

@@ -7,7 +7,7 @@ export const StandardButton = styled.button`
     align-items: center;
     width: 160px;
     cursor: default;
-    background-color: ${theme.colorMiddleGreenYellowLight};
+    background-color: ${theme.colorOne};
     height: ${theme.controlHeightM};
     border-radius: 26px;
     color: ${theme.colorDefaultText};
@@ -24,18 +24,18 @@ export const StandardButton = styled.button`
     font-weight: 600;
     
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorOneDark};
     }
     
     
     :hover {
         box-shadow: ${theme.boxShadowLighter};
-        background: ${theme.colorMiddleGreenYellowLightHover};
+        background: ${theme.colorOneHover};
     }
     
     :focus, &.active {
         box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorMiddleGreenYellowLight};
+        background: ${theme.colorOne};
     }  
 `;
 
@@ -45,7 +45,7 @@ export const GenericButton = styled.button`
     min-width: 120px ;
     border-radius: 26px;
     color: ${theme.colorDefaultText};
-    background: ${theme.colorMiddleGreenYellowVeryLight};
+    background: ${theme.colorOneHover};
     border: none;    
     cursor: default;
     font-size: ${theme.fontSizeDefault};
@@ -54,7 +54,7 @@ export const GenericButton = styled.button`
     
     &:hover, :focus {
         box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorMiddleGreenYellowLight};
+        background: ${theme.colorOne};
     }
 `;
 
@@ -63,7 +63,7 @@ export const SignUpButton = styled(StandardButton)`
     
     &:hover {
         box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorMiddleGreenYellowLight};
+        background: ${theme.colorOne};
     }
 `;
 
@@ -71,7 +71,7 @@ export const SignInButton = styled(StandardButton)`
     
     &:hover, :focus {
         box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorMiddleGreenYellowLight};
+        background: ${theme.colorOne};
     }
 `;
 
