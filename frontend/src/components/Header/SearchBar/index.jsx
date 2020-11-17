@@ -16,7 +16,7 @@ import {
 import {locationAction} from "../../../store/actions/locationAction";
 import {useDispatch, useSelector} from "react-redux";
 import {productAction} from "../../../store/actions/productAction";
-import {SET_PRODUCTS_ALL, SET_PRODUCTS_SUBSET} from "../../../helpers/constants";
+import {SET_LOCATION_SUBSET, SET_PRODUCTS_ALL, SET_PRODUCTS_SUBSET} from "../../../helpers/constants";
 
 const SearchBar = () => {
     const dispatch = useDispatch();
@@ -54,13 +54,14 @@ const SearchBar = () => {
         setLocationString(location)
         setShowAutocomplete(false)
         let splitLocationString = locationString.split(",", 1).toString()
-        await dispatch(productAction('products/?search=' + splitLocationString, 'GET', SET_PRODUCTS_ALL));
+        await dispatch(productAction('products/?search=' + splitLocationString, 'GET', SET_LOCATION_SUBSET));
     }
 
+    // client site search - really fast but all files have to be fetched first (not scalable)
     const searchHandler = async e => {
         const inputString = e.currentTarget.value
+        if (locationString && inputString.length < 2 && e.currentTarget.value === '') setLocationString('')
         if (inputString === ' ') return
-
         let payload = []
         setSearchString(inputString)
 
@@ -71,13 +72,14 @@ const SearchBar = () => {
 
             for (const word of inputString.split(' ')) {
                 let wordStrip = word.toLowerCase()
-                // if (word === ' ') break; else wordStrip = word
+                let locationStrip = wordStrip
+                if (locationString) locationStrip = locationString
                 const searchStringObject = {
                     author: {
                         first_name: wordStrip,
                         last_name: wordStrip,
                     },
-                    location: wordStrip,
+                    location: locationStrip,
                     category: wordStrip,
                     name: wordStrip,
                 }
@@ -87,43 +89,36 @@ const SearchBar = () => {
             for (const product of productsAll) {
                 const searchMatchChecker = (product) => {
                     for (const object of searchStringArray) {
-                        console.log("SEARCH---- inner loop, object", object.author.first_name)
-                        console.log("SEARCH---- inner loop, product", product.author.first_name)
-                        console.log("SEARCH---- TRUTHNESS", (object.author.first_name.includes(product.author.first_name.toLowerCase())))
                         return (product.author.first_name.toLowerCase().includes(object.author.first_name))
                             || (product.author.last_name.toLowerCase().includes(object.author.last_name))
                             || (product.category.toLowerCase().includes(object.category))
-                            || (product.location.toLowerCase().includes(object.location))
-                            || (product.name.toLowerCase().includes(object.name));
+                            || (product.name.toLowerCase().includes(object.name))
+                            && (product.location.toLowerCase().includes(object.location))
 
-                        // || (object.location.toLocaleLowerCase()).includes(product.location.toLocaleLowerCase())
-                        // || (object.category.toLocaleLowerCase()).includes(product.category.toLocaleLowerCase())
-                        // || (object.name.toLocaleLowerCase()).includes(product.name.toLocaleLowerCase())) return true
                     }
                 }
                 const match = searchMatchChecker(product)
                 if (match) payload.push(product)
-                // payload.every((payloadProduct) => payloadProduct !== product)
             }
         }
         createProductsSubset()
         await dispatch(productAction('', '', SET_PRODUCTS_SUBSET, '', payload))
     }
 
-    const submitSearchHandler = async e => {
-        e.preventDefault()
-        setShowAutocomplete(false)
-        let space = ''
-        let splitLocationString = locationString.split(",", 1).toString()
-        if (splitLocationString[0] !== '') space = ' '
-
-        await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_SUBSET));
-    }
+    // this can be used for an Web API based search
+    // const submitSearchHandler = async e => {
+    //     e.preventDefault()
+    //     setShowAutocomplete(false)
+    //     let space = ''
+    //     let splitLocationString = locationString.split(",", 1).toString()
+    //     if (splitLocationString[0] !== '') space = ' '
+    //
+    //     await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_SUBSET));
+    // }
 
     return (
         <Fragment>
-            <Form
-                onSubmit={submitSearchHandler}>
+            <Form>
                 <LocationContainer>
                     <LocationButton onClick={(e) => e.preventDefault()}>
                         <i className="fas fa-map-marker-alt"></i>
@@ -163,7 +158,7 @@ const SearchBar = () => {
 
                 <SearchContainer>
                     <SearchButton onClick={(e) => e.preventDefault()}>
-                        <i className="fas fa-keyboard"></i>
+                        <i className="fas fa-search"></i>
                     </SearchButton>
                     <SearchInput
                         name={"search"}
@@ -175,9 +170,9 @@ const SearchBar = () => {
 
                     />
                 </SearchContainer>
-                <SubmitButton type='submit'>
-                    <i className="fas fa-search"></i>
-                </SubmitButton>
+                {/*<SubmitButton type='submit'>*/}
+                {/*    <i className="fas fa-search"></i>*/}
+                {/*</SubmitButton>*/}
             </Form>
         </Fragment>
     )

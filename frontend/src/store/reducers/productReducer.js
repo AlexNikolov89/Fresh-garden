@@ -1,4 +1,4 @@
-import {SET_PRODUCTS_ALL, CREATE_NEW_PRODUCT, SET_PRODUCTS_SUBSET} from '../../helpers/constants'
+import {SET_PRODUCTS_ALL, CREATE_NEW_PRODUCT, SET_PRODUCTS_SUBSET, SET_LOCATION_SUBSET} from '../../helpers/constants'
 
 const initialState = {
     productsAll: [],
@@ -7,13 +7,20 @@ const initialState = {
 }
 
 export default function productReducer (state = initialState, action) {
+    console.log(action.payload)
     switch (action.type) {
         case SET_PRODUCTS_ALL: {
             const newState = {...state}
             newState.productsAll = action.payload
+            newState.productsAll.reverse()
             newState.productsSubset = action.payload
             newState.productsAll.reverse()
-            newState.productsSubset.reverse()
+            return newState
+        }
+        case SET_LOCATION_SUBSET: {
+            const newState = {...state}
+            newState.productsSubset = action.payload
+            newState.productsAll.reverse()
             return newState
         }
         case SET_PRODUCTS_SUBSET: {
