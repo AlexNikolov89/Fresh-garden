@@ -11,6 +11,10 @@ export const MainContainer = styled.div `
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    background: ${theme.colorBackgroundColor};
+    padding-bottom: 30px;
+    
+    
 
     @media (max-width: 680px) {
         display: flex;
@@ -18,6 +22,34 @@ export const MainContainer = styled.div `
         flex-direction: column;
     }
 `;
+
+
+export const TitleContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${theme.colorBackgroundColor};
+  width: 100%;
+  
+   @media (max-width: 360px){
+       width: 100%; 
+      }  
+`;
+
+export const Text = styled.h2 `
+ font-size: ${theme.fontSizeXXL};
+ color: ${theme.colorTitle};
+ padding 20px; 
+ 
+  @media (max-width: 360px){
+       width: 200px;
+      } 
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+       font-size:  ${theme.fontSizeL};
+       padding: 10px 100px;
+    } 
+`
 
 export const BoxContainer = styled.div `
   /* background: ${theme.colorBackgroundColor};
@@ -81,41 +113,34 @@ export const LeftConatiner = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 100%;
+    padding-bottom: 20px; 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
     }
 `;
 
 export const RightConatiner = styled.aside `
-     border: 1px solid red;
-     width: 40$;
+     width: 100%;
      display: flex;
- justify-content: center;
- 
-     //background: ${theme.colorBackgroundColor};
-    // border: 1px solid ${theme.colorDefaultGrey};
-    //
-    // //border-radius: ${theme.borderRadiusL};
-    // box-shadow: ${theme.boxShadowLighter};
     width: 40%;
-    // padding: 20px;
-    // height: 400px;
-    // display: flex;
-    // flex-wrap: wrap;
-    // flex-direction: column;
-    //
-    // @media (max-width: ${theme.mediaQueryScreenWidth}){
-    //     //flex-direction: row;
-    //     width: 70%;
-    //     margin-bottom: 60px;
-    // }
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        //flex-direction: row;
+        width: 70%;
+        margin-bottom: 60px;
+    }
 
 `;
 
 export const PaymentConatiner = styled.div `
- width: 350px;
- border: 1px solid green;
+ width: 271px;
+ height: 410px;
+ border: 1px solid grey;
+ background: ${theme.colorBackgroundColor};
+ border: 1px solid ${theme.colorDefaultGrey};
+ border-radius: ${theme.borderRadiusS};
+ box-shadow: ${theme.boxShadowLighter}
 `;
 
 export const SumConatiner = styled.div `
@@ -131,39 +156,75 @@ export const SumConatiner = styled.div `
 export const Summary = styled.h3 `
     color: grey;
     margin-bottom: 30px;
+    padding-left: 10px;
     font-size: ${theme.fontSizeM}
 `;
 
 export const SellerContainer = styled.div `
  width: 100%;
- border: 1px solid green;
+ padding: 0 10px;
+ display: flex-box;
+`;
+
+export const Bottom = styled.div `
+ margin-top: 70px;
 `;
 
 export const ButtonsContainer = styled.form `
  display: flex;
- flex-direction: column;
- padding-top: 15px;
+ flex-direction: row;
+ justify-content: space-evenly;
+
 `;
 
-export const Radio = styled.input `
-width: 50px;
+export const RadioButton = styled.div `
+ width: 30px;
+ height: 30px;
+ display: flex;
+ flex-direction: row;
+ 
+ i {
+  font-size: 15px;
+  padding-left: 10px;
+ }
 `;
+
+export const Radio = styled.input ``;
 
 export const TotalSum = styled.h3 `
     float: right;
+    font-size: 15px;
+    padding: 10px;
 `;
 
 export const Submit = styled.div `
-    display: block;
-    //margin-left: 700px;
-    //padding: 60px;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
-    padding: 0 20px;
+    padding-top: 30px;
+    
 `;
 
 export const Button = styled(StandardButton) ``;
+
+
+
+export const DeleteIcon = styled.div `
+  border: none;
+    background: none;
+    color: ${theme.colorDarkOliveGreen};
+    
+     i {
+     font-size: 15px;
+     }
+    
+      &:active {
+         border: none;
+         background: none;
+         i.fas {
+             color: ${theme.colorDarkRed};
+        }
+     }
+`;
 
 
 

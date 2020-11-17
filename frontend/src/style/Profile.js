@@ -16,7 +16,7 @@ export const BottomContainer = styled.div `
     
      @media (max-width: 360px){
        width: 100%;
-       padding-left: ${theme.spaceXS};
+       padding: 0;
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -30,16 +30,20 @@ export const TitleContainer = styled.div `
   justify-content: center;
   align-items: center;
   background: ${theme.colorBackgroundColor};
-  display: flex;
   
    @media (max-width: 360px){
-       width: 100%;   
+       width: 100%; 
+      }  
 `;
 
 export const MainTitle = styled.h2 `
  font-size: ${theme.fontSizeXXL};
  color: ${theme.colorTitle};
  padding 20px; 
+ 
+  @media (max-width: 360px){
+       width: 200px;
+      } 
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size:  ${theme.fontSizeL};
@@ -47,7 +51,10 @@ export const MainTitle = styled.h2 `
     } 
 `;
 export const LogOut = styled(StandardButton) `
- 
+  @media (max-width: 360px){
+       width: 100px;
+       font-size: 12px;
+    }
 `;
 
 export const UserProfileContainer = styled.div `
@@ -56,7 +63,6 @@ export const UserProfileContainer = styled.div `
     height: 350px;
     display: flex;
     border-radius: ${theme.borderRadiusDefault};
-    //margin-top: ${theme.controlHeightS};
     box-shadow: ${theme.boxShadowLight};
     
      @media (max-width: 360px){
@@ -80,7 +86,8 @@ export const AvatarContainer = styled.div `
     padding: 0 20px;
    
   @media (max-width: 360px){
-       width: 40%;
+       display: flex;
+       flex-direction: row;
     }
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -92,9 +99,7 @@ export const Avatar = styled.img `
     width: 140px;
     border-radius: 50%;
     
-    @media (max-width: 360px){
-       width: 100%;
-    }
+   
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        width: 80%; 
     }
@@ -104,9 +109,11 @@ export const Name = styled.p `
     font-size: ${theme.fontSizeDefault};
     padding-top: ${theme.spaceDefault};
     font-weight: bold;
+    color: ${theme.colorDefaultText};
+    padding-bottom: 40px;
     
     @media (max-width: 360px){
-       
+       border: 1px solid black;
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -117,11 +124,16 @@ export const Name = styled.p `
 export const Email = styled(Name) `
 padding-bottom: ${theme.spaceM};
 font-weight: normal;
+font-size: ${theme.fontSizeS};
 
 @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size: ${theme.fontSizeS}
     }
  `;
+
+export const EmailContainer = styled.div `
+ 
+`;
 
 export const ButtonEdit = styled(StandardButton) `
    font-size: ${theme.fontSizeS};
@@ -229,7 +241,6 @@ export const ZipCode = styled(Address) `
 
 export const Contact = styled.div `
     margin-left: ${theme.spaceDefault};
-    padding: 25px 0;
     
     @media (max-width: 360px) {
     margin: 0;

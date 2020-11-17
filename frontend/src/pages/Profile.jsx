@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {HomeContainer, Box
 } from '../style/Homepage';
-import {TitleContainer, UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, ButtonEdit,
+import {TitleContainer, UserProfileContainer, AvatarContainer, EmailContainer, Avatar, Name, ZipCode, Address, ButtonEdit,
     BottomContainer, TitleGarden, TitleLocation, AddressInfo, TitleTel, TelContainer, UserInfoContainer, AboutGarden, AboutText, MainTitle, Info, Email, Contact, Mobile, LogOut} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
@@ -97,7 +97,7 @@ const Profile = ({author}) => {
                         <AvatarContainer>
                             <Avatar src={avatar} alt='avatar' />
                             <Name>{`${first_name} ${last_name}`}</Name>
-                            {email && <Email>{email}</Email>}
+
                             <ButtonEdit>Edit Profile</ButtonEdit>
                         </AvatarContainer>
                         <UserInfoContainer>
@@ -123,11 +123,19 @@ const Profile = ({author}) => {
 
 
                             <Contact>
-                                <TitleTel>Tel. Number</TitleTel>
+                                <TitleTel>Contact</TitleTel>
                                 <TelContainer>
                                 <Mobile>{phone}</Mobile>
+                                     {email && <Email>{email}</Email>}
                                 </TelContainer>
+
                             </Contact>
+
+                            <EmailContainer>
+
+
+                            </EmailContainer>
+
                         </UserInfoContainer>
                     </UserProfileContainer>
 

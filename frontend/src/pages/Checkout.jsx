@@ -1,12 +1,13 @@
 import React, {Fragment} from 'react'
 import Header from '../components/Header';
-import {TopContainer, Image, Text} from '../style/Homepage';
-import {CheckoutConatiner,
+import {TopContainer, Image} from '../style/Homepage';
+import {CheckoutConatiner, Text,
          MainContainer, BoxContainer, RightConatiner, SellerContainer, ButtonsContainer, TopHeaderConatiner, ProductT, QuantityT, Total,
-         HorizontalLine, PaymentConatiner, Radio,
-         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, LeftConatiner, Button, Submit, TotalQ } from '../style/Checkoutpage';
+         TitleContainer, PaymentConatiner, Radio, DeleteIcon, RadioButton,
+         Summary, Subtotal, TotalSum, SumConatiner, Bottom, Delivery, LeftConatiner, Button, Submit, TotalQ } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
+import {EmptyCartIcon} from "../style/ShoppingCart";
 
 
 const Checkout = () => {
@@ -21,7 +22,10 @@ const Checkout = () => {
                 <Header />
 
             <MainContainer>
-                <Text>Checkout</Text>
+                <TitleContainer>
+                     <Text>Checkout</Text>
+                </TitleContainer>
+
 
                 <BoxContainer>
 
@@ -33,8 +37,6 @@ const Checkout = () => {
 
                 <LeftConatiner>
                     <Product />
-                    <Product />
-                    <Product />
                 </LeftConatiner>
 
                <RightConatiner>
@@ -43,25 +45,37 @@ const Checkout = () => {
                         <Summary>Summary</Summary>
 
                         <SellerContainer>
+                            {/*<div>*/}
+                            {/*    <h2>Name</h2>*/}
+                            {/*</div>*/}
+                            {/*<div>*/}
+                            {/*    <h2>CHF</h2>*/}
+                            {/*</div>*/}
+
+                            <h2>Name</h2>
+
                             {/*<SellerName></SellerName>*/}
                         </SellerContainer>
 
                         <hr />
 
-                            <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
 
+                            <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
+                        <Bottom>
                         <ButtonsContainer>
-                            <div>
+
+                            <RadioButton>
                             <Radio type='radio' /><i className="fas fa-hand-holding-usd" />
-                            </div>
-                            <div>
+                            </RadioButton>
+
+                            <RadioButton>
                             <Radio type='radio' /><i className="fas fa-credit-card" />
-                            </div>
-                            <div>
-                            <Radio type='radio' />Fresh Token
-                            </div>
+                            </RadioButton>
+
+                            <DeleteIcon><i className="fas fa-trash-alt" /></DeleteIcon>
                             </ButtonsContainer>
 
+                            </Bottom>
                         <Submit>
                             <Button>Pay</Button>
                         </Submit>

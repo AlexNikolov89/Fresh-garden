@@ -15,12 +15,21 @@ export const ProductContainer = styled.div `
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
     }
+    
+    @media (max-width: 360px){
+        width: 100%;
+    }
 `;
 
 export const ProductImg = styled.img `
     width: 160px;
     height: 130px;
     border-radius: ${theme.borderRadiusS};
+    
+     @media (max-width: 360px){
+        width: 100px;
+        height: 80px;
+    }
  `;
 
 export const InfoConatiner = styled.div `
@@ -28,16 +37,26 @@ export const InfoConatiner = styled.div `
     align-items: center;
     padding-left: 10px;
     width: 60%;
+    
+     @media (max-width: 360px){
+          
+     }
 `;
 
 export const Info = styled.div `
  width: 100%;
+ 
+  @media (max-width: 360px){
+        width: 100%;
+    }
 `;
 
 
 export const ProductTitle = styled.h3 `
  font-size: ${theme.fontSizeDefault};
  color: ${theme.colorTitle};
+ 
+ 
 `;
 
 export const Seller = styled.p `
@@ -85,7 +104,11 @@ export const WrapPrice = styled.div `
 export const PriceContainer = styled.div `
  display: flex;
  margin-left: 100px;
- font-size: ${theme.fontSizeDefault}
+ font-size: ${theme.fontSizeDefault};
+ 
+ @media (max-width: 360px) {
+  display: none;
+ }
 `;
 
 export const Price = styled.h4 `
@@ -95,7 +118,6 @@ export const Unit = styled.div ``;
 
 export const Quantity = styled.div `
     display: flex; 
-   //padding-right: 60px;  
 `;
 
 export const Increment = styled.div `
