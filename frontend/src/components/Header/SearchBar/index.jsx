@@ -94,7 +94,6 @@ const SearchBar = () => {
                             || (product.category.toLowerCase().includes(object.category))
                             || (product.name.toLowerCase().includes(object.name))
                             && (product.location.toLowerCase().includes(object.location))
-
                     }
                 }
                 const match = searchMatchChecker(product)

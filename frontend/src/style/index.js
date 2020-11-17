@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         font-family: "Hind", sans-serif;
         cursor: default;
+        color: #4C4C4C;
+        
         
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
@@ -32,9 +34,23 @@ export const theme = {
     // Media Queries:
     mediaQueryScreenWidth: '680px',
 
-    // Colors:
-    colorDefault: '#222222',
+    // Project Colors:
+    colorOneDark: '#5D6D37',
+    colorOneDarkHover: '#5D6D37',
+    colorTwoDark: '#4C4C4C',
+    colorTwoDarkHover: '#B7C892',
+    colorMainTitle: '#5D6D37',
+    colorDefaultText: '#4C4C4C',
+    colorBackgroundColor:'#fcf9f4',
+    colorDarkPurple: '#69122F',
+    colorDarkRed: '#B4041E',
+    colorDarkBlue: '#045076',
+    colorDarkGold: '#B8860B',
+    colorDefaultWhite: '#FFFFFF',
+
+    // Color Backlog:
     colorAlmond: '#EDDED4',
+    colorDefaultGrey: '#ADADAD',
     colorMiddleGreenYellow: '#B4CB67',
     colorMiddleGreenYellowLight: '#B7C892',
     colorMiddleGreenYellowLightHover: '#C9D6AE',
@@ -42,16 +58,9 @@ export const theme = {
     colorMaxYellowRed: '#FFC370',
     colorDarkOliveGreen: '#5D6D37',
     colorCaputMortuum: '#4F2E2B',
-    colorBackgroundColor:'#fcf9f4',
     colorTitle: '#5D6D37',
     colorRandomText: '#bbbfca',
-    colorDefaultGrey: '#D8D8D8',
-    colorDefaultText: '#4C4C4C',
-    colorDefaultWhite: '#FFFFFF',
-    colorDarkPurple: '#69122F',
-    colorDarkRed: '#B4041E',
-    colorDarkBlue: '#045076',
-    colorDarkGold: '#B8860B',
+
     // Fonts (Visual Hierarchy - 3:4 Method)
     fontSizeXXXXXL: "11.9rem",
     fontSizeXXXXL: "8.9rem",

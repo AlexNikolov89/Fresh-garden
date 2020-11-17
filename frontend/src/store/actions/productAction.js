@@ -15,7 +15,6 @@ export const productAction = (urlPath, method, type, body, payload) => async (di
     }
     const { authReducer:{ token } } = getState();
     const url = baseUrl + urlPath;
-    console.log("urlpath SEARCHSTRING----------", urlPath)
     // creating fetch config header depending on request type
     const createConfig = () => {
         if (method !== 'GET') {
