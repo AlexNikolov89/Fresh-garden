@@ -13,7 +13,6 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,6 +79,20 @@ TEMPLATES = [
     },
 ]
 
+# SESSION_COOKIE_SAMESITE = None
+
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = [
+#     "https://pinocchio.propulsion-learn.com",
+#     "http://127.0.0.1:8000",
+#     "http://localhost:3000",
+#     "http://localhost:8000",
+# ]
+
+# SESSION_SAVE_EVERY_REQUEST = True
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+CSRF_COOKIE_HTTPONLY = False
 CART_SESSION_ID = 'cart'
 CART_AUTH_URL_NAMESPACE = 'cart'
 
