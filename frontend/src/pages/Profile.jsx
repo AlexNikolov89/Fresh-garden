@@ -13,12 +13,18 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
 import {connect} from 'react-redux';
+import Banner from "../components/Header/Banner";
+import {cartAction} from "../store/actions/cartAction";
+import authReducer from "../store/reducers/authReducer";
+import {authAction} from "../store/actions/authAction";
+import {LOGOUT_UNSET_TOKEN, SET_PRODUCTS_ALL} from "../helpers/constants";
+import {productAction} from "../store/actions/productAction";
 
 const Profile = ({author}) => {
-    //const { pathname } = useLocation();
+    const productsAll = useSelector(state => state.productReducer.productsAll)
     const user = useSelector(state => state.userProfileReducer.author)
     const dispatch = useDispatch();
-    let history = useHistory();
+    const history = useHistory();
     const [location, setLocation] = useState('')
     const [firstName, setFirstName] = useState('Jane');
     const [lastName, setLastName] = useState('Doe');
@@ -28,27 +34,46 @@ const Profile = ({author}) => {
     const [address, setAddress] = useState('');
     const [avatar, setAvatar] = useState(defaultAvatar);
     const [zip, setZip] = useState('');
+    const [products, setProducts] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
+
 
     useEffect(() => {
-
         const fetchUser = async () => {
             await dispatch(userAction('users/me/', 'GET', 'GET_USER'));
         }
         fetchUser()
+        return function cleanup() {};
+    }, [dispatch]);
 
+    useEffect(() => {
+        const fetchProducts = async () => {
+            setIsLoading(true)
+            await dispatch(productAction('products/', 'GET', SET_PRODUCTS_ALL));
+            setIsLoading(false);
+        }
+        fetchProducts()
+        return function cleanup() {};
     }, [dispatch]);
 
     useEffect(() => {
         const userInfo = () => {
             if(user.location) setLocation(user.location);
             if(user.zip) setLocation(user.location);
+            // if(productsAll) {
+            //     const newProductSet = productsAll.filter((element) => element.author === user)
+            //     console.log("in Profile newProductSet", newProductSet)
+            //     return setProducts(newProductSet)
+            // }
+            if(productsAll) setProducts(productsAll)
         }
         userInfo()
-    })
+        return function cleanup() {};
+    },)
 
     const logout = () => {
-       localStorage.removeItem('token');
-       history.push('/login')
+       dispatch(authAction('', '', LOGOUT_UNSET_TOKEN))
+       history.push('/user/login')
     }
 
     // useEffect(() => {
@@ -61,11 +86,7 @@ const Profile = ({author}) => {
     return (
         <Fragment>
             <HomeContainer>
-                <TopContainer>
-                    <Image>
-                        <Slogan>Homegrown.<br />Earthy.<br />Fresh.</Slogan>
-                    </Image>
-                </TopContainer>
+                <Banner/>
 
                 <Header />
 
@@ -75,9 +96,6 @@ const Profile = ({author}) => {
                      </TitleContainer>
 
                 <BottomContainer>
-
-                  {/*{pathname === '/login' && <Login/>}*/}
-                  {/*  {location.pathname === '/profile' && <p>you habe profile! pliiiis</p>}*/}
                     <UserProfileContainer>
                         <AvatarContainer>
                             <Avatar src={avatar} alt='avatar' />
@@ -93,18 +111,14 @@ const Profile = ({author}) => {
                             sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
                                 {description}
                             </AboutGarden>
-
-
-                            {/*{location && <Title>My Pickup location</Title>}*/}
+                            {location && <Title>My Pickup location</Title>}
                             <Info>
                             <ZipCode>{zip}</ZipCode>
                             <Address>{address}</Address>
                             {/*<City>{city}</City>*/}
                             </Info>
-
                                 <Title>Tel. Number</Title>
                             <Contact>
-
                                 <Mobile>{phone}</Mobile>
                             </Contact>
                         </UserInfoContainer>
@@ -112,23 +126,14 @@ const Profile = ({author}) => {
 
                 </BottomContainer>
 
-                <CardContainer>
-                     {/*{products.map((product) =>*/}
-                     {/*    <Card product={product} key={product.id}/>*/}
-                     {/*    )}*/}
-
+                <CardContainer id={"hello"}>
+                     {products && products.map((product) => <Card product={product} key={product.id}/>)}
                 </CardContainer>
             </HomeContainer>
             <Footer />
         </Fragment>
     )
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         author: state.userProfileReducer.author
-//     };
-// };
 
 
 export default Profile;

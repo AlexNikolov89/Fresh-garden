@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
+import baseUrl from "../helpers/baseUrl";
+
 
 export default WrappedComponent => (props) => {
-        const authenticationError = useSelector(state => state.authReducer.authenticationError)
         const history = useHistory();
         const location = useLocation();
         const tokenLocal = localStorage.getItem("token");
@@ -12,11 +13,8 @@ export default WrappedComponent => (props) => {
         useEffect(() => {
             const userRedirect = async () => {
                 const path = location.pathname;
-                const url = "http://127.0.0.1:8000/backend/api/auth/token/verify/";
+                const url = `${baseUrl}auth/token/verify/`;
                 const token = tokenRedux ? tokenRedux : tokenLocal ? tokenLocal : "null"
-                console.log("tokenRedux----", tokenRedux)
-                console.log("tokenLocal----", tokenLocal)
-                console.log("token--------", token)
                 const config = {
                     method: 'POST',
                     headers: new Headers({
@@ -27,19 +25,22 @@ export default WrappedComponent => (props) => {
                 };
                 const response = await fetch(url, config);
                 const data = await response.json();
-                const verified = data ? false : true;
-
-                if (path.includes('profile') && !verified) {
-                    history.push('/login');
-                } else if (path.includes('login') && verified) {
-                    history.push('/profile');
-                } else if (authenticationError) {
-                    history.push('/profile');
+                const evaluateData = (arg) => {
+                    return Object.keys(arg).length === 0;
+                };
+                const verified = evaluateData(data);
+                if (path.includes('/user/profile') && !verified) {
+                    history.push('/user/login');
+                } else if (path.includes('/user/login') && verified) {
+                    history.push('/user/profile');
+                } else if (!verified) {
+                    history.push('/user/login');
                 }
             };
-            userRedirect();
+            userRedirect()
+            return function cleanup() {};
 
-        }, [authenticationError, tokenRedux, tokenLocal, history, location]);
+        }, [tokenRedux, tokenLocal, history, location]);
 
         return <WrappedComponent {...props} />
 }

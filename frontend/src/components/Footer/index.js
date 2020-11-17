@@ -13,16 +13,17 @@ const Footer = () => {
         <Fragment>
             <FooterContainer>
                 <LeftContainer>
-                    <Text>© 2020 Copyright fresh-food.ch, Ipsum.</Text>
+                    <Text>© 2020 Copyright freshgarden.ch, eG.</Text>
                 </LeftContainer>
                 <RightContainer>
                     <SwissMade>
-                        <SwissMadeLink target={'_blank'} href={'https://www.swissmadesoftware.org/'}>
+                        <SwissMadeLink target={'_blank'} href={null}>
                             <i className="fas fa-folder-plus"></i>
                         </SwissMadeLink>
+                        swiss innovation
                     </SwissMade>
                     <SocialIcons>
-                        <GithubLink target={'_blank'} href={'https://github.com/'}><i className="fab fa-github-square"></i></GithubLink>
+                        <GithubLink target={'_blank'} href={'https://github.com/Halunks/freshgarden'}><i className="fab fa-github-square"></i></GithubLink>
                         <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                         <TwitterLink target={'_blank'} href={'https://twitter.com/'}><i className="fab fa-twitter-square"></i></TwitterLink>
                     </SocialIcons>

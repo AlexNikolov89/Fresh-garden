@@ -58,10 +58,10 @@ const Addproduct = () => {
         const body = `{ "content": "${product}" }`;
         dispatch(productAction('products/new/', 'POST', CREATE_NEW_PRODUCT, body));
 
-;        const redirect = () => {
+;       const redirect = () => {
             const path = location.pathname;
             if (path === '/') {
-                return history.push('/shop')
+                return history.push('/user/profile')
             }
         }
         redirect()
