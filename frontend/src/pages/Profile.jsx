@@ -10,13 +10,16 @@ import { useLocation } from "react-router-dom";
 import defaultAvatar from '../assets/defaultRuth.PNG';
 import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
+
 import {connect} from 'react-redux';
+import {logoutAction} from "../store/actions/logoutAction";
 
 const Profile = ({author}) => {
-    //const { pathname } = useLocation();
     const user = useSelector(state => state.userProfileReducer.author)
+    const productsAll = useSelector(state => state.productReducer.productsAll)
+    console.log('test', productsAll)
     const dispatch = useDispatch();
     let history = useHistory();
     const [location, setLocation] = useState('')
@@ -28,6 +31,7 @@ const Profile = ({author}) => {
     const [address, setAddress] = useState('');
     const [avatar, setAvatar] = useState(defaultAvatar);
     const [zip, setZip] = useState('');
+    const [products, setProducts] = useState('')
 
     useEffect(() => {
 
@@ -35,19 +39,27 @@ const Profile = ({author}) => {
             await dispatch(userAction('users/me/', 'GET', 'GET_USER'));
         }
         fetchUser()
-
+         return function cleanup() {};
     }, [dispatch]);
 
     useEffect(() => {
         const userInfo = () => {
             if(user.location) setLocation(user.location);
             if(user.zip) setLocation(user.location);
+            if(productsAll){
+                // const filterProducts = (input) => {
+                //     return input.filter((product) => product.author.first_name === user.first_name || product.author.last_name === user.last_name)
+                // }
+                //const newSet = filterProducts(productsAll)
+
+                //setProducts(() => productsAll.filter((product) => product.author.first_name === user.first_name || product.author.last_name === user.last_name))
+            }
         }
         userInfo()
     })
 
     const logout = () => {
-       localStorage.removeItem('token');
+       dispatch(logoutAction());
        history.push('/login')
     }
 
@@ -95,7 +107,7 @@ const Profile = ({author}) => {
                             </AboutGarden>
 
 
-                            {/*{location && <Title>My Pickup location</Title>}*/}
+                            {location && <Title>My Pickup location</Title>}
                             <Info>
                             <ZipCode>{zip}</ZipCode>
                             <Address>{address}</Address>
@@ -112,10 +124,9 @@ const Profile = ({author}) => {
 
                 </BottomContainer>
 
+
                 <CardContainer>
-                     {/*{products.map((product) =>*/}
-                     {/*    <Card product={product} key={product.id}/>*/}
-                     {/*    )}*/}
+                     {products && products.map((product) => <Card product={product} key={product.id}/>)}
 
                 </CardContainer>
             </HomeContainer>

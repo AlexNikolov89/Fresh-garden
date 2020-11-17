@@ -1,4 +1,4 @@
-import { SET_TOKEN } from '../../helpers/constants'
+import { SET_TOKEN, USER_LOGOUT } from '../../helpers/constants'
 
 const initialState = {
     token: null, //localStorage.getItem("token")
@@ -13,6 +13,14 @@ export default function authReducer (state = initialState, action) {
         }
         default: {
             return state
+        }
+        case USER_LOGOUT : {
+            console.log("clearing local storage")
+            console.log(localStorage)
+            localStorage.clear();
+            let state = {...initialState};
+            return state;
+
         }
     }
 }

@@ -35,3 +35,5 @@ export const Login = () => {
         </LoginMainContainer>
     )
 }
+
+export default Login;

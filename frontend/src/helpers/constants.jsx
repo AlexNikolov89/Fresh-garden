@@ -10,4 +10,5 @@ export const TOGGLE_CART_VIEW = 'TOGGLE_SHOW_NOT_SHOW_SHOPPING_CART';
 export const NOT_LOGGED_IN = 'NOT_LOGGED_IN';
 export const RESET_NOT_LOGGED_IN = 'RESET_NOT_LOGGED_IN';
 export const GET_USER = 'GET_USER';
+export const USER_LOGOUT = 'USER_LOGOUT'
 
