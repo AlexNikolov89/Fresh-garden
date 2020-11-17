@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {
     Form,
     LocationContainer,
@@ -14,12 +14,16 @@ import {
     AutocompleteThree,
 } from '../../../style/SearchBar'
 import {locationAction} from "../../../store/actions/locationAction";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {productAction} from "../../../store/actions/productAction";
-import {SET_PRODUCTS_ALL} from "../../../helpers/constants";
+import {SET_PRODUCTS_ALL, SET_PRODUCTS_SUBSET} from "../../../helpers/constants";
 
 const SearchBar = () => {
     const dispatch = useDispatch();
+    const productsAll = useSelector(state => state.productReducer.productsAll)
+    const productsSubset = useSelector(state => state.productReducer.productsSubset)
+    console.log("SEARCH productsAll------", productsAll)
+    console.log("SEARCH productsSubset------", productsSubset)
     const [locationString, setLocationString] = useState('');
     const [searchString, setSearchString] = useState('');
     const [showAutocomplete, setShowAutocomplete] = useState(false);
@@ -54,14 +58,46 @@ const SearchBar = () => {
     }
 
     const searchHandler = async e => {
-        const inputValue = e.currentTarget.value
-        setSearchString(inputValue)
-        setShowAutocomplete(false)
-        let space = ''
-        let splitLocationString = locationString.split(",",1).toString()
-        if (splitLocationString[0] !== '') space = ' '
+        const inputString = e.currentTarget.value
+        let payload = []
+        setSearchString(inputString)
 
-        await dispatch(productAction('products/?search=' + splitLocationString + space + inputValue, 'GET', SET_PRODUCTS_ALL));
+        setShowAutocomplete(false)
+        const createProductsSubset = () => {
+            let searchStringArray = []
+            if (productsAll === false) return
+
+            for (const word of inputString.split(' ')) {
+                let wordStrip = word
+                if (word === false || word === '' || word === ' ' || word === undefined) return
+                else wordStrip = word
+                const searchStringObject = {
+                    author: {
+                        first_name: wordStrip,
+                        last_name: wordStrip,
+                    },
+                    location: wordStrip,
+                    category: wordStrip,
+                    name: wordStrip,
+                }
+                searchStringArray.push(searchStringObject)
+            }
+
+            for (const product of productsAll) {
+                const searchMatchChecker = (product) => {
+                    for (const object of searchStringArray) {
+                        console.log("SEARCH---- inner loop, object", object.author.first_name)
+                        console.log("SEARCH---- inner loop, product", product.author.first_name)
+                        console.log("SEARCH---- TRUTHNESS", (object.author.first_name).includes(product.author.first_name))
+                        return (object.author.first_name).includes(product.author.first_name);
+                    }
+                }
+                const match = searchMatchChecker(product)
+                if (match && payload.every((payloadProduct) => payloadProduct !== product)) payload.push(product)
+            }
+        }
+        createProductsSubset()
+        await dispatch(productAction('','', SET_PRODUCTS_SUBSET,'', payload))
     }
 
     const submitSearchHandler = async e => {
@@ -71,7 +107,7 @@ const SearchBar = () => {
         let splitLocationString = locationString.split(",",1).toString()
         if (splitLocationString[0] !== '') space = ' '
 
-        await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_ALL));
+        await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_SUBSET));
     }
 
     return (
