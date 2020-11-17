@@ -11,21 +11,23 @@ export const ShoppingCartContainer = styled.div `
     justify-content: flex-start;
     align-items: center;
     background: ${theme.colorBackgroundColor};    
-    position: sticky;
+    position: absolute;
     padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
     //box-shadow: ${theme.boxShadowLight};
     z-index: 45;
     overflow-y: scroll;
     max-height: 70vh;
-    box-shadow: ${theme.boxShadowGradient}, 0 80px 50px 30px white;
+    box-shadow: ${theme.boxShadowGradient}, 0 40px 50px 30px white;
 
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         position: fixed;
         height: 70vh;
-        top: 10%; 
-        left: auto;
+        width: calc(5 * ${theme.controlHeightXL});        
+        margin: 5% auto; /* Will not center vertically and won't work in IE6/7. */
+        left: 0;
+        right: 0;        
         box-shadow: ${theme.boxShadowGradient}, 0 0 50px 50px white;
     }
 `;

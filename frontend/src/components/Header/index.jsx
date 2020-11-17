@@ -19,6 +19,8 @@ import {RESET_NOT_LOGGED_IN, TOGGLE_CART_VIEW} from "../../helpers/constants";
 import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
+import ShoppingCart from "../ShoppingCart";
+import {SideBox} from "../../style/Homepage";
 
 const Header = () => {
     const location = useLocation();
@@ -68,7 +70,6 @@ const Header = () => {
                 <Icons >
                     {loginCheck &&
                     <NavLinkAddProduct
-                        onClick={() => viewCart ? dispatch(cartAction('', '', TOGGLE_CART_VIEW)) : null}
                         to='/upload'>
                         <i className="fas fa-plus-circle"/>
                     </NavLinkAddProduct>}
@@ -83,17 +84,16 @@ const Header = () => {
                         <i className="fas fa-shopping-basket" />
                     </CartIcon>
                     <NavLinkAbout
-                        to='/about'
-                        onClick={() => viewCart ? dispatch(cartAction('', '', TOGGLE_CART_VIEW)) : null}>
+                        to='/about'>
                         <i className="fas fa-question-circle"/>
                     </NavLinkAbout>
                     <NavLinkProfile
                         to='/user/profile'
-                        onClick={() => viewCart ? dispatch(cartAction('', '', TOGGLE_CART_VIEW)) : null}
                         className={classLabel}
                         isActive={() => ['/user/profile', '/user/login', '/user'].includes(location.pathname)}>
                         <i className="fas fa-user"/>
                     </NavLinkProfile>
+                    {viewCart && <ShoppingCart/>}
                 </Icons>
 
             </HeaderContainer>

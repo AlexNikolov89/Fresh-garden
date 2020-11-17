@@ -57,7 +57,6 @@ const Homepage = () => {
                         {products.map((product) => <Card product={product} key={product.id}/>)}
                     </Box>
                     <SideBox>
-                        {viewCart && <ShoppingCart/>}
                     <PromotedProducts products={products} />
                     </SideBox>
                 </BottomContainer>
