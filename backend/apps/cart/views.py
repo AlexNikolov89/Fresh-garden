@@ -1,7 +1,8 @@
 from apps.product.models import Product
 from cart.cart import Cart
 from rest_framework import status
-from rest_framework.generics import CreateAPIView, DestroyAPIView, UpdateAPIView, RetrieveDestroyAPIView, ListAPIView
+from rest_framework.generics import CreateAPIView, DestroyAPIView, UpdateAPIView, RetrieveDestroyAPIView, ListAPIView, \
+    RetrieveUpdateDestroyAPIView
 
 from rest_framework.response import Response
 
@@ -74,10 +75,24 @@ class CartDetailsView(ListAPIView):
         cart = Cart(request)
         return Response(cart.cart, status=status.HTTP_200_OK)
 
-# class CheckOutCartView(UpdateAPIView):
-#     """
-#     PATCH: Checkout current Cart and decrease the stock of the chosen items.
-#     """
-#     def update(self, request, *args, **kwargs):
-#         cart = Cart(request)
-#         product = Product.objects.get()
+
+class CheckOutCartView(RetrieveUpdateDestroyAPIView):
+    """
+    PATCH: Checkout current Cart and decrease the stock of the chosen items.
+    """
+    queryset = Product.objects.all()
+    stock_storage = Product.stock
+
+    def update(self, request, *args, **kwargs):
+        cart = Cart(request)
+        product = cart.quantity - Product.stock
+        Product.decrement(product=product)
+        return Response(cart.cart, status=status.HTTP_200_OK)
+
+
+# make new cart url
+# make new cart view (choose the same view class as update product)
+# in cart view: queryset product, store stock in a ew variable
+# in cart view: request data, store quantity in new variable
+# compare variable -> if equal or greater: delete product and return stock
+# if less: decrease stock of product and return quantity
