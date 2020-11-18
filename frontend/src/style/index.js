@@ -17,8 +17,7 @@ export const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
         font-family: "Hind", sans-serif;
         cursor: default;
-        color: #4C4C4C;
-        
+        background-color: #fcf9f4;
         
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
