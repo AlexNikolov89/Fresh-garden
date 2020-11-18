@@ -8,9 +8,10 @@ export const ProductContainer = styled.div `
     flex-direction: row;
     padding: 5px;
     cursor: pointer;
-    border: 1px solid ${theme.colorDefaultGrey};
+    border: 1px solid ${theme.colorRandomText};
     width: 450px;
     height: 140px;
+    //background: ${theme.colorAlmond}
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
@@ -61,6 +62,7 @@ export const ProductTitle = styled.h3 `
 
 export const Seller = styled.p `
  font-size: ${theme.fontSizeDefault};
+ color: ${theme.colorDefaultText}
 `;
 
 export const StockDiv = styled.div `
@@ -78,7 +80,7 @@ export const AvailibleStock = styled.div `
     align-items: center;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border: 1px solid ${theme.colorMiddleGreenYellow};
     //border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
     height: 30px;
     width: 30px;
@@ -91,7 +93,7 @@ export const Count = styled.div `
     align-items: center;
     font-size: ${theme.fontSizeDefault};
     color: ${theme.colorDefaultText};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border: 1px solid ${theme.colorMiddleGreenYellow};
     height: 30px;
     width: 30px;
     background-color: white;
@@ -125,21 +127,21 @@ export const Increment = styled.div `
     justify-content: center;
     align-items: center;
     font-size: ${theme.fontSizeDefault};
-    border: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border: 1px solid ${theme.colorMiddleGreenYellow};
     border-radius: ${theme.borderRadiusS};
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOne};
     height: 30px;
     width: 30px;
     i.fas {
-        color: ${theme.colorDarkOliveGreen};
+        color: ${theme.colorMainTitle};
     }
 
     &:hover, &.active {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOneDarkHover};
           box-shadow: ${theme.boxShadowInset};
 
           i.fas {
-              color: ${theme.colorDarkOliveGreen}
+              color: ${theme.colorMainTitle}
           }
     }
 `;
@@ -152,10 +154,10 @@ export const Delete = styled.div `
   background: none;
   
         i {
-            color: ${theme.colorDarkOliveGreen};
+            color: ${theme.colorOneDark};
             font-size: ${theme.fontSizeM};
         }
-         &:hover, &.active {
+         &:hover, &:active {
         border: none;
         background: none;
         color: ${theme.colorDarkRed};

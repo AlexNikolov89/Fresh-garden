@@ -38,7 +38,7 @@ export const TitleContainer = styled.div `
 
 export const Text = styled.h2 `
  font-size: ${theme.fontSizeXXL};
- color: ${theme.colorTitle};
+ color: ${theme.colorMainTitle};
  padding 20px; 
  
   @media (max-width: 360px){
@@ -138,7 +138,7 @@ export const PaymentConatiner = styled.div `
  height: 410px;
  border: 1px solid grey;
  background: ${theme.colorBackgroundColor};
- border: 1px solid ${theme.colorDefaultGrey};
+ border: 1px solid ${theme.colorRandomText};
  border-radius: ${theme.borderRadiusS};
  box-shadow: ${theme.boxShadowLighter}
 `;
@@ -157,7 +157,8 @@ export const Summary = styled.h3 `
     color: grey;
     margin-bottom: 30px;
     padding-left: 10px;
-    font-size: ${theme.fontSizeM}
+    font-size: ${theme.fontSizeM};
+    //color: ${theme.colorDefaultText}
 `;
 
 export const SellerContainer = styled.div `
@@ -186,6 +187,7 @@ export const RadioButton = styled.div `
  i {
   font-size: 15px;
   padding-left: 10px;
+  color: ${theme.colorOneDark}
  }
 `;
 
@@ -211,7 +213,7 @@ export const Button = styled(StandardButton) ``;
 export const DeleteIcon = styled.div `
   border: none;
     background: none;
-    color: ${theme.colorDarkOliveGreen};
+    color: ${theme.colorOneDark};
     
      i {
      font-size: 15px;
