@@ -1,13 +1,24 @@
 import styled from 'styled-components';
 import {theme} from '../style/index';
-import {GenericButton} from './Buttons'
+import {GenericButton, StandardButton} from './Buttons'
 
+export const CheckoutConatiner = styled.main `
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
+ width: 100%;
+`;
 
-export const ProductsConatiner = styled.div `
+export const MainContainer = styled.div `
     background: ${theme.colorBackgroundColor};
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    background: ${theme.colorBackgroundColor};
+    padding-bottom: 30px;
+    
+    
 
     @media (max-width: 680px) {
         display: flex;
@@ -15,6 +26,34 @@ export const ProductsConatiner = styled.div `
         flex-direction: column;
     }
 `;
+
+
+export const TitleContainer = styled.div `
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: ${theme.colorBackgroundColor};
+  width: 100%;
+  
+   @media (max-width: 360px){
+       width: 100%; 
+      }  
+`;
+
+export const Text = styled.h2 `
+ font-size: ${theme.fontSizeXXL};
+ color: ${theme.colorMainTitle};
+ padding 20px; 
+ 
+  @media (max-width: 360px){
+       width: 200px;
+      } 
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+       font-size:  ${theme.fontSizeL};
+       padding: 10px 100px;
+    } 
+`
 
 export const BoxContainer = styled.div `
   /* background: ${theme.colorBackgroundColor};
@@ -63,7 +102,6 @@ export const TopHeaderConatiner = styled.div `
     border: 1px solid ${theme.colorRandomText};
 `;
 
-export const Button = styled(GenericButton) ``;
 
 export const Delivery = styled.h4 `
     color: ${theme.colorDefaultText};
@@ -75,19 +113,22 @@ export const Delivery = styled.h4 `
     }
 `;
 
-export const PaymentConatiner = styled.aside `
-    background: ${theme.colorBackgroundColor};
-    border: 1px solid ${theme.colorDefaultGrey};
-    
-    //border-radius: ${theme.borderRadiusL};
-    box-shadow: ${theme.boxShadowLighter};
-    width: 40%;
-    padding: 20px;
-    height: 400px;
+export const LeftConatiner = styled.div`
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px; 
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 100%;
+    }
+`;
 
+export const RightConatiner = styled.aside `
+     width: 100%;
+     display: flex;
+    width: 40%;
+    
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         //flex-direction: row;
         width: 70%;
@@ -96,34 +137,14 @@ export const PaymentConatiner = styled.aside `
 
 `;
 
-export const Subtotal = styled.h4 `
-    color: ${theme.colorDefaultText};
-    font-size: ${theme.fontSizeDefault};
-
-    span {
-        color: ${theme.colorDefaultText};
-        margin-left: 20px;
-    }
-`;
-
-export const Summary = styled.h3 `
-    color: grey;
-    margin-bottom: 30px;
-    font-size: ${theme.fontSizeM}
-`;
-
-export const Tax = styled.h4 `
-    color: ${theme.colorDefaultText};
-    font-size: ${theme.fontSizeDefault};
-
-    span {
-        margin-left: 60px;
-    }
-`;
-
-export const TotalSum = styled.h3 `
-    padding: 20px 0;
-    font-size: ${theme.spaceDefault}
+export const PaymentConatiner = styled.div `
+ width: 271px;
+ height: 410px;
+ border: 1px solid grey;
+ background: ${theme.colorBackgroundColor};
+ border: 1px solid ${theme.colorRandomText};
+ border-radius: ${theme.borderRadiusS};
+ box-shadow: ${theme.boxShadowLighter}
 `;
 
 export const SumConatiner = styled.div `
@@ -136,39 +157,82 @@ export const SumConatiner = styled.div `
     //font-size: ${theme.spaceS}
 `;
 
+export const Summary = styled.h3 `
+    color: grey;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    font-size: ${theme.fontSizeM};
+    //color: ${theme.colorDefaultText}
+`;
+
+export const SellerContainer = styled.div `
+ width: 100%;
+ padding: 0 10px;
+ display: flex-box;
+`;
+
+export const Bottom = styled.div `
+ margin-top: 70px;
+`;
+
+export const ButtonsContainer = styled.form `
+ display: flex;
+ flex-direction: row;
+ justify-content: space-evenly;
+
+`;
+
+export const RadioButton = styled.div `
+ width: 30px;
+ height: 30px;
+ display: flex;
+ flex-direction: row;
+ 
+ i {
+  font-size: 15px;
+  padding-left: 10px;
+  color: ${theme.colorOneDark}
+ }
+`;
+
+export const Radio = styled.input ``;
+
+export const TotalSum = styled.h3 `
+    float: right;
+    font-size: 15px;
+    padding: 10px;
+`;
+
 export const Submit = styled.div `
-    display: block;
-    //margin-left: 700px;
-    //padding: 60px;
-    margin-top: 10px;
     display: flex;
     justify-content: center;
-    padding: 0 20px;
+    padding-top: 30px;
+    
 `;
 
-export const ProductWrap = styled.div `
-    width: 100%;
-    padding-right: 60px;
-    //border: 2px solid ${theme.colorDefaultGrey};
-    //border-radius: ${theme.borderRadiusL};
-    //background-color: ${theme.colorAlmond};
-    //box-shadow: ${theme.boxShadowLightest};
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-        width: 100%;
-    }
+export const Button = styled(StandardButton) ``;
+
+
+
+export const DeleteIcon = styled.div `
+  border: none;
+    background: none;
+    color: ${theme.colorOneDark};
+    
+     i {
+     font-size: 15px;
+     }
+    
+      &:active {
+         border: none;
+         background: none;
+         i.fas {
+             color: ${theme.colorDarkRed};
+        }
+     }
 `;
 
-export const Wrapp = styled.div `
-    display: flex;
-    flex-direction: row;
-    padding: 0 80px;
 
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-        width: 100%;
-        flex-direction: column;
-        width: 100%;
-    }
-`;
 
 
 

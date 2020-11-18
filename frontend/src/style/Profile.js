@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {theme} from './index'
-import {GenericButton} from './Buttons'
+import {GenericButton, StandardButton} from './Buttons'
 
 
 export const BottomContainer = styled.div `
@@ -12,60 +12,49 @@ export const BottomContainer = styled.div `
     height: 100%;
     background: ${theme.colorBackgroundColor};
     padding-bottom: ${theme.spaceDefault};
+    min-width: 360px;
     
      @media (max-width: 360px){
        width: 100%;
-       padding-left: ${theme.spaceXS};
+       padding: 0;
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 100$;
+       width: 100%;
        //padding-left: ${theme.spaceXS};
     }
 `;
 
 export const TitleContainer = styled.div `
-  padding-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${theme.colorBackgroundColor};
-  display: flex;
   
    @media (max-width: 360px){
-       width: 100%;
-       
+       width: 100%; 
+      }  
 `;
 
 export const MainTitle = styled.h2 `
  font-size: ${theme.fontSizeXXL};
  color: ${theme.colorTitle};
- padding:0 550px;  
+ padding 20px; 
  
   @media (max-width: 360px){
-       font-size: ${theme.fontSizeXL};
-       padding: 0 50px;;
-    }   
+       width: 200px;
+      } 
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size:  ${theme.fontSizeL};
-       padding: 0 100px;
+       padding: 10px 100px;
     } 
 `;
-
-export const LogOut = styled(GenericButton) `
- width: 170px;
- height: 40px;
- 
+export const LogOut = styled(StandardButton) `
   @media (max-width: 360px){
        width: 100px;
-       //padding-left: ${theme.spaceXS};
+       font-size: 12px;
     }
-    
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 100px;
-    }
- 
 `;
 
 export const UserProfileContainer = styled.div `
@@ -74,7 +63,6 @@ export const UserProfileContainer = styled.div `
     height: 350px;
     display: flex;
     border-radius: ${theme.borderRadiusDefault};
-    margin-top: ${theme.controlHeightS};
     box-shadow: ${theme.boxShadowLight};
     
      @media (max-width: 360px){
@@ -88,7 +76,7 @@ export const UserProfileContainer = styled.div `
 `;
 
 export const AvatarContainer = styled.div `
-    width: 30%;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -96,15 +84,14 @@ export const AvatarContainer = styled.div `
     align-items: center;
     flex-wrap: wrap;
     padding: 0 20px;
-    
+   
   @media (max-width: 360px){
-       width: 100%;
-       //padding-left: ${theme.spaceXS};
+       display: flex;
+       flex-direction: row;
     }
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 30%;
-       
+       width: 40%;
     }
 `;
 
@@ -112,14 +99,9 @@ export const Avatar = styled.img `
     width: 140px;
     border-radius: 50%;
     
-    @media (max-width: 360px){
-       width: 100%;
-       //padding-left: ${theme.spaceXS};
-    }
-    
+   
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 80%;
-       
+       width: 80%; 
     }
 `;
 
@@ -127,9 +109,11 @@ export const Name = styled.p `
     font-size: ${theme.fontSizeDefault};
     padding-top: ${theme.spaceDefault};
     font-weight: bold;
+    color: ${theme.colorDefaultText};
+    padding-bottom: 40px;
     
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-       font-size: ${theme.fontSizeS};
+    @media (max-width: 360px){
+       border: 1px solid black;
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -140,14 +124,19 @@ export const Name = styled.p `
 export const Email = styled(Name) `
 padding-bottom: ${theme.spaceM};
 font-weight: normal;
+font-size: ${theme.fontSizeS};
 
 @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size: ${theme.fontSizeS}
     }
  `;
 
-export const ButtonEdit = styled(GenericButton) `
-    width: 150px;
+export const EmailContainer = styled.div `
+ 
+`;
+
+export const ButtonEdit = styled(StandardButton) `
+   font-size: ${theme.fontSizeS};
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        width: 100px;
@@ -155,9 +144,6 @@ export const ButtonEdit = styled(GenericButton) `
     }
     
     @media (max-width: 360px){
-       //width: 100%;
-       width: 100px;
-       height: 30px;
        font-size: ${theme.fontSizeXS};
     }
     
@@ -166,49 +152,38 @@ export const ButtonEdit = styled(GenericButton) `
 export const UserInfoContainer = styled.div `
     height: 100%;
     width: 100%;
-    margin-left: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: ${theme.spaceM};
+    padding: ${theme.spaceS} 0;
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        // flex-direction: column-reverse;
        // flex-direction: column;
        padding: 15px 0;
-       align-items: center;
-       
     }
     
    @media (max-width: 360px){
+       padding-left: 15px; 
        width: 100%;
-       padding: 0;
     }
 `;
 
-export const Title = styled.h2 `
-    /* justify-content: center;
-    text-align: center; */
-    padding: 15px;
+export const TitleGarden = styled.h2 `
+    padding: 10px 0;
     color: ${theme.colorTitle};
     
      @media (max-width: 360px){
       padding: 9px 0;
-      font-size: ${theme.fontSizeDefault} 
+      font-size: ${theme.fontSizeS};
+      width: 100%;
     }
-    
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-      padding: 10px 0;
-      margin-right: 110px;
-      border: 1px solid green;
-    }
-`
-export const AboutGarden = styled.p `
-    font-size: ${theme.fontSizeDefault};
+`;
+
+export const AboutGarden = styled.div `
     margin-left: ${theme.spaceDefault};
-    height: 63px;
+    height: 30%;
     width: 80%;
-    border: 1px solid red;
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size: ${theme.fontSizeS};
@@ -221,18 +196,33 @@ export const AboutGarden = styled.p `
     }
 `;
 
+export const AboutText = styled.p `
+ font-size: ${theme.fontSizeS}
+`;
+
+export const TitleLocation = styled(TitleGarden) `
+`;
+
+
 export const Info = styled.div `
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // // margin-left: ${theme.spaceDefault};
+    margin-left: ${theme.spaceDefault};
     height: 83px;
+   padding: 10px 0;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-        width: 75%;
+        width: 80%;
+        padding: 0;
+        margin: 0;
     }
    
 `;
+
+export const AddressInfo = styled.div `
+ display: flex;
+ flex-direction: row;
+`;
+
+export const TelContainer = styled.div ``;
 
 export const Address = styled.p `
     font-size: ${theme.fontSizeDefault};
@@ -245,17 +235,30 @@ export const Address = styled.p `
 
 export const City = styled(Address) ``;
 
-export const ZipCode = styled(Address) ``;
+export const ZipCode = styled(Address) `
+ padding-right: 30px; 
+`;
 
 export const Contact = styled.div `
     margin-left: ${theme.spaceDefault};
+    
+    @media (max-width: 360px) {
+    margin: 0;
+    padding-top: 15px;
+    }
 `;
 
 export const Mobile = styled.p `
-    font-size: ${theme.fontSizeDefault};
-
+    font-size: ${theme.fontSizeS};
+   
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size: ${theme.fontSizeS};
+    }
+`;
+
+export const TitleTel = styled(TitleGarden) `
+  @media (max-width: ${theme.mediaQueryScreenWidth}){
+       
     }
 `;
 

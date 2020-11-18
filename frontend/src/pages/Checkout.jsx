@@ -1,23 +1,26 @@
 import React, {Fragment} from 'react'
 import Header from '../components/Header';
-import {TopContainer, Image, Text} from '../style/Homepage';
-import {CheckoutConatiner,
-         ProductsConatiner, BoxContainer, Wrapp, TopHeaderConatiner, ProductT, QuantityT, Total,
-         HorizontalLine, PaymentConatiner,
-         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
+import {CheckoutConatiner, Text,
+         MainContainer, BoxContainer, RightConatiner, SellerContainer, ButtonsContainer,
+         TitleContainer, PaymentConatiner, Radio, DeleteIcon, RadioButton,
+         Summary, TotalSum, SumConatiner, Bottom, LeftConatiner, Button, Submit } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
-import {CheckoutContainer} from "../style/Addproduct";
+import {EmptyCartIcon} from "../style/ShoppingCart";
+import Banner from "../components/Header/Banner";
 
 
 const Checkout = () => {
     return (
         <Fragment>
-            <Header />
-            <CheckoutContainer>
+             <Header />
+            <CheckoutConatiner>
 
-            <ProductsConatiner>
-                <Text>-Your Order Items-</Text>
+            <MainContainer>
+                <TitleContainer>
+                     <Text>Checkout</Text>
+                </TitleContainer>
+
 
                 <BoxContainer>
 
@@ -26,36 +29,63 @@ const Checkout = () => {
                         <QuantityT>Quantity</QuantityT>
                         <Total>Total</Total>
                     </TopHeaderConatiner>  */}
-                <Wrapp>
-                <ProductWrap>
-                    <Product />
-                    <Product />
-                    <Product />
-                    <Product />
-                </ProductWrap>
 
-                <PaymentConatiner>
-                <SumConatiner>
-                    <Summary>Summary</Summary>
-                    <Subtotal>Subtotal: <span>CHF 38.00</span></Subtotal>
-                    <Tax>Tax <span>FREE</span></Tax>
-                    <Delivery>Delivery <span>CHF 6.50</span></Delivery>
-                    
-                    <hr />
-                    <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
-                </SumConatiner>
+                <LeftConatiner>
+                    <Product />
+                </LeftConatiner>
 
-                <Submit>
-                    <Button>Proceed to Pay</Button>
-                </Submit> 
+               <RightConatiner>
+                    <PaymentConatiner>
+                    <SumConatiner>
+                        <Summary>Summary</Summary>
 
-            </PaymentConatiner>
-            </Wrapp>
+                        <SellerContainer>
+                            {/*<div>*/}
+                            {/*    <h2>Name</h2>*/}
+                            {/*</div>*/}
+                            {/*<div>*/}
+                            {/*    <h2>CHF</h2>*/}
+                            {/*</div>*/}
 
+                            <h2>Name</h2>
+
+                            {/*<SellerName></SellerName>*/}
+                        </SellerContainer>
+
+                        <hr />
+
+
+                            <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
+                        <Bottom>
+                        <ButtonsContainer>
+
+                            <RadioButton>
+                            <Radio type='radio' /><i className="fas fa-hand-holding-usd" />
+                            </RadioButton>
+
+                            <RadioButton>
+                            <Radio type='radio' /><i className="fas fa-credit-card" />
+                            </RadioButton>
+
+                            <DeleteIcon><i className="fas fa-trash-alt" /></DeleteIcon>
+                            </ButtonsContainer>
+
+                            </Bottom>
+                        <Submit>
+                            <Button>Pay</Button>
+                        </Submit>
+
+                    </SumConatiner>
+
+
+
+               </PaymentConatiner>
+                </RightConatiner>
                 </BoxContainer>
     
-            </ProductsConatiner>
-            </CheckoutContainer>
+            </MainContainer>
+
+            </CheckoutConatiner>
             <Footer />
         </Fragment>
     )
