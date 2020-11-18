@@ -1,18 +1,19 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react'
 
 const Slides = () => {
     const location = useLocation();
     const history = useHistory();
-    const [indexer, setIndexer] =
+    const [indexer, setIndexer] = useState(1)
+
     return (
         <Fragment>
             <SlidesContainer>
-                your bullshit
+                {location.pathname === '/slides/1' && <Slide></Slide>}
             </SlidesContainer>
             <ButtonsContainer>
-                <Previous onClick={history.goBack}><i className="fas fa-arrow-left"></i></Previous>
-                <Page>Logo pending</Page>
-                <Next><i className="fas fa-arrow-right"></i></Next>
+                <Previous to={`/slides/${indexer}`} onClick={() => {if(indexer > 1) setIndexer(indexer - 1)}}><i className="fas fa-arrow-left"/></Previous>
+                <Page to={'/shop'}>Logo pending</Page>
+                <Next to={`/slides/${indexer}`} onClick={() => setIndexer(indexer + 1)}><i className="fas fa-arrow-right"/></Next>
             </ButtonsContainer>
         </Fragment>
     )
