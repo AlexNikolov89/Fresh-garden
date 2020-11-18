@@ -34,21 +34,20 @@ import {
     ExpiryIcon
 } from '../../style/Card';
 import defaultImage from '../../assets/images/default_pumpkin.jpg'
-import defaultImageAuthor from '../../assets/images/default_farmer.jpg'
 import { ReactComponent as PromoIcon} from '../../assets/icons/disc_2.svg';
 import {cartAction} from "../../store/actions/cartAction";
 import {useDispatch} from "react-redux";
 import {ADD_TO_CART} from "../../helpers/constants";
 
 
-const Card = ({product, changeIcon}) => {
+const Card = ({product}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
     const [name, setName] = useState('First Lastname')
     const [productName, setProductName] = useState('Product Name')
     const [expirationDate, setExpirationDate] = useState('01.01.2021')
     const [image, setImage] = useState(defaultImage)
-    const [imageAuthor, setImageAuthor] = useState(defaultImageAuthor)
+    const [imageAuthor, setImageAuthor] = useState('')
     const [location, setLocation] = useState('Location')
     const [unit, setUnit] = useState('na')
     const [price, setPrice] = useState("0.00")
@@ -121,22 +120,22 @@ const Card = ({product, changeIcon}) => {
                             <ProductName>{productName}</ProductName>
                             <DeliveryOptions>
                                 <DeliveryContainer>
-                                    {deliveryRadius && <DeliveryIcon><i className="fas fa-truck"></i></DeliveryIcon>}
+                                    {deliveryRadius && <DeliveryIcon><i className="fas fa-truck"/></DeliveryIcon>}
                                     {deliveryRadius && <DeliveryDistance>delivery up to {deliveryRadius}km</DeliveryDistance>}
                                 </DeliveryContainer>
                                 <PickUpContainer>
-                                    <PickUpIcon><i className="fas fa-hiking"></i></PickUpIcon>
+                                    <PickUpIcon><i className="fas fa-hiking"/></PickUpIcon>
                                     <Location>{deliveryRadius ? "or pick up @" : "pick up @"}{location}</Location>
                                 </PickUpContainer>
                                 <ExpiryContainer>
-                                    <ExpiryIcon><i className="fas fa-seedling"></i></ExpiryIcon>
+                                    <ExpiryIcon><i className="fas fa-seedling"/></ExpiryIcon>
                                     <ExpiryDate>ad expires {expirationDate}</ExpiryDate>
                                 </ExpiryContainer>
                             </DeliveryOptions>
                         </UpperLeftContainer>
                         <UpperRightContainer>
                             <SellerContainer>
-                                <PortraitContainer><Portrait src={imageAuthor} /></PortraitContainer>
+                                <PortraitContainer>{imageAuthor ? <Portrait src={imageAuthor} /> : <i className="fas fa-user-circle"/>}</PortraitContainer>
                                 <SellerName>{name}</SellerName>
                             </SellerContainer>
                         </UpperRightContainer>
@@ -144,7 +143,7 @@ const Card = ({product, changeIcon}) => {
                     <LowerContainer>
                         <StockContainer>
                             <Stock>{renderedStock}</Stock>
-                            <AddToCart onClick={addToCartHandler}><i className="fas fa-shopping-basket"></i></AddToCart>
+                            <AddToCart onClick={addToCartHandler}><i className="fas fa-shopping-basket"/></AddToCart>
                         </StockContainer>
                         <PriceContainer>
                             <CurrencyTag>CHF</CurrencyTag>

@@ -3,6 +3,15 @@ import background from '../assets/images/Veggies.jpg';
 import {theme} from './index';
 import {GenericButton} from './Buttons'
 import { ProductContainer } from './Product';
+
+export const CheckoutContainer = styled.main`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+`;
+
 export const AddProductContainer = styled.div `
     height: 100%;
     width: 100%;

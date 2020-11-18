@@ -20,7 +20,7 @@ class UserAdmin(UserAdmin):
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
         ('Groups', {'fields': ('groups',)}),
-        (None, {'fields': ('profile_picture',)}),
+        (None, {'fields': ('profile_picture', 'phone', 'description', 'banner', 'address', 'zip', 'city')}),
     )
     # fields which are shown when looking at an list of instances
     list_display = ('email', 'first_name', 'last_name', 'is_staff')

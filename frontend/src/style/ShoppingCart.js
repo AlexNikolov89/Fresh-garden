@@ -209,7 +209,11 @@ export const EmptyCart = styled.div`
     height: ${theme.controlHeightDefault};
 `;
 
-export const EmptyCartIcon = styled(Delete)``;
+export const EmptyCartIcon = styled(Delete)`
+    i.fas {
+        font-size: ${theme.fontSizeDefault};
+    }
+`;
 
 export const TextField = styled.p`
     margin: ${theme.spaceS};

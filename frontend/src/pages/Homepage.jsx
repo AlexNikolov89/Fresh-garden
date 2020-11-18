@@ -48,7 +48,6 @@ const Homepage = () => {
     return (
         <Fragment>
             <HomeContainer>
-                <Banner />
                 <Header />
 
                 {isLoading ? <Loading /> : (

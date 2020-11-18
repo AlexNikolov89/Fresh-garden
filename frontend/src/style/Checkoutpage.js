@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import {theme} from '../style/index';
 import {GenericButton, StandardButton} from './Buttons'
 
-export const CheckoutConatiner = styled.div `
-    width: 100%;
-`;
 
 export const MainContainer = styled.div `
     background: ${theme.colorBackgroundColor};
