@@ -7,7 +7,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer/index'
 //import {Login} from "./Login";
 import { useLocation } from "react-router-dom";
-import defaultAvatar from '../assets/defaultRuth.PNG';
+import defaultAvatar from '../assets/images/profile-temporary.jpg';
 import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
