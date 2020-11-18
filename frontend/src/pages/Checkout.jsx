@@ -7,18 +7,14 @@ import {CheckoutConatiner,
          Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
+import {CheckoutContainer} from "../style/Addproduct";
 
 
 const Checkout = () => {
     return (
         <Fragment>
-
-            <CheckoutConatiner>
-
-            <TopContainer>
-                <Image />
-            </TopContainer>
-                <Header />
+            <Header />
+            <CheckoutContainer>
 
             <ProductsConatiner>
                 <Text>-Your Order Items-</Text>
@@ -59,8 +55,7 @@ const Checkout = () => {
                 </BoxContainer>
     
             </ProductsConatiner>
-
-            </CheckoutConatiner>
+            </CheckoutContainer>
             <Footer />
         </Fragment>
     )

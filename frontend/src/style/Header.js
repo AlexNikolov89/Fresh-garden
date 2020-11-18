@@ -21,7 +21,7 @@ export const HeaderContainer = styled.div `
         top: calc(100% - 64px);
         left: 0;
         justify-content: center;
-        background-color: ${theme.colorMiddleGreenYellowVeryLight};
+        background-color: ${theme.colorOneHover};
     }
 `;
 
@@ -31,6 +31,7 @@ export const FormContainer = styled.div `
     text-align: center;
     height: 100%;
     width: 100%;
+    border-bottom: 1px solid ${theme.colorOne};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};
@@ -73,14 +74,14 @@ export const NavLinkAbout = styled(NavLink)`
     height: 100%;
     width: ${theme.controlHeightXL};
     cursor: default;
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOneHover};
     
     i.fas {
         color: ${theme.colorDefaultText};
     }
     
     &:hover {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowLighter};
 
           i.fas {
@@ -89,7 +90,7 @@ export const NavLinkAbout = styled(NavLink)`
     }
     
     :focus, &.active {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowInset};
           i.fas {
               color: ${theme.colorDefaultText}
@@ -103,11 +104,11 @@ export const NavLinkProfile = styled(NavLinkAbout)`
         background-color: ${theme.colorDarkRed};
     }
     &.fade {
-        background-color: ${theme.colorMiddleGreenYellowVeryLight};
+        background-color: ${theme.colorOneHover};
         -webkit-transition: background-color 750ms linear;
         -ms-transition: background-color 750ms linear;
         transition: background-color 750ms linear;
-    }
+    }    
 `;
 
 export const NavLinkShop = styled(NavLinkAbout)``;
@@ -121,13 +122,13 @@ export const CartIcon = styled.div`
     height: 100%;
     width: ${theme.controlHeightXL};
     cursor: default;
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOneHover};
 
     i.fas {
         color: ${theme.colorDefaultText};
     }
         &:hover {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowLighter};
 
           i.fas {
@@ -136,7 +137,7 @@ export const CartIcon = styled.div`
     }
     
     :focus, &.active {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowInset};
           i.fas {
               color: ${theme.colorDefaultText}

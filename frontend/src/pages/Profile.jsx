@@ -1,6 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {
-    TopContainer, Image, HomeContainer, Slogan} from '../style/Homepage';
+    TopContainer, Image, HomeContainer, Slogan, Box
+} from '../style/Homepage';
 import {TitleContainer, UserProfileContainer, AvatarContainer, Avatar, Name, ZipCode, Address, City, ButtonEdit,
     BottomContainer, CardContainer, UserInfoContainer, AboutGarden, MainTitle, Title, Info, Email, Contact, Mobile, LogOut} from '../style/Profile'
 import Header from '../components/Header'
@@ -86,8 +87,6 @@ const Profile = ({author}) => {
     return (
         <Fragment>
             <HomeContainer>
-                <Banner/>
-
                 <Header />
 
                     <TitleContainer>
@@ -126,9 +125,9 @@ const Profile = ({author}) => {
 
                 </BottomContainer>
 
-                <CardContainer id={"hello"}>
+                <Box style={{width: "100%", marginTop: 0, paddingTop: "32px"}}>
                      {products && products.map((product) => <Card product={product} key={product.id}/>)}
-                </CardContainer>
+                </Box>
             </HomeContainer>
             <Footer />
         </Fragment>

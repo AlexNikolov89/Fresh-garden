@@ -18,7 +18,7 @@ const Homepage = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
-    const products = useSelector(state => state.productReducer.productsAll);
+    const products = useSelector(state => state.productReducer.productsSubset);
     const viewCart = useSelector(state => state.cartReducer.viewCart);
     const [isLoading, setIsLoading] = useState(true)
 
@@ -48,7 +48,6 @@ const Homepage = () => {
     return (
         <Fragment>
             <HomeContainer>
-                <Banner />
                 <Header />
 
                 {isLoading ? <Loading /> : (
@@ -57,7 +56,6 @@ const Homepage = () => {
                         {products.map((product) => <Card product={product} key={product.id}/>)}
                     </Box>
                     <SideBox>
-                        {viewCart && <ShoppingCart/>}
                     <PromotedProducts products={products} />
                     </SideBox>
                 </BottomContainer>

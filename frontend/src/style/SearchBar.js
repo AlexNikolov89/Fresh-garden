@@ -38,8 +38,8 @@ export const AutocompleteContainer = styled(ShoppingCartContainer)`
     min-width: calc(2 * 42px + 2 * 95px + 2 * ${theme.spaceXXS});
     min-height: ${theme.controlHeightXL};
     width: calc(67% - 7.5 * ${theme.controlHeightXL} + ${theme.spaceXXS});
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
-    border-right: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorOneHover};
+    border-right: 1px solid ${theme.colorOneHover};
     position: absolute;
     padding: 0;
     top: calc{${theme.controlHeightXL} - 1px;
@@ -59,12 +59,21 @@ export const AutocompleteOne = styled.button`
     color: ${theme.colorDefaultText};
     background-color: ${theme.colorDefaultWhite};
     border: none;
-    border-bottom: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-bottom: 1px solid ${theme.colorOneHover};
     width: 100%;
     height: ${theme.controlHeightXL};
     outline: none;
     text-align: left;
     padding-left: ${theme.spaceXS};
+    
+    :hover, &.active {
+        color: ${theme.colorOneDark};
+        
+        i {
+            color: ${theme.colorOneDark};
+            font-size: 1.4rem;
+        }
+    }
     
     i {
         font-size: ${theme.fontSizeS};
@@ -108,7 +117,7 @@ export const SearchButton = styled.button `
     background: ${theme.colorDefaultWhite};
     padding: ${theme.spaceS};
     margin-right: ${theme.spaceXXS};
-    border-left: 1px solid ${theme.colorMiddleGreenYellowVeryLight};
+    border-left: 1px solid ${theme.colorOne};
     
     i.fas {
         color: ${theme.colorDefaultText};
@@ -121,7 +130,7 @@ export const LocationButton = styled(SearchButton)``;
 export const SubmitButton = styled(SearchButton)`
     height: 100%;
     width: ${theme.controlHeightXL};
-    background-color: ${theme.colorMiddleGreenYellowVeryLight};
+    background-color: ${theme.colorOneHover};
     margin-right: 0;
     justify-self: flex-start;
     
@@ -130,7 +139,7 @@ export const SubmitButton = styled(SearchButton)`
     }
     
     &:hover {
-          background-color: ${theme.colorMiddleGreenYellowLight};
+          background-color: ${theme.colorOne};
           box-shadow: ${theme.boxShadowInset};
 
           i.fas {
