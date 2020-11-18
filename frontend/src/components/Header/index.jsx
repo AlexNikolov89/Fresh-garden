@@ -9,7 +9,7 @@ import {
     LogoContainer,
     CartIcon,
     NavLinkShop,
-    NavLinkAddProduct
+    NavLinkAddProduct, Logo
 } from '../../style/Header';
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
@@ -19,7 +19,7 @@ import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
 import ShoppingCart from "../ShoppingCart";
 import Banner from "./Banner";
-import {ReactComponent as Logo} from '../../assets/svgs/logo_with_text.svg';
+import logo from '../../assets/svgs/logo_with_text.svg';
 
 const Header = () => {
     const location = useLocation();
@@ -60,7 +60,7 @@ const Header = () => {
             <HeaderContainer >
 
                 <LogoContainer>
-                    <NavLinkHome to='/shop'><Logo/></NavLinkHome>
+                    <NavLinkHome to='/shop'><Logo src={logo}/></NavLinkHome>
                 </LogoContainer>
 
                 <FormContainer>

@@ -160,6 +160,7 @@ export const LogoContainer = styled.div `
     height: 100%;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid ${theme.colorOne};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         display: none;
@@ -167,7 +168,7 @@ export const LogoContainer = styled.div `
 `;
 
 export const Logo = styled.img`
-    width: ${theme.controlHeightXL};
+    height: calc(${theme.controlHeightXL} - 10px);
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};
