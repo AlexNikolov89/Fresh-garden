@@ -80,11 +80,6 @@ const Addproduct = () => {
     return (
         <Fragment>
             <AddProductContainer>
-                <TopContainer>
-                    <Image>
-                        <Slogan>Homegrown. Fresh. Earthy.</Slogan>
-                    </Image>
-                </TopContainer>
                 <Header />
                 <BottomConatiner>
                     <AddCardForm>

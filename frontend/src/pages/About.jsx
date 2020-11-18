@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 const About = () => {
     return (
         <Fragment>
-            <Banner/>
             <Header/>
             <div>
                 your bullshit

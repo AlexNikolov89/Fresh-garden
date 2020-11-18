@@ -117,7 +117,7 @@ export const SearchButton = styled.button `
     background: ${theme.colorDefaultWhite};
     padding: ${theme.spaceS};
     margin-right: ${theme.spaceXXS};
-    border-left: 1px solid ${theme.colorOneHover};
+    border-left: 1px solid ${theme.colorOne};
     
     i.fas {
         color: ${theme.colorDefaultText};
