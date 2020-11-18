@@ -3,40 +3,54 @@ import Header from '../components/Header/index.jsx'
 import {
     AboutMainContainer,
     AleksandraContainer,
-    AlexContainer, BottomHalveUpperContainer, BottomSubPart, BottomSubscriptionText,
+    AlexContainer,
+    BottomHalveUpperContainer,
+    BottomSubPart,
+    BottomSubscriptionText, BugContainer, BugSubmitContainer, BugText, BugTextContainer,
+    DevName,
+    DevRole, DisclaimerContainer, DisclaimerText, DisclaimerTitle,
     FirstDiv,
     FirstLeftContainer,
-    FirstRightContainer, FirstSectionContainer,
+    FirstRightContainer,
+    FirstSectionContainer,
     GitHubLink,
-    HeaderAboutContainer,
+    HeaderTitleContainer,
     Image,
-    LeftProfileContainer,
-    LinkedInLink,
+    LinkedInLink, LowerProfileContainer,
     MeetTheTeamContainer,
     MeetTheTeamHeader,
-    ProfileImage, ProfileImageContainer,
-    RightProfileContainer, RightProfileP, RightProfileTitle,
+    NameContainer, PersonalQuote,
+    ProfileImage,
+    ProfileImageContainer,
     SamiContainer,
     SecondDiv,
     SecondLeftContainer,
     SecondRightContainer,
-    SocialLinks, SubscriptionButtonContainer,
+    SocialLinks,
+    SubscriptionButtonContainer,
     SubscriptionMainContainer,
     SubscriptionModelContainer,
     SubscriptionPlanOne,
     SubscriptionPlanThree,
-    SubscriptionPlanTwo, SubscriptionPrice, SubscriptionTitle,
+    SubscriptionPlanTwo,
+    SubscriptionPrice,
+    SubscriptionTitle,
     TheDevTeam,
     ThirdDiv,
     ThirdLeftContainer,
-    ThirdRightContainer, TopSubPart,
-    TopSubscriptionText, UpperHalveBottomContainer, UpperHalveContainer
+    ThirdRightContainer,
+    TopSubPart,
+    TopSubscriptionText,
+    UpperHalveBottomContainer,
+    UpperHalveContainer,
+    UpperProfileContainer
 } from "../style/About";
 import FreshGarden1 from '../assets/images/freshgarden1.jpg'
 import FreshGarden2 from '../assets/images/freshgarden2.jpg'
 import FreshGarden3 from '../assets/images/freshgarden3.jpg'
 import Sami from '../assets/images/Sami.jpg'
-import {SubscribeButton} from "../style/Buttons";
+import {BugFeedbackButton, SubscribeButton} from "../style/Buttons";
+import Footer from "../components/Footer";
 
 
 const About = () => {
@@ -44,7 +58,7 @@ const About = () => {
         <Fragment>
                 <Header />
                 <AboutMainContainer>
-                    <HeaderAboutContainer>About</HeaderAboutContainer>
+                    <HeaderTitleContainer>About</HeaderTitleContainer>
                     <FirstSectionContainer>
                         <FirstDiv>
                             <FirstLeftContainer>What is freshgarden.ch?
@@ -157,62 +171,82 @@ const About = () => {
                         <MeetTheTeamHeader>Meet the DevTeam</MeetTheTeamHeader>
                             <TheDevTeam>
                                 <AlexContainer>
-                                    <LeftProfileContainer>
+                                    <UpperProfileContainer>
                                         <ProfileImageContainer>
                                             <ProfileImage src={Sami}></ProfileImage>
                                         </ProfileImageContainer>
-                                        <h2>Sami Ben Ali</h2>
-                                        <p>Zürich, Switzerland</p>
-                                    </LeftProfileContainer>
-                                    <RightProfileContainer>
-                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
-                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
-                                        <RightProfileTitle>Social</RightProfileTitle>
+                                        <NameContainer>
+                                            <DevName>Sami Ben Ali</DevName>
+                                            <DevRole>Project Role: Backend Developer</DevRole>
+                                        </NameContainer>
+                                    </UpperProfileContainer>
+                                    <LowerProfileContainer>
+                                        <PersonalQuote>"A wise man once said nothing."</PersonalQuote>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
                                         </SocialLinks>
-                                    </RightProfileContainer>
+                                    </LowerProfileContainer>
                                 </AlexContainer>
                                 <AleksandraContainer>
-                                    <LeftProfileContainer>
+                                    <UpperProfileContainer>
                                         <ProfileImageContainer>
                                             <ProfileImage src={Sami}></ProfileImage>
                                         </ProfileImageContainer>
-                                        <h2>Sami Ben Ali</h2>
-                                        <p>Zürich, Switzerland</p>
-                                    </LeftProfileContainer>
-                                    <RightProfileContainer>
-                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
-                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
-                                        <RightProfileTitle>Social</RightProfileTitle>
+                                        <NameContainer>
+                                            <DevName>Sami Ben Ali</DevName>
+                                            <DevRole>Project Role: Backend Developer</DevRole>
+                                        </NameContainer>
+                                    </UpperProfileContainer>
+                                    <LowerProfileContainer>
+                                        <PersonalQuote>"A wise man once said nothing."</PersonalQuote>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
                                         </SocialLinks>
-                                    </RightProfileContainer>
+                                    </LowerProfileContainer>
                                 </AleksandraContainer>
                                 <SamiContainer>
-                                    <LeftProfileContainer>
+                                    <UpperProfileContainer>
                                         <ProfileImageContainer>
                                             <ProfileImage src={Sami}></ProfileImage>
                                         </ProfileImageContainer>
-                                        <h2>Sami Ben Ali</h2>
-                                        <p>Zürich, Switzerland</p>
-                                    </LeftProfileContainer>
-                                    <RightProfileContainer>
-                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
-                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
-                                        <RightProfileTitle>Social</RightProfileTitle>
+                                        <NameContainer>
+                                            <DevName>Sami Ben Ali</DevName>
+                                            <DevRole>Project Role: Backend Developer</DevRole>
+                                        </NameContainer>
+                                    </UpperProfileContainer>
+                                    <LowerProfileContainer>
+                                        <PersonalQuote>"A wise man once said nothing."</PersonalQuote>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
                                         </SocialLinks>
-                                    </RightProfileContainer>
+                                    </LowerProfileContainer>
                                 </SamiContainer>
                             </TheDevTeam>
                         </MeetTheTeamContainer>
+
+
+                    <BugContainer>
+                        <BugTextContainer>
+                            <BugText>Some Bugs are welcomed but please report the ones on this page.</BugText>
+                        </BugTextContainer>
+                        <BugSubmitContainer>
+                            <BugFeedbackButton><i className="fas fa-bug"></i>Give Feedback</BugFeedbackButton>
+                        </BugSubmitContainer>
+                    </BugContainer>
+
+                    <DisclaimerContainer>
+                        <DisclaimerTitle>Legal Disclaimer</DisclaimerTitle>
+                        <DisclaimerText>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporn vidunt ut labore et dolore magna<br/>
+                        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren duo dolores.<br/>
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br/>
+                        sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.
+                        </DisclaimerText>
+                    </DisclaimerContainer>
                 </AboutMainContainer>
+            <Footer/>
         </Fragment>
     )
 }

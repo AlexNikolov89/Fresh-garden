@@ -10,14 +10,14 @@ export const AboutMainContainer = styled.main`
     width: 100%;
 `;
 
-export const HeaderAboutContainer = styled.h1`
+export const HeaderTitleContainer = styled.h1`
     display: flex;
     justify-content: center;
     align-items: flex-end;
     font-size: ${theme.fontSizeXXXL};
     color: ${theme.colorDarkOliveGreen};
     height: 200px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 `;
 
 export const FirstSectionContainer = styled.div`
@@ -136,7 +136,7 @@ export const TopSubscriptionText = styled.h1`
     align-content: center;
     text-align: center;
     flex-direction: column;
-    font-size: ${theme.fontSizeL};
+    font-size: ${theme.fontSizeXL};
     color: ${theme.colorDarkOliveGreen};
 
     p {
@@ -251,9 +251,10 @@ export const SubscriptionButtonContainer = styled.div`
 
 export const MeetTheTeamContainer = styled.div`
     display: flex;
-    justify-content: center;
+    align-content: center;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 250px;
 `;
 
 export const MeetTheTeamHeader = styled.h1`
@@ -261,91 +262,82 @@ export const MeetTheTeamHeader = styled.h1`
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: ${theme.fontSizeL};
+    font-size: ${theme.fontSizeXL};
+    color: ${theme.colorDarkOliveGreen};
     height: 200px;
     width: 100%;
+    margin-top: 60px;
 `;
 
 export const TheDevTeam = styled.div`
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: row;
+    align-self: center;
+    justify-self: center;
+    width: 65%;
 `
 
 export const AlexContainer = styled.div`
     display: flex;
-    width: 100%;
-    height: 300px;
-    border: solid 1px rgba(0,0,0,0.05); 
-`;
-
-export const AleksandraContainer = styled.div`
-    display: flex;
-    width: 100%;
-    height: 300px;
-    border: solid 1px rgba(0,0,0,0.05); 
-`;
-
-export const SamiContainer = styled.div`
-    display: flex;
-    width: 100%;
-    height: 300px;
-    border: solid 1px rgba(0,0,0,0.05); 
-`;
-
-export const LeftProfileContainer = styled.div`
-    display: flex;
-    height: 100%; 
-    width: 319px;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
     flex-direction: column;
-    border-right: 1px solid rgba(0,0,0,0.05); 
-    
-    h2 {
-      font-size: ${theme.fontSizeM};
-      margin-top: ${theme.spaceS};
-    }
-    
-    p {
-      font-size: ${theme.fontSizeS}; 
-      color: ${theme.colorDefaultGrey};   
-    }
+    text-align: left;
+    width: 400px;
+    height: 250px;
+`;
+
+export const AleksandraContainer = styled(AlexContainer)``;
+export const SamiContainer = styled(AlexContainer)``;
+
+export const NameContainer = styled.div`
+  line-height: 25px;
+`;
+
+export const DevName = styled.h2`
+    font-size: ${theme.fontSizeM};
+    color: ${theme.colorDarkOliveGreen};
+`;
+
+export const DevRole = styled.p`
+    font-size: ${theme.fontSizeM};
+`;
+
+
+export const UpperProfileContainer = styled.div`
 `;
 
 export const RightProfileContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    justify-content: space-evenly;
-    margin-left: ${theme.spaceM};
+   display: flex;
+   flex-direction: column;
 `;
 
-export const RightProfileTitle = styled.h4`
-    font-size: ${theme.fontSizeS};
-    color: ${theme.colorDefaultGrey};
+export const LowerProfileContainer = styled.div`
+   display: flex;
+   flex-direction: column;
 `;
 
-export const RightProfileP = styled.p`
-    font-size: ${theme.fontSizeM}; 
-`
+export const PersonalQuote = styled.p`
+  font-style: italic;
+  font-size: ${theme.fontSizeDefault};
+  color: ${theme.colorDefaultText};
+  margin-top: 10px;
+`;
 
 export const ProfileImage = styled.img`
     height: 100%;
     width: -moz-available;
     width: 100%;
-    border-radius: 100%;
     object-fit: cover;
+    border-radius: ${theme.borderRadiusS};
 `;
 
 export const ProfileImageContainer = styled.div`
     display: flex;
-    justify-self: center;
-    align-self: center;
-    height: 170px;
-    width: 170px;
-    border-radius: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 250px;
+    margin-bottom: 10px;
 `;
 
 
@@ -353,13 +345,14 @@ export const SocialLinks = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    margin-top: 10px;
 `;
 
 export const LinkedInLink = styled.a`
     display: flex;
     text-decoration: none;
     font-size: ${theme.fontSizeL};
-    margin-right: ${theme.spaceS};
+    margin-right: ${theme.spaceXS};
     color: #2867B2;
        
 `
@@ -370,3 +363,56 @@ export const GitHubLink = styled.a`
     font-size: ${theme.fontSizeL};
     color: #24292e;
 `
+
+export const BugContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+`;
+
+export const BugTextContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 100px;
+`;
+
+export const BugText = styled.div`
+    font-size: ${theme.fontSizeM};
+    color: ${theme.colorDefaultText};
+    margin-left: 40px;
+`;
+
+export const BugSubmitContainer = styled.div`
+    display: flex;
+    height: 100px;
+    width: 700px;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const DisclaimerContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 150px;
+`;
+
+export const DisclaimerTitle = styled.h2`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: ${theme.colorDarkOliveGreen};
+    font-size: ${theme.fontSizeXL};
+`;
+
+export const DisclaimerText = styled.p`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    color: ${theme.colorDefaultText};
+    font-size: ${theme.fontSizeDefault};
+    margin-top: ${theme.spaceM};
+`;
