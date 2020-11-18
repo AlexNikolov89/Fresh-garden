@@ -65,6 +65,11 @@ export const NavLinkHome = styled(NavLink)`
     cursor: default;
     padding: ${theme.spaceS};
     height: 100%;
+    
+    svg {
+        height: ${theme.controlHeightXL};
+        width: 200px;
+    }
 `;
 
 export const NavLinkAbout = styled(NavLink)`
