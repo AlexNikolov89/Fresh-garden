@@ -56,6 +56,7 @@ export const BoxContainer = styled.div `
   padding: 50px; */
   display: flex;
   width: 100%;
+  justify-content: space-evenly;
   padding: 0 150px;
   padding-top: 40px;
 
@@ -113,8 +114,7 @@ export const LeftConatiner = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    padding-bottom: 20px; 
+    padding-bottom: 10px; 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 100%;
     }
@@ -123,6 +123,7 @@ export const LeftConatiner = styled.div`
 export const RightConatiner = styled.aside `
      width: 100%;
      display: flex;
+     justify-content: center;
     width: 40%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -141,6 +142,7 @@ export const PaymentConatiner = styled.div `
  border: 1px solid ${theme.colorRandomText};
  border-radius: ${theme.borderRadiusS};
  box-shadow: ${theme.boxShadowLighter}
+
 `;
 
 export const SumConatiner = styled.div `

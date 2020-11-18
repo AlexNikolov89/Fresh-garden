@@ -39,9 +39,11 @@ export const InfoConatiner = styled.div `
     padding-left: 10px;
     width: 60%;
     
-     @media (max-width: 360px){
-          
-     }
+     //@media (max-width: 360px){
+     //     height: 100%;
+     //     width: 100%;
+     //
+     //}
 `;
 
 export const Info = styled.div `

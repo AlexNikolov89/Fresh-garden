@@ -59,7 +59,7 @@ export const LogOut = styled(StandardButton) `
 
 export const UserProfileContainer = styled.div `
     background-color: #fff;
-    width: 50%;
+    width: 40%;
     height: 350px;
     display: flex;
     border-radius: ${theme.borderRadiusDefault};
@@ -113,7 +113,7 @@ export const Name = styled.p `
     padding-bottom: 40px;
     
     @media (max-width: 360px){
-       border: 1px solid black;
+       font-size: ${theme.fontSizeS};
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){

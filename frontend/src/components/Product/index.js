@@ -2,10 +2,17 @@ import React, {Fragment} from 'react'
 import {ProductContainer, InfoConatiner, ProductImg, Seller, AvailibleStock, Price, Info, ProductTitle,
        Quantity, PriceContainer, Unit, StockDiv, Wrap, WrapPrice, Increment, Decrement, Count, Delete} from '../../style/Product.js'
 import TomatoImage from '../../assets/images/tomato.jpg';
+import {useHistory} from "react-router-dom";
 
 
 
 const Product = () => {
+
+    // const history = useHistory();
+    //
+    // const handleClick = () => {
+    //     history.push('/order')
+    // }
     return (
         <Fragment>
             <ProductContainer>
