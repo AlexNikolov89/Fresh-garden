@@ -45,7 +45,6 @@ INSTALLED_APPS = [
 
     # third-party
     'rest_framework',
-    # 'any_imagefield',
     'corsheaders',
 ]
 
@@ -91,6 +90,7 @@ TEMPLATES = [
 # ]
 
 # SESSION_SAVE_EVERY_REQUEST = True
+
 SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
 CSRF_COOKIE_HTTPONLY = False
 CART_SESSION_ID = 'cart'
@@ -147,10 +147,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static-files/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static-files')
 
 MEDIA_URL = '/media-files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media-files')
+
+# these roots worked on a previous similar project
+# STATIC_ROOT = '/static-files/'
+# STATIC_URL = '/static-files/'
+# MEDIA_ROOT = '/media-files/'
+# MEDIA_URL = '/media-files/'
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
