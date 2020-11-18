@@ -150,7 +150,7 @@ STATIC_URL = '/static-files/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static-files')
 
 MEDIA_URL = '/media-files/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static-files')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media-files')
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
