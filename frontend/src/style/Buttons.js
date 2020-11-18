@@ -58,20 +58,8 @@ export const GenericButton = styled.button`
     }
 `;
 
-export const SignUpButton = styled.button`
-    height: ${theme.controlHeightM};
-    width: 15%;
-    border-radius: 26px;
-    color: ${theme.colorDefaultText};
-    color: ${theme.colorDefaultWhite};
-    font-weight: ${theme.fontWeightBold};
-    background: ${theme.colorOneDark};
-    border: none;    
-    cursor: default;
-    font-size: ${theme.fontSizeDefault};
-    outline: none;
-    margin-top: 10px;
-
+export const SignUpButton = styled(StandardButton)`
+    margin-top: ${theme.spaceXS};
     
     &:hover {
         box-shadow: ${theme.boxShadowInset};
@@ -79,21 +67,14 @@ export const SignUpButton = styled.button`
     }
 `;
 
-export const SignInButton = styled.button`
-    height: ${theme.controlHeightL};
-    width: 15%;
-    border-radius: 26px;
-    color: ${theme.colorDefaultWhite};
-    font-weight: ${theme.fontWeightBold};
-    font-size: ${theme.fontSizeDefault};
-    background: ${theme.colorOneDark};
-    border: none;    
-    cursor: default;
-    outline: none;
-
+export const SignInButton = styled(StandardButton)`
     
     &:hover, :focus {
         box-shadow: ${theme.boxShadowInset};
         background: ${theme.colorOne};
     }
+`;
+
+export const SubscribeButton = styled(StandardButton)`
+    margin-bottom: 30px;
 `;
