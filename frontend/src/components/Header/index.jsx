@@ -19,6 +19,9 @@ import {RESET_NOT_LOGGED_IN, TOGGLE_CART_VIEW} from "../../helpers/constants";
 import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
+import ShoppingCart from "../ShoppingCart";
+import {SideBox} from "../../style/Homepage";
+import Banner from "./Banner";
 
 const Header = () => {
     const location = useLocation();
@@ -27,11 +30,18 @@ const Header = () => {
     const redirectFlagRedux = useSelector(state => state.cartReducer.redirectFlag)
     const [redirectFlagComponent, setRedirectFlagComponent] = useState(false)
     const [classLabel, setClassLabel] = useState('default')
+    const tokenRedux = useSelector(state => state.authReducer.token)
+    const [loginCheck, setLogicCheck] = useState(false)
+
+    console.log("flag path  ",location.pathname)
 
     // lights up the profile navigation button if not logged in
     // TODO also do this for the "add product" page
     useEffect(() => {
         const redirectCheck = async () => {
+            if (tokenRedux) {
+                setLogicCheck(true)
+            } else setLogicCheck(false)
             if (redirectFlagRedux && !redirectFlagComponent) {
                 setClassLabel('impulse')
                 return setRedirectFlagComponent(true)
@@ -48,6 +58,7 @@ const Header = () => {
 
     return (
         <Fragment>
+            <Banner />
             <HeaderContainer >
 
                 <LogoContainer>
@@ -59,24 +70,32 @@ const Header = () => {
                 </FormContainer>
 
                 <Icons >
-                    <NavLinkAddProduct to='/upload'><i className="fas fa-plus-circle"></i></NavLinkAddProduct>
+                    {loginCheck &&
+                    <NavLinkAddProduct
+                        to='/upload'>
+                        <i className="fas fa-plus-circle"/>
+                    </NavLinkAddProduct>}
                     <NavLinkShop
                         to='/shop'
                         isActive={() => ['/shop', '/', '/checkout', '/order'].includes(location.pathname)}>
-                        <i className="fas fa-store"></i>
+                        <i className="fas fa-store"/>
                     </NavLinkShop>
-                    <NavLinkProfile
-                        to='/user/profile'
-                        className={classLabel}
-                        isActive={() => ['/user/profile', '/user/login'].includes(location.pathname)}>
-                        <i className="fas fa-user"></i>
-                    </NavLinkProfile>
-                    <NavLinkAbout to='/about'><i className="fas fa-question-circle"></i></NavLinkAbout>
                     <CartIcon
                         onClick={() => dispatch(cartAction('', '', TOGGLE_CART_VIEW))}
                         className={viewCart ? "active" : "inactive"}>
                         <i className="fas fa-shopping-basket" />
                     </CartIcon>
+                    <NavLinkAbout
+                        to='/about'>
+                        <i className="fas fa-question-circle"/>
+                    </NavLinkAbout>
+                    <NavLinkProfile
+                        to='/user/profile'
+                        className={classLabel}
+                        isActive={() => ['/user/profile', '/user/login', '/user'].includes(location.pathname)}>
+                        <i className="fas fa-user"/>
+                    </NavLinkProfile>
+                    {viewCart && <ShoppingCart/>}
                 </Icons>
 
             </HeaderContainer>

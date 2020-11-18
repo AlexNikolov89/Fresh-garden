@@ -3,6 +3,7 @@ from cart.cart import Cart
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, DestroyAPIView, UpdateAPIView, RetrieveDestroyAPIView, ListAPIView, \
     RetrieveUpdateDestroyAPIView
+from rest_framework.permissions import AllowAny
 
 from rest_framework.response import Response
 
@@ -11,6 +12,7 @@ class CartAddItem(CreateAPIView):
     """
     POST: Add product to cart by product id
     """
+    permission_classes = [AllowAny]
 
     def create(self, request, *args, **kwargs):
         cart = Cart(request)
@@ -23,6 +25,7 @@ class CartRemoveItem(DestroyAPIView):
     """
     DELETE: Remove item from cart by product id
     """
+    permission_classes = [AllowAny]
 
     def destroy(self, request, *args, **kwargs):
         cart = Cart(request)
@@ -35,6 +38,7 @@ class CartIncrementQuantity(UpdateAPIView):
     """
     PATCH: Increment quantity of item in cart by product id
     """
+    permission_classes = [AllowAny]
 
     def update(self, request, *args, **kwargs):
         cart = Cart(request)
@@ -47,6 +51,7 @@ class CartDecrementQuantity(UpdateAPIView):
     """
     PATCH: Decrement quantity of item in cart by product id
     """
+    permission_classes = [AllowAny]
 
     def update(self, request, *args, **kwargs):
         cart = Cart(request)
@@ -59,6 +64,8 @@ class ClearCartView(RetrieveDestroyAPIView):
     """
     DELETE: Clear cart
     """
+    permission_classes = [AllowAny]
+
 
     def destroy(self, request, *args, **kwargs):
         cart = Cart(request)
@@ -70,18 +77,24 @@ class CartDetailsView(ListAPIView):
     """
     GET: get cart details
     """
+    permission_classes = [AllowAny]
+
 
     def get(self, request, *args, **kwargs):
         cart = Cart(request)
         return Response(cart.cart, status=status.HTTP_200_OK)
 
 
+# WIP
 class CheckOutCartView(RetrieveUpdateDestroyAPIView):
     """
     PATCH: Checkout current Cart and decrease the stock of the chosen items.
     """
     queryset = Product.objects.all()
     stock_storage = Product.stock
+    # TODO check if JWT token does the trick of not letting checkout unless logged in
+    # If no JWT is needed ->
+    permission_classes = [AllowAny]
 
     def update(self, request, *args, **kwargs):
         cart = Cart(request)

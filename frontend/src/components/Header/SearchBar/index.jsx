@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useEffect, useState} from 'react'
 import {
     Form,
     LocationContainer,
@@ -14,12 +14,16 @@ import {
     AutocompleteThree,
 } from '../../../style/SearchBar'
 import {locationAction} from "../../../store/actions/locationAction";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {productAction} from "../../../store/actions/productAction";
-import {SET_PRODUCTS_ALL} from "../../../helpers/constants";
+import {SET_LOCATION_SUBSET, SET_PRODUCTS_ALL, SET_PRODUCTS_SUBSET} from "../../../helpers/constants";
 
 const SearchBar = () => {
     const dispatch = useDispatch();
+    const productsAll = useSelector(state => state.productReducer.productsAll)
+    const productsSubset = useSelector(state => state.productReducer.productsSubset)
+    console.log("SEARCH productsAll------", productsAll)
+    console.log("SEARCH productsSubset------", productsSubset)
     const [locationString, setLocationString] = useState('');
     const [searchString, setSearchString] = useState('');
     const [showAutocomplete, setShowAutocomplete] = useState(false);
@@ -49,35 +53,71 @@ const SearchBar = () => {
         e.preventDefault();
         setLocationString(location)
         setShowAutocomplete(false)
-        let splitLocationString = locationString.split(",",1).toString()
-        await dispatch(productAction('products/?search=' + splitLocationString, 'GET', SET_PRODUCTS_ALL));
+        let splitLocationString = locationString.split(",", 1).toString()
+        await dispatch(productAction('products/?search=' + splitLocationString, 'GET', SET_LOCATION_SUBSET));
     }
 
+    // client site search - really fast but all files have to be fetched first (not scalable)
     const searchHandler = async e => {
-        const inputValue = e.currentTarget.value
-        setSearchString(inputValue)
-        setShowAutocomplete(false)
-        let space = ''
-        let splitLocationString = locationString.split(",",1).toString()
-        if (splitLocationString[0] !== '') space = ' '
+        const inputString = e.currentTarget.value
+        if (locationString && inputString.length < 2 && e.currentTarget.value === '') setLocationString('')
+        if (inputString === ' ') return
+        let payload = []
+        setSearchString(inputString)
 
-        await dispatch(productAction('products/?search=' + splitLocationString + space + inputValue, 'GET', SET_PRODUCTS_ALL));
+        setShowAutocomplete(false)
+        const createProductsSubset = () => {
+            let searchStringArray = []
+            if (productsAll === false) return
+
+            for (const word of inputString.split(' ')) {
+                let wordStrip = word.toLowerCase()
+                let locationStrip = wordStrip
+                if (locationString) locationStrip = locationString
+                const searchStringObject = {
+                    author: {
+                        first_name: wordStrip,
+                        last_name: wordStrip,
+                    },
+                    location: locationStrip,
+                    category: wordStrip,
+                    name: wordStrip,
+                }
+                searchStringArray.push(searchStringObject)
+            }
+
+            for (const product of productsAll) {
+                const searchMatchChecker = (product) => {
+                    for (const object of searchStringArray) {
+                        return (product.author.first_name.toLowerCase().includes(object.author.first_name))
+                            || (product.author.last_name.toLowerCase().includes(object.author.last_name))
+                            || (product.category.toLowerCase().includes(object.category))
+                            || (product.name.toLowerCase().includes(object.name))
+                            && (product.location.toLowerCase().includes(object.location))
+                    }
+                }
+                const match = searchMatchChecker(product)
+                if (match) payload.push(product)
+            }
+        }
+        createProductsSubset()
+        await dispatch(productAction('', '', SET_PRODUCTS_SUBSET, '', payload))
     }
 
-    const submitSearchHandler = async e => {
-        e.preventDefault()
-        setShowAutocomplete(false)
-        let space = ''
-        let splitLocationString = locationString.split(",",1).toString()
-        if (splitLocationString[0] !== '') space = ' '
-
-        await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_ALL));
-    }
+    // this can be used for an Web API based search
+    // const submitSearchHandler = async e => {
+    //     e.preventDefault()
+    //     setShowAutocomplete(false)
+    //     let space = ''
+    //     let splitLocationString = locationString.split(",", 1).toString()
+    //     if (splitLocationString[0] !== '') space = ' '
+    //
+    //     await dispatch(productAction('products/?search=' + splitLocationString + space + searchString, 'GET', SET_PRODUCTS_SUBSET));
+    // }
 
     return (
         <Fragment>
-            <Form
-                onSubmit={submitSearchHandler}>
+            <Form>
                 <LocationContainer>
                     <LocationButton onClick={(e) => e.preventDefault()}>
                         <i className="fas fa-map-marker-alt"></i>
@@ -113,11 +153,11 @@ const SearchBar = () => {
                             {autocompleteThree}
                         </AutocompleteThree>}
                     </AutocompleteContainer>
-                ) : null }
+                ) : null}
 
                 <SearchContainer>
                     <SearchButton onClick={(e) => e.preventDefault()}>
-                        <i className="fas fa-keyboard"></i>
+                        <i className="fas fa-search"></i>
                     </SearchButton>
                     <SearchInput
                         name={"search"}
@@ -129,9 +169,9 @@ const SearchBar = () => {
 
                     />
                 </SearchContainer>
-                <SubmitButton type='submit'>
-                    <i className="fas fa-search"></i>
-                </SubmitButton>
+                {/*<SubmitButton type='submit'>*/}
+                {/*    <i className="fas fa-search"></i>*/}
+                {/*</SubmitButton>*/}
             </Form>
         </Fragment>
     )

@@ -4,7 +4,7 @@ import {theme} from './index'
 export const FooterContainer = styled.footer `
     height: ${theme.controlHeightL};
     width: 100%;
-    background-color: ${theme.colorDefaultGrey};
+    background-color: ${theme.colorTwoDarkHover};
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -28,7 +28,7 @@ export const RightContainer = styled(LeftContainer)`
     justify-content: flex-end;
     align-items: center;
     height: 100%;    
-    background-color: ${theme.colorDefaultGrey};
+    background-color: ${theme.colorTwoDarkHover};
 
 `;
 
@@ -73,7 +73,7 @@ export const SocialIcons = styled.div`
         // width: ${theme.fontSizeDefault};
 
         &:hover, :focus, &.active {
-            color: ${theme.colorDarkOliveGreen};
+            color: ${theme.colorOneDark};
         }
     }
 `;
