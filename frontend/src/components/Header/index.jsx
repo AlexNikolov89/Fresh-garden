@@ -21,6 +21,7 @@ import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
 import ShoppingCart from "../ShoppingCart";
 import {SideBox} from "../../style/Homepage";
+import Banner from "./Banner";
 
 const Header = () => {
     const location = useLocation();
@@ -57,6 +58,7 @@ const Header = () => {
 
     return (
         <Fragment>
+            <Banner />
             <HeaderContainer >
 
                 <LogoContainer>

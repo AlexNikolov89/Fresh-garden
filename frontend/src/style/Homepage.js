@@ -11,17 +11,32 @@ export const HomeContainer = styled.div `
 export const TopContainer = styled.div `
     width: 100%;    
     height: 240px;
+    
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center; 
+    @keyframes banner {
+        0% {background-position-y: center;}
+        25% {background-position-y: bottom;}
+        75% {background-position-y: top;}
+        100% {background-position-y: center;}
+        
+    }
+    animation-name: banner;
+    animation-duration: 100s;
+    animation-delay: 3s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
 `;
 
 export const Image = styled.div`
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     height: 240px;
+
 `;
 
 export const Slogan = styled.h2`

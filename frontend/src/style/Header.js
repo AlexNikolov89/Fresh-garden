@@ -31,6 +31,7 @@ export const FormContainer = styled.div `
     text-align: center;
     height: 100%;
     width: 100%;
+    border-bottom: 1px solid ${theme.colorOne};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};

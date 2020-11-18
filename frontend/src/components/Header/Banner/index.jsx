@@ -10,7 +10,7 @@ const Banner = ({banner}) => {
         <Fragment>
             <TopContainer style={{backgroundImage: `url(${banner})`}}>
                 <Image >
-                    <Slogan>For the People. By the People.<br />Homegrown.<br />Earthy.</Slogan>
+                    <Slogan>For People. By People.<br />Homegrown.<br />Earthy.</Slogan>
                 </Image>
             </TopContainer>
         </Fragment>
