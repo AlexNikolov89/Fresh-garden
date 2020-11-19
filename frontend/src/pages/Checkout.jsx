@@ -1,13 +1,13 @@
 import React, {Fragment} from 'react'
 import Header from '../components/Header';
-import {TopContainer, Image, Text} from '../style/Homepage';
-import {CheckoutConatiner,
-         ProductsConatiner, BoxContainer, Wrapp, TopHeaderConatiner, ProductT, QuantityT, Total,
-         HorizontalLine, PaymentConatiner,
-         Summary, Subtotal, TotalSum, SumConatiner, Tax, Delivery, ProductWrap, Button, Submit, TotalQ } from '../style/Checkoutpage';
+import {CheckoutConatiner, Text,
+         MainContainer, BoxContainer, RightConatiner, SellerContainer, ButtonsContainer,
+         TitleContainer, PaymentConatiner, Radio, DeleteIcon, RadioButton,
+         Summary, TotalSum, SumConatiner, Bottom, LeftConatiner, Button, Submit } from '../style/Checkoutpage';
 import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
-import {CheckoutContainer} from "../style/Addproduct";
+import {EmptyCartIcon} from "../style/ShoppingCart";
+import Banner from "../components/Header/Banner";
 
 
 const Checkout = () => {

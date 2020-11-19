@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {theme} from './index'
-import {GenericButton} from './Buttons'
+import {StandardButton} from './Buttons'
 
 
 export const BottomContainer = styled.div `
@@ -12,69 +12,80 @@ export const BottomContainer = styled.div `
     height: 100%;
     background: ${theme.colorBackgroundColor};
     padding-bottom: ${theme.spaceDefault};
-    
-     @media (max-width: 360px){
-       width: 100%;
-       padding-left: ${theme.spaceXS};
-    }
+    min-width: 360px;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 100$;
-       //padding-left: ${theme.spaceXS};
+       width: 100%;
+       display: flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       align-items: center;
     }
 `;
 
 export const TitleContainer = styled.div `
-  padding-top: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   background: ${theme.colorBackgroundColor};
-  display: flex;
   
-   @media (max-width: 360px){
-       width: 100%;
+   @media (max-width: 680px){
+       width: 100%; 
        
+      }  
+`;
+
+export const TitleWrap = styled.div `
+width: 60%;
+display: flex;
+justify-content: flex-end;
+`;
+
+export const ButtonWrap = styled.div `
+width: 40%;
+display: flex;
+justify-content: flex-end;
+margin-right: 50px;
 `;
 
 export const MainTitle = styled.h2 `
  font-size: ${theme.fontSizeXXL};
  color: ${theme.colorTitle};
- padding:0 550px;  
+ padding: 20px; 
  
   @media (max-width: 360px){
-       font-size: ${theme.fontSizeXL};
-       padding: 0 50px;;
-    }   
+       width: 200px;
+      } 
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size:  ${theme.fontSizeL};
-       padding: 0 100px;
+       padding: 10px 100px;
     } 
 `;
-
-export const LogOut = styled(GenericButton) `
- width: 170px;
- height: 40px;
- 
+export const LogOut = styled(StandardButton) `
   @media (max-width: 360px){
-       width: 100px;
-       //padding-left: ${theme.spaceXS};
+      
     }
-    
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 100px;
+`;
+
+export const LeftContainer = styled.div `
+   width: 50%;
+   display: flex;
+   justify-content: center;
+   
+   @media (max-width: ${theme.mediaQueryScreenWidth}){
+       width: 90%;
+       display: flex;
     }
- 
 `;
 
 export const UserProfileContainer = styled.div `
-    background-color: #fff;
-    width: 50%;
-    height: 350px;
+    //background-color: #fff;
+    background: ${theme.colorAlmond};
+    width: 80%;
+    height: 300px;
     display: flex;
-    border-radius: ${theme.borderRadiusDefault};
-    margin-top: ${theme.controlHeightS};
+    border-radius: ${theme.borderRadiusM};
     box-shadow: ${theme.boxShadowLight};
     
      @media (max-width: 360px){
@@ -82,44 +93,41 @@ export const UserProfileContainer = styled.div `
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 80%;
+       width: 100%;
+        height: 280px;
     }
     
 `;
 
 export const AvatarContainer = styled.div `
-    width: 30%;
+    width: 40%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 0 20px;
-    
+   
   @media (max-width: 360px){
-       width: 100%;
-       //padding-left: ${theme.spaceXS};
+       display: flex;
+       flex-direction: row;
     }
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 30%;
-       
+       width: 50%;
     }
 `;
 
 export const Avatar = styled.img `
-    width: 140px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover;
     
-    @media (max-width: 360px){
-       width: 100%;
-       //padding-left: ${theme.spaceXS};
-    }
-    
+   
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 80%;
-       
+       width: 70px;
+       height: 70px; 
     }
 `;
 
@@ -127,27 +135,20 @@ export const Name = styled.p `
     font-size: ${theme.fontSizeDefault};
     padding-top: ${theme.spaceDefault};
     font-weight: bold;
+    color: ${theme.colorDefaultText};
+    padding-bottom: 40px;
     
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
+    @media (max-width: 360px){
        font-size: ${theme.fontSizeS};
     }
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       font-size: ${theme.fontSizeM}
+       font-size: ${theme.fontSizeS};
     }
 `;
 
-export const Email = styled(Name) `
-padding-bottom: ${theme.spaceM};
-font-weight: normal;
-
-@media (max-width: ${theme.mediaQueryScreenWidth}){
-       font-size: ${theme.fontSizeS}
-    }
- `;
-
-export const ButtonEdit = styled(GenericButton) `
-    width: 150px;
+export const ButtonEdit = styled(StandardButton) `
+   font-size: ${theme.fontSizeS};
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        width: 100px;
@@ -155,9 +156,6 @@ export const ButtonEdit = styled(GenericButton) `
     }
     
     @media (max-width: 360px){
-       //width: 100%;
-       width: 100px;
-       height: 30px;
        font-size: ${theme.fontSizeXS};
     }
     
@@ -166,53 +164,44 @@ export const ButtonEdit = styled(GenericButton) `
 export const UserInfoContainer = styled.div `
     height: 100%;
     width: 100%;
-    margin-left: 20px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    padding: ${theme.spaceM};
+    padding: ${theme.spaceS} 20px;
+    
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       // flex-direction: column-reverse;
-       // flex-direction: column;
-       padding: 15px 0;
-       align-items: center;
-       
+       padding: 10px;
     }
     
    @media (max-width: 360px){
+       padding-left: 15px; 
        width: 100%;
-       padding: 0;
     }
 `;
 
-export const Title = styled.h2 `
-    /* justify-content: center;
-    text-align: center; */
-    padding: 15px;
+export const TitleGarden = styled.h2 `
+    padding-top: 10px;
     color: ${theme.colorTitle};
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+       padding-top: 0; 
+    };
     
      @media (max-width: 360px){
       padding: 9px 0;
-      font-size: ${theme.fontSizeDefault} 
+      font-size: ${theme.fontSizeS};
+      width: 100%;
     }
-    
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-      padding: 10px 0;
-      margin-right: 110px;
-      border: 1px solid green;
-    }
-`
-export const AboutGarden = styled.p `
-    font-size: ${theme.fontSizeDefault};
-    margin-left: ${theme.spaceDefault};
-    height: 63px;
+`;
+
+export const AboutGarden = styled.div `
+    height: 30%;
     width: 80%;
-    border: 1px solid red;
+    font-size: ${theme.fontSizeS};
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       font-size: ${theme.fontSizeS};
-       
+       width: 90%;
     }
     
     @media (max-width: 360px){
@@ -221,49 +210,109 @@ export const AboutGarden = styled.p `
     }
 `;
 
+export const AboutText = styled.p `
+ font-size: ${theme.fontSizeS};
+`;
+
+export const TitleLocation = styled(TitleGarden) ``;
+
+
 export const Info = styled.div `
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // // margin-left: ${theme.spaceDefault};
-    height: 83px;
-    
+
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-        width: 75%;
+        width: 90%;
+        padding-top: 20px;
     }
    
 `;
 
-export const Address = styled.p `
-    font-size: ${theme.fontSizeDefault};
-
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-       font-size: ${theme.fontSizeS};
-    }
+export const City = styled.p `
+  font-size: ${theme.fontSizeS};
 
 `;
 
-export const City = styled(Address) ``;
+export const AddressInfo = styled.div `
+ display: flex;
+ flex-direction: row;
+`;
+
+export const TelContainer = styled.div `
+
+ @media (max-width: 680px) {
+ height: 50px;
+}
+`;
+
+export const Address = styled.p ``;
 
 export const ZipCode = styled(Address) ``;
 
-export const Contact = styled.div `
-    margin-left: ${theme.spaceDefault};
-`;
+export const Contact = styled.div ``;
 
 export const Mobile = styled.p `
-    font-size: ${theme.fontSizeDefault};
-
+    font-size: ${theme.fontSizeS};
+    font-weight: normal;
+   
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size: ${theme.fontSizeS};
     }
 `;
 
-export const CardContainer = styled.div `
-  // display: flex;
-  // flex-direction
-  //
-  // @media (max-width: 360px){
-  //    
-  //   }
+export const Email = styled.p `
+ padding-bottom: ${theme.spaceM};
+ font-weight: normal;
+ font-size: ${theme.fontSizeS};
+ 
+ @media (max-width: ${theme.mediaQueryScreenWidth}){
+        font-size: ${theme.fontSizeS}
+     }
+ `;
+
+export const TitleTel = styled(TitleGarden) `
+  @media (max-width: ${theme.mediaQueryScreenWidth}){
+       
+    }
+`;
+
+export const CardContainer = styled.div ``;
+
+export const RightContainer = styled.aside `
+   width: 50%;
+`;
+
+export const AsideContainer = styled.div `
+  width: 100%;
+  
+  @media (max-width: 680px){
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+     }
+`;
+
+export const Image = styled.img `
+  width: 450px;
+  height: 300px;
+  border-radius: ${theme.borderRadiusM};
+  box-shadow: ${theme.boxShadowLight};
+  
+   @media (max-width: 680px){
+      width: 370px;
+      display: flex;
+      justify-content: center;
+     }
+`;
+
+export const Delivery = styled.div `
+  display: flex;
+  
+    i {
+        font-size: ${theme.fontSizeDefault};
+        color: ${theme.colorDarkBlue};
+        padding-right: 10px; 
+    }
+     p{
+     font-size: ${theme.fontSizeS};
+     }
 `;
