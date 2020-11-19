@@ -48,7 +48,7 @@ export const PromotionIcon = styled.div`
     svg {
         width: 35px;
         height: 35px;
-        fill: ${theme.colorOneDark};
+        fill: ${theme.colorDarkGold};
 
     }
 
@@ -64,6 +64,7 @@ export const ImageContainer = styled.div`
     align-items: center;
     width: 270px;
     height: 250px;
+
 `;
 
 export const Image = styled.img`
@@ -199,9 +200,17 @@ export const SellerContainer = styled.div`
 export const PortraitContainer = styled.div`
     height: 70px;
     width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 100%;
-    background: grey;
+    background: ${theme.colorAlmond};
     box-shadow: ${theme.boxShadowInset};
+        
+    i {
+        font-size: 73.2px;
+        color: ${theme.colorOne}
+    }
 `;
 
 export const Portrait = styled.img`

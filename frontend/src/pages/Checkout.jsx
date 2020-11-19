@@ -13,11 +13,8 @@ import Banner from "../components/Header/Banner";
 const Checkout = () => {
     return (
         <Fragment>
-
+             <Header />
             <CheckoutConatiner>
-
-               <Banner />
-                <Header />
 
             <MainContainer>
                 <TitleContainer>

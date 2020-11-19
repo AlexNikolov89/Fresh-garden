@@ -19,7 +19,6 @@ export const Login = () => {
 
     return (
         <Fragment>
-            <Banner/>
             <Header/>
                 <LoginMainContainer>
                     <Container>

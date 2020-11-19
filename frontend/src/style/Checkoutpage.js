@@ -2,8 +2,12 @@ import styled from 'styled-components';
 import {theme} from '../style/index';
 import {GenericButton, StandardButton} from './Buttons'
 
-export const CheckoutConatiner = styled.div `
-    width: 100%;
+export const CheckoutConatiner = styled.main `
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
+ width: 100%;
 `;
 
 export const MainContainer = styled.div `

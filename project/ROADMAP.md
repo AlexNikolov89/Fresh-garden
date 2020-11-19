@@ -1,3 +1,6 @@
+# Production URL
+https://pinocchio.propulsion-learn.ch/shop 15.11.2021
+
 # Goal
 <strong>Have by the end of week 3 a presentable prototype of our web application.</strong><br>
 Requirements catalog can be found in Design.<br>

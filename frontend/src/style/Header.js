@@ -31,6 +31,7 @@ export const FormContainer = styled.div `
     text-align: center;
     height: 100%;
     width: 100%;
+    border-bottom: 1px solid ${theme.colorOne};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};
@@ -64,6 +65,11 @@ export const NavLinkHome = styled(NavLink)`
     cursor: default;
     padding: ${theme.spaceS};
     height: 100%;
+    
+    svg {
+        height: ${theme.controlHeightXL};
+        width: 200px;
+    }
 `;
 
 export const NavLinkAbout = styled(NavLink)`
@@ -154,6 +160,7 @@ export const LogoContainer = styled.div `
     height: 100%;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid ${theme.colorOne};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         display: none;
@@ -161,7 +168,7 @@ export const LogoContainer = styled.div `
 `;
 
 export const Logo = styled.img`
-    width: ${theme.controlHeightXL};
+    height: calc(${theme.controlHeightXL} - 10px);
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};

@@ -13,7 +13,7 @@ const Footer = () => {
         <Fragment>
             <FooterContainer>
                 <LeftContainer>
-                    <Text>© 2020 Copyright freshgarden.ch, eG.</Text>
+                    <Text>© 2020 Copyright freshgarden.ch, Ipsum.</Text>
                 </LeftContainer>
                 <RightContainer>
                     <SwissMade>

@@ -13,7 +13,6 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -46,7 +45,6 @@ INSTALLED_APPS = [
 
     # third-party
     'rest_framework',
-    # 'any_imagefield',
     'corsheaders',
 ]
 
@@ -80,7 +78,21 @@ TEMPLATES = [
     },
 ]
 
+# SESSION_COOKIE_SAMESITE = None
 
+# CORS_ALLOW_CREDENTIALS = True
+# CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = [
+#     "https://pinocchio.propulsion-learn.com",
+#     "http://127.0.0.1:8000",
+#     "http://localhost:3000",
+#     "http://localhost:8000",
+# ]
+
+# SESSION_SAVE_EVERY_REQUEST = True
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
+CSRF_COOKIE_HTTPONLY = False
 CART_SESSION_ID = 'cart'
 CART_AUTH_URL_NAMESPACE = 'cart'
 
@@ -134,11 +146,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# Static file settings
+STATIC_URL = '/static-files/'
+MEDIA_URL = '/media-files/'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = '/static-files'
+MEDIA_ROOT = '/media-files'
+
+# serving media-files in development mode
+if DEBUG:
+    MEDIA_ROOT = os.path.join(BASE_DIR, '/media-files')
+
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
