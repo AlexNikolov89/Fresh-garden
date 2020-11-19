@@ -445,11 +445,6 @@ export const ProfileImage = styled.img`
     width: 100%;
     border-radius: 100%;
     object-fit: cover;
-    // height: 100%;
-    // width: -moz-available;
-    // width: 100%;
-    // object-fit: cover;
-    // border-radius: ${theme.borderRadiusS};
 `;
 
 export const ProfileImageContainer = styled.div`
