@@ -3,6 +3,7 @@ import {theme} from './index';
 import React from "react";
 
 export const AboutMainContainer = styled.main`
+    z-index: 9999;
     display: flex;
     justify-content: center;
     flex-direction: column;

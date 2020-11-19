@@ -5,37 +5,61 @@ import {theme} from './index'
 export const HomeContainer = styled.div `
     height: 100%;
     width: 100%;
+    z-index: 9000;
     min-height: calc(100vh - 240px - 64px - 48px);
 `;
 
-export const TopContainer = styled.div `
-    width: 100%;    
+export const Wrapper = styled.div`
+    width: 100%;
     height: 240px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        height: calc(164px);
+    }
+`;
+
+export const BackgroundBack = styled.div `
+    width: 100%;    
+    height: 340px;
+    z-index: 0;
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center; 
     @keyframes banner {
-        0% {background-position-y: center;}
-        25% {background-position-y: bottom;}
-        75% {background-position-y: top;}
-        100% {background-position-y: center;}
-        
+        from {background-position-y: bottom;}
+        to {background-position-y: top;}        
     }
     animation-name: banner;
-    animation-duration: 100s;
+    animation-duration: 25s;
     animation-delay: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        height: calc(164px);
+    }
 `;
 
-export const Image = styled.div`
+export const BackgroundFront = styled(BackgroundBack)`
+    z-index: 1;
+    position: absolute;
+    top: -20vh;
+    height: 500px;  
+`;
+
+export const Image = styled.img`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
     height: 240px;
+    z-index: 1;
 
 `;
 
@@ -54,6 +78,7 @@ export const BottomContainer = styled.div `
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    z-index: 11;
     background: ${theme.colorBackgroundColor};
     min-height: calc(100vh - 240px - 64px - 48px);
 

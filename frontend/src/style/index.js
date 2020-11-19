@@ -21,7 +21,13 @@ export const GlobalStyle = createGlobalStyle`
         
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
-    }  
+    } 
+    
+    a { text-decoration: none; }
+    a:visited { text-decoration: none; }
+    a:hover { text-decoration: none; }
+    a:focus { text-decoration: none; }
+    a:hover, a:active { text-decoration: none; } 
     
     ::-webkit-scrollbar {
         height: 0;
