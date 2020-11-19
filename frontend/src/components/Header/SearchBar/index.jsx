@@ -120,7 +120,7 @@ const SearchBar = () => {
             <Form>
                 <LocationContainer>
                     <LocationButton onClick={(e) => e.preventDefault()}>
-                        <i className="fas fa-map-marker-alt"></i>
+                        <i className="fas fa-map-marker-alt"/>
                     </LocationButton>
                     <LocationInput
                         name={'location'}
@@ -137,19 +137,19 @@ const SearchBar = () => {
                         {{autocompleteOne} &&
                         <AutocompleteOne
                             onClick={(e) => autocompleteHandler(e, autocompleteOne)}>
-                            <i className="fas fa-map-marker"></i>
+                            <i className="fas fa-map-marker"/>
                             {autocompleteOne}
                         </AutocompleteOne>}
                         {{autocompleteTwo} &&
                         <AutocompleteTwo
                             onClick={(e) => autocompleteHandler(e, autocompleteTwo)}>
-                            <i className="fas fa-map-marker"></i>
+                            <i className="fas fa-map-marker"/>
                             {autocompleteTwo}
                         </AutocompleteTwo>}
                         {{autocompleteThree} &&
                         <AutocompleteThree
                             onClick={(e) => autocompleteHandler(e, autocompleteThree)}>
-                            <i className="fas fa-map-marker"></i>
+                            <i className="fas fa-map-marker"/>
                             {autocompleteThree}
                         </AutocompleteThree>}
                     </AutocompleteContainer>
