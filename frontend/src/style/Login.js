@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {theme} from "./index";
 
 export const LoginMainContainer = styled.div`
+    z-index: 9000;
     height: 100vh;
     width: 100%;
     display: flex;

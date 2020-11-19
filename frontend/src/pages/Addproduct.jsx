@@ -12,6 +12,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {productAction} from "../store/actions/productAction";
 import {CREATE_NEW_PRODUCT} from "../helpers/constants";
 import {useHistory, useLocation} from "react-router-dom";
+import {Logo} from "../style/Header";
+import logo from '../assets/svgs/logo.svg'
 
 
 const Addproduct = () => {
@@ -79,92 +81,110 @@ const Addproduct = () => {
 
     return (
         <Fragment>
-            <AddProductContainer>
-                <Header />
-                <BottomConatiner>
-                    <AddCardForm>
-                    <form onChange={handleChange}>
-                        <Title>Want to sell your Vegetables?</Title>
-                        <Form>
-                            <Input
-                                type='text'
-                                placeholder='Sweet Sugar Pumpkin'
-                                required='Required'
-                                name='name'
-                                onChange={changeHandler}/>
-                            <Input
-                                type='text'
-                                placeholder='Rapperswil-Jona, St.Gallen'
-                                name='location'
-                                onChange={changeHandler}/>
-                        </Form>
-                        <Description>
-                            <DescriptionLabel>Describe your products and how grew them...</DescriptionLabel>
-                            <TextArea
-                                type='text'
-                                name='description'
-                                placeholder={'This year my sweet pumpkins (Pumpkin Field Trip F1) grew up to 5kg and are perfect for cakes and soups...'}
-                                onChange={changeHandler}
-                            />
-                        </Description>
-                        <Unit>
-                            <Label>Price</Label>
-                            <Price
-                                type='number'
-                                step=".05" min='0'
-                                placeholder={'12.90'}
-                                name='price'
-                                onChange={changeHandler}
-                                required={'Required'} />
-                            <Label>CHF</Label>
-                            <Dropdown>
-                                <Select name='units' onChange={changeHandler}>
-                                    <Option value={'piece'}>pc.</Option>
-                                    <Option value={'kg'}>Kg</Option>
-                                </Select>
-                            </Dropdown>
-                        </Unit>
-                        <ButtonContainer>
-                            <ButtonDelivery onClick={() => setChangeIcon("delivery")}>Delivery</ButtonDelivery>
-                            <ButtonPickUp onClick={() => setChangeIcon("pickup")}>Pick up</ButtonPickUp>
-                        </ButtonContainer>
-                        <SliderConatiner>
-                            <Left>1.5 km</Left>
-                            <Slider
-                                type='range'
-                                min={0.5} max={50}
-                                value={value}
-                                onChange={updateRange}/>
-                            <Right>50 km</Right>
-                        </SliderConatiner>
-                        {/*<CategoryLabel>Select category</CategoryLabel>*/}
-                        <CategoryContainer required={'Required'}>
-                            {/*TODO make an "other" option for mushrooms for example*/}
-                            <Vegetable onClick={() => setCategory('vegetable')}>Vegetable</Vegetable>
-                            <Fruit onClick={() => setCategory('fruit')}>Fruit</Fruit>
-                            <Mushrooms>Mashrooms</Mushrooms>
-                        </CategoryContainer>
-                        </form>
+            <div style={{
+                backgroundColor: "black",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                zIndex: 9000,
+                width: "100%",
+                position: "absolute",
+                height: "100%",
+                top: 0,
+                color: "black",
+                textAlign: "center",
+                textJustify: "center",
+            }}><h1 style={{
+                color: '#B7C892',
+                fontSize: "64px",
+            }}>THE KOPFSALAT. Thank you.<br/><br/>UP NEXT<br/>A look inside the crystal ball<br/><Logo style={{height: "100px"}} src={logo}/></h1>
+            {/*<AddProductContainer>*/}
+            {/*    <Header />*/}
+            {/*    <BottomConatiner>*/}
+            {/*        <AddCardForm>*/}
+            {/*        <form onChange={handleChange}>*/}
+            {/*            <Title>Want to sell your Vegetables?</Title>*/}
+            {/*            <Form>*/}
+            {/*                <Input*/}
+            {/*                    type='text'*/}
+            {/*                    placeholder='Sweet Sugar Pumpkin'*/}
+            {/*                    required='Required'*/}
+            {/*                    name='name'*/}
+            {/*                    onChange={changeHandler}/>*/}
+            {/*                <Input*/}
+            {/*                    type='text'*/}
+            {/*                    placeholder='Rapperswil-Jona, St.Gallen'*/}
+            {/*                    name='location'*/}
+            {/*                    onChange={changeHandler}/>*/}
+            {/*            </Form>*/}
+            {/*            <Description>*/}
+            {/*                <DescriptionLabel>Describe your products and how grew them...</DescriptionLabel>*/}
+            {/*                <TextArea*/}
+            {/*                    type='text'*/}
+            {/*                    name='description'*/}
+            {/*                    placeholder={'This year my sweet pumpkins (Pumpkin Field Trip F1) grew up to 5kg and are perfect for cakes and soups...'}*/}
+            {/*                    onChange={changeHandler}*/}
+            {/*                />*/}
+            {/*            </Description>*/}
+            {/*            <Unit>*/}
+            {/*                <Label>Price</Label>*/}
+            {/*                <Price*/}
+            {/*                    type='number'*/}
+            {/*                    step=".05" min='0'*/}
+            {/*                    placeholder={'12.90'}*/}
+            {/*                    name='price'*/}
+            {/*                    onChange={changeHandler}*/}
+            {/*                    required={'Required'} />*/}
+            {/*                <Label>CHF</Label>*/}
+            {/*                <Dropdown>*/}
+            {/*                    <Select name='units' onChange={changeHandler}>*/}
+            {/*                        <Option value={'piece'}>pc.</Option>*/}
+            {/*                        <Option value={'kg'}>Kg</Option>*/}
+            {/*                    </Select>*/}
+            {/*                </Dropdown>*/}
+            {/*            </Unit>*/}
+            {/*            <ButtonContainer>*/}
+            {/*                <ButtonDelivery onClick={() => setChangeIcon("delivery")}>Delivery</ButtonDelivery>*/}
+            {/*                <ButtonPickUp onClick={() => setChangeIcon("pickup")}>Pick up</ButtonPickUp>*/}
+            {/*            </ButtonContainer>*/}
+            {/*            <SliderConatiner>*/}
+            {/*                <Left>1.5 km</Left>*/}
+            {/*                <Slider*/}
+            {/*                    type='range'*/}
+            {/*                    min={0.5} max={50}*/}
+            {/*                    value={value}*/}
+            {/*                    onChange={updateRange}/>*/}
+            {/*                <Right>50 km</Right>*/}
+            {/*            </SliderConatiner>*/}
+            {/*            /!*<CategoryLabel>Select category</CategoryLabel>*!/*/}
+            {/*            <CategoryContainer required={'Required'}>*/}
+            {/*                /!*TODO make an "other" option for mushrooms for example*!/*/}
+            {/*                <Vegetable onClick={() => setCategory('vegetable')}>Vegetable</Vegetable>*/}
+            {/*                <Fruit onClick={() => setCategory('fruit')}>Fruit</Fruit>*/}
+            {/*                <Mushrooms>Mashrooms</Mushrooms>*/}
+            {/*            </CategoryContainer>*/}
+            {/*            </form>*/}
 
-                        <Upload enctype="multipart/form-data">
-                            <UploadLabel>Add product image</UploadLabel>
-                            <UploadImage type='file'
-                            name='image'
-                            onClick={changeHandler}
-                            required='Required'
-                            />
-                        </Upload>
-                         <Submit value='Submit' onSubmit={handleSubmit}>Confirm</Submit>
-                        </AddCardForm>
-                        {/*TODO add expiration date input*/}
-                    <CardOverview>
-                        {/*TODO try do everything in variable "product" with "setProduct(...product, [variableName]: newValue"*/}
-                        {/*TODO with this approach you only have to give the "product" as props - nothing else*/}
-                        <Card product={product} changeIcon={changeIcon} category={category}/>
-                    </CardOverview>
-                </BottomConatiner>
-            </AddProductContainer>
-            <Footer />
+            {/*            <Upload enctype="multipart/form-data">*/}
+            {/*                <UploadLabel>Add product image</UploadLabel>*/}
+            {/*                <UploadImage type='file'*/}
+            {/*                name='image'*/}
+            {/*                onClick={changeHandler}*/}
+            {/*                required='Required'*/}
+            {/*                />*/}
+            {/*            </Upload>*/}
+            {/*             <Submit value='Submit' onSubmit={handleSubmit}>Confirm</Submit>*/}
+            {/*            </AddCardForm>*/}
+            {/*            /!*TODO add expiration date input*!/*/}
+            {/*        <CardOverview>*/}
+            {/*            /!*TODO try do everything in variable "product" with "setProduct(...product, [variableName]: newValue"*!/*/}
+            {/*            /!*TODO with this approach you only have to give the "product" as props - nothing else*!/*/}
+            {/*            <Card product={product} changeIcon={changeIcon} category={category}/>*/}
+            {/*        </CardOverview>*/}
+            {/*    </BottomConatiner>*/}
+            {/*</AddProductContainer>*/}
+            {/*<Footer />*/}
+            </div>
         </Fragment>
     )
 }

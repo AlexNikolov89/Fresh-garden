@@ -12,81 +12,69 @@ import Banner from "../components/Header/Banner";
 
 const Checkout = () => {
     return (
-        <Fragment>
-             <Header />
-            <CheckoutConatiner>
+        <Fragment >
+            <div style={{
+                backgroundColor: "black",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                zIndex: 9000,
+                width: "100%",
+                position: "absolute",
+                height: "100%",
+                top: 0,
+                color: "black",
+                textAlign: "center",
+                textJustify: "center",
+            }}><h1 style={{
+                color: '#B7C892',
+                fontSize: "64px",
+            }}>ACT 2 - MEMBER EMMA</h1>
+            {/*<Header />*/}
+            {/*<CheckoutContainer>*/}
 
-            <MainContainer>
-                <TitleContainer>
-                     <Text>Checkout</Text>
-                </TitleContainer>
+            {/*<ProductsConatiner>*/}
+            {/*    <Text>-Your Order Items-</Text>*/}
 
+            {/*    <BoxContainer>*/}
 
-                <BoxContainer>
+            {/*        /!*<TopHeaderConatiner>*/}
+            {/*            <ProductT>Product</ProductT>*/}
+            {/*            <QuantityT>Quantity</QuantityT>*/}
+            {/*            <Total>Total</Total>*/}
+            {/*        </TopHeaderConatiner>  *!/*/}
+            {/*    <Wrapp>*/}
+            {/*    <ProductWrap>*/}
+            {/*        <Product />*/}
+            {/*        <Product />*/}
+            {/*        <Product />*/}
+            {/*        <Product />*/}
+            {/*    </ProductWrap>*/}
 
-                    {/*<TopHeaderConatiner>
-                        <ProductT>Product</ProductT>
-                        <QuantityT>Quantity</QuantityT>
-                        <Total>Total</Total>
-                    </TopHeaderConatiner>  */}
+            {/*    <PaymentConatiner>*/}
+            {/*    <SumConatiner>*/}
+            {/*        <Summary>Summary</Summary>*/}
+            {/*        <Subtotal>Subtotal: <span>CHF 38.00</span></Subtotal>*/}
+            {/*        <Tax>Tax <span>FREE</span></Tax>*/}
+            {/*        <Delivery>Delivery <span>CHF 6.50</span></Delivery>*/}
+            {/*        */}
+            {/*        <hr />*/}
+            {/*        <TotalSum>Total: <span>CHF 44.50</span></TotalSum>*/}
+            {/*    </SumConatiner>*/}
 
-                <LeftConatiner>
-                    <Product />
-                </LeftConatiner>
+            {/*    <Submit>*/}
+            {/*        <Button>Proceed to Pay</Button>*/}
+            {/*    </Submit> */}
 
-               <RightConatiner>
-                    <PaymentConatiner>
-                    <SumConatiner>
-                        <Summary>Summary</Summary>
+            {/*</PaymentConatiner>*/}
+            {/*</Wrapp>*/}
 
-                        <SellerContainer>
-                            {/*<div>*/}
-                            {/*    <h2>Name</h2>*/}
-                            {/*</div>*/}
-                            {/*<div>*/}
-                            {/*    <h2>CHF</h2>*/}
-                            {/*</div>*/}
+            {/*    </BoxContainer>*/}
 
-                            <h2>Name</h2>
-
-                            {/*<SellerName></SellerName>*/}
-                        </SellerContainer>
-
-                        <hr />
-
-
-                            <TotalSum>Total: <span>CHF 44.50</span></TotalSum>
-                        <Bottom>
-                        <ButtonsContainer>
-
-                            <RadioButton>
-                            <Radio type='radio' /><i className="fas fa-hand-holding-usd" />
-                            </RadioButton>
-
-                            <RadioButton>
-                            <Radio type='radio' /><i className="fas fa-credit-card" />
-                            </RadioButton>
-
-                            <DeleteIcon><i className="fas fa-trash-alt" /></DeleteIcon>
-                            </ButtonsContainer>
-
-                            </Bottom>
-                        <Submit>
-                            <Button>Pay</Button>
-                        </Submit>
-
-                    </SumConatiner>
-
-
-
-               </PaymentConatiner>
-                </RightConatiner>
-                </BoxContainer>
-    
-            </MainContainer>
-
-            </CheckoutConatiner>
-            <Footer />
+            {/*</ProductsConatiner>*/}
+            {/*</CheckoutContainer>*/}
+            {/*<Footer />*/}
+            </div>
         </Fragment>
     )
 }

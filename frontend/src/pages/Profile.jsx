@@ -157,7 +157,11 @@ const Profile = ({author}) => {
                 </BottomContainer>
 
                 <Box style={{width: "100%", marginTop: 0, paddingTop: "32px"}}>
-                     {products && products.map((product) => <Card product={product} key={product.id}/>)}
+                     {products && products.map((product) => product.author.first_name === "Emma" && <Card product={product} sold={"true"}/>
+                         // <Card product={product} key={product.id}/>
+                     )}
+
+
                 </Box>
             </HomeContainer>
             <Footer />
