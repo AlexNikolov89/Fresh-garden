@@ -8,34 +8,49 @@ export const HomeContainer = styled.div `
     min-height: calc(100vh - 240px - 64px - 48px);
 `;
 
-export const TopContainer = styled.div `
-    width: 100%;    
+export const Wrapper = styled.div`
+    width: 100%;
     height: 240px;
-    
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const BackgroundBack = styled.div `
+    width: 100%;    
+    height: 540px;
+    z-index: 2;
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: center; 
     @keyframes banner {
-        0% {background-position-y: center;}
-        25% {background-position-y: bottom;}
-        75% {background-position-y: top;}
-        100% {background-position-y: center;}
-        
+        from {background-position-y: bottom;}
+        to {background-position-y: top;}        
     }
     animation-name: banner;
-    animation-duration: 100s;
+    animation-duration: 25s;
     animation-delay: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 `;
 
-export const Image = styled.div`
+export const BackgroundFront = styled(BackgroundBack)`
+    z-index: 3;
+    position: absolute;
+    top: -20vh;
+    height: 500px;  
+`;
+
+export const Image = styled.img`
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
     height: 240px;
+    z-index: 1;
 
 `;
 
