@@ -1,30 +1,28 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {HomeContainer, Box
 } from '../style/Homepage';
-import {TitleContainer, UserProfileContainer, AvatarContainer, EmailContainer, Avatar, Name, ZipCode, City, ButtonEdit,
-    BottomContainer, TitleGarden, TitleLocation, AddressInfo, TitleTel, TelContainer,
-    UserInfoContainer, AboutGarden, AboutText, MainTitle, Info, Email, Contact,
-    Mobile, LogOut, AsideContainer, LeftContainer, RightContainer, Image,
-    TitleWrap, ButtonWrap} from '../style/Profile'
+import {TitleContainer, UserProfileContainer,
+        AvatarContainer, Avatar, Name, City,
+        ButtonEdit, BottomContainer, TitleGarden,
+        TitleLocation, AddressInfo, TitleTel,
+        TelContainer, UserInfoContainer, AboutGarden,
+        AboutText, MainTitle, Info, Email, Contact,
+        Mobile, LogOut, AsideContainer, LeftContainer,
+        Image, Delivery, TitleWrap, ButtonWrap} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
 import garden from '../assets/salad.png'
-//import {Login} from "./Login";
-import { useLocation } from "react-router-dom";
 import defaultAvatar from '../assets/images/profile.png';
 import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
-import {connect} from 'react-redux';
 import Banner from "../components/Header/Banner";
-import {cartAction} from "../store/actions/cartAction";
-import authReducer from "../store/reducers/authReducer";
-import {userProfileReducer} from "../store/reducers/userProfileReducer";
 import {authAction} from "../store/actions/authAction";
 import {LOGOUT_UNSET_TOKEN, SET_PRODUCTS_ALL} from "../helpers/constants";
 import {productAction} from "../store/actions/productAction";
 import {RightConatiner} from "../style/Checkoutpage";
+
 
 const Profile = ({author}) => {
     const productsAll = useSelector(state => state.productReducer.productsAll)
@@ -39,7 +37,7 @@ const Profile = ({author}) => {
     const [phone, setPhone] = useState('+41 78 555 333 22');
     const [address, setAddress] = useState('');
     const [avatar, setAvatar] = useState(defaultAvatar);
-    const [city, setCity] = useState('Winterthur')
+    const [city, setCity] = useState('+ 41 79 543 ## ##')
     const [zip, setZip] = useState('');
     const [products, setProducts] = useState('')
     const [isLoading, setIsLoading] = useState(true)
@@ -70,12 +68,11 @@ const Profile = ({author}) => {
             if(user.first_name) setFirstName(user.first_name);
             if(user.last_name) setLastName(user.last_name);
             if(user.email) setEmail(user.email);
-            // if(productsAll) {
-            //     const newProductSet = productsAll.filter((element) => element.author === user)
-            //     console.log("in Profile newProductSet", newProductSet)
-            //     return setProducts(newProductSet)
-            // }
-            if(productsAll) setProducts(productsAll)
+            if(user.address) setAddress(user.address);
+            if(user.city) setCity(user.city);
+            if(user.description) setDescription(user.description);
+            if(user.phone) setPhone(user.phone);
+            if(productsAll) setProducts(productsAll);
         }
         userInfo()
         return function cleanup() {};
@@ -89,8 +86,8 @@ const Profile = ({author}) => {
     return (
         <Fragment>
             <HomeContainer>
-                <Banner/>
 
+                <Banner/>
                 <Header />
 
                     <TitleContainer>
@@ -103,31 +100,33 @@ const Profile = ({author}) => {
                      </TitleContainer>
 
                 <BottomContainer>
+
                     <LeftContainer>
+
                     <UserProfileContainer>
                         <AvatarContainer>
-                            <Avatar src={avatar} alt='avatar' />
+                            {avatar && <Avatar src={avatar} alt='avatar' />}
                             <Name>{`${first_name} ${last_name}`}</Name>
-                            <ButtonEdit>Edit Profile</ButtonEdit>
+                            <ButtonEdit>Edit</ButtonEdit>
                         </AvatarContainer>
 
                         <UserInfoContainer>
 
                             <AboutGarden>
                                 <TitleGarden>About me and my garden</TitleGarden>
-                                <AboutText>
-                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                            sed diam nonumy eirmod tempor invidunt ut labore et dolore<br />
+                                {description && <AboutText>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
+                                sed diam nonumy eirmod tempor <br />
                                 {description}
-                                </AboutText>
+                                </AboutText> }
                             </AboutGarden>
 
                             <Info>
-                            <TitleLocation>Garden Location</TitleLocation>
+                            <TitleLocation>My Garden's Location</TitleLocation>
                             <AddressInfo>
                             {/*<ZipCode>{zip}</ZipCode>*/}
                             {/*<Address>{address}</Address>*/}
-                            <City>{city}</City>
+                             {city && <City>{city}</City>}
                             </AddressInfo>
                             </Info>
 
@@ -135,14 +134,20 @@ const Profile = ({author}) => {
                             <Contact>
                                 <TitleTel>Contact</TitleTel>
                                 <TelContainer>
-                                <Mobile>{phone}</Mobile>
+                                {phone && <Mobile>{phone}</Mobile>}
                                 {email && <Email>{email}</Email>}
                                 </TelContainer>
-
                             </Contact>
 
+                            <Delivery>
+                                <i className="fas fa-truck" />
+                                <p>I do delivery up to 21km</p>
+                            </Delivery>
+
                         </UserInfoContainer>
+
                     </UserProfileContainer>
+
                     </LeftContainer>
 
                     <RightConatiner>
@@ -161,13 +166,6 @@ const Profile = ({author}) => {
         </Fragment>
     )
 }
-
-// const mapStateToProps = state => {
-//     return {
-//         author: state.userProfileReducer.author
-//     };
-// };
-
 
 
 export default Profile;

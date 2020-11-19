@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import {theme} from './index'
-import {GenericButton, StandardButton} from './Buttons'
+import {StandardButton} from './Buttons'
 
 
 export const BottomContainer = styled.div `
@@ -17,9 +17,9 @@ export const BottomContainer = styled.div `
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        width: 100%;
        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-      align-items: center;
+       flex-wrap: wrap;
+       flex-direction: column;
+       align-items: center;
     }
 `;
 
@@ -31,6 +31,7 @@ export const TitleContainer = styled.div `
   
    @media (max-width: 680px){
        width: 100%; 
+       
       }  
 `;
 
@@ -120,7 +121,8 @@ export const AvatarContainer = styled.div `
 export const Avatar = styled.img `
     width: 100px;
     height: 100px;
-    border-radius: 50%;
+    border-radius: 50%; 
+    object-fit: cover;
     
    
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -145,16 +147,6 @@ export const Name = styled.p `
     }
 `;
 
-export const Email = styled.p `
-padding-bottom: ${theme.spaceM};
-font-weight: normal;
-font-size: ${theme.fontSizeS};
-
-@media (max-width: ${theme.mediaQueryScreenWidth}){
-       font-size: ${theme.fontSizeS}
-    }
- `;
-
 export const ButtonEdit = styled(StandardButton) `
    font-size: ${theme.fontSizeS};
 
@@ -176,11 +168,9 @@ export const UserInfoContainer = styled.div `
     flex-wrap: wrap;
     flex-direction: column;
     padding: ${theme.spaceS} 20px;
-    //padding-left: 20px;
+    
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-        //flex-direction: column-reverse;
-        //flex-direction: column;
        padding: 10px;
     }
     
@@ -195,7 +185,7 @@ export const TitleGarden = styled.h2 `
     color: ${theme.colorTitle};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
-       
+       padding-top: 0; 
     };
     
      @media (max-width: 360px){
@@ -222,10 +212,6 @@ export const AboutGarden = styled.div `
 
 export const AboutText = styled.p `
  font-size: ${theme.fontSizeS};
- 
- // @media (max-width: ${theme.mediaQueryScreenWidth}){
- //       margin-bottom: 10px;
- //    }
 `;
 
 export const TitleLocation = styled(TitleGarden) ``;
@@ -235,7 +221,7 @@ export const Info = styled.div `
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
         width: 90%;
-        padding-top: 30px;
+        padding-top: 20px;
     }
    
 `;
@@ -250,38 +236,37 @@ export const AddressInfo = styled.div `
  flex-direction: row;
 `;
 
-export const TelContainer = styled.div ``;
+export const TelContainer = styled.div `
 
-export const Address = styled.p `
-    // font-size: ${theme.fontSizeS};
-    //
-    // @media (max-width: ${theme.mediaQueryScreenWidth}){
-    //    font-size: ${theme.fontSizeS};
-    // }
-
+ @media (max-width: 680px) {
+ height: 50px;
+}
 `;
 
-export const ZipCode = styled(Address) `
- //padding-right: 30px; 
-`;
+export const Address = styled.p ``;
 
-export const Contact = styled.div `
-    //margin-left: ${theme.spaceDefault};
-    
-    @media (max-width: 360px) {
-    margin: 0;
-    padding-top: 15px;
-    }
-`;
+export const ZipCode = styled(Address) ``;
+
+export const Contact = styled.div ``;
 
 export const Mobile = styled.p `
     font-size: ${theme.fontSizeS};
-    font-weight: bold;
+    font-weight: normal;
    
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        font-size: ${theme.fontSizeS};
     }
 `;
+
+export const Email = styled.p `
+ padding-bottom: ${theme.spaceM};
+ font-weight: normal;
+ font-size: ${theme.fontSizeS};
+ 
+ @media (max-width: ${theme.mediaQueryScreenWidth}){
+        font-size: ${theme.fontSizeS}
+     }
+ `;
 
 export const TitleTel = styled(TitleGarden) `
   @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -289,20 +274,10 @@ export const TitleTel = styled(TitleGarden) `
     }
 `;
 
-export const CardContainer = styled.div `
-  // display: flex;
-  // flex-direction
-  //
-  // @media (max-width: 360px){
-  //    
-  //   }
-`;
+export const CardContainer = styled.div ``;
+
 export const RightContainer = styled.aside `
    width: 50%;
-
-   //@media (max-width: 680px){
-   //   width: 100%
-   //  }
 `;
 
 export const AsideContainer = styled.div `
@@ -326,5 +301,18 @@ export const Image = styled.img `
       width: 370px;
       display: flex;
       justify-content: center;
+     }
+`;
+
+export const Delivery = styled.div `
+  display: flex;
+  
+    i {
+        font-size: ${theme.fontSizeDefault};
+        color: ${theme.colorDarkBlue};
+        padding-right: 10px; 
+    }
+     p{
+     font-size: ${theme.fontSizeS};
      }
 `;
