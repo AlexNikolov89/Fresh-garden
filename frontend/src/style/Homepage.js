@@ -5,6 +5,7 @@ import {theme} from './index'
 export const HomeContainer = styled.div `
     height: 100%;
     width: 100%;
+    z-index: 9000;
     min-height: calc(100vh - 240px - 64px - 48px);
 `;
 
@@ -15,12 +16,16 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        height: calc(164px);
+    }
 `;
 
 export const BackgroundBack = styled.div `
     width: 100%;    
-    height: 540px;
-    z-index: 2;
+    height: 340px;
+    z-index: 0;
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -35,10 +40,14 @@ export const BackgroundBack = styled.div `
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        height: calc(164px);
+    }
 `;
 
 export const BackgroundFront = styled(BackgroundBack)`
-    z-index: 3;
+    z-index: 1;
     position: absolute;
     top: -20vh;
     height: 500px;  
@@ -69,6 +78,7 @@ export const BottomContainer = styled.div `
     justify-content: space-between;
     width: 100%;
     height: 100%;
+    z-index: 11;
     background: ${theme.colorBackgroundColor};
     min-height: calc(100vh - 240px - 64px - 48px);
 

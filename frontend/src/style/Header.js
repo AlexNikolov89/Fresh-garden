@@ -34,7 +34,7 @@ export const FormContainer = styled.div `
     border-bottom: 1px solid ${theme.colorOne};
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
-        width: ${theme.controlHeightXL};
+        display: none;
     }
 `;
 
@@ -70,6 +70,12 @@ export const NavLinkHome = styled(NavLink)`
         height: ${theme.controlHeightXL};
         width: 200px;
     }
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        display: none;
+    }
+    
+    
 `;
 
 export const NavLinkAbout = styled(NavLink)`

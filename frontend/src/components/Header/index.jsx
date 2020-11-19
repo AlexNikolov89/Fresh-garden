@@ -31,7 +31,7 @@ const Header = () => {
     const tokenRedux = useSelector(state => state.authReducer.token)
     const [loginCheck, setLogicCheck] = useState(false)
 
-    console.log("flag path  ",location.pathname)
+    //console.log("flag path  ",location.pathname)
 
     // lights up the profile navigation button if not logged in
     // TODO also do this for the "add product" page
@@ -70,7 +70,7 @@ const Header = () => {
                 <Icons >
                     {loginCheck &&
                     <NavLinkAddProduct
-                        to='/upload'>
+                        to='/user/login'>
                         <i className="fas fa-plus-circle"/>
                     </NavLinkAddProduct>}
                     <NavLinkShop

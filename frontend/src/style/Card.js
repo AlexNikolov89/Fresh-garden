@@ -167,6 +167,8 @@ export const PickUpIcon = styled.div`
     i {
         font-size: ${theme.fontSizeDefault};
         color: ${theme.colorDarkPurple};
+        opacity: 0.4;
+
     }
 `;
 
@@ -175,6 +177,7 @@ export const DeliveryIcon = styled.div`
     i {
         font-size: ${theme.fontSizeDefault};
         color: ${theme.colorDarkBlue};
+        opacity: 0.4;
     }
 `;
 
@@ -182,6 +185,8 @@ export const ExpiryIcon = styled(PickUpIcon)`
     margin-right: 8px;
     i {
         color: ${theme.colorDarkGold};
+        opacity: 0.4;
+
     }
 `;
 
@@ -198,8 +203,8 @@ export const SellerContainer = styled.div`
 `;
 
 export const PortraitContainer = styled.div`
-    height: 70px;
-    width: 70px;
+    height: 67px;
+    width: 67px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -208,7 +213,7 @@ export const PortraitContainer = styled.div`
     box-shadow: ${theme.boxShadowInset};
         
     i {
-        font-size: 73.2px;
+        font-size: 70.2px;
         color: ${theme.colorOne}
     }
 `;
@@ -255,6 +260,8 @@ export const Stock = styled(Count)`
     min-width: 25px;
     width: fit-content;
     padding: 4px;
+    background: ${theme.colorAlmond};
+
 `;
 
 export const AddToCart = styled.div`

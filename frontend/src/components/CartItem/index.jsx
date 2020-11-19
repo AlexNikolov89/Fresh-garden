@@ -10,29 +10,29 @@ import {
     ProductContainer,
     ProductName, QuantityContainer, RightContainer
 } from "../../style/ShoppingCart";
+import kopfsalat from '../../assets/salad.png'
 
 const CartItem = ({item}) => {
     const priceSuffix = item.price % 1 ? '0' : '';
-    console.log("in da cartitem", item)
     return(
         <Fragment>
             <ProductContainer>
                     <LeftContainer>
                         <ImageContainer>
-                            <Image src={item.image ? item.image : defaultImage} />
+                            <Image src={item.image ? item.image : kopfsalat} />
                         </ImageContainer>
                         <DetailContainer>
-                            <ProductName>{item.name ? item.name : "Default Rüebli"}</ProductName>
+                            <ProductName>{item.name ? item.name : "Kopfsalat"}</ProductName>
                             <QuantityContainer>
-                                <Decrement><i className="fas fa-minus"></i></Decrement>
-                                <Count>{item.quantity ? item.quantity : "0"}</Count>
-                                <Increment><i className="fas fa-plus"></i></Increment>
+                                <Decrement><i className="fas fa-minus"/></Decrement>
+                                <Count>{item.quantity ? item.quantity : "1"}</Count>
+                                <Increment><i className="fas fa-plus"/></Increment>
                             </QuantityContainer>
                         </DetailContainer>
                     </LeftContainer>
 
                     <RightContainer>
-                        <Delete><i className="fas fa-trash-alt"></i></Delete>
+                        <Delete><i className="fas fa-trash-alt"/></Delete>
                         <Price>CHF {item.price ? item.price * item.quantity + priceSuffix : "6.80"}</Price>
                     </RightContainer>
                 </ProductContainer>
