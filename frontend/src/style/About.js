@@ -28,6 +28,8 @@ export const FirstSectionContainer = styled.div`
 
 export const FirstDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -60,6 +62,8 @@ export const FirstRightContainer = styled.div`
 
 export const SecondDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -92,6 +96,8 @@ export const SecondRightContainer = styled.p`
 
 export const ThirdDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -123,6 +129,7 @@ export const ThirdRightContainer = styled.div`
 `;
 
 export const Image = styled.img`
+  
     height: 300px;
     width: 500px;
     box-shadow: ${theme.boxShadowGradient};

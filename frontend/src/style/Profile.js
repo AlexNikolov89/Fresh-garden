@@ -180,9 +180,12 @@ export const UserInfoContainer = styled.div `
     }
 `;
 
-export const TitleGarden = styled.h2 `
+export const TitleGarden = styled.p `
     padding-top: 10px;
     color: ${theme.colorTitle};
+    font-size: ${theme.fontSizeM};
+    font-weight: bold;
+    line-height: 25px;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        padding-top: 0; 
@@ -211,10 +214,14 @@ export const AboutGarden = styled.div `
 `;
 
 export const AboutText = styled.p `
- font-size: ${theme.fontSizeS};
+ font-size: ${theme.fontSizeDefault};
 `;
 
-export const TitleLocation = styled(TitleGarden) ``;
+export const TitleLocation = styled(TitleGarden) `
+   color: ${theme.colorTitle};
+   font-size: ${theme.fontSizeM};
+   font-weight: bold;
+`;
 
 
 export const Info = styled.div `
@@ -234,9 +241,11 @@ export const City = styled.p `
 export const AddressInfo = styled.div `
  display: flex;
  flex-direction: row;
+ font-size: ${theme.fontSizeDefault};
 `;
 
 export const TelContainer = styled.div `
+   font-size: ${theme.fontSizeDefault};
 
  @media (max-width: 680px) {
  height: 50px;
@@ -269,6 +278,8 @@ export const Email = styled.p `
  `;
 
 export const TitleTel = styled(TitleGarden) `
+  font-weight: bold;
+  margin-top: ${theme.spaceS};
   @media (max-width: ${theme.mediaQueryScreenWidth}){
        
     }
@@ -306,6 +317,8 @@ export const Image = styled.img `
 
 export const Delivery = styled.div `
   display: flex;
+  margin-top: 10px;
+  font-size: ${theme.fontSizeDefault};
   
     i {
         font-size: ${theme.fontSizeDefault};
@@ -313,6 +326,6 @@ export const Delivery = styled.div `
         padding-right: 10px; 
     }
      p{
-     font-size: ${theme.fontSizeS};
+     font-size: ${theme.fontSizeDefault};
      }
 `;

@@ -41,7 +41,7 @@ export const SignUp = () => {
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
-    const [registrationState, setRegistrationState] = useState('stepOne');
+    const [registrationState, setRegistrationState] = useState('stepTwo');
 
     const handleValidationCode = e => {
         setValidation(e.currentTarget.value);

@@ -79,9 +79,14 @@ import progressBar from '../assets/images/progressbar.png'
 
 import {BugFeedbackButton, SubscribeButton, SubscribeButtonContributor} from "../style/Buttons";
 import Footer from "../components/Footer";
+import { useState, useEffect } from 'react';
+import UnderConstruction from "../components/UnderConstruction";
+import useWindowSize from "../helpers/UseWindowSize";
+
 
 
 const About = () => {
+
     return (
         <Fragment>
                 <Header />
@@ -139,7 +144,7 @@ const About = () => {
                                         <XMark>
                                             <i className="fas fa-times-circle"></i>Social board and Chat<br/>
                                             <i className="fas fa-times-circle"></i>Exclusive event invitations<br/>
-                                            <i className="fas fa-times-circle"></i>Startup backer<br/>
+                                            <i className="fas fa-times-circle"></i>Startup Backer<br/>
                                             <i className="fas fa-times-circle"></i>No transaction fee (##.#%)<br/>
                                         </XMark>
                                         </BottomSubscriptionText>
@@ -166,7 +171,7 @@ const About = () => {
                                             <i className="fas fa-check-circle"></i>Social board and Chat<br/>
                                             <i className="fas fa-check-circle"></i>Exclusive event invitations<br/>
                                         <XMark>
-                                            <i className="fas fa-times-circle"></i>Startup backer<br/>
+                                            <i className="fas fa-times-circle"></i>Startup Backer<br/>
                                             <i className="fas fa-times-circle"></i>No transaction fee (##.#%)<br/>
                                         </XMark>
                                         </BottomSubscriptionText>
@@ -471,4 +476,4 @@ const About = () => {
     )
 }
 
-export  default About;
+export default About;
