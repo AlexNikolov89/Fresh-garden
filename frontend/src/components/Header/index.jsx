@@ -7,12 +7,10 @@ import {
     NavLinkProfile,
     FormContainer,
     LogoContainer,
-    Logo,
     CartIcon,
     NavLinkShop,
-    NavLinkAddProduct
+    NavLinkAddProduct, Logo
 } from '../../style/Header';
-import LogoImg from '../../assets/images/logo_idea.jpg'
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
 import {RESET_NOT_LOGGED_IN, TOGGLE_CART_VIEW} from "../../helpers/constants";
@@ -20,8 +18,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {useLocation} from "react-router-dom";
 import SearchBar from "./SearchBar";
 import ShoppingCart from "../ShoppingCart";
-import {SideBox} from "../../style/Homepage";
 import Banner from "./Banner";
+import logo from '../../assets/svgs/logo_with_text.svg';
 
 const Header = () => {
     const location = useLocation();
@@ -33,7 +31,7 @@ const Header = () => {
     const tokenRedux = useSelector(state => state.authReducer.token)
     const [loginCheck, setLogicCheck] = useState(false)
 
-    console.log("flag path  ",location.pathname)
+    //console.log("flag path  ",location.pathname)
 
     // lights up the profile navigation button if not logged in
     // TODO also do this for the "add product" page
@@ -62,7 +60,7 @@ const Header = () => {
             <HeaderContainer >
 
                 <LogoContainer>
-                    <NavLinkHome to='/shop'><Logo src={LogoImg} /></NavLinkHome>
+                    <NavLinkHome to='/shop'><Logo src={logo}/></NavLinkHome>
                 </LogoContainer>
 
                 <FormContainer>
@@ -72,7 +70,7 @@ const Header = () => {
                 <Icons >
                     {loginCheck &&
                     <NavLinkAddProduct
-                        to='/upload'>
+                        to='/user/login'>
                         <i className="fas fa-plus-circle"/>
                     </NavLinkAddProduct>}
                     <NavLinkShop

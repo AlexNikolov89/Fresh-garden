@@ -15,7 +15,7 @@ export const ShoppingCartContainer = styled.div `
     padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
     //box-shadow: ${theme.boxShadowLight};
-    z-index: 45;
+    z-index: 10001;
     overflow-y: scroll;
     max-height: 70vh;
     box-shadow: ${theme.boxShadowGradient}, 0 50px 50px 30px white;

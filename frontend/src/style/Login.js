@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import {theme} from "./index";
 
 export const LoginMainContainer = styled.div`
+    z-index: 9000;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -76,7 +77,6 @@ export const RightContainer = styled.main`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 100%;
         width: 100%;
         flex-direction: column;
     }
@@ -105,7 +105,7 @@ export const LoginContainer = styled.div`
     align-items: center;
     width: 100%;
     height: calc(100vh - 60px - 26px);
-    padding-top: calc(128px - 20px); mark
+    padding-top: calc(128px - 20px);
 
     #signUpSuccess {
         color: rgba(0, 0, 0, 0.5);
@@ -153,7 +153,10 @@ export const StepOneContainer = styled.div`
     align-items: center;
     width: 100%;
     padding-top: 60px;
-    height: 100%;
+    
+    @media (max-width: 680px) {
+      padding-top: 90px;
+    }
 
     #stepOneIcon {
         flex: 0;
