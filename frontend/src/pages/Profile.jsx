@@ -11,7 +11,7 @@ import {TitleContainer, UserProfileContainer,
         Image, Delivery, TitleWrap, ButtonWrap} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
-import garden from '../assets/salad.png'
+import garden from '../assets/kopf-salad.jpg'
 import defaultAvatar from '../assets/images/profile.png';
 import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";

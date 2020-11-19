@@ -3,40 +3,82 @@ import Header from '../components/Header/index.jsx'
 import {
     AboutMainContainer,
     AleksandraContainer,
-    AlexContainer, BottomHalveUpperContainer, BottomSubPart, BottomSubscriptionText,
+    AlexContainer,
+    BottomHalveUpperContainer,
+    BottomSubPart,
+    BottomSubscriptionText,
+    BugContainer,
+    BugSubmitContainer,
+    BugText,
+    BugTextContainer,
+    DevName,
+    DevNameContainer,
+    DevRole,
+    DevRoleContainer,
+    DisclaimerContainer,
+    DisclaimerText,
+    DisclaimerTitle,
     FirstDiv,
     FirstLeftContainer,
-    FirstRightContainer, FirstSectionContainer,
+    FirstRightContainer,
+    FirstSectionContainer,
     GitHubLink,
-    HeaderAboutContainer,
+    HeaderTitleContainer,
     Image,
-    LeftProfileContainer,
     LinkedInLink,
+    LowerProfileContainer,
     MeetTheTeamContainer,
     MeetTheTeamHeader,
-    ProfileImage, ProfileImageContainer,
-    RightProfileContainer, RightProfileP, RightProfileTitle,
+    NameContainer,
+    PersonalTitle,
+    ProfileImage,
+    ProfileImageContainer, ProgressBar,
+    ProgressBarContainer,
+    Quote,
+    QuoteContainer,
+    QuoteTitleContainer,
+    RoleContent,
+    RoleContentTwo,
+    RoleTitle,
     SamiContainer,
     SecondDiv,
     SecondLeftContainer,
     SecondRightContainer,
-    SocialLinks, SubscriptionButtonContainer,
+    SocialLinks,
+    SubImage,
+    SubImageIndie,
+    SubscriptionButtonContainer,
+    SubscriptionContributor,
     SubscriptionMainContainer,
     SubscriptionModelContainer,
     SubscriptionPlanOne,
     SubscriptionPlanThree,
-    SubscriptionPlanTwo, SubscriptionPrice, SubscriptionTitle,
+    SubscriptionPlanTwo,
+    SubscriptionPrice,
+    SubscriptionTitle,
     TheDevTeam,
     ThirdDiv,
     ThirdLeftContainer,
-    ThirdRightContainer, TopSubPart,
-    TopSubscriptionText, UpperHalveBottomContainer, UpperHalveContainer
+    ThirdRightContainer,
+    TopSubPart,
+    TopSubscriptionText, TwoLogosContainer,
+    UpperHalveBottomContainer,
+    UpperHalveContainer,
+    UpperProfileContainer,
+    XMark
 } from "../style/About";
 import FreshGarden1 from '../assets/images/freshgarden1.jpg'
 import FreshGarden2 from '../assets/images/freshgarden2.jpg'
 import FreshGarden3 from '../assets/images/freshgarden3.jpg'
 import Sami from '../assets/images/Sami.jpg'
-import {SubscribeButton} from "../style/Buttons";
+import Alex from '../assets/images/alex_maeder.jpg'
+import Aleksandra from '../assets/images/aleksandra.jpg'
+import freshgardenLogo from '../assets/svgs/logo_with_text.svg'
+import indiegogoLogo from '../assets/images/indiegogologo.png'
+import progressBar from '../assets/images/progressbar.png'
+
+import {BugFeedbackButton, SubscribeButton, SubscribeButtonContributor} from "../style/Buttons";
+import Footer from "../components/Footer";
 
 
 const About = () => {
@@ -44,10 +86,10 @@ const About = () => {
         <Fragment>
                 <Header />
                 <AboutMainContainer>
-                    <HeaderAboutContainer>About</HeaderAboutContainer>
+                    <HeaderTitleContainer>About</HeaderTitleContainer>
                     <FirstSectionContainer>
                         <FirstDiv>
-                            <FirstLeftContainer>What is freshgarden.ch?
+                            <FirstLeftContainer>Why freshgarden.ch?
                                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br/>
                                 et dolore magna aliquyam erat, sed diam voluptua. At vero eos et.<br/>
                                 consetetur sadipscing elitr, sed diam nonumy sed diam voluptua. At vero.
@@ -76,50 +118,57 @@ const About = () => {
                     </FirstSectionContainer>
 
                     <SubscriptionMainContainer>
-                        <TopSubscriptionText>Can I promote a product?
-                            <p>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore <br/>
-                               Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum<br/>
-                            </p>
+                        <TopSubscriptionText>
+                            Can I promote a product?
                         </TopSubscriptionText>
                         <SubscriptionModelContainer>
                             <SubscriptionPlanOne>
                                 <TopSubPart>
                                     <UpperHalveContainer>
-                                        <SubscriptionTitle>BASIC</SubscriptionTitle>
+                                        <SubscriptionTitle>FREE</SubscriptionTitle>
                                     </UpperHalveContainer>
                                     <UpperHalveBottomContainer>
-                                        <SubscriptionPrice>FREE</SubscriptionPrice>
+                                        <SubscriptionPrice>0 $</SubscriptionPrice>
                                     </UpperHalveBottomContainer>
                                 </TopSubPart>
                                 <BottomSubPart>
                                     <BottomHalveUpperContainer>
                                         <BottomSubscriptionText>
-                                            <i className="fas fa-check-circle"></i>All Features<br/>
-                                            <i className="fas fa-check-circle"></i>Chat Support<br/>
-                                            <i className="fas fa-check-circle"></i>Free Server
+                                            <i className="fas fa-check-circle"></i>Connect to like-minded people<br/>
+                                            <i className="fas fa-check-circle"></i>Buy and sell products
+                                        <XMark>
+                                            <i className="fas fa-times-circle"></i>Social board and Chat<br/>
+                                            <i className="fas fa-times-circle"></i>Exclusive event invitations<br/>
+                                            <i className="fas fa-times-circle"></i>Startup backer<br/>
+                                            <i className="fas fa-times-circle"></i>No transaction fee (##.#%)<br/>
+                                        </XMark>
                                         </BottomSubscriptionText>
                                     </BottomHalveUpperContainer>
                                     <SubscriptionButtonContainer>
-                                        <SubscribeButton>SELECT</SubscribeButton>
+                                        <SubscribeButton>SIGN UP</SubscribeButton>
                                     </SubscriptionButtonContainer>
                                 </BottomSubPart>
                             </SubscriptionPlanOne>
                             <SubscriptionPlanTwo>
                                 <TopSubPart>
                                     <UpperHalveContainer>
-                                        <SubscriptionTitle>FRESHGARDEN</SubscriptionTitle>
+                                        <SubscriptionTitle>MEMBER</SubscriptionTitle>
                                     </UpperHalveContainer>
                                     <UpperHalveBottomContainer>
-                                        <SubscriptionPrice>8.90 $</SubscriptionPrice>
+                                        <SubscriptionPrice>$ / month</SubscriptionPrice>
                                     </UpperHalveBottomContainer>
                                 </TopSubPart>
                                 <BottomSubPart>
                                     <BottomHalveUpperContainer>
-                                        <BottomSubscriptionText>
-                                            <i className="fas fa-check-circle"></i>All Features<br/>
-                                            <i className="fas fa-check-circle"></i>Chat Support<br/>
-                                            <i className="fas fa-check-circle"></i>Free Server
+                                       <BottomSubscriptionText>
+                                            <i className="fas fa-check-circle"></i>Connect to like-minded people<br/>
+                                            <i className="fas fa-check-circle"></i>Buy and sell products<br/>
+                                            <i className="fas fa-check-circle"></i>Social board and Chat<br/>
+                                            <i className="fas fa-check-circle"></i>Exclusive event invitations<br/>
+                                        <XMark>
+                                            <i className="fas fa-times-circle"></i>Startup backer<br/>
+                                            <i className="fas fa-times-circle"></i>No transaction fee (##.#%)<br/>
+                                        </XMark>
                                         </BottomSubscriptionText>
                                     </BottomHalveUpperContainer>
                                     <SubscriptionButtonContainer>
@@ -130,22 +179,33 @@ const About = () => {
                             <SubscriptionPlanThree>
                                 <TopSubPart>
                                     <UpperHalveContainer>
-                                        <SubscriptionTitle>FRESHGARDEN+</SubscriptionTitle>
+                                        <SubscriptionTitle>CONTRIBUTOR</SubscriptionTitle>
                                     </UpperHalveContainer>
                                     <UpperHalveBottomContainer>
-                                        <SubscriptionPrice>14.90 $</SubscriptionPrice>
+                                        <SubscriptionContributor>
+                                            <TwoLogosContainer>
+                                                <SubImage src={freshgardenLogo} />
+                                                <SubImageIndie src={indiegogoLogo} />
+                                            </TwoLogosContainer>
+                                            <ProgressBarContainer>
+                                                <ProgressBar src={progressBar}/>
+                                            </ProgressBarContainer>
+                                        </SubscriptionContributor>
                                     </UpperHalveBottomContainer>
                                 </TopSubPart>
                                 <BottomSubPart>
                                     <BottomHalveUpperContainer>
                                         <BottomSubscriptionText>
-                                            <i className="fas fa-check-circle"></i>All Features<br/>
-                                            <i className="fas fa-check-circle"></i>Chat Support<br/>
-                                            <i className="fas fa-check-circle"></i>Free Server
+                                            <i className="fas fa-check-circle"></i>Connect to like-minded people<br/>
+                                            <i className="fas fa-check-circle"></i>Buy and sell products<br/>
+                                            <i className="fas fa-check-circle"></i>Social board and Chat<br/>
+                                            <i className="fas fa-check-circle"></i>Exclusive event invitations<br/>
+                                            <i className="fas fa-check-circle"></i>Startup Backer<br/>
+                                            <i className="fas fa-check-circle"></i>No transaction fee (##.#%)<br/>
                                         </BottomSubscriptionText>
                                     </BottomHalveUpperContainer>
                                     <SubscriptionButtonContainer>
-                                        <SubscribeButton>SELECT</SubscribeButton>
+                                        <SubscribeButtonContributor>BACK IT</SubscribeButtonContributor>
                                     </SubscriptionButtonContainer>
                                 </BottomSubPart>
                             </SubscriptionPlanThree>
@@ -154,65 +214,259 @@ const About = () => {
 
 
                     <MeetTheTeamContainer>
-                        <MeetTheTeamHeader>Meet the DevTeam</MeetTheTeamHeader>
+                        <MeetTheTeamHeader>Meet the Dev Team</MeetTheTeamHeader>
                             <TheDevTeam>
                                 <AlexContainer>
-                                    <LeftProfileContainer>
+                                    <UpperProfileContainer>
                                         <ProfileImageContainer>
                                             <ProfileImage src={Sami}></ProfileImage>
                                         </ProfileImageContainer>
-                                        <h2>Sami Ben Ali</h2>
-                                        <p>Zürich, Switzerland</p>
-                                    </LeftProfileContainer>
-                                    <RightProfileContainer>
-                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
-                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
-                                        <RightProfileTitle>Social</RightProfileTitle>
+                                        <NameContainer>
+                                            <DevNameContainer>
+                                                <DevName>Sami Ben Ali</DevName>
+                                            </DevNameContainer>
+                                            <DevRoleContainer>
+                                                <DevRole>
+                                                    <RoleTitle>
+                                                        Project Role
+                                                    </RoleTitle>
+                                                    <RoleContent>
+                                                        Backend Developer
+                                                    </RoleContent>
+                                                </DevRole>
+                                            </DevRoleContainer>
+                                        </NameContainer>
+                                    </UpperProfileContainer>
+                                    <LowerProfileContainer>
+                                        <DevRoleContainer>
+                                            <DevRole>
+                                                <RoleTitle>
+                                                    Location
+                                                </RoleTitle>
+                                                <RoleContent>
+                                                    Zurich, Switzerland
+                                                </RoleContent>
+                                            </DevRole>
+                                        </DevRoleContainer>
+                                        <DevRoleContainer>
+                                            <DevRole>
+                                                <RoleTitle>
+                                                    Open to work
+                                                </RoleTitle>
+                                                <RoleContentTwo>
+                                                    linkedin.com/in/<br/>sami-benali/
+                                                </RoleContentTwo>
+                                            </DevRole>
+                                        </DevRoleContainer>
                                         <SocialLinks>
                                             <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
                                         </SocialLinks>
-                                    </RightProfileContainer>
+                                        {/*<DevRoleContainer>*/}
+                                        {/*    <DevRole>*/}
+                                        {/*        <RoleTitle>*/}
+                                        {/*            Background*/}
+                                        {/*        </RoleTitle>*/}
+                                        {/*        <RoleContent>*/}
+                                        {/*            Facility Assistant*/}
+                                        {/*        </RoleContent>*/}
+                                        {/*    </DevRole>*/}
+                                        {/*</DevRoleContainer>*/}
+                                        <DevRoleContainer>
+                                            {/*<QuoteContainer>*/}
+                                            {/*    <QuoteTitleContainer>*/}
+                                            {/*        <PersonalTitle>Quote</PersonalTitle>*/}
+                                            {/*    </QuoteTitleContainer>*/}
+                                            {/*    <Quote>*/}
+                                            {/*        "It's still magic even if you know<br/> how it's done."*/}
+                                            {/*    </Quote>*/}
+                                            {/*</QuoteContainer>*/}
+                                            {/*<DevRole>*/}
+                                            {/*    <RoleTitle>*/}
+                                            {/*        Passion*/}
+                                            {/*    </RoleTitle>*/}
+                                            {/*    <RoleContent>*/}
+                                            {/*        Backend and Styling*/}
+                                            {/*    </RoleContent>*/}
+                                            {/*</DevRole>*/}
+                                        </DevRoleContainer>
+                                    </LowerProfileContainer>
                                 </AlexContainer>
                                 <AleksandraContainer>
-                                    <LeftProfileContainer>
+                                    <UpperProfileContainer>
                                         <ProfileImageContainer>
-                                            <ProfileImage src={Sami}></ProfileImage>
+                                            <ProfileImage src={Alex}></ProfileImage>
                                         </ProfileImageContainer>
-                                        <h2>Sami Ben Ali</h2>
-                                        <p>Zürich, Switzerland</p>
-                                    </LeftProfileContainer>
-                                    <RightProfileContainer>
-                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
-                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
-                                        <RightProfileTitle>Social</RightProfileTitle>
-                                        <SocialLinks>
-                                            <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
-                                            <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
-                                        </SocialLinks>
-                                    </RightProfileContainer>
+                                         <NameContainer>
+                                            <DevNameContainer>
+                                                <DevName>Alex Mäder</DevName>
+                                            </DevNameContainer>
+                                            <DevRoleContainer>
+                                                <DevRole>
+                                                    <RoleTitle>
+                                                        Project Role
+                                                    </RoleTitle>
+                                                    <RoleContent>
+                                                        Lead, Full-Stack
+                                                    </RoleContent>
+                                                </DevRole>
+                                            </DevRoleContainer>
+                                        </NameContainer>
+                                    </UpperProfileContainer>
+                                    <LowerProfileContainer>
+                                        {/*<DevRoleContainer>*/}
+                                        {/*    <DevRole>*/}
+                                        {/*        <RoleTitle>*/}
+                                        {/*            Background*/}
+                                        {/*        </RoleTitle>*/}
+                                        {/*        <RoleContentTwo>*/}
+                                        {/*            Industrial Engineering*/}
+                                        {/*        </RoleContentTwo>*/}
+                                        {/*    </DevRole>*/}
+                                        {/*</DevRoleContainer>*/}
+                                        {/*<QuoteContainer>*/}
+                                        {/*    <QuoteTitleContainer>*/}
+                                        {/*        <PersonalTitle>Quote</PersonalTitle>*/}
+                                        {/*    </QuoteTitleContainer>*/}
+                                        {/*    <Quote>*/}
+                                        {/*        "git push origin master --force"*/}
+                                        {/*    </Quote>*/}
+                                        {/*</QuoteContainer>*/}
+                                        <DevRoleContainer>
+                                            {/*<DevRole>*/}
+                                                {/*    <RoleTitle>*/}
+                                                {/*        Passion*/}
+                                                {/*    </RoleTitle>*/}
+                                                {/*    <RoleContent>*/}
+                                                {/*        Frontend and DevOps*/}
+                                                {/*    </RoleContent>*/}
+                                                {/*</DevRole>*/}
+                                        </DevRoleContainer>
+                                        <DevRoleContainer>
+                                                <DevRole>
+                                                    <RoleTitle>
+                                                        Location
+                                                    </RoleTitle>
+                                                    <RoleContentTwo>
+                                                        Rapperswil-Jona, Switzerland
+                                                    </RoleContentTwo>
+                                                </DevRole>
+                                            </DevRoleContainer>
+                                        <DevRoleContainer>
+                                                <DevRole>
+                                                    <RoleTitle>
+                                                        Open to work
+                                                    </RoleTitle>
+                                                    <RoleContentTwo>
+                                                        linkedin.com/in/<br/>alexemanuelmaeder/
+                                                    </RoleContentTwo>
+                                                </DevRole>
+                                        </DevRoleContainer>
+                                        {/*<SocialLinks>*/}
+                                        {/*    <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/alexemanuelmaeder/'}><i className="fab fa-linkedin"></i></LinkedInLink>*/}
+                                        {/*    <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>*/}
+                                        {/*</SocialLinks>*/}
+                                    </LowerProfileContainer>
                                 </AleksandraContainer>
                                 <SamiContainer>
-                                    <LeftProfileContainer>
+                                    <UpperProfileContainer>
                                         <ProfileImageContainer>
-                                            <ProfileImage src={Sami}></ProfileImage>
+                                            <ProfileImage src={Aleksandra}></ProfileImage>
                                         </ProfileImageContainer>
-                                        <h2>Sami Ben Ali</h2>
-                                        <p>Zürich, Switzerland</p>
-                                    </LeftProfileContainer>
-                                    <RightProfileContainer>
-                                        <RightProfileTitle>Project Role</RightProfileTitle><RightProfileP>Backend Developer</RightProfileP>
-                                        <RightProfileTitle>Project Quote</RightProfileTitle><RightProfileP>"To easy to be true gg ez"</RightProfileP>
-                                        <RightProfileTitle>Social</RightProfileTitle>
+                                         <NameContainer>
+                                            <DevNameContainer>
+                                                <DevName>Aleksandra Nikolov</DevName>
+                                            </DevNameContainer>
+                                            <DevRoleContainer>
+                                                <DevRole>
+                                                    <RoleTitle>
+                                                        Project Role
+                                                    </RoleTitle>
+                                                    <RoleContent>
+                                                        Frontend Developer
+                                                    </RoleContent>
+                                                </DevRole>
+                                            </DevRoleContainer>
+                                        </NameContainer>
+                                    </UpperProfileContainer>
+                                    <LowerProfileContainer>
+                                        {/*<DevRoleContainer>*/}
+                                        {/*    <DevRole>*/}
+                                        {/*        <RoleTitle>*/}
+                                        {/*            Background*/}
+                                        {/*        </RoleTitle>*/}
+                                        {/*        <RoleContentTwo>*/}
+                                        {/*            Quality Assurance*/}
+                                        {/*        </RoleContentTwo>*/}
+                                        {/*    </DevRole>*/}
+                                        {/*</DevRoleContainer>*/}
+                                        {/*<QuoteContainer>*/}
+                                        {/*    <QuoteTitleContainer>*/}
+                                        {/*        <PersonalTitle>Quote</PersonalTitle>*/}
+                                        {/*    </QuoteTitleContainer>*/}
+                                        {/*    <Quote>*/}
+                                        {/*        "I learned a lot about React in this growing project."<br/>*/}
+                                        {/*    </Quote>*/}
+                                        {/*</QuoteContainer>*/}
+                                        <DevRoleContainer>
+                                            {/*<DevRole>*/}
+                                            {/*    <RoleTitle>*/}
+                                                {/*        Passion*/}
+                                                {/*    </RoleTitle>*/}
+                                                {/*    <RoleContent>*/}
+                                                {/*        Frontend Styling*/}
+                                                {/*    </RoleContent>*/}
+                                                {/*</DevRole>*/}
+                                            </DevRoleContainer>
+                                        <DevRoleContainer>
+                                                <DevRole>
+                                                        <RoleTitle>
+                                                            Location
+                                                        </RoleTitle>
+                                                    <RoleContentTwo>
+                                                        Zurich Winterthur, Switzerland
+                                                    </RoleContentTwo>
+                                                </DevRole>
+                                        </DevRoleContainer>
+                                        <DevRoleContainer>
+                                                <DevRole>
+                                                    <RoleTitle>
+                                                        Open to work
+                                                    </RoleTitle>
+                                                    <RoleContentTwo>
+                                                        linkedin.com/in/<br/>aleksandra-nikolov-9597b2189/
+                                                    </RoleContentTwo>
+                                                </DevRole>
+                                            </DevRoleContainer>
                                         <SocialLinks>
-                                            <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/sami-benali/'}><i className="fab fa-linkedin"></i></LinkedInLink>
+                                            <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/aleksandra-nikolov-9597b2189/'}><i className="fab fa-linkedin"></i></LinkedInLink>
                                             <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>
                                         </SocialLinks>
-                                    </RightProfileContainer>
+                                    </LowerProfileContainer>
                                 </SamiContainer>
                             </TheDevTeam>
                         </MeetTheTeamContainer>
+
+
+                    <BugContainer>
+                        <BugTextContainer>
+                            <BugText>Some Bugs are welcomed but please report the ones on this page.</BugText>
+                        </BugTextContainer>
+                        <BugSubmitContainer>
+                            <BugFeedbackButton><i className="fas fa-bug"></i>Give Feedback</BugFeedbackButton>
+                        </BugSubmitContainer>
+                    </BugContainer>
+
+                    <DisclaimerContainer>
+                        <DisclaimerTitle>Legal Disclaimer</DisclaimerTitle>
+                        <DisclaimerText>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod temporn vidunt ut labore et dolore magna<br/>
+                        aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren duo dolores.<br/>
+                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br/>
+                        sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.
+                        </DisclaimerText>
+                    </DisclaimerContainer>
                 </AboutMainContainer>
+            <Footer/>
         </Fragment>
     )
 }
