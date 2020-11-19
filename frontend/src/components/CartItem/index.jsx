@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import defaultImage from "../../assets/eggplant.jpg";
+import defaultImage from "../../assets/demo/eggplant.jpg";
 import {
     Count,
     Decrement, Delete,
@@ -10,7 +10,7 @@ import {
     ProductContainer,
     ProductName, QuantityContainer, RightContainer
 } from "../../style/ShoppingCart";
-import kopfsalat from '../../assets/salad.png'
+import kopfsalat from '../../assets/demo/salad.png'
 
 const CartItem = ({item}) => {
     const priceSuffix = item.price % 1 ? '0' : '';
