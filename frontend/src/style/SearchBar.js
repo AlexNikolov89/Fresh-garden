@@ -22,7 +22,7 @@ export const LocationContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    width: 50%;
+    width: 40%;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         display: none;
@@ -45,9 +45,6 @@ export const AutocompleteContainer = styled(ShoppingCartContainer)`
     top: calc{${theme.controlHeightXL} - 1px;
     box-shadow: ${theme.boxShadowGradient}, 20px 40px 50px 30px white, -20px 40px 50px 30px white;
     background-color: ${theme.colorDefaultWhite};
-    box-shadow: 0 1px 6px rgba(32,33,36,.28);
-
-
 `;
 
 export const AutocompleteOne = styled.button`
@@ -87,7 +84,7 @@ export const AutocompleteTwo = styled(AutocompleteOne)``;
 export const AutocompleteThree = styled(AutocompleteOne)``;
 
 export const SearchContainer = styled(LocationContainer)`
-    width: 50%;
+    width: 60%;
 `;
 
 export const SearchInput = styled.input`

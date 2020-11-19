@@ -1,22 +1,23 @@
 # Develop Locally
-1. Commit you working branch to not loose changes <code>$ git add . $ git commit -m "message"</code>
+## How to develop locally and collaborate remotely
+1. Commit your working branch to not loose changes <code>$ git add . $ git commit -m "styling homepage 75%"</code>
 2. Delete local development branch <code>$ git branch -d development</code>
 3. Checkout new local development branch <code>$ git checkout -b development</code>
 4. Pull latest development branch from gitlab <code>$ git pull origin development</code>
 5. Merge your working branch into your fresh pulled local development branch 
     * Be on development branch <code>$ git merge your-branch-to-integrate</code>
-    * Resolve conflicts locally via the "Commit" > Resolve Tab on the left
+    * Resolve conflicts locally via PyCharm "Commit" > Resolve Tab 
     * Commit after merge (tip: to save and quit the command line commit editor "vim" <code>$ :wq</code>)
-6. Create your a new working branch <code>$ git checkout -b your-branch-name</code> (e.g., branch name: create-login, connect-serializer, ...)
+6. Create your a new working branch <code>$ git checkout -b your-branch-name</code> (e.g., branch name: create-login, styling-posts, ...)
 7. Start remote interpreter (Docker containers) with the configured PyCharm command <code>RUNSERVER</code>
     * If you experience postgres relationship errors consider dropping your local database (see below)
-8. Start frontend react app <code>$ cd frontend/ $ npm start</code>
+8. Start the frontend react app <code>$ cd frontend/ $ npm start</code>
 9. Happy Hacking!
 10. Commit after every new and working feature <code>$ git add . $ git commit -m "login page styling 85% done"</code>
 11. After several features push to GitLab development branch<code>$ git push origin your-branch-name</code>
-    * Consider pulling and merging <strong>development</strong> first locally if it got updated (repeat 1. to 5) 
+    * Consider pulling and merging <strong>development</strong> first locally if development got updated (repeat 1. to 5) 
     * Also only push code which works locally    
-12. Create a merge request on GitLab to <strong>development</strong> branch and assign the DevOps person 
+12. Create a merge request on GitLab to <strong>development</strong> branch and assign the DevOps person. Begin at 6. 
 
 # Tips and Tricks
 * Go into the running container for creating a superuser and accessing the django admin panel
@@ -44,6 +45,3 @@
     * Click <code>MIGRATE</code>
 9. Start the Docker containers via our remote interpreter
     * Click <code>RUNSERVER</code>  
-
- # Production URL
-https://pinocchio.propulsion-learn.ch/shop 15.11.2021
