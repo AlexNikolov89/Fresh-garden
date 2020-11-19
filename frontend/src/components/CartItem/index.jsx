@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import defaultImage from "../../assets/eggplant.jpg";
+import defaultImage from "../../assets/demo/eggplant.jpg";
 import {
     Count,
     Decrement, Delete,

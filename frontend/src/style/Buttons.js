@@ -79,6 +79,12 @@ export const SubscribeButton = styled(StandardButton)`
     margin-bottom: 30px;
 `;
 
+export const SubscribeButtonContributor = styled(StandardButton)`
+    margin-bottom: 30px;
+    background-color: #e51075;
+    color: #FFFFFF;
+`;
+
 export const BugFeedbackButton = styled(StandardButton)`
    padding: 32px 68px;
    width: 300px;

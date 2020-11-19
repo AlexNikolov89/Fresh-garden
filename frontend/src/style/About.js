@@ -8,6 +8,7 @@ export const AboutMainContainer = styled.main`
     flex-direction: column;
     height: 100%;
     width: 100%;
+    background-color: white;
 `;
 
 export const HeaderTitleContainer = styled.h1`
@@ -15,7 +16,7 @@ export const HeaderTitleContainer = styled.h1`
     justify-content: center;
     align-items: flex-end;
     font-size: ${theme.fontSizeXXXL};
-    color: ${theme.colorDarkOliveGreen};
+    color: ${theme.colorOneDark};
     height: 200px;
     margin-bottom: 100px;
 `;
@@ -32,20 +33,22 @@ export const FirstDiv = styled.div`
     height: 450px;
 `;
 
-export const FirstLeftContainer = styled.h1`
+export const FirstLeftContainer = styled.p`
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: left;
-    color: ${theme.colorDarkOliveGreen};
-    font-size: ${theme.fontSizeL};
+    color: ${theme.colorOneDark};
+    font-size: ${theme.fontSizeXL};
+    font-weight: bold;
     height: 400px;
     width: 600px;
     
   p {
-    font-size: ${theme.fontSizeDefault};
+    font-size: ${theme.fontSizeM};
     margin-top: ${theme.spaceM};
     color: ${theme.colorDefaultText};
+    font-weight: normal;
   }
 `;
 
@@ -67,20 +70,22 @@ export const SecondLeftContainer = styled.div`
 `;
 
 
-export const SecondRightContainer = styled.h1`
+export const SecondRightContainer = styled.p`
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    font-size: ${theme.fontSizeL};
-    color: ${theme.colorDarkOliveGreen};
+    font-size: ${theme.fontSizeXL};
+    color: ${theme.colorOneDark};
+    font-weight: bold;
     height: 400px;
     width: 600px;
     
     p {
-      font-size: ${theme.fontSizeDefault};
+      font-size: ${theme.fontSizeM};
       margin-top: ${theme.spaceM};
       color: ${theme.colorDefaultText};
+      font-weight: normal;
     }
 `;
 
@@ -92,20 +97,22 @@ export const ThirdDiv = styled.div`
     height: 450px;
 `;
 
-export const ThirdLeftContainer = styled.h1`
+export const ThirdLeftContainer = styled.p`
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    font-size: ${theme.fontSizeL};
-    color: ${theme.colorDarkOliveGreen};
+    font-size: ${theme.fontSizeXL};
+    color: ${theme.colorOneDark};
+    font-weight: bold;
     height: 400px;
     width: 600px;
     
     p {
       margin-top: ${theme.spaceM};
       color: ${theme.colorDefaultText};
-      font-size: ${theme.fontSizeDefault};
+      font-size: ${theme.fontSizeM};
+      font-weight: normal;
     }
 `;
 
@@ -118,7 +125,7 @@ export const Image = styled.img`
     height: 300px;
     width: 500px;
     box-shadow: ${theme.boxShadowGradient};
-    border-radius: ${theme.borderRadiusS};
+    border-radius: 0.5px;
 `;
 
 export const SubscriptionMainContainer = styled.div`
@@ -130,14 +137,15 @@ export const SubscriptionMainContainer = styled.div`
     margin-top: ${theme.spaceXL};
 `;
 
-export const TopSubscriptionText = styled.h1`
+export const TopSubscriptionText = styled.p`
     display: flex;
     justify-content: center;
     align-content: center;
     text-align: center;
     flex-direction: column;
     font-size: ${theme.fontSizeXL};
-    color: ${theme.colorDarkOliveGreen};
+    color: ${theme.colorOneDark};
+    font-weight: bold;
 
     p {
       font-size: ${theme.fontSizeDefault};
@@ -153,6 +161,7 @@ export const SubscriptionModelContainer = styled.div`
     align-self: center;
     height: 450px;
     width: 1200px;
+    margin-top: 80px;
 `;
 
 export const SubscriptionPlanOne = styled.div`
@@ -162,7 +171,7 @@ export const SubscriptionPlanOne = styled.div`
   width: 300px;
   box-shadow: ${theme.boxShadowGradient};
   border-radius: ${theme.borderRadiusS};
-  border: 1px solid ${theme.colorMiddleGreenYellowLight};
+  border: 0.5px solid ${theme.colorOne};
 `;
 
 export const SubscriptionPlanTwo = styled(SubscriptionPlanOne)``
@@ -177,7 +186,7 @@ export const TopSubPart = styled.div`
   flex-direction: column;
 `;
 
-export const SubscriptionTitle = styled.h2`
+export const SubscriptionTitle = styled.p`
   display: flex;
   width: auto;
   height: auto;
@@ -185,7 +194,8 @@ export const SubscriptionTitle = styled.h2`
   justify-content: center;
   font-size: ${theme.fontSizeL};
   font-weight: ${theme.fontWeightRegular};
-  border-bottom: 1px solid ${theme.colorMiddleGreenYellowLight};
+  border-bottom: 1px solid ${theme.colorOne};
+  color: ${theme.colorDefaultText};
   border-bottom-width: medium;
 `;
 
@@ -195,8 +205,51 @@ export const SubscriptionPrice = styled.h2`
   width: 300px;
   justify-content: center;
   font-size: ${theme.fontSizeL};
+  color: ${theme.colorOne};
 `;
 
+export const SubscriptionContributor = styled(SubscriptionPrice)`
+  display: flex;
+  height: auto;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const TwoLogosContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+`;
+
+export const SubImage = styled.img`
+  display: flex;
+  width: 120px;
+  height: 25px;
+`;
+
+export const SubImageIndie = styled(SubImage)`
+    display: flex;
+    width: 80px;
+    height: 50px;
+    align-self: center;
+`;
+
+export const ProgressBarContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ProgressBar = styled.img`
+  display: flex;
+  width: 180px;
+  height: 45px;
+`;
 
 export const UpperHalveContainer = styled.div`
   display: flex;
@@ -207,11 +260,11 @@ export const UpperHalveContainer = styled.div`
 
 export const UpperHalveBottomContainer = styled.div`
   display: flex;
-  height: 125px;
+  height: 135px;
   width: 250px;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid ${theme.colorDefaultGrey};
+  border-bottom: 1px solid ${theme.colorTwoDarkHover};
   border-bottom-width: thin;
 `;
 
@@ -232,11 +285,29 @@ export const BottomHalveUpperContainer = styled.div`
 export const BottomSubscriptionText = styled.p`
    font-size: 1.4rem;
    font-weight: bold;
+   color: ${theme.colorDefaultText};
+   font-weight: ${theme.fontWeightRegular};
+   font-size: ${theme.fontSizeDefault};
   
   i {
     margin-right: 10px;
-    color: ${theme.colorMiddleGreenYellowLight};
+    color: ${theme.colorOneDark};
   }
+`;
+
+export const XMark = styled.div`
+   font-size: 1.4rem;
+   font-weight: bold;
+   color: ${theme.colorTwoDarkHover};
+   font-weight: ${theme.fontWeightRegular};
+   font-size: ${theme.fontSizeDefault};
+  
+  i {
+    margin-right: 10px;
+    color: ${theme.colorDarkRed};
+    opacity: 0.4;
+  }
+    
 `;
 
 export const SubscriptionButtonContainer = styled.div`
@@ -252,6 +323,7 @@ export const SubscriptionButtonContainer = styled.div`
 export const MeetTheTeamContainer = styled.div`
     display: flex;
     align-content: center;
+    justify-content: center;
     flex-direction: column;
     width: 100%;
     margin-bottom: 250px;
@@ -263,7 +335,7 @@ export const MeetTheTeamHeader = styled.h1`
     justify-content: center;
     text-align: center;
     font-size: ${theme.fontSizeXL};
-    color: ${theme.colorDarkOliveGreen};
+    color: ${theme.colorOneDark};
     height: 200px;
     width: 100%;
     margin-top: 60px;
@@ -271,18 +343,19 @@ export const MeetTheTeamHeader = styled.h1`
 
 export const TheDevTeam = styled.div`
     display: flex;
-    flex-direction: row;
     align-self: center;
     justify-self: center;
-    width: 65%;
+    width: 60%;
+    margin-top: 50px;
 `
 
 export const AlexContainer = styled.div`
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-content: center;
     width: 400px;
     height: 250px;
+    margin-left: 70px;
 `;
 
 export const AleksandraContainer = styled(AlexContainer)``;
@@ -290,15 +363,55 @@ export const SamiContainer = styled(AlexContainer)``;
 
 export const NameContainer = styled.div`
   line-height: 25px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const DevName = styled.h2`
-    font-size: ${theme.fontSizeM};
-    color: ${theme.colorDarkOliveGreen};
+    font-size: ${theme.fontSizeL};
+    color: ${theme.colorOneDark};
 `;
 
 export const DevRole = styled.p`
     font-size: ${theme.fontSizeM};
+    margin-bottom: 5px;
+`;
+
+export const DevNameContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+`;
+
+export const RoleTitle = styled.p`
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    margin-top: 10px;
+`;
+
+export const RoleContent = styled.div`
+    line-height: 15px;
+`;
+
+export const RoleContentTwo = styled.div`
+    line-height: 23px;
+`;
+
+export const DevRoleContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+export const QuoteContainer = styled.div`
+  font-style: italic;
+  font-size: ${theme.fontSizeDefault};
+
+`;
+
+export const Quote = styled.p`
+  font-size: ${theme.fontSizeDefault};
+  color: ${theme.colorDefaultGrey};
+  line-height: 20px;
 `;
 
 
@@ -315,29 +428,46 @@ export const LowerProfileContainer = styled.div`
    flex-direction: column;
 `;
 
-export const PersonalQuote = styled.p`
-  font-style: italic;
-  font-size: ${theme.fontSizeDefault};
-  color: ${theme.colorDefaultText};
-  margin-top: 10px;
+export const PersonalTitle = styled.p`
+    font-size: ${theme.fontSizeDefault};
+    color: ${theme.colorDefaultText};
+    font-style: normal;
+    margin-top: 3px;
+`;
+
+export const QuoteTitleContainer = styled.div`
 `;
 
 export const ProfileImage = styled.img`
     height: 100%;
     width: -moz-available;
     width: 100%;
+    border-radius: 100%;
     object-fit: cover;
-    border-radius: ${theme.borderRadiusS};
+    // height: 100%;
+    // width: -moz-available;
+    // width: 100%;
+    // object-fit: cover;
+    // border-radius: ${theme.borderRadiusS};
 `;
 
 export const ProfileImageContainer = styled.div`
+    height: 200px;
+    width: 200px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 270px;
-    height: 250px;
-    margin-bottom: 10px;
+    justify-content: center;
+    border-radius: 100%;
+    background: ${theme.colorAlmond};
+    box-shadow: ${theme.boxShadowInset};
+    margin-bottom: 15px;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+    //width: 270px;
+    //height: 250px;
+    //margin-bottom: 10px;
 `;
 
 
@@ -369,6 +499,7 @@ export const BugContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 300px;
+    margin-top: 150px;
 `;
 
 export const BugTextContainer = styled.div`
@@ -388,7 +519,7 @@ export const BugText = styled.div`
 export const BugSubmitContainer = styled.div`
     display: flex;
     height: 100px;
-    width: 700px;
+    width: 400px;
     justify-content: center;
     align-items: center;
 `;
@@ -398,14 +529,16 @@ export const DisclaimerContainer = styled.div`
     flex-direction: column;
     width: 100%;
     margin-bottom: 150px;
+    margin-top: 100px;
 `;
 
-export const DisclaimerTitle = styled.h2`
+export const DisclaimerTitle = styled.p`
     display: flex;
     width: 100%;
     justify-content: center;
-    color: ${theme.colorDarkOliveGreen};
+    color: ${theme.colorOneDark};
     font-size: ${theme.fontSizeXL};
+    font-weight: bold;
 `;
 
 export const DisclaimerText = styled.p`
