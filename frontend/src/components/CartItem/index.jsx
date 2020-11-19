@@ -10,7 +10,7 @@ import {
     ProductContainer,
     ProductName, QuantityContainer, RightContainer
 } from "../../style/ShoppingCart";
-import kopfsalat from '../../assets/salad.png'
+import kopfsalat from '../../assets/kopf-salad.jpg'
 
 const CartItem = ({item}) => {
     const priceSuffix = item.price % 1 ? '0' : '';

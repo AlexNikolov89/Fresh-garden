@@ -189,6 +189,7 @@ export const StepTwoContainer = styled(StepOneContainer)`
         color: rgba(0, 0, 0, .5);
         font-size: 1.6rem;
         text-align: center;
+        margin-bottom: 80px;
     }
 
     #stepTwoIcon {
