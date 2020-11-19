@@ -139,7 +139,7 @@ const About = () => {
                                         <XMark>
                                             <i className="fas fa-times-circle"></i>Social board and Chat<br/>
                                             <i className="fas fa-times-circle"></i>Exclusive event invitations<br/>
-                                            <i className="fas fa-times-circle"></i>Startup backer<br/>
+                                            <i className="fas fa-times-circle"></i>Startup Backer<br/>
                                             <i className="fas fa-times-circle"></i>No transaction fee (##.#%)<br/>
                                         </XMark>
                                         </BottomSubscriptionText>
@@ -166,7 +166,7 @@ const About = () => {
                                             <i className="fas fa-check-circle"></i>Social board and Chat<br/>
                                             <i className="fas fa-check-circle"></i>Exclusive event invitations<br/>
                                         <XMark>
-                                            <i className="fas fa-times-circle"></i>Startup backer<br/>
+                                            <i className="fas fa-times-circle"></i>Startup Backer<br/>
                                             <i className="fas fa-times-circle"></i>No transaction fee (##.#%)<br/>
                                         </XMark>
                                         </BottomSubscriptionText>

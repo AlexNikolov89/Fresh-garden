@@ -102,44 +102,28 @@ const Profile = ({author}) => {
                     <LeftContainer>
 
                     <UserProfileContainer>
-                        <AvatarContainer>
-                            {avatar && <Avatar src={avatar} alt='avatar' />}
-                            <Name>{`${first_name} ${last_name}`}</Name>
-                            <ButtonEdit>Edit</ButtonEdit>
-                        </AvatarContainer>
-
                         <UserInfoContainer>
 
                             <AboutGarden>
-                                <TitleGarden>About me and my garden</TitleGarden>
-                                {description && <AboutText>
-                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr,<br />
-                                sed diam nonumy eirmod tempor <br />
-                                {description}
-                                </AboutText> }
+                                <TitleGarden>Name</TitleGarden>
+                                <AboutText>{user.first_name} {user.last_name}</AboutText>
                             </AboutGarden>
 
                             <Info>
-                            <TitleLocation>My Garden's Location</TitleLocation>
-                            <AddressInfo>
-                            {/*<ZipCode>{zip}</ZipCode>*/}
-                            {/*<Address>{address}</Address>*/}
-                             {city && <City>{city}</City>}
-                            </AddressInfo>
+                            <TitleLocation>Initial Consideration Message</TitleLocation>
+                            <AddressInfo>{user.username}</AddressInfo>
                             </Info>
 
 
                             <Contact>
-                                <TitleTel>Contact</TitleTel>
-                                <TelContainer>
-                                {phone && <Mobile>{phone}</Mobile>}
-                                {email && <Email>{email}</Email>}
-                                </TelContainer>
+                                <TitleTel>Releases</TitleTel>
+                                <TelContainer>{user.email}</TelContainer>
                             </Contact>
 
                             <Delivery>
-                                <i className="fas fa-truck" />
-                                <p>I do delivery up to 21km</p>
+                                <p>
+                                    We keep you udpated by not sending more than 3 emails a year.
+                                </p>
                             </Delivery>
 
                         </UserInfoContainer>
