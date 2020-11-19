@@ -70,7 +70,7 @@ const Header = () => {
                 <Icons >
                     {loginCheck &&
                     <NavLinkAddProduct
-                        to='/upload'>
+                        to='/user/login'>
                         <i className="fas fa-plus-circle"/>
                     </NavLinkAddProduct>}
                     <NavLinkShop

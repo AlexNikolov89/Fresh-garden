@@ -40,7 +40,7 @@ import {useDispatch} from "react-redux";
 import {ADD_TO_CART} from "../../helpers/constants";
 
 
-const Card = ({product}) => {
+const Card = ({product, sold}) => {
     const dispatch = useDispatch();
     const [availableStock, setAvailableStock] = useState(product.stock)
     const [name, setName] = useState('First Lastname')
@@ -56,6 +56,7 @@ const Card = ({product}) => {
     const [styleDiscount, setStyleDiscount] = useState(null)
     const [discountedPrice, setDiscountedPrice] = useState('')
     const [deliveryRadius, setDeliveryRadius] = useState(null)
+    const [soldStyle, setSoldStyle] = useState(null)
 
     // formatting backend information and handling the real time render of the "addproduct" page
     useEffect(() => {
@@ -80,13 +81,20 @@ const Card = ({product}) => {
                     fontSize: "1.2rem",
                     alignSelf: "center",
                     margin: "2px",
+                    color: 'grey',
                 }
                 setStyle(styleObject)
                 styleObject = {
-                    color: "#5D6D37",
+                    color: "#B8860B",
                     marginLeft: 0,
                 }
                 setStyleDiscount(styleObject)
+            }
+            if (sold) {
+                let styleObject = {
+                    opacity: "0.4",
+                }
+                setSoldStyle(styleObject)
             }
         }
         unitFormatter();
@@ -109,19 +117,20 @@ const Card = ({product}) => {
 
     return (
         <Fragment>
-            <CardContainer>
+            <CardContainer style={soldStyle}>
                 <TopContainer>
-                    {product.promotion && <PromotionIcon><PromoIcon /></PromotionIcon>}
-                    <ImageContainer><Image src={image} /></ImageContainer>
+                    {product.promotion && <PromotionIcon><PromoIcon/></PromotionIcon>}
+                    <ImageContainer><Image src={image}/></ImageContainer>
                 </TopContainer>
                 <BottomContainer>
                     <UpperContainer>
                         <UpperLeftContainer>
-                            <ProductName>{productName}</ProductName>
-                            <DeliveryOptions>
+                            <ProductName>{productName}<br/>{sold && "SOLD Jason: 1"}</ProductName>
+                            {!sold && <DeliveryOptions>
                                 <DeliveryContainer>
                                     {deliveryRadius && <DeliveryIcon><i className="fas fa-truck"/></DeliveryIcon>}
-                                    {deliveryRadius && <DeliveryDistance>delivery up to {deliveryRadius}km</DeliveryDistance>}
+                                    {deliveryRadius &&
+                                    <DeliveryDistance>delivery up to {deliveryRadius}km</DeliveryDistance>}
                                 </DeliveryContainer>
                                 <PickUpContainer>
                                     <PickUpIcon><i className="fas fa-hiking"/></PickUpIcon>
@@ -131,11 +140,12 @@ const Card = ({product}) => {
                                     <ExpiryIcon><i className="fas fa-seedling"/></ExpiryIcon>
                                     <ExpiryDate>ad expires {expirationDate}</ExpiryDate>
                                 </ExpiryContainer>
-                            </DeliveryOptions>
+                            </DeliveryOptions>}
                         </UpperLeftContainer>
                         <UpperRightContainer>
                             <SellerContainer>
-                                <PortraitContainer>{imageAuthor ? <Portrait src={imageAuthor} /> : <i className="fas fa-user-circle"/>}</PortraitContainer>
+                                <PortraitContainer>{imageAuthor ? <Portrait src={imageAuthor}/> :
+                                    <i className="fas fa-user-circle"/>}</PortraitContainer>
                                 <SellerName>{name}</SellerName>
                             </SellerContainer>
                         </UpperRightContainer>
