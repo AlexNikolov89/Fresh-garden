@@ -1,13 +1,17 @@
 import React, {Fragment, useEffect, useState} from 'react';
 import {HomeContainer, Box
 } from '../style/Homepage';
-import {TitleContainer, UserProfileContainer, AvatarContainer, EmailContainer, Avatar, Name, ZipCode, Address, ButtonEdit,
-    BottomContainer, TitleGarden, TitleLocation, AddressInfo, TitleTel, TelContainer, UserInfoContainer, AboutGarden, AboutText, MainTitle, Info, Email, Contact, Mobile, LogOut} from '../style/Profile'
+import {TitleContainer, UserProfileContainer, AvatarContainer, EmailContainer, Avatar, Name, ZipCode, City, ButtonEdit,
+    BottomContainer, TitleGarden, TitleLocation, AddressInfo, TitleTel, TelContainer,
+    UserInfoContainer, AboutGarden, AboutText, MainTitle, Info, Email, Contact,
+    Mobile, LogOut, AsideContainer, LeftContainer, RightContainer, Image,
+    TitleWrap, ButtonWrap} from '../style/Profile'
 import Header from '../components/Header'
 import Footer from '../components/Footer/index'
+import garden from '../assets/salad.png'
 //import {Login} from "./Login";
 import { useLocation } from "react-router-dom";
-import defaultAvatar from '../assets/images/profile-temporary.jpg';
+import defaultAvatar from '../assets/images/profile.png';
 import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
@@ -20,6 +24,7 @@ import {userProfileReducer} from "../store/reducers/userProfileReducer";
 import {authAction} from "../store/actions/authAction";
 import {LOGOUT_UNSET_TOKEN, SET_PRODUCTS_ALL} from "../helpers/constants";
 import {productAction} from "../store/actions/productAction";
+import {RightConatiner} from "../style/Checkoutpage";
 
 const Profile = ({author}) => {
     const productsAll = useSelector(state => state.productReducer.productsAll)
@@ -34,6 +39,7 @@ const Profile = ({author}) => {
     const [phone, setPhone] = useState('+41 78 555 333 22');
     const [address, setAddress] = useState('');
     const [avatar, setAvatar] = useState(defaultAvatar);
+    const [city, setCity] = useState('Winterthur')
     const [zip, setZip] = useState('');
     const [products, setProducts] = useState('')
     const [isLoading, setIsLoading] = useState(true)
@@ -88,20 +94,24 @@ const Profile = ({author}) => {
                 <Header />
 
                     <TitleContainer>
+                        <TitleWrap>
                          <MainTitle>Profile</MainTitle>
+                            </TitleWrap>
+                        <ButtonWrap>
                         <LogOut onClick={logout}>Logout</LogOut>
+                            </ButtonWrap>
                      </TitleContainer>
 
                 <BottomContainer>
+                    <LeftContainer>
                     <UserProfileContainer>
                         <AvatarContainer>
                             <Avatar src={avatar} alt='avatar' />
                             <Name>{`${first_name} ${last_name}`}</Name>
-
                             <ButtonEdit>Edit Profile</ButtonEdit>
                         </AvatarContainer>
-                        <UserInfoContainer>
 
+                        <UserInfoContainer>
 
                             <AboutGarden>
                                 <TitleGarden>About me and my garden</TitleGarden>
@@ -113,11 +123,11 @@ const Profile = ({author}) => {
                             </AboutGarden>
 
                             <Info>
-                            {location && <TitleLocation>My Pickup location</TitleLocation>}
+                            <TitleLocation>Garden Location</TitleLocation>
                             <AddressInfo>
-                            <ZipCode>{zip}</ZipCode>
-                            <Address>{address}</Address>
-                            {/*<City>{city}</City>*/}
+                            {/*<ZipCode>{zip}</ZipCode>*/}
+                            {/*<Address>{address}</Address>*/}
+                            <City>{city}</City>
                             </AddressInfo>
                             </Info>
 
@@ -126,18 +136,20 @@ const Profile = ({author}) => {
                                 <TitleTel>Contact</TitleTel>
                                 <TelContainer>
                                 <Mobile>{phone}</Mobile>
-                                     {email && <Email>{email}</Email>}
+                                {email && <Email>{email}</Email>}
                                 </TelContainer>
 
                             </Contact>
 
-                            <EmailContainer>
-
-
-                            </EmailContainer>
-
                         </UserInfoContainer>
                     </UserProfileContainer>
+                    </LeftContainer>
+
+                    <RightConatiner>
+                        <AsideContainer>
+                            <Image src={garden} />
+                        </AsideContainer>
+                    </RightConatiner>
 
                 </BottomContainer>
 
