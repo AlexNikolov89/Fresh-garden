@@ -86,8 +86,6 @@ const Profile = ({author}) => {
     return (
         <Fragment>
             <HomeContainer>
-
-                <Banner/>
                 <Header />
 
                     <TitleContainer>
