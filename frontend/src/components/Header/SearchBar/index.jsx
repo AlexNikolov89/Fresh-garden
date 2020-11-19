@@ -157,7 +157,7 @@ const SearchBar = () => {
 
                 <SearchContainer>
                     <SearchButton onClick={(e) => e.preventDefault()}>
-                        <i className="fas fa-search"></i>
+                        <i className="fas fa-search"/>
                     </SearchButton>
                     <SearchInput
                         name={"search"}

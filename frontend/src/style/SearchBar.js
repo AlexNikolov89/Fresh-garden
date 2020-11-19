@@ -9,7 +9,7 @@ export const Form = styled.form `
     height: 100%;
     width: 100%;
     opacity: 1;
-    
+        
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         justify-content: flex-end;
         width: ${theme.controlHeightXL};
@@ -85,6 +85,9 @@ export const AutocompleteThree = styled(AutocompleteOne)``;
 
 export const SearchContainer = styled(LocationContainer)`
     width: 60%;
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        display: none;
+    }
 `;
 
 export const SearchInput = styled.input`
