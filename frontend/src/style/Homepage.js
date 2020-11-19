@@ -5,7 +5,7 @@ import {theme} from './index'
 export const HomeContainer = styled.div `
     height: 100%;
     width: 100%;
-    z-index: 9000;
+    z-index: 9000000;
     min-height: calc(100vh - 240px - 64px - 48px);
 `;
 

@@ -122,7 +122,7 @@ const Profile = ({author}) => {
 
                             <Delivery>
                                 <p>
-                                    We keep you udpated by not sending more than 3 emails a year.
+                                    We keep you updated by not sending more than 3 emails a year.
                                 </p>
                             </Delivery>
 

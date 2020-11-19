@@ -79,9 +79,14 @@ import progressBar from '../assets/images/progressbar.png'
 
 import {BugFeedbackButton, SubscribeButton, SubscribeButtonContributor} from "../style/Buttons";
 import Footer from "../components/Footer";
+import { useState, useEffect } from 'react';
+import UnderConstruction from "../components/UnderConstruction";
+import useWindowSize from "../helpers/UseWindowSize";
+
 
 
 const About = () => {
+
     return (
         <Fragment>
                 <Header />
@@ -471,4 +476,4 @@ const About = () => {
     )
 }
 
-export  default About;
+export default About;
