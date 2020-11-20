@@ -13,7 +13,7 @@ const Slides = () => {
 
     return (
         <Fragment>
-            <div style={{
+            <div onClick={() => history.push('/shop')}style={{
                 backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",

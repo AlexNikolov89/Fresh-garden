@@ -15,6 +15,7 @@ export const LoginHeader = styled.header`
     font-size: ${theme.fontSizeM};
     margin-top: 20px;
     margin-left: 30px;
+    z-index: 5;
 `
 
 export const LoginQuestion = styled.div`
@@ -153,6 +154,7 @@ export const StepOneContainer = styled.div`
     align-items: center;
     width: 100%;
     padding-top: 60px;
+    height: 100vh;
     
     @media (max-width: 680px) {
       padding-top: 90px;
@@ -162,7 +164,7 @@ export const StepOneContainer = styled.div`
         flex: 0;
         margin-top: min(100px,30px);
         margin-bottom: calc(200px + 100px + 9px);
-        min-height: 60px;
+        min-height: 100px;
     }
 `
 export const StepLoginContainer = styled(StepOneContainer)`
@@ -173,6 +175,7 @@ export const StepLoginContainer = styled(StepOneContainer)`
 `
 
 export const StepTwoContainer = styled(StepOneContainer)`
+    width: 100%;
     img {
         margin-top: calc(55px - 37px);
         margin-bottom: 30px;
@@ -183,6 +186,7 @@ export const StepTwoContainer = styled(StepOneContainer)`
    
     h2 {
     margin-top: 56px;
+    font-size: 32px;
    
     }
     p {
@@ -194,7 +198,6 @@ export const StepTwoContainer = styled(StepOneContainer)`
 
     #stepTwoIcon {
         flex: 0;
-        margin-top: min(100px,30px);
         margin-bottom: calc(155px + 100px + 9px);
         min-height: 60px;
     }
@@ -222,6 +225,8 @@ export const FormWrapper = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    
+    height: 100%;
 `
 
 export const BaseInputContainer = styled.div`
@@ -258,6 +263,11 @@ export const BaseInputContainer = styled.div`
 
 export const ValidationCodeContainer = styled(BaseInputContainer)`
     width: 560px;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        width: 260px;
+    }
+    
 `
 export const EmailInputContainer = styled(BaseInputContainer)`
     flex-direction: column;
@@ -308,6 +318,21 @@ export const UsernameInputContainer = styled(BaseInputContainer)`
     flex-direction: column;
     align-items: flex-start;
     background-color: ${theme.colorBackgroundColor};
+    
+    select {
+        border: none;
+        background: inherit;
+        font-size: 1.6rem;
+        margin-top: 8px;
+          width: 100%;
+        
+        option {
+          border: none;
+          background: inherit;
+          font-size: 1.2rem;
+          
+        }
+    }
 `
 export const FirstnameInputContainer = styled(BaseInputContainer)``
 export const LastnameInputContainer = styled(BaseInputContainer)``
@@ -322,6 +347,7 @@ export const PasswordSignInContainer = styled(UsernameSignInInputContainer)`
 `;
 
 export const LayoutContainerForm = styled.div`
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     flex-direction: row;

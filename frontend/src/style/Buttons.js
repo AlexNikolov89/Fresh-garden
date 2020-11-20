@@ -22,21 +22,24 @@ export const StandardButton = styled.button`
     transition: box-shadow .3s ease;
     line-height: 18px;
     font-weight: 600;
+    box-shadow: none;
+
     
     i.fas {
         color: ${theme.colorOneDark};
     }
     
-    
     :hover {
-        box-shadow: ${theme.boxShadowLighter};
+        // box-shadow: ${theme.boxShadowLighter};
         background: ${theme.colorOneHover};
-    }
+    }    
     
-    :focus, &.active {
+    :active {        
         box-shadow: ${theme.boxShadowInset};
         background: ${theme.colorOne};
-    }  
+    }    
+    
+
 `;
 
 export const GenericButton = styled.button`
@@ -60,19 +63,10 @@ export const GenericButton = styled.button`
 
 export const SignUpButton = styled(StandardButton)`
     margin-top: ${theme.spaceXS};
-    
-    &:hover {
-        box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorOne};
-    }
 `;
 
 export const SignInButton = styled(StandardButton)`
-    
-    &:hover, :focus {
-        box-shadow: ${theme.boxShadowInset};
-        background: ${theme.colorOne};
-    }
+  margin-top: 30px;
 `;
 
 export const SubscribeButton = styled(StandardButton)`

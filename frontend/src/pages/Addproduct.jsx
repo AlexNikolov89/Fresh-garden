@@ -14,9 +14,11 @@ import {CREATE_NEW_PRODUCT} from "../helpers/constants";
 import {useHistory, useLocation} from "react-router-dom";
 import {Logo} from "../style/Header";
 import logo from '../assets/svgs/logo.svg'
+import UnderConstruction from "../components/UnderConstruction";
 
 
 const Addproduct = () => {
+    const demo = useSelector(state => state.authReducer.demo)
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -81,7 +83,13 @@ const Addproduct = () => {
 
     return (
         <Fragment>
-            <div style={{
+            {!demo && <UnderConstruction text={"A functionality for uploading and selling a product is our highest priority."}/>}
+            {demo && <div onClick={() => {
+                window.opener = null
+                window.open("https://docs.google.com/presentation/d/1PcmkSzGMDq_IrAmPvD5UsE0jvuOIJbhcg8WizfeojJk/edit#slide=id.gac87beb2e0_0_46", "_self")
+                window.close()
+            }}
+                          style={{
                 backgroundColor: "black",
                 display: "flex",
                 justifyContent: "center",
@@ -98,6 +106,8 @@ const Addproduct = () => {
                 color: '#B7C892',
                 fontSize: "64px",
             }}>THE KOPFSALAT. Thank you.<br/><br/>UP NEXT<br/>A look inside the crystal ball<br/><Logo style={{height: "100px"}} src={logo}/></h1>
+            </div>}
+
             {/*<AddProductContainer>*/}
             {/*    <Header />*/}
             {/*    <BottomConatiner>*/}
@@ -184,7 +194,6 @@ const Addproduct = () => {
             {/*    </BottomConatiner>*/}
             {/*</AddProductContainer>*/}
             {/*<Footer />*/}
-            </div>
         </Fragment>
     )
 }

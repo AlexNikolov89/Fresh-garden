@@ -2,8 +2,18 @@ import styled from 'styled-components';
 import {theme} from './index';
 import React from "react";
 
-export const AboutMainContainer = styled.main`
+export const AboutContainer = styled.div`
     z-index: 9999;
+    background: white;
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}){
+        display: none;
+    }
+`;
+
+
+export const AboutMainContainer = styled.main`
+    z-index: 10001;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -18,9 +28,22 @@ export const HeaderTitleContainer = styled.h1`
     align-items: flex-end;
     font-size: ${theme.fontSizeXXXL};
     color: ${theme.colorOneDark};
-    height: 200px;
-    margin-bottom: 100px;
+    //height: 200px;
+    margin-bottom: 70px;
+    margin-top: 70px;
 `;
+
+export const TLDR = styled.p`
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    font-size: ${theme.fontSizeL};
+    color: ${theme.colorTwoDarkHover};
+    font-family: monospace;
+    margin-bottom: 70px;
+
+`;
+
 
 export const FirstSectionContainer = styled.div`
     padding: 30px;
@@ -28,6 +51,8 @@ export const FirstSectionContainer = styled.div`
 
 export const FirstDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -60,6 +85,8 @@ export const FirstRightContainer = styled.div`
 
 export const SecondDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -92,6 +119,8 @@ export const SecondRightContainer = styled.p`
 
 export const ThirdDiv = styled.div`
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
@@ -123,6 +152,7 @@ export const ThirdRightContainer = styled.div`
 `;
 
 export const Image = styled.img`
+  
     height: 300px;
     width: 500px;
     box-shadow: ${theme.boxShadowGradient};

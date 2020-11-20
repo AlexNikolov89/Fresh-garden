@@ -124,7 +124,20 @@ export const NavLinkProfile = styled(NavLinkAbout)`
 
 export const NavLinkShop = styled(NavLinkAbout)``;
 
-export const NavLinkAddProduct = styled(NavLinkAbout)``;
+export const NavLinkAddProduct = styled(NavLinkAbout)`
+    background-color: ${theme.colorTwoDarkHover};
+    
+    &:hover {
+          background-color: ${theme.colorTwoDarkHover};
+          box-shadow: ${theme.boxShadowLighter};
+
+    }
+    
+    :focus, &.active {
+          background-color: ${theme.colorTwoDarkHover};
+          box-shadow: ${theme.boxShadowInset};
+    }  
+`;
 
 export const CartIcon = styled.div`
     display: flex;
@@ -179,5 +192,13 @@ export const Logo = styled.img`
     @media (max-width: ${theme.mediaQueryScreenWidth}) {
         width: ${theme.controlHeightXL};
     }
+`;
+
+export const LogoNavBar = styled(Logo)`
+    height: calc(${theme.controlHeightXL} - 20px);
+    
+    @media (max-width: ${theme.mediaQueryScreenWidth}) {
+        height: calc(${theme.controlHeightXL} - 20px);
+    }    
 `;
 

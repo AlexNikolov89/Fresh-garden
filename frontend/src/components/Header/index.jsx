@@ -9,7 +9,7 @@ import {
     LogoContainer,
     CartIcon,
     NavLinkShop,
-    NavLinkAddProduct, Logo
+    NavLinkAddProduct, Logo, LogoNavBar
 } from '../../style/Header';
 import '../../style/Navbar.css'
 import {cartAction} from "../../store/actions/cartAction";
@@ -20,6 +20,7 @@ import SearchBar from "./SearchBar";
 import ShoppingCart from "../ShoppingCart";
 import Banner from "./Banner";
 import logo from '../../assets/svgs/logo_with_text.svg';
+import logo_mono from '../../assets/svgs/logo.svg';
 
 const Header = () => {
     const location = useLocation();
@@ -31,7 +32,6 @@ const Header = () => {
     const tokenRedux = useSelector(state => state.authReducer.token)
     const [loginCheck, setLogicCheck] = useState(false)
 
-    //console.log("flag path  ",location.pathname)
 
     // lights up the profile navigation button if not logged in
     // TODO also do this for the "add product" page
@@ -68,11 +68,13 @@ const Header = () => {
                 </FormContainer>
 
                 <Icons >
-                    {loginCheck &&
+                    {/*{loginCheck &&*/}
                     <NavLinkAddProduct
-                        to='/user/login'>
-                        <i className="fas fa-plus-circle"/>
-                    </NavLinkAddProduct>}
+                        to='/about'>
+                        {/*<i className="fas fa-plus-circle"/>*/}
+                        <LogoNavBar src={logo_mono}/>
+                    </NavLinkAddProduct>
+                    {/*}*/}
                     <NavLinkShop
                         to='/shop'
                         isActive={() => ['/shop', '/', '/checkout', '/order'].includes(location.pathname)}>
@@ -84,8 +86,8 @@ const Header = () => {
                         <i className="fas fa-shopping-basket" />
                     </CartIcon>
                     <NavLinkAbout
-                        to='/about'>
-                        <i className="fas fa-question-circle"/>
+                        to='/upload'>
+                        <i className="fas fa-plus-circle"/>
                     </NavLinkAbout>
                     <NavLinkProfile
                         to='/user/profile'

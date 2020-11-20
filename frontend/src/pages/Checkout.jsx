@@ -8,28 +8,37 @@ import Product from '../components/Product/index'
 import Footer from '../components/Footer/index'
 import {EmptyCartIcon} from "../style/ShoppingCart";
 import Banner from "../components/Header/Banner";
+import UnderConstruction from "../components/UnderConstruction";
+import {useSelector} from "react-redux";
+import {useHistory, useLocation} from "react-router-dom";
 
 
 const Checkout = () => {
+    const demo = useSelector(state => state.authReducer.demo)
+    const history = useHistory();
+
     return (
-        <Fragment >
-            <div style={{
-                backgroundColor: "black",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                zIndex: 9000,
-                width: "100%",
-                position: "absolute",
-                height: "100%",
-                top: 0,
-                color: "black",
-                textAlign: "center",
-                textJustify: "center",
-            }}><h1 style={{
-                color: '#B7C892',
-                fontSize: "64px",
-            }}>ACT 2 - MEMBER EMMA</h1>
+        <Fragment>
+            {demo ? (
+                <div onClick={() => history.push('/shop')} style={{
+                    backgroundColor: "black",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    zIndex: 9000,
+                    width: "100%",
+                    position: "absolute",
+                    height: "100%",
+                    top: 0,
+                    color: "black",
+                    textAlign: "center",
+                    textJustify: "center",
+                }}><h1 style={{
+                    color: '#B7C892',
+                    fontSize: "64px",
+                }}>ACT 2 - MEMBER EMMA</h1></div>) : (
+                    <UnderConstruction text={"This site is under construction. Be assured that no payment was executed nor any payment information stored."}/>
+                    )}
             {/*<Header />*/}
             {/*<CheckoutContainer>*/}
 
@@ -74,7 +83,6 @@ const Checkout = () => {
             {/*</ProductsConatiner>*/}
             {/*</CheckoutContainer>*/}
             {/*<Footer />*/}
-            </div>
         </Fragment>
     )
 }

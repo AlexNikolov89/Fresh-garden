@@ -272,13 +272,14 @@ export const AddToCart = styled.div`
     border-radius: ${theme.borderRadiusS};
     height: 25px;
     width: 25px;
+    box-shadow: none;
 
     i {
         font-size: ${theme.fontSizeDefault};
         color: ${theme.colorOneDark};
     }
     
-    &:hover, :focus, &.active {
+    :active {
           box-shadow: ${theme.boxShadowInset};
     }
 `;
