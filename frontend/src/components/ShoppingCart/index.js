@@ -16,7 +16,6 @@ const ShoppingCart = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const priceSuffix = cartTotal % 1 ? '0' : '';
-    console.log("in da shoppingcart", cart)
 
     useEffect(() => {
         const fetchCart = async () => {
@@ -34,7 +33,7 @@ const ShoppingCart = () => {
                 </TopContainer>
 
                 <MiddleContainer>
-                    {Object.keys(cart).map(item => <CartItem item={item} key={item.product_id} />)}
+                    {Object.keys(cart).map(item => <CartItem id={`cart-item-${item.id}`} item={item} key={item.product_id} />)}
                 </MiddleContainer>
 
                 <BottomContainer>

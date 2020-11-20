@@ -148,16 +148,17 @@ export const Name = styled.p `
 `;
 
 export const ButtonEdit = styled(StandardButton) `
-   font-size: ${theme.fontSizeS};
-
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 100px;
-       font-size: ${theme.fontSizeXS};
-    }
-    
-    @media (max-width: 360px){
-       font-size: ${theme.fontSizeXS};
-    }
+   // font-size: ${theme.fontSizeS};
+   //
+   //  @media (max-width: ${theme.mediaQueryScreenWidth}){
+   //     width: 100px;
+   //     font-size: ${theme.fontSizeXS};
+   //  }
+   // 
+   //  @media (max-width: 360px){
+   //     font-size: ${theme.fontSizeXS};
+   //  }
+   width: 100px;
     
 `;
 
@@ -180,12 +181,9 @@ export const UserInfoContainer = styled.div `
     }
 `;
 
-export const TitleGarden = styled.p `
+export const TitleGarden = styled.h2 `
     padding-top: 10px;
     color: ${theme.colorTitle};
-    font-size: ${theme.fontSizeM};
-    font-weight: bold;
-    line-height: 25px;
     
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        padding-top: 0; 
@@ -201,7 +199,7 @@ export const TitleGarden = styled.p `
 export const AboutGarden = styled.div `
     height: 30%;
     width: 80%;
-    font-size: ${theme.fontSizeS};
+    font-size: ${theme.fontSizeDefault};
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        width: 90%;
@@ -217,11 +215,7 @@ export const AboutText = styled.p `
  font-size: ${theme.fontSizeDefault};
 `;
 
-export const TitleLocation = styled(TitleGarden) `
-   color: ${theme.colorTitle};
-   font-size: ${theme.fontSizeM};
-   font-weight: bold;
-`;
+export const TitleLocation = styled(TitleGarden) ``;
 
 
 export const Info = styled.div `
@@ -234,7 +228,7 @@ export const Info = styled.div `
 `;
 
 export const City = styled.p `
-  font-size: ${theme.fontSizeS};
+  font-size: ${theme.fontSizeDefault};
 
 `;
 
@@ -245,7 +239,7 @@ export const AddressInfo = styled.div `
 `;
 
 export const TelContainer = styled.div `
-   font-size: ${theme.fontSizeDefault};
+  font-size: ${theme.fontSizeDefault};
 
  @media (max-width: 680px) {
  height: 50px;
@@ -259,7 +253,7 @@ export const ZipCode = styled(Address) ``;
 export const Contact = styled.div ``;
 
 export const Mobile = styled.p `
-    font-size: ${theme.fontSizeS};
+    font-size: ${theme.fontSizeDefault};
     font-weight: normal;
    
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -270,7 +264,7 @@ export const Mobile = styled.p `
 export const Email = styled.p `
  padding-bottom: ${theme.spaceM};
  font-weight: normal;
- font-size: ${theme.fontSizeS};
+ font-size: ${theme.fontSizeDefault};
  
  @media (max-width: ${theme.mediaQueryScreenWidth}){
         font-size: ${theme.fontSizeS}
@@ -278,8 +272,6 @@ export const Email = styled.p `
  `;
 
 export const TitleTel = styled(TitleGarden) `
-  font-weight: bold;
-  margin-top: ${theme.spaceS};
   @media (max-width: ${theme.mediaQueryScreenWidth}){
        
     }
@@ -317,8 +309,6 @@ export const Image = styled.img `
 
 export const Delivery = styled.div `
   display: flex;
-  margin-top: 10px;
-  font-size: ${theme.fontSizeDefault};
   
     i {
         font-size: ${theme.fontSizeDefault};

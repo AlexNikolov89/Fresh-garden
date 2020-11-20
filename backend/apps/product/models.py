@@ -89,5 +89,5 @@ class Product(models.Model):
     )
 
     def __str__(self):
-        return f"{self.author}: {self.name[0:100]}"
+        return f"{self.author.first_name}: {self.name[0:100]}"
 

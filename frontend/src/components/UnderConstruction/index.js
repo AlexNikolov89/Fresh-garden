@@ -9,13 +9,13 @@ import {
     MessageContainer
 } from "../../style/UnderConstruction";
 
-const UnderConstruction = ({text}) => {
+const UnderConstruction = ({text, mobile}) => {
     const history = useHistory();
     const location = useLocation();
 
     return (
         <Fragment>
-            <ConstructionContainer>
+            <ConstructionContainer className={mobile}>
                 <CenterContainer>
                     <Icons>
                         <i className="fas fa-tools"/>

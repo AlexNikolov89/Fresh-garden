@@ -15,7 +15,7 @@ export const ShoppingCartContainer = styled.div `
     padding: ${theme.spaceS};
     top: calc(0px + ${theme.controlHeightXL});
     //box-shadow: ${theme.boxShadowLight};
-    z-index: 10001;
+    z-index: 100044;
     overflow-y: scroll;
     max-height: 70vh;
     box-shadow: ${theme.boxShadowGradient}, 0 50px 50px 30px white;
@@ -128,8 +128,8 @@ export const Decrement = styled.div`
     border: 1px solid ${theme.colorOneHover};    
     border-radius: ${theme.borderRadiusS};
     background-color: ${theme.colorOneHover};
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     i.fas {
         color: ${theme.colorOneDark};
     }
@@ -154,8 +154,8 @@ export const Count = styled.div`
     color: ${theme.colorDefaultText};
     border-top: 1px solid ${theme.colorOneHover};
     border-bottom: 1px solid ${theme.colorOneHover};
-    height: 25px;
-    width: 25px;
+    height: 20px;
+    width: 20px;
     background-color: ${theme.colorBackgroundColor};
 `;
 

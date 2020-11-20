@@ -4,6 +4,7 @@ import {theme} from "./index";
 
 
 export const ConstructionContainer = styled.main`
+    z-index: 10009;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -11,6 +12,13 @@ export const ConstructionContainer = styled.main`
     height: 100vh;
     width: 100%;
     background-color: inherit;
+    
+    &.true {      
+        display: none;  
+        @media (max-width: ${theme.mediaQueryScreenWidth}){
+            display: flex;
+        }
+    }
 `;
 
 export const CenterContainer = styled.div`

@@ -5,7 +5,7 @@ import {theme} from './index'
 export const HomeContainer = styled.div `
     height: 100%;
     width: 100%;
-    z-index: 9000000;
+    z-index: 50;
     min-height: calc(100vh - 240px - 64px - 48px);
 `;
 
@@ -24,8 +24,8 @@ export const Wrapper = styled.div`
 
 export const BackgroundBack = styled.div `
     width: 100%;    
-    height: 340px;
-    z-index: 0;
+    height: 240px;
+    z-index: 1;
 
     background-repeat: no-repeat;
     background-size: cover;
@@ -49,8 +49,8 @@ export const BackgroundBack = styled.div `
 export const BackgroundFront = styled(BackgroundBack)`
     z-index: 1;
     position: absolute;
-    top: -20vh;
-    height: 500px;  
+    top: 0;
+    height: 304px;  
 `;
 
 export const Image = styled.img`
