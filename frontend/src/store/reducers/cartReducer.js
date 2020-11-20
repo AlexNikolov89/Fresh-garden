@@ -17,7 +17,6 @@ export default function cartReducer (state = initialState, action) {
             // }
             // let newCartTotal =+ action.payload.map(item => subTotal(item))
             // newState.cartTotal = newCartTotal
-            console.log("inside",newState)
             return newState
         }
         case TOGGLE_CART_VIEW: {

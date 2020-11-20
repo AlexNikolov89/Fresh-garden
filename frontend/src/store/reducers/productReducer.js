@@ -7,7 +7,6 @@ const initialState = {
 }
 
 export default function productReducer (state = initialState, action) {
-    //console.log(action.payload)
     switch (action.type) {
         case SET_PRODUCTS_ALL: {
             const newState = {...state}
@@ -25,9 +24,7 @@ export default function productReducer (state = initialState, action) {
         }
         case SET_PRODUCTS_SUBSET: {
             const newState = {...state}
-            console.log("productReducer SUBSET, payload", action.payload)
             if (action.payload && action.payload.length !== 0) {
-                console.log("productReducer: INSIDE IF FIRED, payload")
                 newState.productsSubset = action.payload
                 newState.productsSubset.reverse()
                 return newState

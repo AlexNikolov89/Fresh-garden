@@ -30,7 +30,6 @@ export const authAction = (email, password, type) => async (dispatch, getState) 
     const response = await fetch(url, config)
     const data = await response.json();
     dispatch(setToken(data.access)); //token
-    if (data.access) console.log("authReducer---------NEW TOKEN", data.access)
     localStorage.setItem("token", data.access);
     return data
 };

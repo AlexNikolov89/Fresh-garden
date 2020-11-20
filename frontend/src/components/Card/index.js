@@ -108,9 +108,7 @@ const Card = ({product, sold}) => {
         }
         fetchNewCart();
         if (availableStock === 0) return
-        console.log("available before....", availableStock)
         setAvailableStock(availableStock - 1)
-        console.log("available after......", availableStock)
         if (availableStock - 1 > 99) return setRenderedStock('99+')
         if (availableStock - 1 <= 99) return setRenderedStock(availableStock - 1)
     }
