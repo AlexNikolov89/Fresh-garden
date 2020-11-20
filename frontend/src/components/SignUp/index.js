@@ -42,6 +42,11 @@ export const SignUp = () => {
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
     const [registrationState, setRegistrationState] = useState('stepTwo');
+    const [string, setString] = useState('');
+
+    const stringGenerator = (input) => {
+
+    }
 
     const handleValidationCode = e => {
         setValidation(e.currentTarget.value);
@@ -51,6 +56,7 @@ export const SignUp = () => {
     }
     const handleUsername = e => {
         setUsername(e.currentTarget.value);
+        setString(stringGenerator())
     }
     const handleFirstName = e => {
         setFirstName(e.currentTarget.value);
