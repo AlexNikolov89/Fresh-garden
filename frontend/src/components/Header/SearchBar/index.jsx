@@ -22,8 +22,6 @@ const SearchBar = () => {
     const dispatch = useDispatch();
     const productsAll = useSelector(state => state.productReducer.productsAll)
     const productsSubset = useSelector(state => state.productReducer.productsSubset)
-    console.log("SEARCH productsAll------", productsAll)
-    console.log("SEARCH productsSubset------", productsSubset)
     const [locationString, setLocationString] = useState('');
     const [searchString, setSearchString] = useState('');
     const [showAutocomplete, setShowAutocomplete] = useState(false);

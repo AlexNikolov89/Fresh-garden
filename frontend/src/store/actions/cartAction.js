@@ -3,7 +3,6 @@ import baseUrl from "../../helpers/baseUrl";
 import {NOT_LOGGED_IN, RESET_NOT_LOGGED_IN, TOGGLE_CART_VIEW} from "../../helpers/constants";
 
 export const setCartData = (type, data) => {
-            console.log("in da cartAction payload", data)
 
     return {
         type: type,
