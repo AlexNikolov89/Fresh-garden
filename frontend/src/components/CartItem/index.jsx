@@ -11,29 +11,40 @@ import {
     ProductName, QuantityContainer, RightContainer
 } from "../../style/ShoppingCart";
 import kopfsalat from '../../assets/demo/salad.png'
+import {unmountComponentAtNode} from "react-dom";
 
 const CartItem = ({item}) => {
     const priceSuffix = item.price % 1 ? '0' : '';
+    const stock = item.quantity
+
     return(
         <Fragment>
             <ProductContainer>
                     <LeftContainer>
                         <ImageContainer>
-                            <Image src={item.image ? item.image : kopfsalat} />
+                            <Image src={item.image} />
                         </ImageContainer>
                         <DetailContainer>
-                            <ProductName>{item.name ? item.name : "Kopfsalat"}</ProductName>
+                            <ProductName>{item.name}</ProductName>
                             <QuantityContainer>
-                                <Decrement><i className="fas fa-minus"/></Decrement>
-                                <Count>{item.quantity ? item.quantity : "1"}</Count>
-                                <Increment><i className="fas fa-plus"/></Increment>
+                                <Decrement onClick={() => {
+                                    if (item.quantity > 1) {
+                                        item.quantity = item.quantity - 1
+                                    }
+                                }}><i className="fas fa-minus"/></Decrement>
+                                <Count>{item.quantity}</Count>
+                                <Increment onClick={() => {
+                                    if (item.quantity < stock ) {
+                                        item.quantity = item.quantity + 1
+                                    }
+                                }}><i className="fas fa-plus"/></Increment>
                             </QuantityContainer>
                         </DetailContainer>
                     </LeftContainer>
 
                     <RightContainer>
-                        <Delete><i className="fas fa-trash-alt"/></Delete>
-                        <Price>CHF {item.price ? item.price * item.quantity + priceSuffix : "6.80"}</Price>
+                        <Delete onClick={() => unmountComponentAtNode(document.getElementById(`cart-item-${item.id}`))}><i className="fas fa-trash-alt"/></Delete>
+                        <Price>CHF {item.price * item.quantity + priceSuffix}</Price>
                     </RightContainer>
                 </ProductContainer>
         </Fragment>

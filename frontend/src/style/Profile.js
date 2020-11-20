@@ -148,16 +148,17 @@ export const Name = styled.p `
 `;
 
 export const ButtonEdit = styled(StandardButton) `
-   font-size: ${theme.fontSizeS};
-
-    @media (max-width: ${theme.mediaQueryScreenWidth}){
-       width: 100px;
-       font-size: ${theme.fontSizeXS};
-    }
-    
-    @media (max-width: 360px){
-       font-size: ${theme.fontSizeXS};
-    }
+   // font-size: ${theme.fontSizeS};
+   //
+   //  @media (max-width: ${theme.mediaQueryScreenWidth}){
+   //     width: 100px;
+   //     font-size: ${theme.fontSizeXS};
+   //  }
+   // 
+   //  @media (max-width: 360px){
+   //     font-size: ${theme.fontSizeXS};
+   //  }
+   width: 100px;
     
 `;
 
@@ -198,7 +199,7 @@ export const TitleGarden = styled.h2 `
 export const AboutGarden = styled.div `
     height: 30%;
     width: 80%;
-    font-size: ${theme.fontSizeS};
+    font-size: ${theme.fontSizeDefault};
 
     @media (max-width: ${theme.mediaQueryScreenWidth}){
        width: 90%;
@@ -211,7 +212,7 @@ export const AboutGarden = styled.div `
 `;
 
 export const AboutText = styled.p `
- font-size: ${theme.fontSizeS};
+ font-size: ${theme.fontSizeDefault};
 `;
 
 export const TitleLocation = styled(TitleGarden) ``;
@@ -227,16 +228,18 @@ export const Info = styled.div `
 `;
 
 export const City = styled.p `
-  font-size: ${theme.fontSizeS};
+  font-size: ${theme.fontSizeDefault};
 
 `;
 
 export const AddressInfo = styled.div `
  display: flex;
  flex-direction: row;
+ font-size: ${theme.fontSizeDefault};
 `;
 
 export const TelContainer = styled.div `
+  font-size: ${theme.fontSizeDefault};
 
  @media (max-width: 680px) {
  height: 50px;
@@ -250,7 +253,7 @@ export const ZipCode = styled(Address) ``;
 export const Contact = styled.div ``;
 
 export const Mobile = styled.p `
-    font-size: ${theme.fontSizeS};
+    font-size: ${theme.fontSizeDefault};
     font-weight: normal;
    
     @media (max-width: ${theme.mediaQueryScreenWidth}){
@@ -261,7 +264,7 @@ export const Mobile = styled.p `
 export const Email = styled.p `
  padding-bottom: ${theme.spaceM};
  font-weight: normal;
- font-size: ${theme.fontSizeS};
+ font-size: ${theme.fontSizeDefault};
  
  @media (max-width: ${theme.mediaQueryScreenWidth}){
         font-size: ${theme.fontSizeS}
@@ -313,6 +316,6 @@ export const Delivery = styled.div `
         padding-right: 10px; 
     }
      p{
-     font-size: ${theme.fontSizeS};
+     font-size: ${theme.fontSizeDefault};
      }
 `;

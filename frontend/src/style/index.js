@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;500;700&display=swap');
     :root {
         font-size: 62.5%; /* 1.6 rem = 16px*/
+        color: #4C4C4C;
     }
     * {
         margin: 0;
