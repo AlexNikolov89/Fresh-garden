@@ -34,7 +34,7 @@ import {
     PersonalTitle,
     ProfileImage,
     ProfileImageContainer, ProgressBar,
-    ProgressBarContainer,
+    ProgressBarContainer, QrCode, QrCodeContainer, QrText,
     Quote,
     QuoteContainer,
     QuoteTitleContainer,
@@ -84,6 +84,7 @@ import { useState, useEffect } from 'react';
 import useWindowSize from "../hooks/useWindowSize";
 import UnderConstruction from "../components/UnderConstruction";
 import {useHistory, useLocation} from "react-router-dom";
+import QRCODE from '../assets/QR_Code.png'
 
 
 
@@ -102,9 +103,9 @@ const About = () => {
                     <FirstSectionContainer>
                         <FirstDiv>
                             <FirstLeftContainer>Why freshgarden.ch?
-                                <p>There are more than 22'000 registered Schrebergaerten in Switzerland only.
-                                    An untapped market potential by information technology in these community gardens poses an opportunity.</p> <p>
-                                    Capitalising on this and providing a solution for selling and buying seasonal oversupply as well as local fresh food is the motivation behind freshgarden.ch <br/>
+                                <p>There are more than <strong>22'000</strong> registered Schrebergaerten in Switzerland only.
+                                    An <strong>untapped market potential</strong> by information technology in these community gardens poses an opportunity.</p> <p>
+                                    Capitalising on this and providing a solution for selling and buying seasonal oversupply as well as <strong>local fresh food</strong> is the motivation behind freshgarden.ch <br/>
 
                                 </p>
                             </FirstLeftContainer>
@@ -113,10 +114,10 @@ const About = () => {
                         <SecondDiv>
                             <SecondLeftContainer><Image src={FreshGarden2}/></SecondLeftContainer>
                             <SecondRightContainer>What are the upcoming features?
-                                <p>freshgarden.ch has a focus on providing a social board for our members.
+                                <p>freshgarden.ch has a focus on providing a <strong>social board</strong> for our members.
                                 </p>
-                                <p>With a map feature the user journey of delivering can be an adventure on its own.</p>
-                                <p>A third feature in the backlog is to use the economy of scale for global food production improvements.</p>
+                                <p>With a <strong>map feature</strong> the user journey of delivering can be an adventure on its own.</p>
+                                <p>A third feature in the backlog is to <strong>use data</strong> in the economy of scale for global food production improvements.</p>
                             </SecondRightContainer>
                         </SecondDiv>
                         {/*<ThirdDiv>*/}
@@ -266,17 +267,17 @@ const About = () => {
                                             <RoleTitle>
                                                 Open to work
                                             </RoleTitle>
-                                            <RoleContentTwo>
-                                                linkedin.com/in/<br/>sami-benali/
-                                            </RoleContentTwo>
+                                            {/*<RoleContentTwo>*/}
+                                            {/*    linkedin.com/in/<br/>sami-benali/*/}
+                                            {/*</RoleContentTwo>*/}
                                         </DevRole>
                                     </DevRoleContainer>
                                     <SocialLinks>
-                                        <LinkedInLink target={'_blank'}
-                                                      href={'https://www.linkedin.com/in/sami-benali/'}><i
-                                            className="fab fa-linkedin"></i></LinkedInLink>
-                                        <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i
-                                            className="fab fa-github-square"></i></GitHubLink>
+                                        {/*<LinkedInLink target={'_blank'}*/}
+                                        {/*              href={'https://www.linkedin.com/in/sami-benali/'}><i*/}
+                                        {/*    className="fab fa-linkedin"></i></LinkedInLink>*/}
+                                        {/*<GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i*/}
+                                        {/*    className="fab fa-github-square"></i></GitHubLink>*/}
                                     </SocialLinks>
                                     {/*<DevRoleContainer>*/}
                                     {/*    <DevRole>*/}
@@ -315,7 +316,7 @@ const About = () => {
                                     </ProfileImageContainer>
                                     <NameContainer>
                                         <DevNameContainer>
-                                            <DevName>Alex M�der</DevName>
+                                            <DevName>Alex Mäder</DevName>
                                         </DevNameContainer>
                                         <DevRoleContainer>
                                             <DevRole>
@@ -373,14 +374,18 @@ const About = () => {
                                             <RoleTitle>
                                                 Open to work
                                             </RoleTitle>
-                                            <RoleContentTwo>
-                                                linkedin.com/in/<br/>alexemanuelmaeder/
-                                            </RoleContentTwo>
+                                            {/*<RoleContentTwo>*/}
+                                            {/*    linkedin.com/in/<br/>alexemanuelmaeder/*/}
+                                            {/*</RoleContentTwo>*/}
                                         </DevRole>
                                     </DevRoleContainer>
+                                    <QrCodeContainer>
+                                        <QrCode src={QRCODE}></QrCode>
                                     {/*<SocialLinks>*/}
                                     {/*    <LinkedInLink target={'_blank'} href={'https://www.linkedin.com/in/alexemanuelmaeder/'}><i className="fab fa-linkedin"></i></LinkedInLink>*/}
                                     {/*    <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i className="fab fa-github-square"></i></GitHubLink>*/}
+                                        <QrText>Contribute? Jobs? Feedback: Linkedin</QrText>
+                                    </QrCodeContainer>
                                     {/*</SocialLinks>*/}
                                 </LowerProfileContainer>
                             </AleksandraContainer>
@@ -449,17 +454,17 @@ const About = () => {
                                             <RoleTitle>
                                                 Open to work
                                             </RoleTitle>
-                                            <RoleContentTwo>
-                                                linkedin.com/in/<br/>aleksandra-nikolov-9597b2189/
-                                            </RoleContentTwo>
+                                            {/*<RoleContentTwo>*/}
+                                            {/*    linkedin.com/in/<br/>aleksandra-nikolov-9597b2189/*/}
+                                            {/*</RoleContentTwo>*/}
                                         </DevRole>
                                     </DevRoleContainer>
                                     <SocialLinks>
-                                        <LinkedInLink target={'_blank'}
-                                                      href={'https://www.linkedin.com/in/aleksandra-nikolov-9597b2189/'}><i
-                                            className="fab fa-linkedin"></i></LinkedInLink>
-                                        <GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i
-                                            className="fab fa-github-square"></i></GitHubLink>
+                                        {/*<LinkedInLink target={'_blank'}*/}
+                                        {/*              href={'https://www.linkedin.com/in/aleksandra-nikolov-9597b2189/'}><i*/}
+                                        {/*    className="fab fa-linkedin"></i></LinkedInLink>*/}
+                                        {/*<GitHubLink target={'_blank'} href={'https://gitlab.propulsion-home.ch/samo'}><i*/}
+                                        {/*    className="fab fa-github-square"></i></GitHubLink>*/}
                                     </SocialLinks>
                                 </LowerProfileContainer>
                             </SamiContainer>

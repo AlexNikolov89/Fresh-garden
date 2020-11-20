@@ -496,6 +496,29 @@ export const ProfileImageContainer = styled.div`
     //margin-bottom: 10px;
 `;
 
+export const QrCodeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const QrCode = styled.img`
+  display: flex;
+  height: 150px;
+  width: 130px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  margin-left: 35px;
+   flex-direction: row;
+`;
+
+export const QrText = styled.h2`
+  display: flex;
+  font-size: ${theme.fontSizeM};
+  margin-left: 35px;
+  flex-direction: row;
+`;
+
 
 export const SocialLinks = styled.div`
     display: flex;
@@ -525,7 +548,7 @@ export const BugContainer = styled.div`
     justify-content: center;
     align-items: center;
     height: 300px;
-    margin-top: 150px;
+    margin-top: 300px;
 `;
 
 export const BugTextContainer = styled.div`
