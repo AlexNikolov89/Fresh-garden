@@ -315,7 +315,7 @@ const About = () => {
                                     </ProfileImageContainer>
                                     <NameContainer>
                                         <DevNameContainer>
-                                            <DevName>Alex Mäder</DevName>
+                                            <DevName>Alex Mï¿½der</DevName>
                                         </DevNameContainer>
                                         <DevRoleContainer>
                                             <DevRole>

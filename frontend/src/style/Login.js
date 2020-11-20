@@ -164,7 +164,7 @@ export const StepOneContainer = styled.div`
         flex: 0;
         margin-top: min(100px,30px);
         margin-bottom: calc(200px + 100px + 9px);
-        min-height: 60px;
+        min-height: 100px;
     }
 `
 export const StepLoginContainer = styled(StepOneContainer)`
