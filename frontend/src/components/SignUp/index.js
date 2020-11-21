@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { regAction } from '../../store/actions/regAction';
 import { valiAction } from '../../store/actions/valiAction';
 import { useDispatch } from 'react-redux';
-import {GenericButton, SignInButton, SignUpButton} from '../../style/Buttons'
+import { SignInButton, SignUpButton} from '../../style/Buttons'
 import {
     FormWrapper,
     StepOneContainer,
@@ -27,26 +27,33 @@ import { SignIn } from '../SignIn';
 import { ReactComponent as StepOneIconSVG } from '../../assets/svgs/stepOne.svg';
 import { ReactComponent as StepTwoIconSVG } from '../../assets/svgs/stepTwo.svg';
 import { ReactComponent as StepThreeIconSVG } from '../../assets/svgs/stepThree.svg';
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 
 export const SignUp = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [code, setCode] = useState('');
     const [validation, setValidation] = useState('');
-    const [username, setUsername] = useState('');
+    const [username, setUsername] = useState('INIT');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
     const [registrationState, setRegistrationState] = useState('stepTwo');
     const [string, setString] = useState('');
+    const { height, width } = useWindowDimensions();
 
-    const stringGenerator = (input) => {
-
+    // creates a random user ID with informational suffixes
+    const stringGenerator = () => {
+        console.log(history)
+        setString(`${toString(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))}.${height}x${width}${"HISTORY"}.${username}`)
+        console.log(string)
     }
+    stringGenerator()
 
     const handleValidationCode = e => {
         setValidation(e.currentTarget.value);
@@ -56,7 +63,6 @@ export const SignUp = () => {
     }
     const handleUsername = e => {
         setUsername(e.currentTarget.value);
-        setString(stringGenerator())
     }
     const handleFirstName = e => {
         setFirstName(e.currentTarget.value);
@@ -97,6 +103,7 @@ export const SignUp = () => {
 
     const stepThreeHandler = async e => {
         e.preventDefault();
+        stringGenerator()
         if (password !== passwordRepeat) {
             setPassword('')
             setPasswordRepeat('')
@@ -109,7 +116,7 @@ export const SignUp = () => {
             setUsername('')
             setMessage('The username must be at least 3 characters long.')
         } else {
-            const valiResponse = await dispatch(valiAction(validation, email, username, firstName, lastName, password))
+            const valiResponse = await dispatch(valiAction(validation, email, string, firstName, lastName, password))
 
             if (valiResponse.is_active === true) {
                 setRegistrationState('stepFour')

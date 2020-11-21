@@ -114,7 +114,7 @@ const Profile = ({author}) => {
 
                             <Info>
                             <TitleLocation>Initial contribution consideration</TitleLocation>
-                            <AddressInfo>Code: {user.username}</AddressInfo>
+                            <AddressInfo>User ID: {user.username[6]}####...</AddressInfo>
                             </Info>
 
 
