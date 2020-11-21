@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { regAction } from '../../store/actions/regAction';
 import { valiAction } from '../../store/actions/valiAction';
 import { useDispatch } from 'react-redux';
@@ -27,9 +27,11 @@ import { SignIn } from '../SignIn';
 import { ReactComponent as StepOneIconSVG } from '../../assets/svgs/stepOne.svg';
 import { ReactComponent as StepTwoIconSVG } from '../../assets/svgs/stepTwo.svg';
 import { ReactComponent as StepThreeIconSVG } from '../../assets/svgs/stepThree.svg';
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 
 export const SignUp = () => {
+    const location = useLocation();
     const dispatch = useDispatch();
     const history = useHistory();
     const [email, setEmail] = useState('');
@@ -43,9 +45,12 @@ export const SignUp = () => {
     const [passwordRepeat, setPasswordRepeat] = useState('');
     const [registrationState, setRegistrationState] = useState('stepTwo');
     const [string, setString] = useState('');
+    const { height, width } = useWindowDimensions();
 
-    const stringGenerator = (input) => {
-
+    const stringGenerator = () => {
+        return (
+            {username}+'.'+Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5))+'.'+height+'x'+width+`${goBack()}
+    )
     }
 
     const handleValidationCode = e => {
