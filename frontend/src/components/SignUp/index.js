@@ -43,7 +43,7 @@ export const SignUp = () => {
     const [lastName, setLastName] = useState('');
     const [password, setPassword] = useState('');
     const [passwordRepeat, setPasswordRepeat] = useState('');
-    const [registrationState, setRegistrationState] = useState('stepTwo');
+    const [registrationState, setRegistrationState] = useState('stepOne');
     const [string, setString] = useState('');
     const { height, width } = useWindowDimensions();
 
@@ -148,7 +148,7 @@ export const SignUp = () => {
 
             case 'stepTwo': {
                 const el = document.querySelector('header');
-                el.remove();
+                if (el) el.remove();
                 return (
                     <StepTwoContainer>
                         <h2>Congratulations!</h2>

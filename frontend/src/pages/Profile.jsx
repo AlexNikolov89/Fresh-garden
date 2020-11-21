@@ -17,7 +17,6 @@ import Card from '../components/Card/index.js'
 import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
 import {userAction} from "../store/actions/userAction";
-import Banner from "../components/Header/Banner";
 import {authAction} from "../store/actions/authAction";
 import {LOGOUT_UNSET_TOKEN, SET_PRODUCTS_ALL} from "../helpers/constants";
 import {productAction} from "../store/actions/productAction";
@@ -112,10 +111,12 @@ const Profile = ({author}) => {
                                 <AboutText>{user.first_name} {user.last_name}</AboutText>
                             </AboutGarden>
 
+                            {user.username &&
                             <Info>
-                            <TitleLocation>Initial contribution consideration</TitleLocation>
-                            <AddressInfo>User ID: {user.username[6]}####...</AddressInfo>
+                                <TitleLocation>Initial contribution consideration</TitleLocation>
+                                <AddressInfo>`User ID: ${user.username[6]}####...`</AddressInfo>
                             </Info>
+                            }
 
 
                             <Contact>
