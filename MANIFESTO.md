@@ -3,7 +3,6 @@
 1. We aspire to clean code (DRY, KISS, YAGNI, Consistency, Readability)
 2. We code like it's for someone else (a lot of small files, maintainability)
 3. We code device responsive (@media queries and % dimensions for width, heights can be px)
-4. We follow the SCRUM framework (daily stand ups 9AM + 4PM, sprints, Kanban cards)
 5. We work hard play hard
 
 <strong>Rules</strong>

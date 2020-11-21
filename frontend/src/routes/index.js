@@ -10,10 +10,9 @@ import {Login} from "../pages/Login";
 import Slides from "../pages/Slides";
 
 
-
 export const Routes = () => {
     return <Fragment>
-                <Router>
+                <Router >
                     <Switch>
                         <Route path="/slides" component={Slides} exact />
                         <Route path="/user/profile" component={AuthComponent(Profile)} exact />
