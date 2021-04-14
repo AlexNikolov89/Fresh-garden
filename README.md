@@ -1,8 +1,15 @@
 # Screenshots
-add gifs
+
+![freshgarden_signin](https://user-images.githubusercontent.com/66255010/114711949-d7887480-9d2f-11eb-8d0d-f66c60649330.png)
+
+![freshgarden_homepage](https://user-images.githubusercontent.com/66255010/114712038-eff88f00-9d2f-11eb-8214-4a108c852207.png)
+
+![freshgarden_about](https://user-images.githubusercontent.com/66255010/114712238-2b935900-9d30-11eb-866b-75ca41905e98.png)
+
 
 # Project Pinocchio
-add purpose
+Freshgarden is the result of a three week sprint with three junior web developers. 
+Freshgarden resolves around the idea of trading homegrown food from consumer to consumer.
 
 # Setup Guide 
 <strong>Prerequisites and Frontend</strong>
